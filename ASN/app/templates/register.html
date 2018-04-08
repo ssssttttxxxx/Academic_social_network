@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="User login page" />
+    <meta name="author" content="" />
+
+	<title>Academic Social Network Platform - Register</title>
+
+	<!-- jquery -->
+	<script type="text/javascript" src="../static/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../static/jquery/jquery-migrate-3.0.1.min.js"></script>
+	<!-- jquery-validation -->
+	<script type="text/javascript" src="../static/jquery-validation-1.17.0/dist/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js"></script>
+	<!-- bootstrap-3.3.7 -->
+	<link href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- font-awesome-4.7.0 -->
+	<link href="../static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<!-- text fonts -->
+	<link rel="stylesheet" href="../static/common/login/ace-fonts.css" />
+	<!-- ace styles -->
+	<!-- <link rel="stylesheet" href="../static/common/login/ace.css" /> -->
+
+    <!-- sweetalert -->
+    <link href="../static/sweetalert/css/sweetalert.css" rel="stylesheet">
+    <script src="../static/sweetalert/js/sweetalert.min.js"></script>
+
+    <link href="../static/common/animate.css" rel="stylesheet">
+    <link href="../static/common/style.css" rel="stylesheet">
+    <link href="../static/chosen/chosen.css" rel="stylesheet">
+
+</head>
+<body class="gray-bg">
+
+	<div class="navbar-wrapper">
+	    <nav class="navbar navbar-default navbar-fixed-top white-bg" role="navigation">
+	        <div class="container">
+	            <div class="navbar-header">
+                    <a class="navbar-brand" href="/user/home" style="margin-left: 0px;padding: 7.5px 0px;">
+                    	<img src="../static/common/img/logo.png" height="40px" />
+                    </a>
+                </div>
+                <div class="navbar-right" style="margin: 15px 0px;">
+                	<span>已经注册?&nbsp;</span>
+                	<a href="/user/login" class="btn btn-primary btn-sm">登录</a>
+                </div>
+	        </div>
+	    </nav>
+	</div>
+
+    <div class="middle-box loginscreen animated fadeInDown" style="padding-top: 100px;">
+        <div class="row">
+        	<div class="col-lg-12">
+
+	            <div class="ibox-title">
+	            	<h3 class="text-left">
+		            	<i class="ace-icon fa fa-sign-out"></i>
+		            	<span>注册</span>
+		            </h3>
+	            </div>
+
+	            <div class="ibox-content">
+	                <form class="form-horizontal" id="signupForm" method="POST" action="/api/regist">
+                        <fieldset>
+	                	<div class="form-group">
+	                		<label class="col-sm-2 control-label">邮箱</label>
+	                        <div class="col-sm-9 input-group">
+	                        	<input class="form-control" placeholder="邮箱地址" name="email" id="email" type="email" required="">
+	                        	<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+	                        </div>
+	                    </div>
+	                    <div class="hr-line-dashed"></div>
+
+	                    <div class="form-group">
+	                    	<label class="col-sm-2 control-label">密码</label>
+	                        <div class="col-sm-9 input-group">
+	                        	<input class="form-control" placeholder="请输入8~16位数字或英文字母" id="password" name="password" type="password" required="">
+	                        	<span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+	                        </div>
+	                    </div>
+	                    <div class="hr-line-dashed"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="padding-left:0px;">确认密码</label>
+                            <div class="col-sm-9 input-group">
+                                <input class="form-control" placeholder="请重新输入密码" id="confirm_password" name="confirm_password" type="password" required="">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+
+	                    <div class="form-group">
+	                    	<label class="col-sm-2 control-label">姓氏</label>
+	                        <div class="col-sm-4">
+	                        	<input class="form-control"  placeholder="" name="firstname" id="firstname" type="text" required="">
+	                        </div>
+							<label class="col-sm-2 control-label">名字</label>
+	                        <div class="col-sm-4">
+	                        	<input class="form-control"  placeholder="" name="lastname" id="lastname" type="text" required="">
+	                        </div>
+	                    </div>
+	                    <div class="hr-line-dashed"></div>
+
+	                    <div class="form-group">
+	                    	<label class="col-sm-2 control-label">性别</label>
+	                    	<div class="col-sm-4">
+	                        	<select name="gender" id="gender" name="gender" class="form-control" required="">
+	        		                <option value="">请选择</option>
+					                <option value="0">男</option>
+					                <option value="1">女</option>
+					            </select>
+	                        </div>
+	                        <label class="col-sm-2 control-label">学位</label>
+	                    	<div class="col-sm-4">
+	                        	<select name="degree" id="degree" name="degree" class="form-control" required="">
+	        		                <option value="">请选择</option>
+					                <option value="0">学士</option>
+					                <option value="1">硕士</option>
+					                <option value="1">博士</option>
+					            </select>
+	                        </div>
+	                    </div>
+	                    <div class="hr-line-dashed"></div>
+
+<!-- 	                    <div class="form-group">
+	                    	<label class="col-sm-3 control-label">所属机构</label>
+	                    	<div class="col-sm-8">
+	                        	<select name="sex" id="institution" class="form-control">
+	        		                <option value="">请选择</option>
+					                <option value="0">1</option>
+					                <option value="1">2</option>
+					            </select>
+	                        </div>
+	                    </div>
+	                    <div class="hr-line-dashed"></div> -->
+
+	                    <div class="form-group">
+		                    <div class="col-sm-12 col-sm-offset-3">
+		                    	<button type="button" class="btn btn-white" style="width: 90px;" onclick="window.location.href='login.html'">
+		                    		<i class="fa fa-mail-reply"></i>&nbsp;取消
+		                    	</button>
+		                    	<button type="submit" class="btn btn-primary" style="width: 90px;">
+		                    		<i class="fa fa-check"></i>&nbsp;注册
+		                    	</button>
+		                    </div>
+	                    </div>
+                        </fieldset>
+	                </form>
+                    <div style="margin-top: 10px;" id="flash_message">
+                        {% for message in get_flashed_messages() %}
+                        <div class="alert alert-warning">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {{ message }}
+                        </div>
+                       {% endfor %}
+                    </div>
+                </div>
+	        </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $().ready(function(){
+            $("#signupForm").validate({
+                //失去焦点时验证
+                onfocusout: function(element) {
+                    $(element).valid();
+                },
+                rules: {
+                    email: {
+                        email: true
+                    },
+                    password: {
+                        minlength: 8,
+                        maxlength: 16
+                    },
+                    confirm_password: {
+                        required: true,
+                        minlength: 5,
+                        equalTo: "#password"
+                    }
+                },
+                messages: {
+                    email: {
+                        required: "请输入邮箱",
+                        email: "请输入一个正确的邮箱"
+                    },
+                    password: {
+                        required: "请输入密码",
+                        minlength: "密码长度不能小于 8 位",
+                        maxlength: "密码长度不能大于 16 位"
+                    },
+                    confirm_password: {
+                        required: "请输入密码",
+                        minlength: "密码长度不能小于 8 位",
+                        maxlength: "密码长度不能大于 16 位",
+                        equalTo: "两次密码输入不一致"
+                    },
+                },
+                submitHandler: function(form){
+					form.submit();
+                },
+				invalidHandler: function(form, validator) {
+					swal("请输入有效信息! ", "","error");
+				},
+                errorPlacement: function(error, element) {  
+                    error.appendTo(element.val());
+                }
+            })
+        });
+
+        setTimeout("$('#flash_message').hide()", 3000);
+    </script>
+
+<!--     <script>
+        var xmlHttp;
+
+        /************* 创建网络请求 ***********/
+        function createXMLHttpRequest(){
+            //Mozilla 浏览器（将XMLHttpRequest对象作为本地浏览器对象来创建）
+            if(window.XMLHttpRequest){ //Mozilla 浏览器
+                xmlHttp = new XMLHttpRequest();
+            }else if(window.ActiveXObject) { //IE浏览器
+            //IE浏览器（将XMLHttpRequest对象作为ActiveX对象来创建）
+                try{
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }catch(e){
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }catch(e){}
+                }
+            }
+            if(xmlHttp == null){
+                alert("不能创建XMLHttpRequest对象");
+                return false;
+            }
+        }
+        /************* 发出异步请求的方法 ***********/
+        function sendAsynchronRequest(url,parameter,callback){
+            createXMLHttpRequest();
+            if(parameter == null){
+                //设置一个事件处理器，当XMLHttp状态发生变化，就会出发该事件处理器，由他调用
+                //callback指定的javascript函数
+                xmlHttp.onreadystatechange = callback;
+                xmlHttp.open("GET",url,true);//true表示发出一个异步的请求。
+                xmlHttp.send(null);
+            }else{
+                xmlHttp.onreadystatechange = callback;
+                xmlHttp.open("POST",url,true);
+                xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded;");
+                xmlHttp.send(parameter);
+            }
+        }
+        /************* 上代码是通用的方法，接下来是调用以上的方法 ***********/
+
+        /************* 提交按钮的响应函数 ***********/
+        function submit(){
+            console.log("submit");
+            // 获取相应对象的值
+            var email = $('#email').val();
+            var password = $('#password').val();
+            var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();
+            var gender = $("#gender option:selected");
+            var degree = $("#degree option:selected");
+            var institution = $("institution option:selected");
+
+            //判定输入是否满足要求
+            //认证邮箱有效性
+			if (!(/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(email))){
+                alert("邮箱地址有误，请重填!");
+                $('#email').addClass("has-error");
+                $('#email').focus();
+                return false;
+            } else if (!(/^[a-zA-Z0-9]{8,16}$/.test(password))) {
+                $('#password').addClass("has-error");
+                $('#password').focus();
+            } 
+            //再判断是否为空
+            else if (email=="" || password=="" || firstname=="" || lastname=="" || gender=="" || degree=="" || institution=="") {
+                // alert("信息填写不完整!\r\n*为必填字段!");
+                return false;
+            }
+
+            var args = "name="+name+"&phone_number="+phone_number+"&email="+email+
+                    "&join_type="+join_type+"&aim_area="+aim_area+"&is_company="+is_company+
+                    "&company_info="+company_info+"&company_square="+company_square+"&note="+note;
+            // url = "/ws/wx/join_backstage";
+            // sendAsynchronRequest(url,args,loadCallBack);
+        }
+
+        /************* 指定回调方法 ***********/
+        function loadCallBack(){
+            try{
+                if (xmlHttp.readyState == 4){
+                    if (xmlHttp.status == 200){
+                        if(xmlHttp.responseText != null && xmlHttp.responseText != ""){
+                            var val = xmlHttp.responseText;
+                            if(val=="true"){
+                                alert("加盟申请提交成功，我们将会与您取得联系，请留意您的手机、邮箱。");
+                                window.location.reload();
+                            }
+
+                            else if(val=="false"){
+                                alert("提交失败，请稍后重试或直接联系客服热线400-108-3322")
+                            }
+                            else  if(val=="update"){
+                                alert("号码已报名，已为您更新加盟信息，我们将会与您取得联系，请留意您的手机、邮箱。")
+                                window.location.reload();
+                            }
+                        }
+                    }
+                }
+                    if (xmlHttp.readyState == 1) {
+//                            alert("正在加载连接对象......");
+                    }
+                    if (xmlHttp.readyState == 2) {
+//                            alert("连接对象加载完毕。");
+                    }
+                    if (xmlHttp.readyState == 3) {
+//                            alert("数据获取中......");
+                    }
+            }
+              catch (e)
+              {
+                  //错误事件处理;
+              }
+        }
+    </script> -->
+
+
+</body>
+</html>

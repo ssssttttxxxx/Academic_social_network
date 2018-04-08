@@ -1,0 +1,12 @@
+<!doctype html>
+<title>PyMongo Sample</title>
+<h1>paper:</h1>
+<ul>
+{% for paper in papers %}
+    <li>{{paper.id}}</li>
+    <li>{{paper.title}}</li>
+    <li>{{paper.year}}</li>
+    <li>{{paper.co_authors}}</li>
+    <li>{{paper.abstract}}</li>
+{% endfor %}
+</ul>

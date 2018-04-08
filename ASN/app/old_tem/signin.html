@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Signin</title>
+
+        <link rel='stylesheet' href="../static/stylesheets/style.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="../static/stylesheets/bootstrap.min.css">
+
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <link href="../static/stylesheets/mycss/signin.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="container">
+            <form class="form-signin" role="form" action="/api/login", method="post">
+                <h2 class="form-signin-heading">用户登录</h2>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                    <li class="error">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+                <input type="text" class="form-control" id="username" name="name" placeholder="请输入用户名" required autofocus>
+                <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码" required>
+                <br />
+                <button class="btn btn-lg btn-primary btn-block" type="submit" id="login0">登录</button>
+                <button type="button" class="btn btn-lg btn-primary btn-block" id="register0">注册</button>
+            </form>
+        </div> <!-- /container -->
+
+        <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="../static/javascripts/jquery-1.11.3.min.js"></script>
+            <script src="../static/javascripts/bootstrap.min.js"></script>
+            <script src="../static/javascripts/docs.min.js"></script>
+
+            <script type="text/javascript">
+            $('#register0').on('click', function() {
+              console.log('wa');
+              window.location.href='/user/regist'
+              return false;
+            })
+            </script>
+    </body>
+</html>

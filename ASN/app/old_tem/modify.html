@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>modify</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/stylesheets/mycss/modify.css" rel="stylesheet">
+
+    <!--引入wangEditor.css-->
+    <link rel="stylesheet" type="text/css" href="../static/stylesheets/wangEditor/wangEditor.min.css">
+
+  </head>
+
+  <body id="dd">
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item" href="home">主页</a>
+          {% if current_user.is_active %}
+          <a class="blog-nav-item" href="#">欢迎您，{{ current_user.name }}</a>
+          <a class="blog-nav-item" href="/user/add">添加词条</a>
+          <a class="blog-nav-item" href="/api/logout">注销</a>
+          {% else %}
+          <a class="blog-nav-item" href="/user/login">登录</a>
+          {% endif %}
+
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+      {% for fullcon in fullcontent %}
+      <div class="blog-header">
+        <h1 class="blog-title">{{ fullcon.title }}</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8 blog-main" id="main-box">
+          <div class="blog-post">
+            <br>
+            <textarea id="content2" style="height:600px;max-height:800px;" rows="5" class=" form-control "  name="content" placeholder="context">{{ fullcon.content }}</textarea>
+            <br>
+          </div><!-- /.blog-post -->
+        </div><!-- /.blog-main -->
+      </div><!-- /.row -->
+
+      <div class="modify-btn">
+        <a href="/user/detail"><button class="btn btn-lg btn-primary btn-block" type="submit" id="confirm">确认修改</button></a>
+        <br>
+      </div>
+      <div class="modify-btn" >
+        <a href="home"><button class="btn btn-lg btn-primary btn-block" type="button" id="cancel" style="float:left;">取消修改</button></a>
+        <br>
+      </div>
+      {% endfor %}
+
+    </div><!-- /.container -->
+
+    <div class="blog-footer">
+      <p>641大百科</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../static/javascripts/jquery-1.11.3.min.js"></script>
+    <script src="../static/javascripts/bootstrap.min.js"></script>
+    <script src="../static/javascripts/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+    <script type="text/javascript" src="../static/javascripts/wangEditor/wangEditor.min.js"></script>
+    <script type="text/javascript">
+    var editor = new wangEditor('content0');
+    editor.create();
+    $('#confirm').on('click',function () {
+      // 获取编辑器区域完整html代码
+      var html = editor.$txt.html();
+      content = html;
+      return content;
+    });
+    $('#cancel').on('click', function() {
+      location.href="/user/home"
+    });
+    </script>
+
+
+  </body>
+</html>

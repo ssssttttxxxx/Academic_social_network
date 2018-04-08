@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>searchResult</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/stylesheets/mycss/result.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item" href="home">主页</a>
+          {% if current_user.is_active %}
+          <a class="blog-nav-item" href="#">欢迎您，{{ current_user.name }}</a>
+          <a class="blog-nav-item" href="/user/add">添加词条</a>
+          <a class="blog-nav-item" href="/api/logout">注销</a>
+          {% else %}
+          <a class="blog-nav-item" href="/user/login">登录</a>
+          {% endif %}
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="search">
+        <form action="/user/search" method="post">
+          <input type="text" class="col-sm-8 form-control searchtext"id="searchtext" name="searchtext" required></input>
+          <button class="btn btn-sm btn-primary btn-block" type="submit" style="width:25%;height:20%;">search</button>
+        </form>
+      </div>
+
+      <div class="blog-header"></div>
+
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          {% for result in results %}
+          <div class="blog-post">
+            <form action="/user/detail" method="post" >
+              <!-- <h3 class="blog-post-title"><button class="btn btn-lg btn-link" style="background-color:transparent; font-size:14; color:2fb2e8;" type="submit"  name="linklist" onclick='return clickevent(this)'>{{ result.title }}</button></h3> -->
+              <h3 class="blog-post-title"><input name="linklist" value= {{ result.title }} style="display:none"><button class="btn btn-lg btn-link" style=" font-size:14; color:2fb2e8;" type="submit">{{ result.title }}</button></input></h3>
+            </form>
+            <p>Welcome to use '641 Search Engine'. This is result searching for you. Click to view details. Thank you for using our system.</p>
+          </div>
+          {% endfor %}
+          <!-- <form  action="" method="post">
+            <input type="hidden" name="biaoti" value="biaoti">
+          </form> -->
+
+        </div><!-- /.blog-main -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+
+    <div class="blog-footer">
+      <p>641大百科</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../static/javascripts/jquery-1.11.3.min.js"></script>
+    <script src="../static/javascripts/bootstrap.min.js"></script>
+    <script src="../static/javascripts/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+    <script type="text/javascript">
+    //function clickevent(obj) {
+      //var ll=document.getElementsByName("linklist");
+      //var linklist = obj.innerHTML;
+      //console.log(this.id)
+      //alert(obj.innerHTML);
+      //linklist=obj.innerHTML;
+      //linklist=ll;
+      //$('form').attr('action','/user/detail'+linklist=obj.innerHTML);
+      //$('form').submit();
+      //console.log(linklist)
+      //alert(obj,innerHTML);
+      //doucument.getElementsByName("biaoti").value=linklist;
+      //return linklist;
+    //}
+    </script>
+    <script type="text/javascript">
+    //var ll=document.getElementsByName("linklist");
+    //console.log(ll.innerHTML);
+    </script>
+  </body>
+</html>

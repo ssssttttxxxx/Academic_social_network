@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>PyMongo authors</title>
+<h1>Authors:</h1>
+<ul>
+    <li>{{authors.paper_id}}</li>
+    {% for author in authors.co_authors %}
+        <li>{{author}}</li>
+    {% endfor %}
+</ul>

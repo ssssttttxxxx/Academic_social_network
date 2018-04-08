@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Detail</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/stylesheets/mycss/detail.css" rel="stylesheet">
+
+    <!--引入wangEditor.css-->
+    <link rel="stylesheet" type="text/css" href="../static/stylesheets/wangEditor/wangEditor.min.css">
+
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item" href="home">主页</a>
+          {% if current_user.is_active %}
+          <a class="blog-nav-item" href="#">欢迎您，{{ current_user.name }}</a>
+          <a class="blog-nav-item" href="/user/add">添加词条</a>
+          <a class="blog-nav-item" href="/api/logout">注销</a>
+          {% else %}
+          <a class="blog-nav-item" href="/user/login">登录</a>
+          {% endif %}
+
+        </nav>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="search">
+        <form action="/user/search", method="post">
+          <input type="text" class="col-sm-8 form-control searchtext" id="searchtext" name="searchtext"></input>
+           <button class="btn btn-sm btn-primary btn-block" type="submit" style="width:25%;height:20%;">search</button>
+        </form>
+      </div>
+
+    <form role="form" action="/api/modify" method="post">
+      {% for fullcon in fullcontent %}
+      <div class="blog-header">
+        <input name="newTitle" value= {{ fullcon.title }} style="display:none"><h1 class="blog-title">{{ fullcon.title }}</h1></input>
+      </div>
+      <div class="row">
+        <div class="col-lg-10 blog-main">
+          <div class="blog-post" name="det" id="det">
+              <textarea id="content1" style="height:800px;max-height:1200px;wigth:100%" name="newContent">{{fullcon.content}}</textarea>
+          </div>
+        </div><!-- /.blog-main -->
+      </div><!-- /.row -->
+
+
+      {% if current_user.is_active %}
+      <div class="modify-btn">
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="modify">修改词条</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="confirmModify">确认修改</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="cancelModify">放弃修改</button>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="sendComment">发布评论</button>
+        <br>
+      </div>
+      {% endif %}
+    </form>
+
+      <div class= "comment-container" id="comment">
+        {% for comment in comments %}
+        <div class= "single-comment" id="singleComment">
+          <div class="line"  style="width:100%;margin: 1px;height:2%;border-top:1px solid #ddd"></div>
+          <div class= "comment-user">
+            <h4>{{ comment.name }}</h4>
+          </div>
+          <div class="comment-text">
+            <p>{{ comment.content }}</p>
+          </div>
+          <div class="comment-footer">
+            <p>{{ comment.time }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div><!-- /.container -->
+
+    <div class="blog-footer">
+      <p>641大百科</p>
+      <p><a href="#">Back to top</a></p>
+    </div>
+
+    <div style="display:none;top:15%;left:40%;position:absolute;width:600px; height:25%; background-color:#ccc; z-index:999" id="out">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" style="padding-top:30px;">
+                    <form class="form-signin" role="form" action="/api/commen", method="post">
+                        <input style="width:570px" type="text" class="form-control" name="commentcontent" placeholder="您说～" required autofocus>
+                        <br />
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <ul class=flashes>
+                            {% for message in messages %}
+                            <li class="error">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% endwith %}
+                        <button style="width:100px" class="btn btn-lg btn-primary btn-block" type="submit" id="fabu">发布</button>
+                        <button style="width:100px" class="btn btn-lg btn-primary btn-block" type="button" id="back">返回</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../static/javascripts/jquery-1.11.3.min.js"></script>
+    <script src="../static/javascripts/bootstrap.min.js"></script>
+    <script src="../static/javascripts/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+    <!--这里引用jquery和wangEditor.js-->
+    <script type="text/javascript" src="../static/javascripts/wangEditor/wangEditor.min.js"></script>
+    <script type="text/javascript">
+      var editor = new wangEditor('content1');
+      editor.create();
+      editor.disable();
+      $('#confirmModify').hide();
+      $('#cancelModify').hide();
+      $("#back").click(function(){
+          $("#out").hide();
+          return false;
+      })
+      $("#sendComment").click(function(){
+          $("#out").show();
+      })
+      $("#modify").click(function(){
+          editor.enable();
+          $('#modify').hide();
+          $('#confirmModify').show();
+          $('#cancelModify').show();
+      })
+      $('#confirmModify').on('click',function () {
+        // 获取编辑器区域完整html代码
+        var html = editor.$txt.html();
+        content = html;
+        return content;
+      });
+      $('#cancelModify').on('click', function() {
+      	location.href="/user/home"
+      });
+      </script>
+    </script>
+
+    {% endfor %}
+  </body>
+</html>

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="User login page" />
+    <meta name="author" content="" />
+
+	<title>Academic Social Network Platform - private profile</title>
+
+	<!-- jquery -->
+	<script type="text/javascript" src="../static/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../static/jquery/jquery-migrate-3.0.1.min.js"></script>
+	<!-- jquery-validation -->
+	<script type="text/javascript" src="../static/jquery-validation-1.17.0/dist/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js"></script>
+	<!-- bootstrap-3.3.7 -->
+	<link href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- font-awesome-4.7.0 -->
+	<link href="../static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<!-- text fonts -->
+	<link rel="stylesheet" href="../static/common/login/ace-fonts.css" />
+	<!-- ace styles -->
+	<!-- <link rel="stylesheet" href="../static/common/login/ace.css" /> -->
+
+	<!-- dropzone-5.4.0 -->
+	<link href="../static/dropzone-5.4.0/css/dropzone.css" rel="stylesheet">
+	<script src="../static/dropzone-5.4.0/js/dropzone.js"></script>
+
+    <!-- sweetalert -->
+    <link href="../static/sweetalert/css/sweetalert.css" rel="stylesheet">
+    <script src="../static/sweetalert/js/sweetalert.min.js"></script>
+
+    <!-- chosen -->
+    <link href="../static/chosen/css/chosen.css" rel="stylesheet">
+    <script src="../static/chosen/js/chosen.jquery.js"></script>
+
+    <!-- echarts -->
+    <script src="../static/echarts/js/echarts.min.js"></script>
+
+    <link href="../static/common/animate.css" rel="stylesheet">
+    <link href="../static/common/style.css" rel="stylesheet">
+
+</head>
+<body class="gray-bg">
+
+	<div class="navbar-wrapper">
+	    <nav class="navbar navbar-default navbar-fixed-top white-bg" role="navigation">
+	        <div class="container">
+	            <div class="navbar-header">
+                    <a class="navbar-brand" href="/user/home" style="margin-left: 0px;padding: 7.5px 0px;">
+                    	<img src="../static/common/img/logo.png" height="40px" />
+                    </a>
+                </div>
+<!--                 <div class="navbar-right" style="margin-top: 10px;">
+                	<span>还没注册?&nbsp;</span>
+                	<a href="register.html" class="btn btn-primary btn-sm">注册</a>
+                </div> -->
+                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;">
+                    <li>
+                        <a href="profile.html" style="padding: 0px 0px;min-height: 0px;" title="用户">
+                            <img alt="image" class="img-circle" src="../static/common/img/a4.jpg" width="40px" height="40px">
+                            <strong>{{current_user.first_name}}</strong>
+                        </a>
+                    </li>
+                    <span style="padding:15px 0px 5px 0px;margin: 0px 2px 0px 6px;border-left: 1px solid #999c9e;font-size: 0;"></span>
+                    <li>
+                        <a href="/api/logout" title="注销">
+                            <i class="fa fa-sign-out fa-lg"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+	        </div>
+	    </nav>
+	</div>
+
+	<div class="wrapper wrapper-content animated fadeIn" style="padding-top: 100px;">
+		<div class="container">
+			<div class="row">
+                <div class="col-lg-12">
+                    <div class="tabs-container">
+                        <div class="tabs-left">
+	                        <ul class="nav nav-tabs">
+	                            <li class="active"><a data-toggle="tab" href="#tab-1"><i class="fa fa-circle text-navy"></i> 个人信息</a></li>
+	                            <li class=""><a data-toggle="tab" href="#tab-2"><i class="fa fa-circle text-danger"></i> 关注领域</a></li>
+	                            <li class=""><a data-toggle="tab" href="#tab-3" id="tab3"><i class="fa fa-circle text-primary"></i> 我的关注</a></li>
+	                            <li class=""><a data-toggle="tab" href="#tab-4" id="tab4"><i class="fa fa-circle text-info"></i> 谁关注我</a></li>
+	                            <li class=""><a data-toggle="tab" href="#tab-5" id="tab5"><i class="fa fa-circle text-warning"></i> 我的论文</a></li>
+	                            <li class=""><a data-toggle="tab" href="#tab-6" id="tab6"><i class="fa fa-circle text-muted"></i> 关系图</a></li>
+	                        </ul>
+	                        <div class="tab-content">
+	                            <div id="tab-1" class="tab-pane active">
+	                                <div class="panel-body">
+						            	<div class="col-md-6 animated fadeInDown">
+						            		<div class="ibox-content">
+						                        <div class="widget-head-color-box navy-bg p-lg text-center">
+						                            <div class="m-b-md">
+							                            <h2 class="font-bold no-margins">
+							                                {{current_user.first_name}}
+							                            </h2>
+						                            </div>
+						                            <img src="../static/common/img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
+						                            <div>
+						                            	<div class="btn-group">
+							                                <label title="Edit head portrait" for="inputImage" class="btn btn-info">
+							                                    <input type="file" accept="image/*" name="file" id="inputImage" class="hide">
+							                                    <i class="fa fa-wrench"></i>&nbsp;修改头像
+							                                </label>
+							                            </div>
+						                            </div>
+						                        </div>
+						                        <div class="widget-text-box">
+						                            <div class="text-center">
+						                            	<a href="#tab-3" id="toTab3"><small class="label label-danger"><i class="fa fa-hand-paper-o"></i> 100 发表</small></a> |
+						                                <a href="#tab-4" id="toTab4"><small class="label label-info"><i class="fa fa-hand-paper-o"></i> 350 关注</small></a> |
+						                                <a href="#tab-5" id="toTab5"><small class="label label-warning"><i class="fa fa-hand-paper-o"></i> 610 粉丝</small></a> 
+						                            </div>
+						                        </div>
+						            		</div>
+						            	</div>
+
+	                                	<div class="col-md-6 animated fadeInDown">
+	                                		<div class="ibox-content">
+			                                	<form method="get" class="form-horizontal">
+
+								                    <div class="form-group">
+								                    	<label class="col-sm-2 control-label">姓氏</label>
+								                        <div class="col-sm-4">
+								                        	<input type="text" class="form-control"  placeholder="" required="" id="firstname" disabled="disabled" value={{current_user.first_name}}>
+								                        </div>
+														<label class="col-sm-2 control-label">名字</label>
+								                        <div class="col-sm-4">
+								                        	<input type="text" class="form-control"  placeholder="" required="" id="lastname" disabled="disabled" value={{current_user.last_name}}>
+								                        </div>
+								                    </div>
+								                    <div class="hr-line-dashed"></div>
+
+								                    <div class="form-group">
+								                    	<label class="col-sm-2 control-label">性别</label>
+								                    	<div class="col-sm-4">
+								                        	<select name="gender" id="gender" class="form-control" disabled="disabled">
+								        		                <option value="">请选择</option>
+												                <option value="0" selected>男</option>
+												                <option value="1">女</option>
+												            </select>
+								                        </div>
+								                        <label class="col-sm-2 control-label">学位</label>
+								                    	<div class="col-sm-4">
+								                        	<select name="degree" id="degree" class="form-control" disabled="disabled">
+								        		                <option value="">请选择</option>
+												                <option value="0" selected>学士</option>
+												                <option value="1">硕士</option>
+												                <option value="1">博士</option>
+												            </select>
+								                        </div>
+								                    </div>
+								                    <div class="hr-line-dashed"></div>
+
+								                    <div class="form-group">
+								                    	<label class="col-sm-3 control-label">所属机构</label>
+								                    	<div class="col-sm-9">
+								                        	<select name="sex" id="institution" class="form-control" disabled="disabled">
+								        		                <option value="">请选择</option>
+												                <option value="0" selected>1</option>
+												                <option value="1">2</option>
+												            </select>
+								                        </div>
+								                    </div>
+								                    <div class="hr-line-dashed"></div>
+
+								                    <div class="form-group">
+								                    	<label class="col-sm-2 control-label">地址</label>
+								                        <div class="col-sm-10">
+								                        	<input type="address" class="form-control"  placeholder="" required="" id="address" disabled="disabled" value="广东华南理工大学">
+								                        </div>
+								                    </div>
+								                    <div class="hr-line-dashed"></div>
+
+								                    <div class="form-group">
+								                    	<label class="col-sm-2 control-label">电话</label>
+								                        <div class="col-sm-10">
+								                        	<input type="telephone" class="form-control"  placeholder="" required="" id="telephone" disabled="disabled" value="1377777777">
+								                        </div>
+								                    </div>
+								                    <div class="hr-line-dashed"></div>
+
+								                    <div class="form-group">
+									                    <div class="col-sm-12 col-sm-offset-3">
+									                    	<button type="button" class="btn btn-white" id="profile_edit" style="width: 90px;"><!-- onclick="window.location.href='login.html'" -->
+									                    		<i class="fa fa-edit"></i>&nbsp;修改
+									                    	</button>
+									                    	<button type="button" class="btn btn-primary " id="profile_confirm" style="width: 90px;">
+									                    		<i class="fa fa-check-square-o"></i>&nbsp;确认
+									                    	</button>
+									                    </div>
+								                    </div>
+								                </form>
+								            </div>
+
+						            	</div>
+
+						        	</div>
+	                            </div>
+	                            <div id="tab-2" class="tab-pane">
+	                                <div class="panel-body">
+	                                	<div class="col-md-12">
+						            		<div class="ibox-content animated fadeInRight">
+												<h3 class="tag-title">感兴趣的领域</h3>
+
+								                <div class="form-group">
+									                <div class="input-group">
+									                	<select data-placeholder="请选择..." class="chosen-select" id="addField" multiple tabindex="1">
+											                <!-- <option value="">Select</option> -->
+											                <option value="Data Mining">Data Mining</option>
+											                <option value="Machine Learning" selected="">Machine Learning</option>
+											                <option value="Social Network">Social Network</option>
+											                <option value="Deep Learning">Deep Learning</option>
+											                <option value="Healthcare">Healthcare</option>
+									                	</select>
+									                </div>
+							                	</div>
+
+					                            <ul class="tag-list" id="fieldList" style="padding: 0">
+					                                <!-- <li><a href=""><i class="fa fa-tag"></i> Social Network</a></li> -->
+					                            </ul>
+					                            <div class="clearfix"></div>
+					                        </div>
+					                    </div>
+	                                </div>
+	                            </div>
+                             	<div id="tab-3" class="tab-pane">
+	                                <div class="panel-body">
+	                                	<div class="col-md-12">
+	                                		<div class="ibox-content">
+		                            	        <div class="wrapper wrapper-content animated fadeInRight">
+											        <div class="row">
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											        </div>
+											    </div>
+											</div>
+										</div>
+	                                </div>
+	                            </div>
+                             	<div id="tab-4" class="tab-pane">
+	                                <div class="panel-body">
+										<div class="col-md-12">
+											<div class="ibox-content">
+		                            	        <div class="wrapper wrapper-content animated fadeInRight">
+											        <div class="row">
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											            <div class="col-md-4">
+											                <div class="contact-box" style="padding: 10px;">
+											                    <a href="profile.html">
+												                    <div class="col-sm-5">
+												                        <div class="text-center">
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">博士</div>
+												                        </div>
+												                    </div>
+												                    <div class="col-sm-7">
+												                        <h3><strong>张三</strong></h3>
+												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
+												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
+												                        <p><i class="fa fa-phone"></i> 1377777777</p>
+
+												                    </div>
+												                    <div class="clearfix"></div>
+										                        </a>
+					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
+													                <div class="m-t-xs btn-group">
+													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
+													                </div>
+													            </div>
+											                </div>
+											            </div>
+											        </div>
+											    </div>
+											</div>
+										</div>
+	                                </div>
+	                            </div>
+	                            <div id="tab-5" class="tab-pane">
+	                                <div class="panel-body">
+
+	                                	<div class="col-lg-12 animated fadeInRight">
+							                <div class="ibox">
+							                    <div class="ibox-title">
+							                        <h5>上传论文</h5>
+							                    </div>
+							                    <div class="ibox-content">
+							                        <form id="my-awesome-dropzone" class="dropzone" action="#">
+							                            <div class="dropzone-previews"></div>
+							                        </form>
+							                        <div class="hr-line-dashed"></div>
+							                        <button type="submit" class="btn btn-primary pull-right">
+							                        	<i class="fa fa-upload"></i>&nbsp;上传提交
+							                    	</button>
+							                    </div>
+							                </div>
+							            </div>
+
+						            	<div class="col-lg-12 animated bounce">
+						            		<div class="ibox">
+						            			<div class="ibox-content">
+									            	<div id="vertical-timeline" class="vertical-container dark-timeline center-orientation">
+							                            <div class="vertical-timeline-block">
+							                                <div class="vertical-timeline-icon navy-bg">
+							                                    <i class="fa fa-briefcase"></i>
+							                                </div>
+
+							                                <div class="vertical-timeline-content">
+	                                                            <div class="file-box" style="margin-left: 18%;">
+									                                <div class="file">
+									                                    <a href="#">
+									                                        <span class="corner"></span>
+
+									                                        <div class="icon">
+									                                            <i class="fa fa-file"></i>
+									                                        </div>
+									                                        <div class="file-name">
+									                                            Document_2014.doc
+									                                            <br/>
+									                                            <small>Added: Jan 11, 2014</small>
+									                                        </div>
+									                                    </a>
+									                                </div>
+									                            </div>
+							                                    <span class="vertical-date">
+							                                        Today <br/>
+							                                        <small>Dec 24</small>
+							                                    </span>
+							                                </div>
+							                            </div>
+
+							                            <div class="vertical-timeline-block">
+							                                <div class="vertical-timeline-icon blue-bg">
+							                                    <i class="fa fa-file-text"></i>
+							                                </div>
+
+							                                <div class="vertical-timeline-content">
+	                                                            <div class="file-box">
+									                                <div class="file">
+									                                    <a href="#">
+									                                        <span class="corner"></span>
+
+									                                        <div class="icon">
+									                                            <i class="fa fa-file"></i>
+									                                        </div>
+									                                        <div class="file-name">
+									                                            Document_2014.doc
+									                                            <br/>
+									                                            <small>Added: Jan 11, 2014</small>
+									                                        </div>
+									                                    </a>
+									                                </div>
+									                            </div>
+							                                    <span class="vertical-date">
+							                                        Today <br/>
+							                                        <small>Dec 24</small>
+							                                    </span>
+							                                </div>
+							                            </div>
+
+							                            <div class="vertical-timeline-block">
+							                                <div class="vertical-timeline-icon lazur-bg">
+							                                    <i class="fa fa-coffee"></i>
+							                                </div>
+
+							                                <div class="vertical-timeline-content">
+	                                                            <div class="file-box">
+									                                <div class="file">
+									                                    <a href="#">
+									                                        <span class="corner"></span>
+
+									                                        <div class="icon">
+									                                            <i class="fa fa-file"></i>
+									                                        </div>
+									                                        <div class="file-name">
+									                                            Document_2014.doc
+									                                            <br/>
+									                                            <small>Added: Jan 11, 2014</small>
+									                                        </div>
+									                                    </a>
+									                                </div>
+									                            </div>
+							                                    <span class="vertical-date"> Yesterday <br/><small>Dec 23</small></span>
+							                                </div>
+							                            </div>
+
+							                            <div class="vertical-timeline-block">
+							                                <div class="vertical-timeline-icon yellow-bg">
+							                                    <i class="fa fa-phone"></i>
+							                                </div>
+
+							                                <div class="vertical-timeline-content">
+	                                                            <div class="file-box">
+									                                <div class="file">
+									                                    <a href="#">
+									                                        <span class="corner"></span>
+
+									                                        <div class="icon">
+									                                            <i class="fa fa-file"></i>
+									                                        </div>
+									                                        <div class="file-name">
+									                                            Document_2014.doc
+									                                            <br/>
+									                                            <small>Added: Jan 11, 2014</small>
+									                                        </div>
+									                                    </a>
+									                                </div>
+									                            </div>
+							                                    <span class="vertical-date">Yesterday <br/><small>Dec 23</small></span>
+							                                </div>
+							                            </div>
+														
+						                        	</div>
+						            			</div>
+						            		</div>
+						            	</div>
+	                                    
+	                                </div>
+	                            </div>
+	                            <div id="tab-6" class="tab-pane">
+	                                <div class="panel-body">
+
+						                <div class="col-lg-12">
+						                    <div class="tabs-container">
+						                        <ul class="nav nav-tabs" style="border-bottom: none;">
+						                            <li class="active"><a data-toggle="tab" href="#chart1"> 论文关系图</a></li>
+						                            <li class=""><a data-toggle="tab" href="#chart2"> 作者关系图</a></li>
+						                        </ul>
+						                        <div class="tab-content">
+						                            <div id="chart1" class="tab-pane active">
+
+					                            		<div class="panel-body" style="margin: 0;width: 100%;height: 500px;">
+						                                    <div id="paperGraph" style="height: 100%;"></div>
+						                                </div>
+						                            </div>
+						                            <div id="chart2" class="tab-pane">
+						                                <div class="panel-body" style="margin: 0;width: 100%;height: 500px;">
+															<div id="coauthorGraph" style="height: 100%;"></div>
+						                                </div>
+						                            </div>
+						                        </div>
+						                    </div>
+						                </div>
+
+						            </div>
+	                            </div>
+	                        </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+            
+    <script>
+        $(document).ready(function(){
+        	// 跳到tab
+        	$("#toTab3").click(function(){
+        		$("#tab5").click();
+        	});
+        	$("#toTab4").click(function(){
+        		$("#tab3").click();
+        	})
+        	$("#toTab5").click(function(){
+        		$("#tab4").click();
+        	})
+
+        	// 我的论文上传
+            Dropzone.options.myAwesomeDropzone = {
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 100,
+                init: function() {
+                    var myDropzone = this;
+                    this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        myDropzone.processQueue();
+                    });
+                    this.on("sendingmultiple", function() {
+                    });
+                    this.on("successmultiple", function(files, response) {
+                    });
+                    this.on("errormultiple", function(files, response) {
+                    });
+                }
+            }
+
+            function animationHover(element, animation) {
+			    element = $(element);
+			    element.hover(
+			        function () {
+			            element.addClass('animated ' + animation);
+			        },
+			        function () {
+			            //wait for animation to finish before removing classes
+			            window.setTimeout(function () {
+			                element.removeClass('animated ' + animation);
+			            }, 2000);
+			        });
+			}
+            $(".file-box").each(function() {
+                animationHover(this, 'pulse');
+            });
+
+            // 个人信息确认按钮
+            $("#profile_confirm").click(function () {
+	            swal({
+	                title: "修改个人信息",
+	                text: "请问是否确认修改？",
+	                type: "warning",
+	                cancelButtonText: "取消",
+	                showCancelButton: true,
+	                confirmButtonColor: "#DD6B55",
+	                confirmButtonText: "确认",
+	                closeOnConfirm: false
+	            }, function () {
+	                swal("保存成功！", "您的个人信息已经修改成功！", "success");
+        			$('#firstname').attr("disabled","disabled"); 
+	            	$('#lastname').attr("disabled","disabled"); 
+	            	$('#gender').attr("disabled","disabled"); 
+	            	$('#degree').attr("disabled","disabled"); 
+	            	$('#institution').attr("disabled","disabled"); 
+	            	$('#address').attr("disabled","disabled"); 
+	            	$('#telephone').attr("disabled","disabled"); 
+	            });
+	        });
+            $("#profile_edit").click(function() {
+            	$('#firstname').removeAttr("disabled");
+            	$('#lastname').removeAttr("disabled");
+            	$('#gender').removeAttr("disabled");
+            	$('#degree').removeAttr("disabled");
+            	$('#institution').removeAttr("disabled");
+            	$('#address').removeAttr("disabled");
+            	$('#telephone').removeAttr("disabled");
+            });
+
+
+            // 关注领域添加标签
+            $(".chosen-select").chosen({width: "450px"});
+			for (var i in $("#addField").val()) {
+					$("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $("#addField").val()[i] + '</a></li>');
+				}
+			$("#addField").on('change', function(){
+				// console.log($("#addField option:selected").val());
+				$("#fieldList li").remove();
+				for (var i in $(this).val()) {
+					$("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $(this).val()[i] + '</a></li>');
+				}
+				// $("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $(this).find("option:selected").val() + '</a></li>');
+			});
+
+
+	        //关注
+	        $(".followBtn").click(function(){
+	        	if (this.innerText == " Follow") {
+	        		$(this).html('<i class="fa fa-users"></i> Following');
+	        		$(this).bind({
+	        			mouseenter: function(e) {
+				            $(this).css("background-color", "#FF4500");
+				            $(this).html('<i class="fa fa-user-times"></i> Unfollow');
+				        },
+				        mouseleave: function(e) {
+				            $(this).css("background-color", "#ffffff");
+				            $(this).html('<i class="fa fa-users"></i> Following');
+				        }
+	        		});
+	    		}
+	        	else {
+	        		$(this).css("background-color", "#ffffff");
+	        		$(this).unbind('mouseenter').unbind('mouseleave');
+	        		$(this).html('<i class="fa fa-user-plus"></i> Follow');
+	        	}
+	        });
+       });
+    </script>
+
+    <script type="text/javascript">
+        //论文关系图
+        var dom1 = document.getElementById("paperGraph");
+        var myChartGraph1 = echarts.init(dom1);
+        option1 = null;
+        // app.title = '论文关系图';
+        myChartGraph1.showLoading();
+
+  //       option1 = {
+		//     xAxis: {
+		//         type: 'category',
+		//         data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+		//     },
+		//     yAxis: {
+		//         type: 'value'
+		//     },
+		//     series: [{
+		//         data: [820, 932, 901, 934, 1290, 1330, 1320],
+		//         type: 'line'
+		//     }]
+		// };
+
+		// myChartGraph1.setOption(option1);
+
+		//作者关系图
+        var dom2 = document.getElementById("coauthorGraph");
+        var myChartGraph2 = echarts.init(dom2);
+        // var app = {};
+        option2 = null;
+        // app.title = '作者关系图';
+
+        myChartGraph2.showLoading();
+        $.ajax({
+        	url: "/api/expert_network",
+        	data: {"name": "Martin Ester"},
+        	success: function(data){
+	        	myChartGraph2.hideLoading();
+
+	        	var graph = JSON.parse(data);
+
+ 				var years = [];
+				for (var i=0;i<graph.length;i++){
+ 					years.push(graph[i].year);
+				}
+
+	        	for (var i=0;i<graph.length;i++){
+		        	graph[i].nodes.forEach(function(node){
+	    		        node.itemStyle = null;
+				        // node.symbolSize = 10;
+				        // node.value = node.symbolSize;
+				        // node.category = node.attributes.modularity_class;
+				        // Use random x, y
+				        node.x = node.y = null;
+				        node.draggable = true;
+		        	})
+	        	}
+
+        	    option2 = {
+        	    	baseOption: {
+        	    		timeline: {
+				            // y: 0,
+				            axisType: 'category',
+				            // realtime: false,
+				            // loop: false,
+				            autoPlay: false,
+				            // currentIndex: 2,
+				            // playInterval: 1000,
+				            // controlStyle: {
+				            //     position: 'left'
+				            // },
+				            data: years,
+				            label: {
+				                // formatter : function(s) {
+				                //     return (new Date(s)).getFullYear();
+				                // }
+				            }
+				        },
+				        title: {
+				            subtext: '',
+				            top: 'bottom',
+				            left: 'right'
+				        },
+				        tooltip: {},
+				        legend: {
+				            // selectedMode: 'single',
+				            data: ["Martin Ester"]
+				        },
+				        animation: false,
+				        series : [
+				            {
+				                name: '',
+				                type: 'graph',
+				                layout: 'force',
+				                roam: true,
+				                label: {
+				                    normal: {
+				                        position: 'right'
+				                    }
+				                },
+				                force: {
+				                    repulsion: 100
+				                }
+				            }
+				        ]
+				    },
+				    options: [
+						{
+				    		title: {text: '2008年'},
+				    		series: [
+				    			{
+				    				data: graph[0].nodes,
+				                	links: graph[0].links
+				    			}
+				    		]
+				    	},
+				    	{
+				    		title: {text: '2009年'},
+				    		series: [
+				    			{
+				    				data: graph[1].nodes,
+				                	links: graph[1].links
+				    			}
+				    		]
+				    	},
+				    	{
+				    		title: {text: '2010年'},
+				    		series: [
+				    			{
+				    				data: graph[2].nodes,
+				                	links: graph[2].links
+				    			}
+				    		]
+				    	}
+				    ]
+			    };
+
+			    // option2 = {
+			    //     title: {
+			    //         text: '作者关系图',
+			    //         subtext: '',
+			    //         top: 'bottom',
+			    //         left: 'right'
+			    //     },
+			    //     tooltip: {},
+			    //     legend: [{
+			    //         // selectedMode: 'single',
+			    //         data: ["Martin Ester"]
+			    //     }],
+			    //     animation: false,
+			    //     series : [
+			    //         {
+			    //             name: '',
+			    //             type: 'graph',
+			    //             layout: 'force',
+			    //             data: graph[0].nodes,
+			    //             links: graph[0].links,
+			    //             roam: true,
+			    //             label: {
+			    //                 normal: {
+			    //                     position: 'right'
+			    //                 }
+			    //             },
+			    //             force: {
+			    //                 repulsion: 100
+			    //             }
+			    //         }
+			    //     ]
+			    // };
+			    myChartGraph2.setOption(option2);
+        	},
+        	error: function (errorMsg) {
+	            //alert("图表数据加载失败！");
+	        }
+        });
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
+            myChartGraph1.resize();
+            myChartGraph2.resize();  
+	    });         
+	    window.onresize = function() {
+        	myChartGraph1.resize();
+        	myChartGraph2.resize();
+        }
+    </script>
+</body>
+</html>

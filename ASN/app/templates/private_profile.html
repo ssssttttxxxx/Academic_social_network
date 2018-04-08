@@ -98,7 +98,7 @@
 						                        <div class="widget-head-color-box navy-bg p-lg text-center">
 						                            <div class="m-b-md">
 							                            <h2 class="font-bold no-margins">
-							                                {{current_user.first_name}}
+							                                {{current_user.first_name}}{{current_user.last_name}}
 							                            </h2>
 						                            </div>
 						                            <img src="../static/common/img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
@@ -142,7 +142,7 @@
 								                    	<div class="col-sm-4">
 								                        	<select name="gender" id="gender" class="form-control" disabled="disabled">
 								        		                <option value="">请选择</option>
-												                <option value="0" selected>男</option>
+												                <option value="0">男</option>
 												                <option value="1">女</option>
 												            </select>
 								                        </div>
@@ -150,9 +150,9 @@
 								                    	<div class="col-sm-4">
 								                        	<select name="degree" id="degree" class="form-control" disabled="disabled">
 								        		                <option value="">请选择</option>
-												                <option value="0" selected>学士</option>
+												                <option value="0">学士</option>
 												                <option value="1">硕士</option>
-												                <option value="1">博士</option>
+												                <option value="2">博士</option>
 												            </select>
 								                        </div>
 								                    </div>
@@ -161,19 +161,15 @@
 								                    <div class="form-group">
 								                    	<label class="col-sm-3 control-label">所属机构</label>
 								                    	<div class="col-sm-9">
-								                        	<select name="sex" id="institution" class="form-control" disabled="disabled">
-								        		                <option value="">请选择</option>
-												                <option value="0" selected>1</option>
-												                <option value="1">2</option>
-												            </select>
-								                        </div>
+												            <input type="department" class="form-control"  placeholder="" required="" id="department" disabled="disabled" value={{current_user.department}}>       
+														</div>
 								                    </div>
 								                    <div class="hr-line-dashed"></div>
 
 								                    <div class="form-group">
 								                    	<label class="col-sm-2 control-label">地址</label>
 								                        <div class="col-sm-10">
-								                        	<input type="address" class="form-control"  placeholder="" required="" id="address" disabled="disabled" value="广东华南理工大学">
+								                        	<input type="address" class="form-control"  placeholder="" required="" id="address" disabled="disabled" value={{current_user.address}}>
 								                        </div>
 								                    </div>
 								                    <div class="hr-line-dashed"></div>
@@ -181,7 +177,7 @@
 								                    <div class="form-group">
 								                    	<label class="col-sm-2 control-label">电话</label>
 								                        <div class="col-sm-10">
-								                        	<input type="telephone" class="form-control"  placeholder="" required="" id="telephone" disabled="disabled" value="1377777777">
+								                        	<input type="telephone" class="form-control"  placeholder="" required="" id="telephone" disabled="disabled" value={{current_user.phone}}>
 								                        </div>
 								                    </div>
 								                    <div class="hr-line-dashed"></div>
@@ -810,10 +806,14 @@
             	$('#lastname').removeAttr("disabled");
             	$('#gender').removeAttr("disabled");
             	$('#degree').removeAttr("disabled");
-            	$('#institution').removeAttr("disabled");
+            	$('#department').removeAttr("disabled");
             	$('#address').removeAttr("disabled");
             	$('#telephone').removeAttr("disabled");
             });
+
+             $("#gender").find("option[value='"+{{current_user.gender}}+"']").attr("selected",true);
+             $("#degree").find("option[value='"+{{current_user.education}}+"']").attr("selected",true);
+
 
 
             // 关注领域添加标签

@@ -1,24 +1,25 @@
 # coding=utf-8
 import sys
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 
 import json
 from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify, render_template
-from flask_login import login_user, login_required,logout_user, current_user
+from flask_login import login_user, login_required, logout_user, current_user
 from app.api.model import User, Lemma, Comment, db
 from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, Expert_detail_total
 from app.api.construct_network_from_mongodb import ConstructCoauthorsTree, ConstructCitationTree
 from app.api.mongodb_model import mongo
 
 api = Blueprint(
-        'api',
-        __name__,
+    'api',
+    __name__,
 )
+
 
 @api.route('/regist', methods=['POST', 'GET'])
 def registBussiness():
-
     name = request.form.get('email')
     nowUser = ASNUser.query.filter_by(email=name).first()
     if not nowUser:
@@ -38,16 +39,17 @@ def registBussiness():
         login_user(user)
         flash('注册成功!请登录!')
         return redirect(url_for('user.login'))
-    else :
+    else:
         flash('注册失败!帐号已存在,请重新注册!')
         return redirect(url_for('user.regist'))
 
-@api.route('/login',methods=['POST'])
+
+@api.route('/login', methods=['POST'])
 def loginBussiness():
     name = request.form.get('email')
     password = request.form.get('password')
     # nowUser = ASNUser.query.filter_by(email=name, password=password).first()
-    nowUser = db.session.query(ASNUser).filter(ASNUser.email==name, ASNUser.password==password).first()
+    nowUser = db.session.query(ASNUser).filter(ASNUser.email == name, ASNUser.password == password).first()
     print nowUser
     if nowUser:
         login_user(nowUser)
@@ -59,11 +61,13 @@ def loginBussiness():
         flash('登录失败，请检查账号和密码！')
         return redirect(url_for('user.login'))
 
+
 @api.route('/logout', methods=['GET'])
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('user.home'))
+
 
 @api.route('/reset')
 def reset():
@@ -81,7 +85,7 @@ def ref_id(paper_id=None):
     :param paper_id:
     :return:
     """
-    print "id",paper_id
+    print "id", paper_id
     # data = {'id':paper_id, 'detail':'fxxx'}
     # mongo.db.C.insert_one(data)
     if paper_id is None:
@@ -91,15 +95,16 @@ def ref_id(paper_id=None):
         paper = mongo.db.Citation.find_one({'paper_id': paper_id})
         if paper is not None:
             paper_detail = {
-            "paper_id": paper["paper_id"],
-            "ref_id": paper["ref_id"]
+                "paper_id": paper["paper_id"],
+                "ref_id": paper["ref_id"]
             }
             print paper_detail
             return render_template('blank.html', papers=[paper_detail])
             # return paper_detail
         else:
             return "no paper found!fxxx_ref_id"
-    # return "insert!!"
+            # return "insert!!"
+
 
 @api.route('/expert_search')
 @api.route('/expert_search/<string:expert_name>')
@@ -113,13 +118,14 @@ def search_expert(expert_name=None):
     if expert_name is None:
         return render_template("asn_detail.html")
     else:
-        results = Expert_detail.query.filter(Expert_detail.name.like("%"+expert_name+"%")).all()
+        results = Expert_detail.query.filter(Expert_detail.name.like("%" + expert_name + "%")).all()
         if results is not None:
             return render_template('asn_detail.html', experts=results)
         else:
             return "no expert found!fxxx_expert_detail"
 
-#不启用
+
+# 不启用
 @api.route('/authors')
 @api.route('/authors/<string:paper_id>')
 def search_authors(paper_id=None):
@@ -128,22 +134,23 @@ def search_authors(paper_id=None):
     :param paper_id:
     :return:
     """
-    print "paper_id",paper_id
+    print "paper_id", paper_id
     if paper_id is None:
         return render_template("asn_authors.html")
     else:
         results = mongo.db.Co_authors.find_one({'paper_id': paper_id})
         if results is not None:
             paper_authors = {
-                'paper_id':results['paper_id'],
-                'co_authors':results['co_authors'],
+                'paper_id': results['paper_id'],
+                'co_authors': results['co_authors'],
             }
             print paper_authors
             return render_template("asn_authors.html", authors=paper_authors)
         else:
             return "no expert found!fxxx_authors"
 
-#不启用
+
+# 不启用
 @api.route('/paper')
 @api.route('/paper/<string:paper_name>')
 def search_paper(paper_name=None):
@@ -171,21 +178,22 @@ def search_paper(paper_name=None):
         else:
             return "no paper found!paper_search"
 
-@api.route('/search', methods=['POST','GET'])
+
+@api.route('/search', methods=['POST', 'GET'])
 def searchBussiness():
     """
     根据请求的搜索类型返回paper或者author的搜索结果
     :return:
     """
     item_number = 10
-    searchtext = request.form.get('searchtext')     #搜索字段需要存入页面之中，否则难以获取0
+    searchtext = request.form.get('searchtext')  # 搜索字段需要存入页面之中，否则难以获取0
     search_type = request.form.get('searchType')
-    page_number = request.form.get('page')    #用户点击搜索时page_number为1
-    start_item_number = (page_number-1)*item_number
+    page_number = request.form.get('page')  # 用户点击搜索时page_number为1
+    start_item_number = (page_number - 1) * item_number
 
     if search_type == "authors":
         author_results = Expert_detail.query.filter(
-            Expert_detail.name.like("%"+searchtext+"%")).slice(start_item_number, item_number).all()
+            Expert_detail.name.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
         if author_results is not None:
             # 存放所有研究者信息的数组
             authors_detail = []
@@ -206,12 +214,12 @@ def searchBussiness():
 
     elif search_type == "papers":
         paper_results = Paper_detail.query.filter(
-            Paper_detail.title.like("%"+searchtext+"%")).slice(start_item_number, item_number).all()
+            Paper_detail.title.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
         if paper_results is not None:
             # 存放所有paper信息的数据
             papers_detail = []
             for paper in paper_results:
-                paper_detail ={
+                paper_detail = {
                     "id": paper["id"],
                     "title": paper["title"],
                     "authors": paper["authors"],
@@ -227,7 +235,6 @@ def searchBussiness():
 
         else:
             return json.dumps({"error": "can not found the author"})
-
 
 
 @api.route('/expert_network', methods=['GET'])
@@ -267,7 +274,7 @@ def expert_network():
                 "values": value,
             }
             edges.append(edges_item)
-        gra_data = {"year":year, "nodes": nodes, "links": edges}
+        gra_data = {"year": year, "nodes": nodes, "links": edges}
         datas.append(gra_data)
 
     json_data = json.dumps(datas)
@@ -275,6 +282,7 @@ def expert_network():
     return json_data
 
     # return render_template('old_tem/test_output.html', edges_list=coauthor_network_edges)
+
 
 @api.route('/paper_network', methods=['GET'])
 @api.route('/paper_network/<string:paper_id>')
@@ -362,15 +370,39 @@ def insert_new_item():
     cite_num = 0
     avatar = ""
 
-    item = Expert_detail_total(id,mid,name,name_zh,position,
-            phone,fax,email,department,address,
-            homepage,education,experience,biography, avatar,
-            h_index, g_index, gender, cite_num, tags)
+    item = Expert_detail_total(id, mid, name, name_zh, position,
+                               phone, fax, email, department, address,
+                               homepage, education, experience, biography, avatar,
+                               h_index, g_index, gender, cite_num, tags)
 
     try:
         db.session.add(item)
         db.session.commit()
-        return json.dumps({"result":"insertion successd"})
+        return json.dumps({"result": "insertion successd"})
 
     except:
-        return json.dumps({"result":"insertion failed"})
+        return json.dumps({"result": "insertion failed"})
+
+
+@api.route('/modify_user', methods=['POST'])
+def modify_user():
+    new_info = request.args.get("new_info")
+    first_name = new_info["first_name"]
+    last_name = new_info["last_name"]
+    gender = new_info["gender"]
+    degree = new_info["degree"]
+    department = new_info["department"]
+    address = new_info["address"]
+    phone = new_info["phone"]
+    result = ASNUser.query.filter(ASNUser.email==current_user.get_id()).first()
+    another_result = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
+
+    result.first_name = first_name
+    result.last_name = last_name
+    result.gender = gender
+    result.degree = degree
+    result.department = department
+    result.address = address
+    result.phone = phone
+    db.session.commit()
+

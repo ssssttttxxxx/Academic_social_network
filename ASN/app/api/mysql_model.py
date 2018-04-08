@@ -1,5 +1,6 @@
 # coding=utf-8
 import sys
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 from flask_pymongo import PyMongo
@@ -12,31 +13,32 @@ import datetime
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = r'mysql://root:stx11stx11@127.0.0.1/dblp_ref'
 app.config['SQLALCHEMY_BINDS'] = {
-    'paper':    r'mysql://root:stx11stx11@127.0.0.1/dblp_ref',
-    'expert':   r'mysql://root:stx11stx11@127.0.0.1/expert_example',
+    'paper': r'mysql://root:stx11stx11@127.0.0.1/dblp_ref',
+    'expert': r'mysql://root:stx11stx11@127.0.0.1/expert_example',
 }
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 
 class ASNUser(db.Model, UserMixin):
-
     __bind_key__ = 'expert'
-    __tablename__= 'user'
+    __tablename__ = 'user'
     email = db.Column(db.Integer, primary_key=True)
     password = db.Column(db.String(40))
     first_name = db.Column(db.String(30))
     last_name = db.Column(db.String(30))
     gender = db.Column(db.String(10))
     education = db.Column(db.String(10))
-
+    department = db.Column(db.String(45))
+    phone = db.Column(db.String(45))
+    address = db.Column(db.String(45))
 
     def __str__(self):
         return '用户<email:%s, password:%s>' % (self.email, self.password)
 
-    def __init__(self, email=None, password=None, gender=None,
-                 education=None, department=None,
-                 first_name=None, last_name=None):
+    def __init__(self, email="", password="", gender="",
+                 education="", department="", phone="",
+                 first_name="", last_name="", address=""):
         self.email = email
         self.password = password
         self.gender = gender
@@ -44,6 +46,9 @@ class ASNUser(db.Model, UserMixin):
         self.department = department
         self.first_name = first_name
         self.last_name = last_name
+        self.department = department
+        self.phone = phone
+        self.address = address
 
     def __repr__(self):
         return '<ASNUser %r>' % self.usernam
@@ -63,10 +68,10 @@ class ASNUser(db.Model, UserMixin):
         except AttributeError:
             raise NotImplementedError('No `email` attribute - override `get_id`')
 
-class Expert_detail_total(db.Model):
 
+class Expert_detail_total(db.Model):
     __bind_key__ = 'expert'
-    __tablename__= 'expert_more_detail'
+    __tablename__ = 'expert_more_detail'
     id = db.Column(db.String(45), primary_key=True)
     mid = db.Column(db.String(45))
     name = db.Column(db.String(45))
@@ -94,11 +99,10 @@ class Expert_detail_total(db.Model):
         return '作者详细<id:%s, 名字：%s>' % (self.id, self.name)
 
     def __init__(self, id=None, mid=None, name=None, name_zh=None, position=None,
-                 phone=None, fax=None, email=None,department=None,
+                 phone=None, fax=None, email=None, department=None,
                  address=None, homepage=None, education=None, experience=None,
-                  biography=None, avatar=None, h_index=None, g_index=None,
+                 biography=None, avatar=None, h_index=None, g_index=None,
                  gender=None, cite_num=None, tags=None):
-
         self.id = id
         self.mid = mid
         self.name = name
@@ -117,8 +121,9 @@ class Expert_detail_total(db.Model):
         self.h_index = h_index
         self.g_index = g_index
         self.gender = gender
-        self.cite_num =cite_num
+        self.cite_num = cite_num
         self.tags = tags
+
 
 class Expert_detail(db.Model):
     __bind_key__ = 'expert_total'
@@ -140,7 +145,6 @@ class Expert_detail(db.Model):
 
 
 class Paper_detail(db.Model):
-
     __tablename__ = 'paper'
     id = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
     title = db.Column(db.TEXT)

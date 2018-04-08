@@ -48,4 +48,4 @@ def load_user(email):
 def home():
     status = {"loginStatus": False,
               "logoutStatus": True}
-    return render_template('index.html', Status=status)
+    return render_template('home.html', Status=status)

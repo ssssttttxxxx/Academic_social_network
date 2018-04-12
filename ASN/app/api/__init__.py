@@ -1,12 +1,20 @@
 # coding=utf-8
+import os
 import sys
 
 reload(sys)
 sys.setdefaultencoding('utf8')
 
 import json
-from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify, render_template
+from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify, render_template, current_app
 from flask_login import login_user, login_required, logout_user, current_user
+from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
+from flask_wtf import FlaskForm
+
+from PIL import Image
+
+from werkzeug.datastructures import FileStorage
+
 from app.api.model import User, Lemma, Comment, db
 from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, Expert_detail_total
 from app.api.construct_network_from_mongodb import ConstructCoauthorsTree, ConstructCitationTree
@@ -18,20 +26,25 @@ api = Blueprint(
 )
 
 
+
+
 @api.route('/regist', methods=['POST', 'GET'])
 def registBussiness():
     name = request.form.get('email')
     nowUser = ASNUser.query.filter_by(email=name).first()
     if not nowUser:
-        uesrname = request.form.get('email')
+        email = request.form.get('email')
         password = request.form.get('password')
         first_name = request.form.get('firstname')
         last_name = request.form.get('lastname')
         gender = request.form.get('gender')
         education = request.form.get('degree')
 
-        user = ASNUser(email=uesrname, password=password, first_name=first_name,
+        user = ASNUser(email=email, password=password, first_name=first_name,
                        last_name=last_name, gender=gender, education=education)
+
+        mongo_user = {"email": email, "follow": []}
+        mongo.db.follow.insert_one(mongo_user)
         print user
         db.session.add(user)
         db.session.commit()
@@ -406,3 +419,71 @@ def modify_user():
     result.phone = phone
     db.session.commit()
 
+
+@api.route('/follow', methods=['POST'])
+def follow():
+    current_email = current_user.get_id()
+    follow_email = request.args.get("email")
+    result = mongo.db.follow.find_one({"email": current_email})
+    follow_list = result["follow"]
+    if follow_email not in follow_list:
+        follow_list.append(follow_email)
+
+    update_item = {"email": current_email,"follow": follow_list}
+    result = mongo.db.users.replace_one({'email': current_email}, update_item)
+    return json.dumps({"result": "successed"})
+
+
+@api.route('/modify_password', methods=['POST'])
+def modify_password():
+    current_email = current_user.get_id()
+    result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
+    new_password = request.args.get("password")
+    result.password = new_password
+    db.session.commit()
+
+
+@api.route('/upload_avatar', methods=['POST'])
+def upload_avatar():
+    #注册
+    uploaded_photos = UploadSet()
+    configure_uploads(current_app, uploaded_photos)
+
+
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'avatar' not in request.files:
+            print 'No file part'
+            return json.dumps({'result': "failed", 'filename': '', 'msg': 'No avatar part'})
+        file = request.files['avatar']
+        # if user does not select file, browser also submit a empty part without filename
+        if file.filename == '':
+            print 'No selected file'
+            return json.dumps({'result': "failed", 'filename': '', 'msg': 'No selected file'})
+        else:
+            try:
+                #存储
+                filename = uploaded_photos.save(file)
+                avatar_url = uploaded_photos.url(filename)
+                print '%s url is %s' % (filename, avatar_url)
+
+                email = current_user.get_id()
+                #update数据库
+                result = db.session.query(ASNUser).filter(ASNUser.email == email).first()
+                result.avatar = avatar_url
+                print result
+                db.session.commit()
+
+                download_url = current_app.config['UPLOADS_DEFAULT_DEST']+'/files/'+filename
+                print "download_url: ", download_url
+                # 图片压缩
+                im = Image.open(download_url)
+                im_resize = im.resize((256, 256))
+                im_resize.save(download_url)
+
+                return json.dumps({'result': "successed", 'filename': filename, 'msg': avatar_url})
+            except Exception as e:
+                print 'upload file exception: %s' % e
+                return json.dumps({'result': "failed", 'filename': '', 'msg': 'Error occurred'})
+    else:
+        return json.dumps({'result': "failed", 'filename': '', 'msg': 'Method not allowed'})

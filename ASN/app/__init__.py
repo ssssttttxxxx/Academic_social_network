@@ -1,14 +1,19 @@
 # coding=utf-8
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_login import LoginManager
+from flask_login import login_required, current_user
 from flask_pymongo import PyMongo
+
 from app.route.user import user
 from app.api import api
 from app.api.model import db, User
 from app.api.mysql_model import ASNUser
 # 由于无法从 __init__.py (此文件)导入 mongo 到 user.py , 所以沿用 mongodb_model 中 mongo
 from app.api.mongodb_model import mongo
-
+from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
+from flask_wtf import FlaskForm
+import json
+import os
 # app = Flask("Paper", template_folder=r'C:\Users\hphp\Desktop\graduation_design\chujq-baike-master\baike-master\app\templates')
 app = Flask(__name__)
 app.secret_key = '1frMFuWRVPV1'
@@ -34,6 +39,11 @@ mongo.init_app(app)
 login_manager = LoginManager()
 login_manager.login_view = '.login'
 login_manager.init_app(app)
+
+# app.config['UPLOADS_DEFAULT_DEST'] = os.getcwd() + '\\app\\avatar'
+
+app.config['UPLOADS_DEFAULT_DEST'] = './app/static/avatar'
+app.config['UPLOADS_DEFAULT_URL'] = '../static/avatar'
 
 app.register_blueprint(user, url_prefix='/user')
 app.register_blueprint(api, url_prefix='/api')

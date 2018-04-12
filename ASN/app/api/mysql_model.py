@@ -32,13 +32,14 @@ class ASNUser(db.Model, UserMixin):
     department = db.Column(db.String(45))
     phone = db.Column(db.String(45))
     address = db.Column(db.String(45))
-
+    avatar = db.Column(db.String(100))
     def __str__(self):
         return '用户<email:%s, password:%s>' % (self.email, self.password)
 
     def __init__(self, email="", password="", gender="",
                  education="", department="", phone="",
-                 first_name="", last_name="", address=""):
+                 first_name="", last_name="", address="",
+                 avatar = "../static/init.png"):
         self.email = email
         self.password = password
         self.gender = gender
@@ -49,6 +50,7 @@ class ASNUser(db.Model, UserMixin):
         self.department = department
         self.phone = phone
         self.address = address
+        self.avatar = avatar
 
     def __repr__(self):
         return '<ASNUser %r>' % self.usernam

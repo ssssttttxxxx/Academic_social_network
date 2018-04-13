@@ -12,7 +12,6 @@ from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_cl
 from flask_wtf import FlaskForm
 
 from PIL import Image
-
 from werkzeug.datastructures import FileStorage
 
 from app.api.model import User, Lemma, Comment, db
@@ -399,27 +398,33 @@ def insert_new_item():
 
 @api.route('/modify_user', methods=['POST'])
 def modify_user():
-    new_info = request.args.get("new_info")
-    first_name = new_info["first_name"]
-    last_name = new_info["last_name"]
-    gender = new_info["gender"]
-    degree = new_info["degree"]
-    department = new_info["department"]
-    address = new_info["address"]
-    phone = new_info["phone"]
-    result = ASNUser.query.filter(ASNUser.email==current_user.get_id()).first()
-    another_result = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
-
+    # try:
+    print "request.args", request.args
+    first_name = request.form.get('firstName')
+    last_name = request.form.get('lastName')
+    gender = request.form.get('genderSelected')
+    degree = request.form.get('degreeSelected')
+    department = request.form.get('department')
+    address = request.form.get('address')
+    phone = request.form.get('telephone')
+    print "firstname", first_name
+    print "phone",phone
+    # result = ASNUser.query.filter(ASNUser.email==current_user.get_id()).first()
+    result = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
+    print "result"
     result.first_name = first_name
     result.last_name = last_name
     result.gender = gender
-    result.degree = degree
+    result.education = degree
     result.department = department
     result.address = address
     result.phone = phone
     db.session.commit()
-
-
+    return json.dumps({'result':'success'})
+    # except Exception, e:
+    #     print "error: ",e
+    #     return json.dumps({'result':'fail'})
+    # return redirect(url_for('user.private_profile'))
 @api.route('/follow', methods=['POST'])
 def follow():
     current_email = current_user.get_id()
@@ -436,11 +441,19 @@ def follow():
 
 @api.route('/modify_password', methods=['POST'])
 def modify_password():
+    old_password = request.form.get('oldPassword')
+    new_password = request.form.get('newPassword')
+    print "new_password: ",new_password
     current_email = current_user.get_id()
     result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
-    new_password = request.args.get("password")
-    result.password = new_password
-    db.session.commit()
+
+    if old_password==result.password:
+        print "procceed modification"
+        result.password = new_password
+        db.session.commit()
+        return json.dumps({'result':'success'})
+    else:
+        return json.dumps({'result':'fail'})
 
 
 @api.route('/upload_avatar', methods=['POST'])

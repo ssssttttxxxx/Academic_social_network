@@ -39,7 +39,7 @@ class ASNUser(db.Model, UserMixin):
     def __init__(self, email="", password="", gender="",
                  education="", department="", phone="",
                  first_name="", last_name="", address="",
-                 avatar = "../static/init.png"):
+                 avatar = "../static/avatar/files/init.png"):
         self.email = email
         self.password = password
         self.gender = gender

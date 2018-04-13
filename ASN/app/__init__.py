@@ -38,6 +38,7 @@ mongo.init_app(app)
 
 login_manager = LoginManager()
 login_manager.login_view = '.login'
+login_manager.login_message = '请登录'
 login_manager.init_app(app)
 
 # app.config['UPLOADS_DEFAULT_DEST'] = os.getcwd() + '\\app\\avatar'

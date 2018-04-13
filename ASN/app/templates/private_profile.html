@@ -43,10 +43,6 @@
     <!-- echarts -->
     <script src="../static/echarts/js/echarts.min.js"></script>
 
-    <!-- steps -->
-    <link href="../static/steps/css/jquery.steps.css" rel="stylesheet">
-    <script src="../static/steps/js/jquery.steps.min.js"></script>
-
     <link href="../static/common/animate.css" rel="stylesheet">
     <link href="../static/common/style.css" rel="stylesheet">
 
@@ -61,14 +57,10 @@
                     	<img src="../static/common/img/logo.png" height="40px" />
                     </a>
                 </div>
-<!--                 <div class="navbar-right" style="margin-top: 10px;">
-                	<span>还没注册?&nbsp;</span>
-                	<a href="register.html" class="btn btn-primary btn-sm">注册</a>
-                </div> -->
                 <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;">
                     <li>
-                        <a href="profile.html" style="padding: 0px 0px;min-height: 0px;" title="用户">
-                            <img alt="image" class="img-circle" src="../static/common/img/init.png" width="40px" height="40px">
+                        <a href="/user/private_profile" style="padding: 0px 0px;min-height: 0px;" title="用户">
+                            <img alt="image" class="img-circle" :src="avatarSrc" width="40px" height="40px">
                             <strong>{[ firstName ]}&nbsp;{[ lastName ]}</strong>
                         </a>
                     </li>
@@ -89,9 +81,9 @@
                 <div class="col-lg-12">
                     <div class="tabs-container">
                         <div class="tabs-left">
-	                        <ul class="nav nav-tabs">
-	                            <li class="active"><a data-toggle="tab" href="#tab-1"><i class="fa fa-circle text-navy"></i> 个人信息</a></li>
-	                            <li class=""><a data-toggle="tab" href="#tab-2"><i class="fa fa-circle text-danger"></i> 关注领域</a></li>
+	                        <ul class="nav nav-tabs" id="mainTab">
+	                            <li class="active"><a data-toggle="tab" href="#tab-1" id="tab1"><i class="fa fa-circle text-navy"></i> 个人信息</a></li>
+	                            <li class=""><a data-toggle="tab" href="#tab-2" id="tab2"><i class="fa fa-circle text-danger"></i> 关注领域</a></li>
 	                            <li class=""><a data-toggle="tab" href="#tab-3" id="tab3"><i class="fa fa-circle text-primary"></i> 我的关注</a></li>
 	                            <li class=""><a data-toggle="tab" href="#tab-4" id="tab4"><i class="fa fa-circle text-info"></i> 谁关注我</a></li>
 	                            <li class=""><a data-toggle="tab" href="#tab-5" id="tab5"><i class="fa fa-circle text-warning"></i> 我的论文</a></li>
@@ -106,11 +98,11 @@
 							            		<div class="col-md-6 animated fadeInDown">
 							                        <div class="widget-head-color-box navy-bg p-lg text-center">
 							                            <div class="m-b-md">
-								                            <h2 class="font-bold no-margins">
+								                            <h2 class="font-bold no-margins" v-once>
 								                                {[ firstName ]}&nbsp;{[ lastName ]}
 								                            </h2>
 							                            </div>
-							                            <img src="../static/common/img/init.png" class="img-circle circle-border m-b-md" alt="profile" id="avatar" height="128px" width="128px">
+							                            <img :src="avatarSrc" class="img-circle circle-border m-b-md" alt="profile" id="avatar" height="128px" width="128px">
 							                            <div>
 							                            	<div class="btn-group">
 								                                <label title="Edit avatar" for="avatarSelected" class="btn btn-info">
@@ -130,22 +122,22 @@
 							            		</div>
 
 		                                		<div class="col-md-6 animated fadeInDown">
-				                                	<form method="get" class="form-horizontal">
-
+				                                	<!-- <form method="POST" class="form-horizontal" action="/api/modify_user"> -->
+													<div class="form-horizontal" id="editForm">
 									                    <div class="form-group">
-									                    	<label class="col-sm-2 control-label">姓氏</label>
+									                    	<label class="col-sm-2 control-label">姓氏*</label>
 									                        <div class="col-sm-4">
-									                        	<input type="text" class="form-control"  placeholder="" required="" id="firstname" disabled="disabled" v-model="firstName">
+									                        	<input type="text" class="form-control" placeholder="" required="" id="firstname" disabled="disabled" v-model="firstName">
 									                        </div>
-															<label class="col-sm-2 control-label">名字</label>
+															<label class="col-sm-2 control-label">名字*</label>
 									                        <div class="col-sm-4">
-									                        	<input type="text" class="form-control"  placeholder="" required="" id="lastname" disabled="disabled" v-model="lastName">
+									                        	<input type="text" class="form-control" placeholder="" required="" id="lastname" disabled="disabled" v-model="lastName">
 									                        </div>
 									                    </div>
 									                    <div class="hr-line-dashed"></div>
 
 									                    <div class="form-group">
-									                    	<label class="col-sm-2 control-label">性别</label>
+									                    	<label class="col-sm-2 control-label">性别*</label>
 									                    	<div class="col-sm-4">
 									                        	<select name="gender" id="gender" class="form-control" disabled="disabled" v-model="genderSelected">
 									        		                <option value="">请选择</option>
@@ -153,7 +145,7 @@
 													                <option value="1">女</option>
 													            </select>
 									                        </div>
-									                        <label class="col-sm-2 control-label">学位</label>
+									                        <label class="col-sm-2 control-label">学位*</label>
 									                    	<div class="col-sm-4">
 									                        	<select name="degree" id="degree" class="form-control" disabled="disabled" v-model="degreeSelected">
 									        		                <option value="">请选择</option>
@@ -168,7 +160,7 @@
 									                    <div class="form-group">
 									                    	<label class="col-sm-3 control-label">所属机构</label>
 									                    	<div class="col-sm-9">
-													            <input type="department" class="form-control"  placeholder="" required="" id="department" disabled="disabled" v-model="department">       
+													            <input type="text" class="form-control" placeholder="" required="" id="department" disabled="disabled" v-model="department">       
 															</div>
 									                    </div>
 									                    <div class="hr-line-dashed"></div>
@@ -176,7 +168,7 @@
 									                    <div class="form-group">
 									                    	<label class="col-sm-2 control-label">地址</label>
 									                        <div class="col-sm-10">
-									                        	<input type="address" class="form-control"  placeholder="" required="" id="address" disabled="disabled" v-model="address">
+									                        	<input type="text" class="form-control" placeholder="" required="" id="address" disabled="disabled" v-model="address">
 									                        </div>
 									                    </div>
 									                    <div class="hr-line-dashed"></div>
@@ -184,59 +176,59 @@
 									                    <div class="form-group">
 									                    	<label class="col-sm-2 control-label">电话</label>
 									                        <div class="col-sm-10">
-									                        	<input type="telephone" class="form-control"  placeholder="" required="" id="telephone" disabled="disabled" v-model="telephone">
+									                        	<input type="text" class="form-control" placeholder="" required="" id="telephone" disabled="disabled" v-model="telephone">
 									                        </div>
 									                    </div>
 									                    <div class="hr-line-dashed"></div>
 
 									                    <div class="form-group">
 										                    <div class="col-sm-12 col-sm-offset-3">
-										                    	<button type="button" class="btn btn-white" id="profile_edit" style="width: 90px;"><!-- onclick="window.location.href='login.html'" -->
+										                    	<button type="button" class="btn btn-white" style="width: 90px;" v-on:click="profile_edit" v-if="ifEdit">
 										                    		<i class="fa fa-edit"></i>&nbsp;修改
 										                    	</button>
-										                    	<button type="button" class="btn btn-primary " id="profile_confirm" style="width: 90px;">
+										                    	<button type="button" class="btn btn-white" style="width: 90px;" v-on:click="profile_edit" v-else>
+										                    		<i class="fa fa-close"></i>&nbsp;取消
+										                    	</button>
+										                    	<button type="button" class="btn btn-primary" style="width: 90px;" v-on:click="profile_confirm">
 										                    		<i class="fa fa-check-square-o"></i>&nbsp;确认
 										                    	</button>
 										                    </div>
 									                    </div>
-									                </form>
+									                <!-- </form> -->
+									            	</div>
 									        	</div>
 							            	</div>
 	                                	</div>
 
 	                                	<div class="col-lg-12">
 		                                	<div class="ibox-content">
-                		                        <div id="wizard">
-						                            <h1>First Step</h1>
-						                            <div class="step-content">
-						                                <div class="text-center m-t-md">
-						                                <h2>Hello in Step 1</h2>
-						                                <p>
-						                                    This is the first content.
-						                                </p>
-						                                </div>
-						                            </div>
+		                                		<h3 class="tag-title"><i class="fa fa-key"></i>&nbsp;密码修改</h3>
+		                                		<!-- <form class="form-horizontal" id="editPassword" method="POST" action="/api/modify_password"> -->
+		                                		<div class="form-horizontal" id="editPasswordForm">
+					                            	<div class="col-md-6">
+			                                            <div class="form-group">
+			                                                <label>原密码 *</label>
+			                                                <input id="oldPassword" type="password" class="form-control required" placeholder="请输入原密码">
+			                                            </div>
+			                                            <div class="form-group">
+			                                                <label>新密码 *</label>
+			                                                <input id="newPassword" type="password" class="form-control required" placeholder="请输入8~16位数字或英文字母">
+			                                            </div>
+			                                            <div class="form-group">
+			                                                <label>确认新密码 *</label>
+			                                                <input id="confirm_newPassword" type="password" class="form-control required" placeholder="请再次输入新密码">
+			                                            </div>
 
-						                            <h1>Second Step</h1>
-						                            <div class="step-content">
-						                                <div class="text-center m-t-md">
-						                                    <h2>This is step 2</h2>
-						                                    <p>
-						                                        This content is diferent than the first one.
-						                                    </p>
-						                                </div>
-						                            </div>
-
-						                            <h1>Third Step</h1>
-						                            <div class="step-content">
-						                                <div class="text-center m-t-md">
-						                                    <h2>This is step 3</h2>
-						                                    <p>
-						                                        This is last content.
-						                                    </p>
-						                                </div>
-						                            </div>
-						                        </div>
+									                    <div class="form-group">
+										                    <div class="col-sm-12 col-sm-offset-9">
+										                    	<button type="button" class="btn btn-primary" id="editNewPassword">
+										                    		确认修改
+										                    	</button>
+										                    </div>
+									                    </div>
+			                                        </div>
+			                                    </div>
+			                                    <!-- </form> -->
 		                                	</div>
 	                                	</div>
 						        	</div>
@@ -739,7 +731,7 @@
 						                <div class="col-lg-12">
 						                	<div class="ibox-content">
 						                		<div class="tabs-container">
-							                        <ul class="nav nav-tabs" style="border-bottom: none;">
+							                        <ul class="nav nav-tabs" style="border-bottom: none;" id="chartTab">
 							                            <li class="active"><a data-toggle="tab" href="#chart1"> 论文关系图</a></li>
 							                            <li class=""><a data-toggle="tab" href="#chart2"> 作者关系图</a></li>
 							                        </ul>
@@ -770,9 +762,36 @@
             </div>
 		</div>
 	</div>
-            
+
+
+	<script type="text/javascript">
+    	//头像上传
+        function uploadAvatar() {
+        	$("#avatarSelected").change(function() {
+        		// var csrf = $("input[name='csrfmiddlewaretoken']").val();
+			    var formData = new FormData();
+			    // formData.append("csrfmiddlewaretoken",csrf);
+			    formData.append('avatar', $("#avatarSelected")[0].files[0]);  /*获取上传的图片对象*/
+			    $.ajax({
+			      	url: '/upload_avatar',
+		          	type: 'POST',
+					data: formData,
+					contentType: false,
+					processData: false,
+					success: function (args) {
+			        	console.log(args);  /*服务器端的图片地址*/
+						$("#avatar").attr('src','/'+args);  /*预览图片*/
+			     	}
+				})
+        	})
+        }
+
+	</script>
+
+
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
+        	/*header*/
 	        new Vue({
 	            delimiters: ['{[', ']}'],
 	            el: '#status',
@@ -780,68 +799,36 @@
 	                {% if current_user.email %}
 	                firstName: {{current_user.first_name|tojson}},
 	                lastName: {{current_user.last_name|tojson}},
+	                avatarSrc: {{current_user.avatar|tojson}}
 	                {% else %}
 	                firstName: "",
 	                lastName: "",
+	                avatarSrc: ""
 	                {% endif %}
 	            }
 	        });
 
-        	// 跳到tab
+        	/*首先加载个人信息页*/
+        	// 跳转tab
         	$("#toTab3").click(function(){
         		$("#tab5").click();
         	});
         	$("#toTab4").click(function(){
         		$("#tab3").click();
-        	})
+        	});
         	$("#toTab5").click(function(){
         		$("#tab4").click();
-        	})
+        	});
 
-        	// 我的论文上传
-            Dropzone.options.myAwesomeDropzone = {
-                autoProcessQueue: false,
-                uploadMultiple: true,
-                parallelUploads: 100,
-                maxFiles: 100,
-                init: function() {
-                    var myDropzone = this;
-                    this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        myDropzone.processQueue();
-                    });
-                    this.on("sendingmultiple", function() {
-                    });
-                    this.on("successmultiple", function(files, response) {
-                    });
-                    this.on("errormultiple", function(files, response) {
-                    });
-                }
-            }
+            //头像上传
+            uploadAvatar();
 
-            function animationHover(element, animation) {
-			    element = $(element);
-			    element.hover(
-			        function () {
-			            element.addClass('animated ' + animation);
-			        },
-			        function () {
-			            //wait for animation to finish before removing classes
-			            window.setTimeout(function () {
-			                element.removeClass('animated ' + animation);
-			            }, 2000);
-			        });
-			}
-            $(".file-box").each(function() {
-                animationHover(this, 'pulse');
-            });
-
-            //个人信息显示
-			new Vue({
+            //个人信息显示        
+			var app = new Vue({
 	            delimiters: ['{[', ']}'],
 	            el: '#privateMessage',
 	            data: {
+	            	ifEdit: true,
 	                {% if current_user.email %}
 	                firstName: {{current_user.first_name|tojson}},
 	                lastName: {{current_user.last_name|tojson}},
@@ -849,7 +836,8 @@
 	                degreeSelected: {{current_user.education}},
 	                department: {{current_user.department|tojson}},
 	                address: {{current_user.address|tojson}},
-	                telephone: {{current_user.phone|tojson}}
+	                telephone: {{current_user.phone|tojson}},
+	                avatarSrc: {{current_user.avatar|tojson}}
 	                {% else %}
 	                firstName: "",
 	                lastName: "",
@@ -858,102 +846,154 @@
 	                degreeSelected: "",
 	                department: "",
 	                address: "",
-	                telephone: ""
+	                telephone: "",
+	                avatarSrc: ""
 	                {% endif %}
+	            },
+	            methods: {
+    	            //个人信息确认按钮
+	            	profile_confirm: function() {
+	            		if (this.ifEdit == false) {
+	            			if (this.firstname == '' || this.lastname == '' || this.genderSelected == '' || this.degreeSelected == '') {
+	            				swal("*不能为空! ", "请重新修改! ", "error");
+	            			}
+	            			else {
+								swal({
+					                title: "修改个人信息",
+					                text: "请问是否确认修改？",
+					                type: "warning",
+					                cancelButtonText: "取消",
+					                showCancelButton: true,
+					                confirmButtonColor: "#DD6B55",
+					                confirmButtonText: "确认",
+					                closeOnConfirm: false
+					            }, function () {
+					            	$.ajax({
+					            		url: '/api/modify_user',
+					            		type: 'POST',
+					            		data: {
+					            			firstName: this.firstName,
+							                lastName: this.lastName,
+							                genderSelected: this.genderSelected,
+							                degreeSelected: this.degreeSelected,
+							                department: this.department,
+							                address: this.address,
+							                telephone: this.telephone
+					            		},
+					            		success: function(data) {
+					            			var res = JSON.parse(data);
+					            			if (res.result == "success") {
+								                swal({
+								                	title: "保存成功！", 
+								                	text: "您的个人信息已经修改成功！", 
+								                	type: "success"
+								                }, function(){
+								                	setTimeout(function(){
+								                		window.location.reload();
+								                	}, 500);
+								                });
+									            this.ifEdit = true;
+					            			}
+					            			else {
+					            				swal("修改失败! ", "请重新修改! ", "error");
+					            			}
+					            		},
+					            		error: function() {
+				            				swal("请求修改失败! ", "请重新修改! ", "error");
+					            		}
+				            		});
+					            });
+							}
+		            	}
+		            	else {
+		            		swal("请先点击修改按钮! ", "", "error");
+		            	}
+	            	},
+	            	//修改信息按钮
+	            	profile_edit: function() {
+			        	if (this.ifEdit == true) {
+			        		this.ifEdit = false;
+			            	$('#firstname').removeAttr("disabled");
+				        	$('#lastname').removeAttr("disabled");
+				        	$('#gender').removeAttr("disabled");
+				        	$('#degree').removeAttr("disabled");
+				        	$('#department').removeAttr("disabled");
+				        	$('#address').removeAttr("disabled");
+				        	$('#telephone').removeAttr("disabled");
+			    		}
+			        	else {
+			        		this.ifEdit = true;
+		                	setTimeout(function(){
+		                		window.location.reload();
+		                	}, 0);
+			        	}
+			        }
 	            }
 	        });
+			
+			//修改密码
+	        $("#editNewPassword").click(function() {
+	        	var oldPassword = $("#oldPassword").val()
+	        	var newPassword = $("#newPassword").val()
+	        	var confirm_newPassword = $("#confirm_newPassword").val()
 
-            // 个人信息确认按钮
-            $("#profile_confirm").click(function () {
-	            swal({
-	                title: "修改个人信息",
-	                text: "请问是否确认修改？",
-	                type: "warning",
-	                cancelButtonText: "取消",
-	                showCancelButton: true,
-	                confirmButtonColor: "#DD6B55",
-	                confirmButtonText: "确认",
-	                closeOnConfirm: false
-	            }, function () {
-	                swal("保存成功！", "您的个人信息已经修改成功！", "success");
-        			$('#firstname').attr("disabled","disabled"); 
-	            	$('#lastname').attr("disabled","disabled"); 
-	            	$('#gender').attr("disabled","disabled"); 
-	            	$('#degree').attr("disabled","disabled"); 
-	            	$('#institution').attr("disabled","disabled"); 
-	            	$('#address').attr("disabled","disabled"); 
-	            	$('#telephone').attr("disabled","disabled"); 
-	            });
+	        	if (oldPassword == newPassword) {
+	        		$("#oldPassword").val("");
+	        		$("#newPassword").val("");
+	        		$("#confirm_newPassword").val("");
+	        		swal("请输入不相同的新旧密码! ", "", "error");
+	        	}
+	        	else if (newPassword.length > 8 && newPassword.length < 16 && newPassword == confirm_newPassword) {
+					$.ajax({
+	            		url: '/api/modify_password',
+	            		type: 'POST',
+	            		data: {
+	            			oldPassword: oldPassword,
+	            			newPassword: newPassword,
+	            			confirm_newPassword: confirm_newPassword
+	            		},
+	            		success: function(data) {
+	            			var res = JSON.parse(data);
+	            			if (res.result == "success") {
+				                swal({
+				                	title: "新密码修改成功！", 
+				                	text: "", 
+				                	type: "success"
+				                }, function(){
+					        		$("#oldPassword").val("");
+					        		$("#newPassword").val("");
+					        		$("#confirm_newPassword").val("");
+				                });
+	            			}
+	            			else {
+				        		$("#oldPassword").val("");
+				        		$("#newPassword").val("");
+				        		$("#confirm_newPassword").val("");
+	            				swal("原密码错误! ", "请重新修改! ", "error");
+	            			}
+	            		},
+	            		error: function() {
+			        		$("#oldPassword").val("");
+			        		$("#newPassword").val("");
+			        		$("#confirm_newPassword").val("");
+            				swal("新密码请求修改失败! ", "请重新修改! ", "error");
+	            		}
+	            	});
+	        	}
+	        	else {
+	        		$("#oldPassword").val("");
+	        		$("#newPassword").val("");
+	        		$("#confirm_newPassword").val("");
+	        		swal("请输入有效密码! ", "", "error");
+	        	}
 	        });
-            $("#profile_edit").click(function() {
-            	$('#firstname').removeAttr("disabled");
-            	$('#lastname').removeAttr("disabled");
-            	$('#gender').removeAttr("disabled");
-            	$('#degree').removeAttr("disabled");
-            	$('#department').removeAttr("disabled");
-            	$('#address').removeAttr("disabled");
-            	$('#telephone').removeAttr("disabled");
-            });
 
-            // 头像上传
-            // var $inputImage = $("#avaterSelected");
-            // if (window.FileReader) {
-            //     $inputImage.change(function() {
-            //         var fileReader = new FileReader(),
-            //                 files = this.files,
-            //                 file;
-
-            //         if (!files.length) {
-            //             return;
-            //         }
-
-            //         file = files[0];
-
-            //         if (/^image\/\w+$/.test(file.type)) {
-            //             fileReader.readAsDataURL(file);
-            //             fileReader.onload = function (event) {
-            //             	$("#avater").attr('src', event.target.result);
-            //             };
-            //         } else {
-            //             showMessage("Please choose an image file.");
-            //         }
-            //     });
-            // } else {
-            //     $inputImage.addClass("hide");
-            // }
-
-            function uploadAvatar() {
-            	$("#avatarSelected").change(function() {
-            		// var csrf = $("input[name='csrfmiddlewaretoken']").val();
-				    var formData = new FormData();
-				    // formData.append("csrfmiddlewaretoken",csrf);
-				    formData.append('avatar', $("#avatarSelected")[0].files[0]);  /*获取上传的图片对象*/
-				    $.ajax({
-				      	url: '/api/upload_avatar',
-			          	type: 'POST',
-						data: formData,
-						contentType: false,
-						processData: false,
-						success: function (args) {
-				        	console.log(args);  /*服务器端的图片地址*/
-				        	arg = JSON.parse(args);
-							$("#avatar").attr('src', arg.msg);  /*预览图片*/
-				     	}
-					})
-            	})
-            }
-            uploadAvatar();
-
-
-
-            //密码修改
-            $("#wizard").steps();
-
-            // 关注领域添加标签
+            /*关注领域*/
+            //添加标签
             $(".chosen-select").chosen({width: "450px"});
 			for (var i in $("#addField").val()) {
-					$("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $("#addField").val()[i] + '</a></li>');
-				}
+				$("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $("#addField").val()[i] + '</a></li>');
+			}
 			$("#addField").on('change', function(){
 				// console.log($("#addField option:selected").val());
 				$("#fieldList li").remove();
@@ -963,8 +1003,7 @@
 				// $("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $(this).find("option:selected").val() + '</a></li>');
 			});
 
-
-	        //关注
+	        /*用户关注*/
 	        $(".followBtn").click(function(){
 	        	if (this.innerText == " Follow") {
 	        		$(this).html('<i class="fa fa-users"></i> Following');
@@ -985,7 +1024,70 @@
 	        		$(this).html('<i class="fa fa-user-plus"></i> Follow');
 	        	}
 	        });
-       });
+
+    		/*我的论文上传*/
+            Dropzone.options.myAwesomeDropzone = {
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 100,
+                init: function() {
+                    var myDropzone = this;
+                    this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        myDropzone.processQueue();
+                    });
+                    this.on("sendingmultiple", function() {
+                    });
+                    this.on("successmultiple", function(files, response) {
+                    });
+                    this.on("errormultiple", function(files, response) {
+                    });
+                }
+            };
+
+            function animationHover(element, animation) {
+			    element = $(element);
+			    element.hover(
+			        function () {
+			            element.addClass('animated ' + animation);
+			        },
+			        function () {
+			            //wait for animation to finish before removing classes
+			            window.setTimeout(function () {
+			                element.removeClass('animated ' + animation);
+			            }, 2000);
+			        });
+			};
+            $(".file-box").each(function() {
+                animationHover(this, 'pulse');
+            });
+
+        	/*mainTab标签页请求*/
+        	$('#mainTab a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+
+        		if ($(e.target).attr("id") == "tab1") { //个人信息页
+        			console.log($(e.target).text());
+        		}
+        		else if ($(e.target).attr("id") == "tab2") { //关注领域页
+        			console.log($(e.target).text());
+        		}
+        		else if ($(e.target).attr("id") == "tab3") { //我的关注页
+        			console.log($(e.target).text());
+        		}
+        		else if ($(e.target).attr("id") == "tab4") { //谁关注我页
+        			console.log($(e.target).text());
+        		}
+        		else if ($(e.target).attr("id") == "tab5") { //我的论文页
+					console.log($(e.target).text());
+        		}
+        		else if ($(e.target).attr("id") == "tab6") { //关系图页
+        			console.log($(e.target).text());
+        		}
+        	});
+
+       })
     </script>
 
     <script type="text/javascript">
@@ -1163,14 +1265,15 @@
 	        }
         });
 
-        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
+        $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
             myChartGraph1.resize();
             myChartGraph2.resize();  
-	    });         
+	    });
 	    window.onresize = function() {
         	myChartGraph1.resize();
         	myChartGraph2.resize();
         }
     </script>
+
 </body>
 </html>

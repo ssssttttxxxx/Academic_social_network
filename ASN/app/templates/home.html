@@ -45,14 +45,10 @@
                     	<img src="../static/common/img/logo.png" height="40px" />
                     </a>
                 </div>
-<!--                 <div class="navbar-right" style="margin-top: 10px;">
-                	<span>还没注册?&nbsp;</span>
-                	<a href="register.html" class="btn btn-primary btn-sm">注册</a>
-                </div> -->
                 <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-show="loginStatus">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" href="/user/private_profile" data-hover="dropdown" data-toggle="dropdown" style="padding: 0px 0px;min-height: 0px;" title="用户">
-                            <img alt="image" class="img-circle" src="../static/common/img/a4.jpg"  width="40px" height="40px">
+                        <a class="dropdown-toggle" href="/user/private_profile" data-hover="dropdown" style="padding: 0px 0px;min-height: 0px;" title="用户">
+                            <img alt="image" class="img-circle" :src="avatarSrc" width="40px" height="40px">
                             <strong>{[ firstName ]}&nbsp;{[ lastName ]}</strong>
                             <span class="caret"></span>
                         </a>
@@ -191,23 +187,27 @@
                 firstName: {{current_user.first_name|tojson}},
                 lastName: {{current_user.last_name|tojson}},
                 email: {{current_user.email|tojson}},
+                avatarSrc: {{current_user.avatar|tojson}}
                 {% else %}
                 firstName: "",
                 lastName: "",
                 email: "",
+                avatarSrc: ""
                 {% endif %}
             },
             methods: {
-                showLogin: function() {
-                    this.logoutStatus = false;
-                    this.loginStatus = true;
-                },
-                showLogout: function() {
-                    this.logoutStatus = true;
-                    this.loginStatus = false;
-                }
+                // showLogin: function() {
+                //     this.logoutStatus = false;
+                //     this.loginStatus = true;
+                // },
+                // showLogout: function() {
+                //     this.logoutStatus = true;
+                //     this.loginStatus = false;
+                // }
             }
         })
+
+        
     </script>
 </body>
 </html>

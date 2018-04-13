@@ -25,8 +25,6 @@ api = Blueprint(
 )
 
 
-
-
 @api.route('/regist', methods=['POST', 'GET'])
 def registBussiness():
     name = request.form.get('email')
@@ -37,18 +35,47 @@ def registBussiness():
         first_name = request.form.get('firstname')
         last_name = request.form.get('lastname')
         gender = request.form.get('gender')
-        education = request.form.get('degree')
+        degree = request.form.get('degree')
+        sex = ""
+        if gender == "0":
+            sex = "male"
+        elif gender == "1":
+            sex = "female"
+        education = ""
+        if degree == "0":
+            education = "bechelor"
+        elif degree == "1":
+            education = "master"
+        elif degree == "2":
+            education = "Ph.D"
 
-        user = ASNUser(email=email, password=password, first_name=first_name,
-                       last_name=last_name, gender=gender, education=education)
+        # 注册时添加到作者表中
+        try:
+            res = db.session.query(db.func.max(Expert_detail_total.total_id).label('max_id')).one()
+            # max_id = db.session.query(db.func.max(Expert_detail_total)).scalar().total_id
+            max_id = res.max_id
+            print "max_id: ", max_id
+            expert = Expert_detail_total(id=max_id, email=email, name=first_name+" "+last_name, gender=sex,
+                                         education=education, total_id=max_id + 1)
+            db.session.add(expert)
+            db.session.commit()
+        except Exception, e:
+            print '添加到作者表时发生错误: ', e
 
+        #注册到用户表
+        try:
+            user = ASNUser(email=email, password=password, first_name=first_name,
+                           last_name=last_name, gender=gender, education=degree)
+            db.session.add(user)
+            db.session.commit()
+        except Exception, e:
+            print '添加到用户表时发生错误: ', e
+
+        # 注册时在mongodb初始化关注列表
         mongo_user = {"email": email, "follow": []}
         mongo.db.follow.insert_one(mongo_user)
-        print user
-        db.session.add(user)
-        db.session.commit()
-        # db.session.remove()
-        login_user(user)
+
+        # login_user(user)
         flash('注册成功!请登录!')
         return redirect(url_for('user.login'))
     else:
@@ -398,33 +425,63 @@ def insert_new_item():
 
 @api.route('/modify_user', methods=['POST'])
 def modify_user():
-    # try:
-    print "request.args", request.args
-    first_name = request.form.get('firstName')
-    last_name = request.form.get('lastName')
-    gender = request.form.get('genderSelected')
-    degree = request.form.get('degreeSelected')
-    department = request.form.get('department')
-    address = request.form.get('address')
-    phone = request.form.get('telephone')
-    print "firstname", first_name
-    print "phone",phone
-    # result = ASNUser.query.filter(ASNUser.email==current_user.get_id()).first()
-    result = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
-    print "result"
-    result.first_name = first_name
-    result.last_name = last_name
-    result.gender = gender
-    result.education = degree
-    result.department = department
-    result.address = address
-    result.phone = phone
-    db.session.commit()
-    return json.dumps({'result':'success'})
-    # except Exception, e:
-    #     print "error: ",e
-    #     return json.dumps({'result':'fail'})
-    # return redirect(url_for('user.private_profile'))
+    try:
+        current_email = current_user.get_id()
+        print "request.args", request.args
+        print "request.form", request.form
+        # print "request.get_json", request.get_json('firstName')
+        first_name = request.form.get('firstName')
+        last_name = request.form.get('lastName')
+        gender = request.form.get('genderSelected')
+        degree = request.form.get('degreeSelected')
+        department = request.form.get('department')
+        address = request.form.get('address')
+        phone = request.form.get('telephone')
+        print "phone", phone
+        print "lastname", last_name
+        print "firstname", first_name
+        # result = ASNUser.query.filter(ASNUser.email==current_user.get_id()).first()
+        if first_name is not None:
+            result_user = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
+        else:
+            return json.dumps({'result':'fail'})
+
+        result_user.first_name = first_name
+        result_user.last_name = last_name
+        result_user.gender = gender
+        result_user.education = degree
+        result_user.department = department
+        result_user.address = address
+        result_user.phone = phone
+
+        result_expert = db.session.query(Expert_detail_total).filter(Expert_detail_total.email == current_email).first()
+        result_expert.name = first_name + " " + last_name
+
+        sex = ""
+        if gender == "0":
+            sex = "male"
+        elif gender == "1":
+            sex = "female"
+        result_expert.gender = sex
+        education=""
+        if degree == "0":
+            education = "bechelor"
+        elif degree == "1":
+            education = "master"
+        elif degree == "2":
+            education = "Ph.D"
+        result_expert.education = education
+        result_expert.department = department
+        result_expert.address = address
+        result_expert.phone = phone
+
+        db.session.commit()
+        return json.dumps({'result':'success'})
+    except Exception, e:
+        print "error: ",e
+        return json.dumps({'result':'fail'})
+
+
 @api.route('/follow', methods=['POST'])
 def follow():
     current_email = current_user.get_id()
@@ -482,10 +539,17 @@ def upload_avatar():
 
                 email = current_user.get_id()
                 #update数据库
-                result = db.session.query(ASNUser).filter(ASNUser.email == email).first()
-                result.avatar = avatar_url
-                print result
-                db.session.commit()
+                try:
+                    result_user = db.session.query(ASNUser).filter(ASNUser.email == email).first()
+                    result_user.avatar = avatar_url
+
+                    result_expert = db.session.query(Expert_detail_total).filter(Expert_detail_total.email == email).first()
+                    result_expert.avatar = avatar_url
+
+                    db.session.commit()
+                except Exception, e:
+                    print "无法更新头像"
+                    return json.dumps({'result': "failed", 'filename': '', 'msg': 'Error occurred'})
 
                 download_url = current_app.config['UPLOADS_DEFAULT_DEST']+'/files/'+filename
                 print "download_url: ", download_url
@@ -500,3 +564,18 @@ def upload_avatar():
                 return json.dumps({'result': "failed", 'filename': '', 'msg': 'Error occurred'})
     else:
         return json.dumps({'result': "failed", 'filename': '', 'msg': 'Method not allowed'})
+
+@api.route('focus_area', methods=['POST'])
+def focus_area():
+    current_email = current_user.get_id()
+    area_list = request.form.get('focusArea').split(';')
+    focus_area_str = ""
+    for area in area_list:
+        focus_area_str += str(area)
+        focus_area_str += ';'
+    result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
+    result.focus_area = focus_area_str
+    db.session.commit()
+
+
+

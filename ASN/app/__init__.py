@@ -7,7 +7,7 @@ from flask_pymongo import PyMongo
 from app.route.user import user
 from app.api import api
 from app.api.model import db, User
-from app.api.mysql_model import ASNUser
+from app.api.mysql_model import ASNUser, Expert_detail_total
 # 由于无法从 __init__.py (此文件)导入 mongo 到 user.py , 所以沿用 mongodb_model 中 mongo
 from app.api.mongodb_model import mongo
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class

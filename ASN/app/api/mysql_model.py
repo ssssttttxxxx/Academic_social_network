@@ -33,13 +33,15 @@ class ASNUser(db.Model, UserMixin):
     phone = db.Column(db.String(45))
     address = db.Column(db.String(45))
     avatar = db.Column(db.String(100))
+    focus_area = db.Column(db.String(100))
     def __str__(self):
         return '用户<email:%s, password:%s>' % (self.email, self.password)
 
     def __init__(self, email="", password="", gender="",
                  education="", department="", phone="",
                  first_name="", last_name="", address="",
-                 avatar = "../static/avatar/files/init.png"):
+                 avatar = "../static/avatar/files/init.png",
+                 focus_area = ""):
         self.email = email
         self.password = password
         self.gender = gender
@@ -51,6 +53,7 @@ class ASNUser(db.Model, UserMixin):
         self.phone = phone
         self.address = address
         self.avatar = avatar
+        self.focus_area = focus_area
 
     def __repr__(self):
         return '<ASNUser %r>' % self.usernam
@@ -73,8 +76,8 @@ class ASNUser(db.Model, UserMixin):
 
 class Expert_detail_total(db.Model):
     __bind_key__ = 'expert'
-    __tablename__ = 'expert_more_detail'
-    id = db.Column(db.String(45), primary_key=True)
+    __tablename__ = 'expert_user_detail'
+    id = db.Column(db.String(45))
     mid = db.Column(db.String(45))
     name = db.Column(db.String(45))
     name_zh = db.Column(db.String(45))
@@ -96,6 +99,7 @@ class Expert_detail_total(db.Model):
     gender = db.Column(db.String(5))
     cite_num = db.Column(db.String(10))
     tags = db.Column(db.String(100))
+    total_id = db.Column(db.Integer, primary_key=True)
 
     def __str__(self):
         return '作者详细<id:%s, 名字：%s>' % (self.id, self.name)
@@ -103,8 +107,8 @@ class Expert_detail_total(db.Model):
     def __init__(self, id=None, mid=None, name=None, name_zh=None, position=None,
                  phone=None, fax=None, email=None, department=None,
                  address=None, homepage=None, education=None, experience=None,
-                 biography=None, avatar=None, h_index=None, g_index=None,
-                 gender=None, cite_num=None, tags=None):
+                 biography=None, avatar = "../static/avatar/files/init.png", h_index=None, g_index=None,
+                 gender=None, cite_num=None, tags=None, total_id=None):
         self.id = id
         self.mid = mid
         self.name = name
@@ -125,7 +129,7 @@ class Expert_detail_total(db.Model):
         self.gender = gender
         self.cite_num = cite_num
         self.tags = tags
-
+        self.total_id = total_id
 
 class Expert_detail(db.Model):
     __bind_key__ = 'expert_total'

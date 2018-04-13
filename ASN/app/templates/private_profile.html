@@ -57,10 +57,11 @@
                     	<img src="../static/common/img/logo.png" height="40px" />
                     </a>
                 </div>
+
                 <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;">
                     <li>
                         <a href="/user/private_profile" style="padding: 0px 0px;min-height: 0px;" title="用户">
-                            <img alt="image" class="img-circle" :src="avatarSrc" width="40px" height="40px">
+                            <img alt="image" class="img-circle" :src="avatarSrc" width="40px" height="40px" id="headerAvatar">
                             <strong>{[ firstName ]}&nbsp;{[ lastName ]}</strong>
                         </a>
                     </li>
@@ -122,7 +123,6 @@
 							            		</div>
 
 		                                		<div class="col-md-6 animated fadeInDown">
-				                                	<!-- <form method="POST" class="form-horizontal" action="/api/modify_user"> -->
 													<div class="form-horizontal" id="editForm">
 									                    <div class="form-group">
 									                    	<label class="col-sm-2 control-label">姓氏*</label>
@@ -194,16 +194,14 @@
 										                    	</button>
 										                    </div>
 									                    </div>
-									                <!-- </form> -->
-									            	</div>
+									                </div>
 									        	</div>
 							            	</div>
 	                                	</div>
 
 	                                	<div class="col-lg-12">
 		                                	<div class="ibox-content">
-		                                		<h3 class="tag-title"><i class="fa fa-key"></i>&nbsp;密码修改</h3>
-		                                		<!-- <form class="form-horizontal" id="editPassword" method="POST" action="/api/modify_password"> -->
+					                            <h3 class="tag-title"><i class="fa fa-key"></i>&nbsp;密码修改</h3>
 		                                		<div class="form-horizontal" id="editPasswordForm">
 					                            	<div class="col-md-6">
 			                                            <div class="form-group">
@@ -228,7 +226,6 @@
 									                    </div>
 			                                        </div>
 			                                    </div>
-			                                    <!-- </form> -->
 		                                	</div>
 	                                	</div>
 						        	</div>
@@ -762,37 +759,38 @@
             </div>
 		</div>
 	</div>
-
-
+            
 	<script type="text/javascript">
-    	//头像上传
         function uploadAvatar() {
         	$("#avatarSelected").change(function() {
         		// var csrf = $("input[name='csrfmiddlewaretoken']").val();
+        		console.log("asldkfjsaldkfj");
 			    var formData = new FormData();
 			    // formData.append("csrfmiddlewaretoken",csrf);
 			    formData.append('avatar', $("#avatarSelected")[0].files[0]);  /*获取上传的图片对象*/
 			    $.ajax({
-			      	url: '/upload_avatar',
+			      	url: '/api/upload_avatar',
 		          	type: 'POST',
 					data: formData,
 					contentType: false,
 					processData: false,
-					success: function (args) {
+					success: function(args) {
 			        	console.log(args);  /*服务器端的图片地址*/
-						$("#avatar").attr('src','/'+args);  /*预览图片*/
+			        	arg = JSON.parse(args);
+						$("#avatar").attr('src', arg.msg);  /*预览图片*/
+						$("#headerAvatar").attr('src', arg.msg);  /*预览图片*/
+			     	},
+			     	error: function() {
+			     		console.log("error");
 			     	}
 				})
         	})
         }
-
 	</script>
 
-
     <script>
-        $(document).ready(function() {
-        	/*header*/
-	        new Vue({
+        $(document).ready(function(){
+	        var app1 = new Vue({
 	            delimiters: ['{[', ']}'],
 	            el: '#status',
 	            data: {
@@ -808,23 +806,8 @@
 	            }
 	        });
 
-        	/*首先加载个人信息页*/
-        	// 跳转tab
-        	$("#toTab3").click(function(){
-        		$("#tab5").click();
-        	});
-        	$("#toTab4").click(function(){
-        		$("#tab3").click();
-        	});
-        	$("#toTab5").click(function(){
-        		$("#tab4").click();
-        	});
-
-            //头像上传
-            uploadAvatar();
-
-            //个人信息显示        
-			var app = new Vue({
+            //个人信息显示
+			var app2 = new Vue({
 	            delimiters: ['{[', ']}'],
 	            el: '#privateMessage',
 	            data: {
@@ -854,10 +837,20 @@
     	            //个人信息确认按钮
 	            	profile_confirm: function() {
 	            		if (this.ifEdit == false) {
-	            			if (this.firstname == '' || this.lastname == '' || this.genderSelected == '' || this.degreeSelected == '') {
+	            			if (this.firstName=="" || this.lastName=="" || this.genderSelected=="" || this.degreeSelected=="") {
+	            			// if (false) {
+
+	            				console.log(this.firstName);
+	            				console.log(this.lastName);
+	            				console.log(this.genderSelected);
+	            				console.log(this.degreeSelected);
 	            				swal("*不能为空! ", "请重新修改! ", "error");
 	            			}
 	            			else {
+	            				console.log(this.firstName);
+	            				console.log(this.lastName);
+	            				console.log(this.genderSelected);
+	            				console.log(this.degreeSelected);
 								swal({
 					                title: "修改个人信息",
 					                text: "请问是否确认修改？",
@@ -869,6 +862,7 @@
 					                closeOnConfirm: false
 					            }, function () {
 					            	$.ajax({
+					            		
 					            		url: '/api/modify_user',
 					            		type: 'POST',
 					            		data: {
@@ -878,7 +872,7 @@
 							                degreeSelected: this.degreeSelected,
 							                department: this.department,
 							                address: this.address,
-							                telephone: this.telephone
+							                telephone: this.telephone,
 					            		},
 					            		success: function(data) {
 					            			var res = JSON.parse(data);
@@ -928,10 +922,24 @@
 		                	}, 0);
 			        	}
 			        }
-	            }
+			    }
 	        });
 			
-			//修改密码
+        	// 跳到tab
+        	$("#toTab3").click(function(){
+        		$("#tab5").click();
+        	});
+        	$("#toTab4").click(function(){
+        		$("#tab3").click();
+        	});
+        	$("#toTab5").click(function(){
+        		$("#tab4").click();
+        	});
+
+			//头像上传
+            uploadAvatar();
+
+            //修改密码
 	        $("#editNewPassword").click(function() {
 	        	var oldPassword = $("#oldPassword").val()
 	        	var newPassword = $("#newPassword").val()
@@ -988,12 +996,11 @@
 	        	}
 	        });
 
-            /*关注领域*/
-            //添加标签
+            // 关注领域添加标签
             $(".chosen-select").chosen({width: "450px"});
 			for (var i in $("#addField").val()) {
-				$("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $("#addField").val()[i] + '</a></li>');
-			}
+					$("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $("#addField").val()[i] + '</a></li>');
+				}
 			$("#addField").on('change', function(){
 				// console.log($("#addField option:selected").val());
 				$("#fieldList li").remove();
@@ -1003,7 +1010,8 @@
 				// $("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $(this).find("option:selected").val() + '</a></li>');
 			});
 
-	        /*用户关注*/
+
+	        //关注
 	        $(".followBtn").click(function(){
 	        	if (this.innerText == " Follow") {
 	        		$(this).html('<i class="fa fa-users"></i> Following');
@@ -1025,7 +1033,7 @@
 	        	}
 	        });
 
-    		/*我的论文上传*/
+        	// 我的论文上传
             Dropzone.options.myAwesomeDropzone = {
                 autoProcessQueue: false,
                 uploadMultiple: true,
@@ -1045,7 +1053,7 @@
                     this.on("errormultiple", function(files, response) {
                     });
                 }
-            };
+            }
 
             function animationHover(element, animation) {
 			    element = $(element);
@@ -1059,7 +1067,7 @@
 			                element.removeClass('animated ' + animation);
 			            }, 2000);
 			        });
-			};
+			}
             $(".file-box").each(function() {
                 animationHover(this, 'pulse');
             });
@@ -1087,7 +1095,7 @@
         		}
         	});
 
-       })
+       });
     </script>
 
     <script type="text/javascript">
@@ -1265,15 +1273,14 @@
 	        }
         });
 
-        $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+        $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
             myChartGraph1.resize();
             myChartGraph2.resize();  
-	    });
+	    });         
 	    window.onresize = function() {
         	myChartGraph1.resize();
         	myChartGraph2.resize();
         }
     </script>
-
 </body>
 </html>

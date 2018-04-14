@@ -4,9 +4,9 @@ import sys
 sys.path.append("..")
 from flask import render_template, Blueprint, redirect, url_for, request, session, current_app, flash
 from flask_login import login_required, current_user
-from app.api.model import User, Lemma, Comment, db
+# from api.model import User, Lemma, Comment, db
 from app.api.mongodb_model import mongo
-from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail
+from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, db
 
 user = Blueprint(
     'user',
@@ -48,7 +48,7 @@ def add():
 @user.route('/search', methods=['POST'])
 def search():
     searchtext = request.form.get('searchtext')
-    results = Lemma.query.filter(Lemma.title.like("%" + searchtext + "%")).all()
+    results = Expert_detail.query.filter(Expert_detail.name.like("%" + searchtext + "%")).all()
     if results:
         return render_template('result.html', results=results)
     else:
@@ -59,7 +59,7 @@ def search():
 @user.route('/detail', methods=['POST'])
 def detail():
     entirelytitle = request.form.get('linklist')
-    fullcontent = Lemma.query.filter_by(title=entirelytitle)
+    fullcontent = Expert_detail.query.filter_by(title=entirelytitle)
     return render_template('detail.html', fullcontent=fullcontent)
 
 

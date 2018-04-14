@@ -857,9 +857,10 @@
     	            //个人信息确认按钮
 	            	profile_confirm: function() {
 	            		var vue2 = this
-
 	            		if (vue2.ifEdit == false) {
-	            			if (vue2.firstName=="" || vue2.lastName=="" || vue2.genderSelected=="" || vue2.degreeSelected=="") {
+	            			if (vue2.firstName==="" || vue2.lastName==="" || vue2.genderSelected==="" || vue2.degreeSelected==="") {
+
+
 	            				swal("*不能为空! ", "请重新修改! ", "error");
 	            			}
 	            			else {

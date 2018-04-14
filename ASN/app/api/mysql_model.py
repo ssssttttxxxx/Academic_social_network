@@ -6,18 +6,19 @@ sys.setdefaultencoding('utf8')
 from flask_pymongo import PyMongo
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, current_user
-from flask import Flask
-
+from flask import Flask, current_app
 import datetime
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = r'mysql://root:stx11stx11@127.0.0.1/dblp_ref'
-app.config['SQLALCHEMY_BINDS'] = {
-    'paper': r'mysql://root:stx11stx11@127.0.0.1/dblp_ref',
-    'expert': r'mysql://root:stx11stx11@127.0.0.1/expert_example',
-}
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-db = SQLAlchemy(app)
+
+
+# app = Flask(__name__)
+# app.config['SQLALCHEMY_DATABASE_URI'] = r'mysql://root:stx11stx11@127.0.0.1/dblp_ref'
+# app.config['SQLALCHEMY_BINDS'] = {
+#     'paper': r'mysql://root:stx11stx11@127.0.0.1/dblp_ref',
+#     'expert': r'mysql://root:stx11stx11@127.0.0.1/expert_example',
+# }
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+db = SQLAlchemy()
 
 
 class ASNUser(db.Model, UserMixin):
@@ -40,7 +41,7 @@ class ASNUser(db.Model, UserMixin):
     def __init__(self, email="", password="", gender="",
                  education="", department="", phone="",
                  first_name="", last_name="", address="",
-                 avatar = "../static/avatar/files/init.png",
+                 avatar = "../static/avatar/init.png",
                  focus_area = ""):
         self.email = email
         self.password = password
@@ -131,6 +132,7 @@ class Expert_detail_total(db.Model):
         self.tags = tags
         self.total_id = total_id
 
+
 class Expert_detail(db.Model):
     __bind_key__ = 'expert_total'
     __tablename__ = 'expert_detail_total'
@@ -151,14 +153,17 @@ class Expert_detail(db.Model):
 
 
 class Paper_detail(db.Model):
-    __tablename__ = 'paper'
+
+    __bind_key__ = 'paper'
+    __tablename__ = 'paper_total'
+
     id = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
     title = db.Column(db.TEXT)
     authors = db.Column(db.TEXT)
     venue = db.Column(db.TEXT)
     year = db.Column(db.Integer)
     ref = db.Column(db.TEXT)
-    abtract = db.Column(db.TEXT)
+    abstract = db.Column(db.TEXT)
 
     def __str__(self):
         return '论文<id:%s, title：%s>' % (self.id, self.title)
@@ -170,3 +175,23 @@ class Paper_detail(db.Model):
         self.year = year
         self.ref = ref
         self.abtract = abtract
+
+
+class Upload_paper(db.Model):
+
+    __bind_key__ = 'expert'
+    __tablename__= 'upload_paper'
+    user_email = db.Column(db.String(45), primary_key=True)
+    file_url = db.Column(db.String(45))
+    time = db.Column(db.DateTime)
+
+    def __init__(self, user_email=None, file_url=None, time=None):
+        self.user_email = user_email
+        self.file_url = file_url
+        self.time = time
+
+    def __str__(self):
+        return '上传论文<email:%s, file_url：%s>' % (self.user_email, self.file_url)
+
+    def __repr__(self):
+        return '<Upload_paper %r>' % self.user_email

@@ -99,7 +99,7 @@
 							            		<div class="col-md-6 animated fadeInDown">
 							                        <div class="widget-head-color-box navy-bg p-lg text-center">
 							                            <div class="m-b-md">
-								                            <h2 class="font-bold no-margins" v-once>
+								                            <h2 class="font-bold no-margins">
 								                                {[ firstName ]}&nbsp;{[ lastName ]}
 								                            </h2>
 							                            </div>
@@ -785,72 +785,84 @@
 			     	}
 				})
         	})
+        };
+
+        function cancelEditProfile(arg) {
+		    arg.firstName = {{current_user.first_name|tojson}}
+            arg.lastName = {{current_user.last_name|tojson}}
+            arg.genderSelected = {{current_user.gender}}
+            arg.degreeSelected = {{current_user.education}}
+            arg.department = {{current_user.department|tojson}}
+            arg.address = {{current_user.address|tojson}}
+            arg.telephone = {{current_user.phone|tojson}}
+            arg.ifEdit = true
+        	$('#firstname').attr("disabled", true);
+        	$('#lastname').attr("disabled", true);
+        	$('#gender').attr("disabled", true);
+        	$('#degree').attr("disabled", true);
+        	$('#department').attr("disabled", true);
+        	$('#address').attr("disabled", true);
+        	$('#telephone').attr("disabled", true);
         }
 	</script>
 
     <script>
         $(document).ready(function(){
+            //个人信息显示
+	    	data1 = {
+                {% if current_user.email %}
+                firstName: {{current_user.first_name|tojson}},
+                lastName: {{current_user.last_name|tojson}},
+                avatarSrc: {{current_user.avatar|tojson}}
+                {% else %}
+                firstName: "",
+                lastName: "",
+                avatarSrc: ""
+                {% endif %}
+            }
 	        var app1 = new Vue({
 	            delimiters: ['{[', ']}'],
 	            el: '#status',
-	            data: {
-	                {% if current_user.email %}
-	                firstName: {{current_user.first_name|tojson}},
-	                lastName: {{current_user.last_name|tojson}},
-	                avatarSrc: {{current_user.avatar|tojson}}
-	                {% else %}
-	                firstName: "",
-	                lastName: "",
-	                avatarSrc: ""
-	                {% endif %}
-	            }
+	            data: data1
 	        });
 
-            //个人信息显示
+            data2 = {
+            	ifEdit: true,
+                {% if current_user.email %}
+                firstName: {{current_user.first_name|tojson}},
+                lastName: {{current_user.last_name|tojson}},
+                genderSelected: {{current_user.gender}},
+                degreeSelected: {{current_user.education}},
+                department: {{current_user.department|tojson}},
+                address: {{current_user.address|tojson}},
+                telephone: {{current_user.phone|tojson}},
+                avatarSrc: {{current_user.avatar|tojson}}
+                {% else %}
+                firstName: "",
+                lastName: "",
+                email: "",
+                genderSelected: "",
+                degreeSelected: "",
+                department: "",
+                address: "",
+                telephone: "",
+                avatarSrc: ""
+                {% endif %}
+            }
 			var app2 = new Vue({
 	            delimiters: ['{[', ']}'],
 	            el: '#privateMessage',
-	            data: {
-	            	ifEdit: true,
-	                {% if current_user.email %}
-	                firstName: {{current_user.first_name|tojson}},
-	                lastName: {{current_user.last_name|tojson}},
-	                genderSelected: {{current_user.gender}},
-	                degreeSelected: {{current_user.education}},
-	                department: {{current_user.department|tojson}},
-	                address: {{current_user.address|tojson}},
-	                telephone: {{current_user.phone|tojson}},
-	                avatarSrc: {{current_user.avatar|tojson}}
-	                {% else %}
-	                firstName: "",
-	                lastName: "",
-	                email: "",
-	                genderSelected: "",
-	                degreeSelected: "",
-	                department: "",
-	                address: "",
-	                telephone: "",
-	                avatarSrc: ""
-	                {% endif %}
-	            },
+	            data: data2,
 	            methods: {
     	            //个人信息确认按钮
 	            	profile_confirm: function() {
-	            		if (this.ifEdit == false) {
-	            			if (this.firstName=="" || this.lastName=="" || this.genderSelected=="" || this.degreeSelected=="") {
-	            			// if (false) {
+	            		var vue2 = this
 
-	            				console.log(this.firstName);
-	            				console.log(this.lastName);
-	            				console.log(this.genderSelected);
-	            				console.log(this.degreeSelected);
+	            		if (vue2.ifEdit == false) {
+	            			if (vue2.firstName=="" || vue2.lastName=="" || vue2.genderSelected=="" || vue2.degreeSelected=="") {
 	            				swal("*不能为空! ", "请重新修改! ", "error");
 	            			}
 	            			else {
-	            				console.log(this.firstName);
-	            				console.log(this.lastName);
-	            				console.log(this.genderSelected);
-	            				console.log(this.degreeSelected);
 								swal({
 					                title: "修改个人信息",
 					                text: "请问是否确认修改？",
@@ -858,44 +870,57 @@
 					                cancelButtonText: "取消",
 					                showCancelButton: true,
 					                confirmButtonColor: "#DD6B55",
-					                confirmButtonText: "确认",
-					                closeOnConfirm: false
-					            }, function () {
-					            	$.ajax({
-					            		
-					            		url: '/api/modify_user',
-					            		type: 'POST',
-					            		data: {
-					            			firstName: this.firstName,
-							                lastName: this.lastName,
-							                genderSelected: this.genderSelected,
-							                degreeSelected: this.degreeSelected,
-							                department: this.department,
-							                address: this.address,
-							                telephone: this.telephone,
-					            		},
-					            		success: function(data) {
-					            			var res = JSON.parse(data);
-					            			if (res.result == "success") {
-								                swal({
-								                	title: "保存成功！", 
-								                	text: "您的个人信息已经修改成功！", 
-								                	type: "success"
-								                }, function(){
+					                confirmButtonText: "确认"
+					            }, function (isConfirm) {
+					            	if (isConfirm) {
+						            	$.ajax({
+						            		
+						            		url: '/api/modify_user',
+						            		type: 'POST',
+						            		data: {
+						            			firstName: vue2.firstName,
+								                lastName: vue2.lastName,
+								                genderSelected: vue2.genderSelected,
+								                degreeSelected: vue2.degreeSelected,
+								                department: vue2.department,
+								                address: vue2.address,
+								                telephone: vue2.telephone,
+						            		},
+						            		success: function(args) {
+						            			var res = JSON.parse(args);
+						            			if (res.result == "success") {
+									                swal({
+									                	title: "保存成功！", 
+									                	text: "您的个人信息已经修改成功！", 
+									                	type: "success"
+									                }, function(){
+									                	data1.firstName = res.newData.newFirstName;
+									                	data1.lastName = res.newData.newLastName;
+									                }); 
+										            vue2.ifEdit = true;
+			            			            	$('#firstname').attr("disabled", true);
+										        	$('#lastname').attr("disabled", true);
+										        	$('#gender').attr("disabled", true);
+										        	$('#degree').attr("disabled", true);
+										        	$('#department').attr("disabled", true);
+										        	$('#address').attr("disabled", true);
+										        	$('#telephone').attr("disabled", true);
+						            			}
+						            			else {
 								                	setTimeout(function(){
 								                		window.location.reload();
 								                	}, 500);
-								                });
-									            this.ifEdit = true;
-					            			}
-					            			else {
-					            				swal("修改失败! ", "请重新修改! ", "error");
-					            			}
-					            		},
-					            		error: function() {
-				            				swal("请求修改失败! ", "请重新修改! ", "error");
-					            		}
-				            		});
+						            				swal("修改失败! ", "请重新修改! ", "error");
+						            			}
+						            		},
+						            		error: function() {
+					            				swal("请求修改失败! ", "请重新修改! ", "error");
+						            		}
+						            	});
+						            }
+					            	else {
+					            		cancelEditProfile(vue2);
+					            	}
 					            });
 							}
 		            	}
@@ -916,15 +941,12 @@
 				        	$('#telephone').removeAttr("disabled");
 			    		}
 			        	else {
-			        		this.ifEdit = true;
-		                	setTimeout(function(){
-		                		window.location.reload();
-		                	}, 0);
+							cancelEditProfile(this);
 			        	}
 			        }
 			    }
 	        });
-			
+
         	// 跳到tab
         	$("#toTab3").click(function(){
         		$("#tab5").click();

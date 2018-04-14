@@ -427,25 +427,47 @@ def insert_new_item():
 def modify_user():
     try:
         current_email = current_user.get_id()
-        print "request.args", request.args
-        print "request.form", request.form
-        # print "request.get_json", request.get_json('firstName')
-        first_name = request.form.get('firstName')
-        last_name = request.form.get('lastName')
-        gender = request.form.get('genderSelected')
-        degree = request.form.get('degreeSelected')
-        department = request.form.get('department')
-        address = request.form.get('address')
-        phone = request.form.get('telephone')
-        print "phone", phone
-        print "lastname", last_name
-        print "firstname", first_name
-        # result = ASNUser.query.filter(ASNUser.email==current_user.get_id()).first()
+
+        if request.method=='GET':
+            print 'GET'
+            # new_info = request.args.get("new_info")
+            first_name = request.args.get("firstName")
+            last_name = request.args.get("lastName")
+            gender = request.args.get("genderSelected")
+            degree = request.args.get("degreeSelected")
+            department = request.args.get("department")
+            address =request.args.get("address")
+            phone =request.args.get("telephone")
+        elif request.method == 'POST':
+            print 'POST'
+            first_name = request.form.get("firstName")
+            last_name = request.form.get("lastName")
+            gender = request.form.get("genderSelected")
+            degree = request.form.get("degreeSelected")
+            department = request.form.get("department")
+            address = request.form.get("address")
+            phone = request.form.get("telephone")
+        result = ASNUser.query.filter(ASNUser.email==current_user.get_id()).first()
+        another_result = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
+        # print "first_name", request.form['firstName']
         if first_name is not None:
+            print "firstName", first_name
+            print "lastName", last_name
+            print "gender", gender
+            print "degree", degree
+            print "department", department
+            print "address", address
+            print "phone", phone
             result_user = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
         else:
-            return json.dumps({'result':'fail'})
-
+            print "firstName", first_name
+            print "lastName", last_name
+            print "gender", gender
+            print "degree", degree
+            print "department", department
+            print "address", address
+            print "phone", phone
+            return json.dumps({'result': 'fail'})
         result_user.first_name = first_name
         result_user.last_name = last_name
         result_user.gender = gender
@@ -456,14 +478,13 @@ def modify_user():
 
         result_expert = db.session.query(Expert_detail_total).filter(Expert_detail_total.email == current_email).first()
         result_expert.name = first_name + " " + last_name
-
         sex = ""
         if gender == "0":
             sex = "male"
         elif gender == "1":
             sex = "female"
         result_expert.gender = sex
-        education=""
+        education = ""
         if degree == "0":
             education = "bechelor"
         elif degree == "1":
@@ -474,9 +495,21 @@ def modify_user():
         result_expert.department = department
         result_expert.address = address
         result_expert.phone = phone
-
+        data = {
+            "newFirstName": first_name,
+            "newLastName": last_name,
+            "newGender": gender,
+            "newDegree": degree,
+            "newDepartment": department,
+            "newAddress": address,
+            "newTelephone": phone,
+        }
         db.session.commit()
-        return json.dumps({'result':'success'})
+        return json.dumps({'result': 'success', 'newData': data})
+
+    except Exception, e:
+        print "error: ", e
+        return json.dumps({'result': 'fail'})
     except Exception, e:
         print "error: ",e
         return json.dumps({'result':'fail'})

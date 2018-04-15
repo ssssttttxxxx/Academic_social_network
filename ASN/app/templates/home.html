@@ -181,13 +181,13 @@
             delimiters: ['{[', ']}'],
             el: '#status',
             data: {
-                loginStatus: {{Status.loginStatus|tojson}},
-                logoutStatus: {{Status.logoutStatus|tojson}},
+                loginStatus: [[Status.loginStatus|tojson]],
+                logoutStatus: [[Status.logoutStatus|tojson]],
                 {% if current_user.email %}
-                firstName: {{current_user.first_name|tojson}},
-                lastName: {{current_user.last_name|tojson}},
-                email: {{current_user.email|tojson}},
-                avatarSrc: {{current_user.avatar|tojson}}
+                firstName: [[current_user.first_name|tojson]],
+                lastName: [[current_user.last_name|tojson]],
+                email: [[current_user.email|tojson]],
+                avatarSrc: [[current_user.avatar|tojson]]
                 {% else %}
                 firstName: "",
                 lastName: "",

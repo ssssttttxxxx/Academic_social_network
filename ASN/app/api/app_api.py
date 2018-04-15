@@ -643,15 +643,19 @@ def delete_avatar():
 @api.route('focus_area', methods=['POST'])
 @login_required
 def focus_area():
-    current_email = current_user.get_id()
-    area_list = request.form.get('focusArea').split(';')
-    focus_area_str = ""
-    for area in area_list:
-        focus_area_str += str(area)
-        focus_area_str += ';'
-    result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
-    result.focus_area = focus_area_str
-    db.session.commit()
+    try:
+        current_email = current_user.get_id()
+        area_list = request.form.get('focusArea').split(';')
+        focus_area_str = ""
+        for area in area_list:
+            focus_area_str += str(area)
+            focus_area_str += ';'
+        result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
+        result.focus_area = focus_area_str
+        db.session.commit()
+        return json.dumps({'result':'success'})
+    except:
+        return json.dumps({'result':'fail'})
 
 
 @api.route('upload_paper', methods=['POST'])

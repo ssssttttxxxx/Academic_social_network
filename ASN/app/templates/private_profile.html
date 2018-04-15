@@ -1049,14 +1049,34 @@
 						}
 				    	if (text != ''){
 				    		if (!isExist(text)){
-			    				this.dis_source.push({
-					        		text: text
-					      		})
-					      		this.text = ''
+				    			$.ajax({
+				            		url: '/api/',
+				            		type: 'POST',
+				            		data: {
+				            			: text
+				            		},
+				            		success: function(args){
+				            			var res = JSON.parse(args);
+				            			if (res.result == "success") {
+					            			that.dis_source.push({
+								        		text: text
+								      		})
+								      		that.text = ''
+				            			} 
+				            			else {
+				            				that.text = ''
+				            				swal("添加标签失败! ", "请重新添加! ", "error");
+				            			}
+				            		},
+				            		error: function(){
+				            			that.text = ''
+				            			swal("请求添加标签失败! ", "请重新添加! ", "error");
+				            		}
+								});
 				    		}
 				    		else{
-				    			swal("已存在此标签! ", "", "error");
 				    			this.text = ''
+				    			swal("已存在此标签! ", "", "error");
 				    		}
 				    	}
 				  	},

@@ -19,6 +19,9 @@ import os
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+app.jinja_env.variable_start_string = '[['
+app.jinja_env.variable_end_string = ']]'
 # app.secret_key = '1frMFuWRVPV1'
 # app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://%s:%s@%s/%s" % ('root', 'stx11stx11', '127.0.0.1', 'dblp_ref')
 # app.config['SQLALCHEMY_BINDS'] = {

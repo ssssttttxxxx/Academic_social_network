@@ -640,25 +640,54 @@ def delete_avatar():
         print "无法删除原头像"
 
 
-@api.route('focus_area', methods=['POST'])
+@api.route('/add_tag', methods=['POST'])
 @login_required
-def focus_area():
+def add_tag():
+
     try:
         current_email = current_user.get_id()
-        area_list = request.form.get('focusArea').split(';')
-        focus_area_str = ""
-        for area in area_list:
-            focus_area_str += str(area)
-            focus_area_str += ';'
+        area_text = request.form.get('text')
+        print "tag", area_text
+
         result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
-        result.focus_area = focus_area_str
+        print result.focus_area
+        area_list = result.focus_area
+
+        if area_list == "":
+            area_list = area_text
+        else:
+            area_list = area_list + "," + area_text
+
+        area_str = area_list
+        print "area str", area_str
+        result.focus_area = area_str
         db.session.commit()
-        return json.dumps({'result':'success'})
+        return json.dumps({'result': 'success'})
     except:
-        return json.dumps({'result':'fail'})
+        return json.dumps({'result': 'fail'})
+
+@api.route('/del_tag', methods=['POST'])
+@login_required
+def del_tag():
+    current_email = current_user.get_id()
+    area_index = request.form.get('index')
+    result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
+    area_list = result.focus_area.split(',')
+    # area_list.remove(area_text)
+    del area_list[int(area_index)]
+    area_str = ""
+    for index, area in enumerate(area_list):
+        if index == len(area_list)-1:
+            area_str = area_str + area
+        else:
+            area_str = area_str + area + ','
+
+    result.focus_area = area_str
+    db.session.commit()
+    return json.dumps({'result': 'success'})
 
 
-@api.route('upload_paper', methods=['POST'])
+@api.route('/upload_paper', methods=['POST'])
 @login_required
 def upload_paper():
     """
@@ -687,7 +716,7 @@ def upload_paper():
         return json.dumps({'result': 'fail', 'msg': 'No file part'})
 
 
-@api.route('delete_paper', methods=['POST'])
+@api.route('/delete_paper', methods=['POST'])
 @login_required
 def delete_paper():
     email = current_user.get_id()

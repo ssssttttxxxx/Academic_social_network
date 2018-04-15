@@ -50,7 +50,7 @@
 		.tags-wrap {
 			width: 100%;
 			height: 100%;
-			outline: black solid 1px;
+			/*outline: black solid 1px;*/
 			overflow: hidden;
 			&::after{
 				content: "";
@@ -60,7 +60,7 @@
 			}
 		}
 		.tag-list {
-			font-size: 14px;
+			font-size: 13px;
 			background-color: #f3f3f4;
 			padding: 5px 12px;
 			color: inherit;
@@ -83,6 +83,8 @@
 			/*padding: 0 22px 0 10px;*/
 			padding: 5px 12px;
 			border-radius: 6px;
+			/*border: none;*/
+			outline: none;
 			.content{
 				line-height: 28px;
 			}
@@ -97,12 +99,12 @@
 		  	}
 		}
 		.tags-input{
-			font-size: 14px;
+			font-size: 13px;
 			padding: 0;
 			background-color: inherit;
 			border: none;
 			color: inherit;
-			width: 10em;
+			width: 12em;
 		}
     </style>
 
@@ -848,173 +850,173 @@
         	})
         };
 
-      //   function cancelEditProfile(arg) {
-		    // arg.firstName = {{current_user.first_name|tojson}}
-      //       arg.lastName = {{current_user.last_name|tojson}}
-      //       arg.genderSelected = {{current_user.gender}}
-      //       arg.degreeSelected = {{current_user.education}}
-      //       arg.department = {{current_user.department|tojson}}
-      //       arg.address = {{current_user.address|tojson}}
-      //       arg.telephone = {{current_user.phone|tojson}}
-      //       arg.ifEdit = true
-      //   	$('#firstname').attr("disabled", true);
-      //   	$('#lastname').attr("disabled", true);
-      //   	$('#gender').attr("disabled", true);
-      //   	$('#degree').attr("disabled", true);
-      //   	$('#department').attr("disabled", true);
-      //   	$('#address').attr("disabled", true);
-      //   	$('#telephone').attr("disabled", true);
-      //   }
+        function cancelEditProfile(arg) {
+		    arg.firstName = {{current_user.first_name|tojson}}
+            arg.lastName = {{current_user.last_name|tojson}}
+            arg.genderSelected = {{current_user.gender}}
+            arg.degreeSelected = {{current_user.education}}
+            arg.department = {{current_user.department|tojson}}
+            arg.address = {{current_user.address|tojson}}
+            arg.telephone = {{current_user.phone|tojson}}
+            arg.ifEdit = true
+        	$('#firstname').attr("disabled", true);
+        	$('#lastname').attr("disabled", true);
+        	$('#gender').attr("disabled", true);
+        	$('#degree').attr("disabled", true);
+        	$('#department').attr("disabled", true);
+        	$('#address').attr("disabled", true);
+        	$('#telephone').attr("disabled", true);
+        }
 	</script>
 
     <script>
         $(document).ready(function(){
             //个人信息显示
-	  //   	data1 = {
-   //              {% if current_user.email %}
-   //              firstName: {{current_user.first_name|tojson}},
-   //              lastName: {{current_user.last_name|tojson}},
-   //              avatarSrc: {{current_user.avatar|tojson}}
-   //              {% else %}
-   //              firstName: "",
-   //              lastName: "",
-   //              avatarSrc: ""
-   //              {% endif %}
-   //          }
-	  //       var app1 = new Vue({
-	  //           delimiters: ['{[', ']}'],
-	  //           el: '#status',
-	  //           data: data1
-	  //       });
+	    	data1 = {
+                {% if current_user.email %}
+                firstName: {{current_user.first_name|tojson}},
+                lastName: {{current_user.last_name|tojson}},
+                avatarSrc: {{current_user.avatar|tojson}}
+                {% else %}
+                firstName: "",
+                lastName: "",
+                avatarSrc: ""
+                {% endif %}
+            }
+	        var app1 = new Vue({
+	            delimiters: ['{[', ']}'],
+	            el: '#status',
+	            data: data1
+	        });
 
-   //          data2 = {
-   //          	ifEdit: true,
-   //              {% if current_user.email %}
-   //              firstName: {{current_user.first_name|tojson}},
-   //              lastName: {{current_user.last_name|tojson}},
-   //              genderSelected: {{current_user.gender}},
-   //              degreeSelected: {{current_user.education}},
-   //              department: {{current_user.department|tojson}},
-   //              address: {{current_user.address|tojson}},
-   //              telephone: {{current_user.phone|tojson}},
-   //              avatarSrc: {{current_user.avatar|tojson}}
-   //              {% else %}
-   //              firstName: "",
-   //              lastName: "",
-   //              email: "",
-   //              genderSelected: "",
-   //              degreeSelected: "",
-   //              department: "",
-   //              address: "",
-   //              telephone: "",
-   //              avatarSrc: ""
-   //              {% endif %}
-   //          }
-			// var app2 = new Vue({
-	  //           delimiters: ['{[', ']}'],
-	  //           el: '#privateMessage',
-	  //           data: data2,
-	  //           methods: {
-   //  	            //个人信息确认按钮
-	  //           	profile_confirm: function() {
-	  //           		var vue2 = this
+            data2 = {
+            	ifEdit: true,
+                {% if current_user.email %}
+                firstName: {{current_user.first_name|tojson}},
+                lastName: {{current_user.last_name|tojson}},
+                genderSelected: {{current_user.gender}},
+                degreeSelected: {{current_user.education}},
+                department: {{current_user.department|tojson}},
+                address: {{current_user.address|tojson}},
+                telephone: {{current_user.phone|tojson}},
+                avatarSrc: {{current_user.avatar|tojson}}
+                {% else %}
+                firstName: "",
+                lastName: "",
+                email: "",
+                genderSelected: "",
+                degreeSelected: "",
+                department: "",
+                address: "",
+                telephone: "",
+                avatarSrc: ""
+                {% endif %}
+            }
+			var app2 = new Vue({
+	            delimiters: ['{[', ']}'],
+	            el: '#privateMessage',
+	            data: data2,
+	            methods: {
+    	            //个人信息确认按钮
+	            	profile_confirm: function() {
+	            		var vue2 = this
 
-	  //           		if (vue2.ifEdit == false) {
-	  //           			if (vue2.firstName=="" || vue2.lastName=="" || vue2.genderSelected=="" || vue2.degreeSelected=="") {
-	  //           				swal("*不能为空! ", "请重新修改! ", "error");
-	  //           			}
-	  //           			else {
-			// 					swal({
-			// 		                title: "修改个人信息",
-			// 		                text: "请问是否确认修改？",
-			// 		                type: "warning",
-			// 		                cancelButtonText: "取消",
-			// 		                showCancelButton: true,
-			// 		                confirmButtonColor: "#DD6B55",
-			// 		                confirmButtonText: "确认"
-			// 		            }, function (isConfirm) {
-			// 		            	if (isConfirm) {
-			// 			            	$.ajax({
+	            		if (vue2.ifEdit == false) {
+	            			if (vue2.firstName==="" || vue2.lastName==="" || vue2.genderSelected==="" || vue2.degreeSelected==="") {
+	            				swal("*不能为空! ", "请重新修改! ", "error");
+	            			}
+	            			else {
+								swal({
+					                title: "修改个人信息",
+					                text: "请问是否确认修改？",
+					                type: "warning",
+					                cancelButtonText: "取消",
+					                showCancelButton: true,
+					                confirmButtonColor: "#DD6B55",
+					                confirmButtonText: "确认"
+					            }, function (isConfirm) {
+					            	if (isConfirm) {
+						            	$.ajax({
 						            		
-			// 			            		url: '/api/modify_user',
-			// 			            		type: 'POST',
-			// 			            		data: {
-			// 			            			firstName: vue2.firstName,
-			// 					                lastName: vue2.lastName,
-			// 					                genderSelected: vue2.genderSelected,
-			// 					                degreeSelected: vue2.degreeSelected,
-			// 					                department: vue2.department,
-			// 					                address: vue2.address,
-			// 					                telephone: vue2.telephone,
-			// 			            		},
-			// 			            		success: function(args) {
-			// 			            			var res = JSON.parse(args);
-			// 			            			if (res.result == "success") {
-			// 						                swal({
-			// 						                	title: "保存成功！", 
-			// 						                	text: "您的个人信息已经修改成功！", 
-			// 						                	type: "success"
-			// 						                }, function(){
-			// 						                	data1.firstName = res.newData.newFirstName;
-			// 						                	data1.lastName = res.newData.newLastName;
-			// 						                }); 
-			// 							            vue2.ifEdit = true;
-			//             			            	$('#firstname').attr("disabled", true);
-			// 							        	$('#lastname').attr("disabled", true);
-			// 							        	$('#gender').attr("disabled", true);
-			// 							        	$('#degree').attr("disabled", true);
-			// 							        	$('#department').attr("disabled", true);
-			// 							        	$('#address').attr("disabled", true);
-			// 							        	$('#telephone').attr("disabled", true);
-			// 			            			}
-			// 			            			else {
-			// 					                	setTimeout(function(){
-			// 					                		window.location.reload();
-			// 					                	}, 500);
-			// 			            				swal("修改失败! ", "请重新修改! ", "error");
-			// 			            			}
-			// 			            		},
-			// 			            		error: function() {
-			// 		            				swal("请求修改失败! ", "请重新修改! ", "error");
-			// 			            		}
-			// 			            	});
-			// 			            }
-			// 		            	else {
-			// 		            		cancelEditProfile(vue2);
-			// 		            	}
-			// 		            });
-			// 				}
-		 //            	}
-		 //            	else {
-		 //            		swal("请先点击修改按钮! ", "", "error");
-		 //            	}
-	  //           	},
-	  //           	//修改信息按钮
-	  //           	profile_edit: function() {
-			//         	if (this.ifEdit == true) {
-			//         		this.ifEdit = false;
-			//             	$('#firstname').removeAttr("disabled");
-			// 	        	$('#lastname').removeAttr("disabled");
-			// 	        	$('#gender').removeAttr("disabled");
-			// 	        	$('#degree').removeAttr("disabled");
-			// 	        	$('#department').removeAttr("disabled");
-			// 	        	$('#address').removeAttr("disabled");
-			// 	        	$('#telephone').removeAttr("disabled");
-			//     		}
-			//         	else {
-			// 				cancelEditProfile(this);
-			//         	}
-			//         }
-			//     }
-	  //       });
+						            		url: '/api/modify_user',
+						            		type: 'POST',
+						            		data: {
+						            			firstName: vue2.firstName,
+								                lastName: vue2.lastName,
+								                genderSelected: vue2.genderSelected,
+								                degreeSelected: vue2.degreeSelected,
+								                department: vue2.department,
+								                address: vue2.address,
+								                telephone: vue2.telephone,
+						            		},
+						            		success: function(args) {
+						            			var res = JSON.parse(args);
+						            			if (res.result == "success") {
+									                swal({
+									                	title: "保存成功！", 
+									                	text: "您的个人信息已经修改成功！", 
+									                	type: "success"
+									                }, function(){
+									                	data1.firstName = res.newData.newFirstName;
+									                	data1.lastName = res.newData.newLastName;
+									                }); 
+										            vue2.ifEdit = true;
+			            			            	$('#firstname').attr("disabled", true);
+										        	$('#lastname').attr("disabled", true);
+										        	$('#gender').attr("disabled", true);
+										        	$('#degree').attr("disabled", true);
+										        	$('#department').attr("disabled", true);
+										        	$('#address').attr("disabled", true);
+										        	$('#telephone').attr("disabled", true);
+						            			}
+						            			else {
+								                	setTimeout(function(){
+								                		window.location.reload();
+								                	}, 500);
+						            				swal("修改失败! ", "请重新修改! ", "error");
+						            			}
+						            		},
+						            		error: function() {
+					            				swal("请求修改失败! ", "请重新修改! ", "error");
+						            		}
+						            	});
+						            }
+					            	else {
+					            		cancelEditProfile(vue2);
+					            	}
+					            });
+							}
+		            	}
+		            	else {
+		            		swal("请先点击修改按钮! ", "", "error");
+		            	}
+	            	},
+	            	//修改信息按钮
+	            	profile_edit: function() {
+			        	if (this.ifEdit == true) {
+			        		this.ifEdit = false;
+			            	$('#firstname').removeAttr("disabled");
+				        	$('#lastname').removeAttr("disabled");
+				        	$('#gender').removeAttr("disabled");
+				        	$('#degree').removeAttr("disabled");
+				        	$('#department').removeAttr("disabled");
+				        	$('#address').removeAttr("disabled");
+				        	$('#telephone').removeAttr("disabled");
+			    		}
+			        	else {
+							cancelEditProfile(this);
+			        	}
+			        }
+			    }
+	        });
+	        
 	  		var data3 = {
 		    	isShowMultiSelect: false,
-		      	source: ['Data Mining', 'Machine Learning', 'Social Network', 'Deep Learning', 'Healthcare']
+		      	source: ['Data Mining', 'Machine Learning', 'Social Network']
 		    }
 
 	  		var tags = {
-	  			template: '<div class="input tags-wrap"><div class="tag-list" transition="tags" v-for="(item,index) in dis_source"><a href=""><i class="fa fa-tag" style="margin-right: 3px;"></i>{{item.text}}</a><i class="fa fa-close" style="margin-left: 3px;" @click="del(index)"></i></div><input class="tags-input" type="text" placeholder="标签，按 enter 创建" v-model="text" @keyup.enter="add(text)" v-on:focus="showMultiSelect"></div>',
-	  			 // v-on:blur="hideMultiSelect"
+	  			template: '<div class="input tags-wrap"><div class="tag-list" transition="tags" v-for="(item,index) in dis_source"><a href=""><i class="fa fa-tag" style="margin-right: 3px;"></i>{{item.text}}</a><i class="fa fa-close" style="margin-left: 3px;" @click="del(index)"></i></div><input class="tags-input" type="text" placeholder="选择或输入按 Enter 创建" v-model="text" @keyup.enter="add(text)" v-on:focus="showMultiSelect"></div>',// v-on:blur="hideMultiSelect"
 	  			props: {
 					source: {
 						type: Array,
@@ -1025,7 +1027,7 @@
 					var dis_source = []
 			  		this.source.forEach(function (item) {
 					    var obj = {
-				      		text: item,
+				      		text: item
 					    }
 				    	dis_source.push(obj)
 				  	})
@@ -1036,18 +1038,30 @@
 				},
 				methods: {
 					add: function(text){
-				    	if(text != ''){
-				      		var count = this.source.length
-				      		console.log(count);
-				      		this.source.push(count, text)
-				      		this.dis_source.push(count, {
-				        		text: text,
-				      		})
-				      		this.text = ''
+						var that = this
+						var isExist = function(element){
+							for (var i = 0;i < that.dis_source.length;i++) {
+				    			if ( that.dis_source[i].text === element) {
+				    				return true
+				    			}
+				    		}
+				    		return false
+						}
+				    	if (text != ''){
+				    		if (!isExist(text)){
+			    				this.dis_source.push({
+					        		text: text
+					      		})
+					      		this.text = ''
+				    		}
+				    		else{
+				    			swal("已存在此标签! ", "", "error");
+				    			this.text = ''
+				    		}
 				    	}
 				  	},
 				  	del: function(index){
-				      	this.source.splice(index, 1)
+				      	// this.source.splice(index, 1)
 				      	this.dis_source.splice(index, 1)
 			    	},
 			    	showMultiSelect: function(event){
@@ -1066,19 +1080,6 @@
 			    data: data3,
 			    components: {
 			      'v-tags': tags
-			    },
-			    methods: {
-			    	add: function(text){
-				    	if(text != ''){
-				      		var count = this.source.length
-				      		console.log(count);
-				      		this.source.push(count, text)
-				      		// this.dis_source.push(count, {
-				        // 		text: text,
-				      		// })
-				      		this.text = ''
-				    	}
-			    	}
 			    }
 		  	})
 
@@ -1156,22 +1157,8 @@
 
             // 关注领域添加标签
             $(".chosen-select").chosen({width: "350px"});
-			// for (var i in $("#addField").val()) {
-			// 		$("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $("#addField").val()[i] + '</a></li>');
-			// 	}
-			// $("#addField").on('change', function(){
-			// 	// console.log($("#addField option:selected").val());
-			// 	$("#fieldList li").remove();
-			// 	for (var i in $(this).val()) {
-			// 		$("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $(this).val()[i] + '</a></li>');
-			// 	}
-			// 	// $("#fieldList").append('<li><a href=""><i class="fa fa-tag"></i> ' + $(this).find("option:selected").val() + '</a></li>');
-			// });
 			$("#addField").change(function(){
-				console.log("addfiled");
-				data3.source.push($("#addField option:selected").val());
-				console.log($("#addField option:selected").val());
-				app3.add($("#addField option:selected").val());
+				app3.$children[0].add($("#addField option:selected").val());
 				data3.isShowMultiSelect = false;
 			})
 			

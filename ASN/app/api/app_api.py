@@ -302,14 +302,24 @@ def expert_network():
     # expert_id = request.form.get('expert_id')
     # expert_name = request.form.get('expert_name')
     # year = request.form.get('year')
+    min_year = 1954
+    max_year = 2017
+    years = []
     datas = []
     expert_name = request.args.get('name')
     print "expert_name", expert_name
-    years = [2008, 2009, 2010]
+
+    for year in range (min_year, max_year):
+        years.append(year)
+    # years = [2008, 2009, 2010]
     for year in years:
         coauthor_network = ConstructCoauthorsTree(expert_name, year)
         coauthor_network.construct()
 
+        # 网络中只有作者自己，则进行下一年的关系网络构建
+        if coauthor_network.nodes_num()==1:
+            break
+        
         coauthor_nodes = coauthor_network.all_nodes()
         nodes = []
         for node in coauthor_nodes:

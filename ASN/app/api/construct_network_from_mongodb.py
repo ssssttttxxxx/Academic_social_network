@@ -82,12 +82,22 @@ class ConstructCitationTree():
         print "第一层节点与第二层节点（第一层之间）关系建立"
 
         for relevant_paper_id in relevant_paper_ids:
+
             time_start = time.time()
             # 查询引用文章的引用
-            rel_ref_node = self.my_set.find_one({"paper_id": relevant_paper_id})
-            rel_ref_ids = rel_ref_node['ref_id']
+            rel_node = self.my_set.find_one({"paper_id": relevant_paper_id})
             time_end = time.time()
             # print "query time", time_end-time_start
+
+            rel_ref_ids = rel_node['ref_id']
+            relevant_paper_title = rel_node['title']
+
+            self.Graph.add_node(
+                rel_node['title'],
+                paper_title=rel_node['title'],
+                id=rel_node['paper_id'],
+                year=rel_node['year']
+            )
 
             for rel_ref_id in rel_ref_ids:
 
@@ -96,30 +106,24 @@ class ConstructCitationTree():
 
                 # if rel_ref_id in relevant_paper_ids:
 
-                relevant_paper_id, relevant_paper_title, relevnat_paper_year = \
-                    self.query_paper_id_title_year(relevant_paper_id)
-
                 rel_ref_id, rel_ref_title, rel_ref_year\
                     = self.query_paper_id_title_year(rel_ref_id)
-                print relevant_paper_title, "引用", rel_ref_title
-
                 self.Graph.add_node(
-                    relevant_paper_title,
-                    paper_title=relevant_paper_title,
-                    id=relevant_paper_id,
-                    year=relevnat_paper_year
-                )
-                self.Graph.add_node(
-                    relevant_paper_title,
+                    rel_ref_title,
                     paper_title=rel_ref_title,
                     id=rel_ref_id,
                     year=rel_ref_year
                 )
                 self.Graph.add_edge(relevant_paper_title, rel_ref_title)
 
+                print relevant_paper_title, "引用", rel_ref_title
+
         # 处理第二层节点之间的关系
         print "第二层节点之间关系建立"
         for ref2_id in second_layer_ref_ids:
+
+            ref2_id, ref2_title, ref2_year = self.query_paper_id_title_year(ref2_id)
+            self.Graph.add_node(ref2_title, paper_title=ref2_title, id=ref2_id, year=ref2_year)
 
             # 查询第二层节点的引用
             ref_ref2_ids = self.my_set.find_one({"paper_id": ref2_id})["ref_id"]
@@ -128,9 +132,7 @@ class ConstructCitationTree():
                 # 第二层节点引用第二层节点的情况
                 if ref_ref2_id in second_layer_ref_ids:
                     ref_ref2_id, ref_ref2_title, ref_ref2_year = self.query_paper_id_title_year(ref_ref2_id)
-                    ref2_id, ref2_title, ref2_year = self.query_paper_id_title_year(ref2_id)
                     print ref2_title, "引用", ref_ref2_title
-                    self.Graph.add_node(ref2_title, paper_title=ref2_title, id=ref2_id, year=ref2_year)
                     self.Graph.add_node(ref_ref2_title, paper_title=ref_ref2_title, id=ref_ref2_id, year=ref_ref2_year)
                     self.Graph.add_edge(ref2_title, ref_ref2_title)
 
@@ -199,9 +201,19 @@ class ConstructCitationTree():
     def edges(self):
         return self.Graph.edges()
 
+    def nodes(self):
+        return self.Graph.nodes()
+
     def all_nodes(self):
+        node_list = []
         nodes = self.Graph.nodes()
-        return nodes
+        for node in nodes:
+            pi = self.Graph.node[node]['id']
+            t = self.Graph.node[node]['paper_title']
+            y = self.Graph.node[node]['year']
+            # print pi,t,y
+            node_list.append((pi,t,y))
+        return node_list
 
 class ConstructCoauthorsTree():
 
@@ -263,9 +275,17 @@ class ConstructCoauthorsTree():
                 edges_list.append(edge)
         return edges_list
 
+    def nodes_num(self):
+        """
+        返回节点数量
+        :return:
+        """
+        return self.Graph.number_of_nodes()
+
 if __name__ == "__main__":
     CTM = ConstructCitationTree("00338203-9eb3-40c5-9f31-cbac73a519ec")
     CTM.construct()
+    print CTM.all_nodes()
     # years = [2008, 2009, 2010, 2011, 2012, 2013]
     # for year in years:
 

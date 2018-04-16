@@ -11,7 +11,6 @@ from api.app_api import api, login_manager
 
 from api.mysql_model import ASNUser, Expert_detail_total
 from api.mysql_model import db
-# 由于无法从 __init__.py (此文件)导入 mongo 到 user.py , 所以沿用 mongodb_model 中 mongo
 from api.mongodb_model import mongo
 from config import Config
 
@@ -59,7 +58,7 @@ login_manager.init_app(app)
 # # 文件存储路径配置
 # app.config['UPLOADED_FILES_DEST '] ='./app/static/paper'
 # app.config['UPLOADS_FILES_URL'] = '../static/paper'
-#
+
 app.register_blueprint(user, url_prefix='/user')
 app.register_blueprint(api, url_prefix='/api')
 

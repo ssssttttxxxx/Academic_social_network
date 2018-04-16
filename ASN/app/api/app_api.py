@@ -549,7 +549,6 @@ def follow():
 def modify_password():
     old_password = request.form.get('oldPassword')
     new_password = request.form.get('newPassword')
-    print "new_password: ", new_password
     current_email = current_user.get_id()
     result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
 
@@ -590,7 +589,7 @@ def upload_avatar():
                 email = current_user.get_id()
 
                 download_url = current_app.config['UPLOADED_PHOTOS_DEST'] + filename
-                print "download_url: ", avatar_url
+                print '%s download_url is %s', (filename, download_url)
 
                 # update数据库
                 try:
@@ -634,7 +633,6 @@ def delete_avatar():
         else:
             url = result_user.avatar.split('..')
             delete_url = "./app" + url[1]
-            print "delete_url", delete_url
             os.remove(delete_url)
     except:
         print "无法删除原头像"

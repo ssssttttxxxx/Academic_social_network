@@ -134,7 +134,7 @@
                     <li>
                         <a href="/user/private_profile" style="padding: 0px 0px;min-height: 0px;" title="用户">
                             <img alt="image" class="img-circle" :src="avatarSrc" width="40px" height="40px" id="headerAvatar">
-                            <strong>{[ firstName ]}&nbsp;{[ lastName ]}</strong>
+                            <strong>{{ firstName }}&nbsp;{{ lastName }}</strong>
                         </a>
                     </li>
                     <span style="padding:15px 0px 5px 0px;margin: 0px 2px 0px 6px;border-left: 1px solid #999c9e;font-size: 0;"></span>
@@ -172,7 +172,7 @@
 							                        <div class="widget-head-color-box navy-bg p-lg text-center">
 							                            <div class="m-b-md">
 								                            <h2 class="font-bold no-margins">
-								                                {[ firstName ]}&nbsp;{[ lastName ]}
+								                                {{ firstName }}&nbsp;{{ lastName }}
 								                            </h2>
 							                            </div>
 							                            <img :src="avatarSrc" class="img-circle circle-border m-b-md" alt="profile" id="avatar" height="128px" width="128px">
@@ -664,13 +664,15 @@
 							                    </div>
 							                    <div class="ibox-content">
 							                    	<div class="form-group">
-								                        <form id="myDropzone" class="dropzone" action="#">
+								                        <form id="my-awesome-dropzone" class="dropzone" method="POST" action="/api/upload_paper" enctype="multipart/form-data">
 								                            <!-- <div class="dropzone-previews"></div> -->
+						                                   	<div class="dropzone-previews"></div>
+													        <button type="submit" class="btn btn-primary pull-right" style="margin-top: 140px;cursor: pointer">
+									                        	<i class="fa fa-upload"></i>&nbsp;上传提交
+									                    	</button>
 								                        </form>
 							                    	</div>
-							                        <button type="submit" class="btn btn-primary pull-right" id="uploadPaperSubmit">
-							                        	<i class="fa fa-upload"></i>&nbsp;上传提交
-							                    	</button>
+							                        
 							                    </div>
 							                </div>
 							            </div>
@@ -679,165 +681,33 @@
 						            		<div class="ibox">
 						            			<div class="ibox-content">
 									            	<div id="vertical-timeline" class="vertical-container dark-timeline center-orientation">
-							                            <div class="vertical-timeline-block">
-							                                <div class="vertical-timeline-icon navy-bg">
-							                                    <i class="fa fa-briefcase"></i>
-							                                </div>
 
-							                                <div class="vertical-timeline-content">
-	                                                            <div class="file-box" style="margin-left: 18%;">
-									                                <div class="file">
-									                                    <a href="#">
-									                                        <span class="corner"></span>
-
-									                                        <div class="icon">
-									                                            <i class="fa fa-file"></i>
-									                                        </div>
-									                                        <div class="file-name">
-									                                            Document_2014.doc
-									                                            <br/>
-									                                            <small>Added: Jan 11, 2014</small>
-									                                        </div>
-									                                    </a>
-									                                </div>
-									                            </div>
-							                                    <span class="vertical-date">
-							                                        Today <br/>
-							                                        <small>Dec 24</small>
-							                                    </span>
-							                                </div>
-							                            </div>
-
-							                            <div class="vertical-timeline-block">
+							                            <div class="vertical-timeline-block" v-for="item in paperItem">
 							                                <div class="vertical-timeline-icon blue-bg">
 							                                    <i class="fa fa-file-text"></i>
 							                                </div>
 
 							                                <div class="vertical-timeline-content">
-	                                                            <div class="file-box">
+	                                                            <div class="file-box" style="margin-left: 17%;">
 									                                <div class="file">
-									                                    <a href="#">
+									                                    <a target="_blank" :href="item.fileURL">
 									                                        <span class="corner"></span>
-
 									                                        <div class="icon">
 									                                            <i class="fa fa-file"></i>
 									                                        </div>
 									                                        <div class="file-name">
-									                                            Document_2014.doc
+									                                            {{ item.fileName }}
 									                                            <br/>
-									                                            <small>Added: Jan 11, 2014</small>
+									                                            <!-- <small>Added: Jan 11, 2014</small> -->
 									                                        </div>
 									                                    </a>
 									                                </div>
 									                            </div>
 							                                    <span class="vertical-date">
-							                                        Today <br/>
-							                                        <small>Dec 24</small>
+							                                        {{ item.date }}
+							                                        <br/>
+							                                        <small>{{ item.time }}</small>
 							                                    </span>
-							                                </div>
-							                            </div>
-
-							                            <div class="vertical-timeline-block">
-							                                <div class="vertical-timeline-icon lazur-bg">
-							                                    <i class="fa fa-coffee"></i>
-							                                </div>
-
-							                                <div class="vertical-timeline-content">
-	                                                            <div class="file-box">
-									                                <div class="file">
-									                                    <a href="#">
-									                                        <span class="corner"></span>
-
-									                                        <div class="icon">
-									                                            <i class="fa fa-file"></i>
-									                                        </div>
-									                                        <div class="file-name">
-									                                            Document_2014.doc
-									                                            <br/>
-									                                            <small>Added: Jan 11, 2014</small>
-									                                        </div>
-									                                    </a>
-									                                </div>
-									                            </div>
-							                                    <span class="vertical-date"> Yesterday <br/><small>Dec 23</small></span>
-							                                </div>
-							                            </div>
-
-							                            <div class="vertical-timeline-block">
-							                                <div class="vertical-timeline-icon yellow-bg">
-							                                    <i class="fa fa-phone"></i>
-							                                </div>
-
-							                                <div class="vertical-timeline-content">
-	                                                            <div class="file-box">
-									                                <div class="file">
-									                                    <a href="#">
-									                                        <span class="corner"></span>
-
-									                                        <div class="icon">
-									                                            <i class="fa fa-file"></i>
-									                                        </div>
-									                                        <div class="file-name">
-									                                            Document_2014.doc
-									                                            <br/>
-									                                            <small>Added: Jan 11, 2014</small>
-									                                        </div>
-									                                    </a>
-									                                </div>
-									                            </div>
-							                                    <span class="vertical-date">Yesterday <br/><small>Dec 23</small></span>
-							                                </div>
-							                            </div>
-
-							                            <div class="vertical-timeline-block">
-							                                <div class="vertical-timeline-icon yellow-bg">
-							                                    <i class="fa fa-phone"></i>
-							                                </div>
-
-							                                <div class="vertical-timeline-content">
-	                                                            <div class="file-box">
-									                                <div class="file">
-									                                    <a href="#">
-									                                        <span class="corner"></span>
-
-									                                        <div class="icon">
-									                                            <i class="fa fa-file"></i>
-									                                        </div>
-									                                        <div class="file-name">
-									                                            Document_2014.doc
-									                                            <br/>
-									                                            <small>Added: Jan 11, 2014</small>
-									                                        </div>
-									                                    </a>
-									                                </div>
-									                            </div>
-							                                    <span class="vertical-date">Yesterday <br/><small>Dec 23</small></span>
-							                                </div>
-							                            </div>
-
-							                            <div class="vertical-timeline-block">
-							                                <div class="vertical-timeline-icon yellow-bg">
-							                                    <i class="fa fa-phone"></i>
-							                                </div>
-
-							                                <div class="vertical-timeline-content">
-	                                                            <div class="file-box">
-									                                <div class="file">
-									                                    <a href="#">
-									                                        <span class="corner"></span>
-
-									                                        <div class="icon">
-									                                            <i class="fa fa-file"></i>
-									                                        </div>
-									                                        <div class="file-name">
-									                                            Document_2014.doc
-									                                            <br/>
-									                                            <small>Added: Jan 11, 2014</small>
-									                                        </div>
-									                                    </a>
-									                                </div>
-									                            </div>
-							                                    <span class="vertical-date">Yesterday <br/><small>Dec 23</small></span>
 							                                </div>
 							                            </div>
 														
@@ -885,12 +755,11 @@
             </div>
 		</div>
 	</div>
-            
+
 	<script type="text/javascript">
         function uploadAvatar() {
         	$("#avatarSelected").change(function() {
         		// var csrf = $("input[name='csrfmiddlewaretoken']").val();
-        		console.log("asldkfjsaldkfj");
 			    var formData = new FormData();
 			    // formData.append("csrfmiddlewaretoken",csrf);
 			    formData.append('avatar', $("#avatarSelected")[0].files[0]);  /*获取上传的图片对象*/
@@ -929,267 +798,384 @@
         	$('#department').attr("disabled", true);
         	$('#address').attr("disabled", true);
         	$('#telephone').attr("disabled", true);
+        };
+
+        function getPaperList() {
+        	$.ajax({
+        		url: '/api/get_upload_paper',
+        		type: 'POST',
+        		data: {
+        			userID: [[current_user.email|tojson]]
+        		},
+        		success: function(args){
+        			var res = JSON.parse(args);
+        			if (res.result == "success") {
+        				data4.paperItem = res.paperItem
+        			} 
+        			else {
+        				console.log("获取论文列表失败! ");
+        			}
+        		},
+        		error: function(){
+        			console.log("请求获取论文列表失败! ");
+        		}
+			});
+        };
+
+        function editProfile(arg) {
+        	$.ajax({
+        		url: '/api/modify_user',
+        		type: 'POST',
+        		data: {
+        			firstName: arg.firstName,
+	                lastName: arg.lastName,
+	                genderSelected: arg.genderSelected,
+	                degreeSelected: arg.degreeSelected,
+	                department: arg.department,
+	                address: arg.address,
+	                telephone: arg.telephone,
+        		},
+        		success: function(args) {
+        			var res = JSON.parse(args);
+        			if (res.result == "success") {
+		                swal({
+		                	title: "保存成功！", 
+		                	text: "您的个人信息已经修改成功！", 
+		                	type: "success"
+		                }, function(){
+		                	data1.firstName = res.newData.newFirstName;
+		                	data1.lastName = res.newData.newLastName;
+		                }); 
+			            arg.ifEdit = true;
+		            	$('#firstname').attr("disabled", true);
+			        	$('#lastname').attr("disabled", true);
+			        	$('#gender').attr("disabled", true);
+			        	$('#degree').attr("disabled", true);
+			        	$('#department').attr("disabled", true);
+			        	$('#address').attr("disabled", true);
+			        	$('#telephone').attr("disabled", true);
+        			}
+        			else {
+	                	setTimeout(function(){
+	                		window.location.reload();
+	                	}, 500);
+        				swal("修改失败! ", "请重新修改! ", "error");
+        			}
+        		},
+        		error: function() {
+    				swal("请求修改失败! ", "请重新修改! ", "error");
+        		}
+        	});
+
+		    function editPassword(OP, NP, CNP) {
+		    	$.ajax({
+            		url: '/api/modify_password',
+            		type: 'POST',
+            		data: {
+            			oldPassword: OP,
+            			newPassword: NP,
+            			confirm_newPassword: CNP
+            		},
+            		success: function(data) {
+            			var res = JSON.parse(data);
+            			if (res.result == "success") {
+			                swal({
+			                	title: "新密码修改成功！", 
+			                	text: "", 
+			                	type: "success"
+			                }, function(){
+				        		$("#oldPassword").val("");
+				        		$("#newPassword").val("");
+				        		$("#confirm_newPassword").val("");
+			                });
+            			}
+            			else {
+			        		$("#oldPassword").val("");
+			        		$("#newPassword").val("");
+			        		$("#confirm_newPassword").val("");
+            				swal("原密码错误! ", "请重新修改! ", "error");
+            			}
+            		},
+            		error: function() {
+		        		$("#oldPassword").val("");
+		        		$("#newPassword").val("");
+		        		$("#confirm_newPassword").val("");
+        				swal("新密码请求修改失败! ", "请重新修改! ", "error");
+            		}
+            	});
+		    }
         }
+	</script>
+
+	<script type="text/javascript">
+       	//顶部个人信息显示
+    	data1 = {
+            {% if current_user.email %}
+            firstName: [[current_user.first_name|tojson]],
+            lastName: [[current_user.last_name|tojson]],
+            avatarSrc: [[current_user.avatar|tojson]]
+            {% else %}
+            firstName: "",
+            lastName: "",
+            avatarSrc: ""
+            {% endif %}
+        }
+        var app1 = new Vue({
+            el: '#status',
+            data: data1
+        });
+
+        //个人信息页
+        data2 = {
+        	ifEdit: true,
+            {% if current_user.email %}
+            firstName: [[current_user.first_name|tojson]],
+            lastName: [[current_user.last_name|tojson]],
+            genderSelected: [[current_user.gender]],
+            degreeSelected: [[current_user.education]],
+            department: [[current_user.department|tojson]],
+            address: [[current_user.address|tojson]],
+            telephone: [[current_user.phone|tojson]],
+            avatarSrc: [[current_user.avatar|tojson]]
+            {% else %}
+            firstName: "",
+            lastName: "",
+            email: "",
+            genderSelected: "",
+            degreeSelected: "",
+            department: "",
+            address: "",
+            telephone: "",
+            avatarSrc: ""
+            {% endif %}
+        }
+		var app2 = new Vue({
+            el: '#privateMessage',
+            data: data2,
+            methods: {
+	            //个人信息确认按钮
+            	profile_confirm: function() {
+            		var vue2 = this
+
+            		if (vue2.ifEdit == false) {
+            			if (vue2.firstName==="" || vue2.lastName==="" || vue2.genderSelected==="" || vue2.degreeSelected==="") {
+            				swal("*不能为空! ", "请重新修改! ", "error");
+            			}
+            			else {
+							swal({
+				                title: "修改个人信息",
+				                text: "请问是否确认修改？",
+				                type: "warning",
+				                cancelButtonText: "取消",
+				                showCancelButton: true,
+				                confirmButtonColor: "#DD6B55",
+				                confirmButtonText: "确认"
+				            }, function (isConfirm) {
+				            	if (isConfirm) {
+				            		editProfile(vue2);
+					            }
+				            	else {
+				            		cancelEditProfile(vue2);
+				            	}
+				            });
+						}
+	            	}
+	            	else {
+	            		swal("请先点击修改按钮! ", "", "error");
+	            	}
+            	},
+            	//修改信息按钮
+            	profile_edit: function() {
+		        	if (this.ifEdit == true) {
+		        		this.ifEdit = false;
+		            	$('#firstname').removeAttr("disabled");
+			        	$('#lastname').removeAttr("disabled");
+			        	$('#gender').removeAttr("disabled");
+			        	$('#degree').removeAttr("disabled");
+			        	$('#department').removeAttr("disabled");
+			        	$('#address').removeAttr("disabled");
+			        	$('#telephone').removeAttr("disabled");
+		    		}
+		        	else {
+						cancelEditProfile(this);
+		        	}
+		        }
+		    }
+        });
+
+		//关注领域标签
+  		var data3 = {
+	    	isShowMultiSelect: false,
+	      	source: [[current_user.focus_area|tojson]].split(',')
+	      	// source: ['Data Mining', 'Machine Learning', 'Social Network']
+	    }
+  		var tags = {
+  			template: '<div class="input tags-wrap"><div class="tag-list" transition="tags" v-for="(item,index) in dis_source"><a href=""><i class="fa fa-tag" style="margin-right: 3px;"></i>{{ item.text }}</a><i class="fa fa-close" style="margin-left: 3px;" @click="del(index)"></i></div><input class="tags-input" type="text" placeholder="选择或输入按 Enter 创建" v-model="text" @keyup.enter="add(text)" v-on:focus="showMultiSelect"></div>',// v-on:blur="hideMultiSelect"
+  			props: {
+				source: {
+					type: Array,
+					default: []
+				}
+			},
+			data: function(){
+				var dis_source = []
+		  		this.source.forEach(function (item) {
+				    var obj = {
+			      		text: item
+				    }
+			    	dis_source.push(obj)
+			  	})
+			  	return {
+			    	text: '',
+			    	dis_source: dis_source,
+			  	}
+			},
+			methods: {
+				add: function(text){
+					var that = this
+					var isExist = function(element){
+						for (var i = 0;i < that.dis_source.length;i++) {
+			    			if ( that.dis_source[i].text === element) {
+			    				return true
+			    			}
+			    		}
+			    		return false
+					}
+			    	if (text != ''){
+			    		if (!isExist(text)){
+			        		$.ajax({
+			            		url: '/api/add_tag',
+			            		type: 'POST',
+			            		data: {
+			            			text: text
+			            		},
+			            		success: function(args){
+			            			var res = JSON.parse(args);
+			            			if (res.result == "success") {
+				            			that.dis_source.push({
+							        		text: text
+							      		})
+							      		that.text = ''
+			            			} 
+			            			else {
+			            				that.text = ''
+			            				swal("添加标签失败! ", "请重新添加! ", "error");
+			            			}
+			            		},
+			            		error: function(){
+			            			that.text = ''
+			            			swal("请求添加标签失败! ", "请重新添加! ", "error");
+			            		}
+							});
+			    		}
+			    		else{
+			    			this.text = ''
+			    			swal("已存在此标签! ", "", "error");
+			    		}
+			    	}
+			  	},
+			  	del: function(index){
+			  		var that = this
+			      	$.ajax({
+		        		url: '/api/del_tag',
+		        		type: 'POST',
+		        		data: {
+		        			index: index
+		        		},
+		        		success: function(args){
+		        			var res = JSON.parse(args);
+		        			if (res.result == "success") {
+		        				that.dis_source.splice(index, 1)
+		        			} 
+		        			else {
+		        				swal("删除标签失败! ", "请重新删除! ", "error");
+		        			}
+		        		},
+		        		error: function(){
+		        			swal("请求删除标签失败! ", "请重新删除! ", "error");
+		        		}
+					});
+		    	},
+		    	showMultiSelect: function(event){
+		    		data3.isShowMultiSelect = true;
+		    	},
+		    	hideMultiSelect: function(envet){
+		    		data3.isShowMultiSelect = false;
+		    	}
+			}
+		}
+		var app3 = new Vue({
+		    el: '#tagsInput',
+		    data: data3,
+		    components: {
+		      'v-tags': tags
+		    }
+	  	})
+
+		//论文上传插件配置
+        Dropzone.options.myAwesomeDropzone = {
+        	paramName: "uploadPaper",
+        	addRemoveLinks: true,
+            autoProcessQueue: false,
+            uploadMultiple: false,
+            parallelUploads: 1,
+            maxFiles: 1,
+            maxFilesize: 10,
+            acceptedFiles: "application/pdf",
+            dictMaxFilesExceeded: "您最多只能上传1个文件！",
+	        dictResponseError: "文件上传失败！",
+	        dictInvalidFileType: "您不能上传该类型文件,文件类型只能是*.pdf！",
+	        dictFallbackMessage: "浏览器不受支持！",
+	        dictFileTooBig: "文件过大,超出上传文件最大支持！",
+	        dictCancelUpload: "取消",
+	        dictCancelUploadConfirmation: "确认取消",
+	        dictRemoveFile: "删除",
+            init: function() {
+                var myDZ = this;
+
+                this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    myDZ.processQueue();
+                });
+
+                this.on("success", function(file, args){
+                	var res = JSON.parse(args);
+                	if (res.result == "success") {
+                		myDZ.removeAllFiles();
+                		getPaperList()
+                		swal("已上传成功! ", "", "success");
+                	}
+                	else {
+                		myDZ.removeAllFiles();
+                		swal("上传失败! ", "请重新上传! ", "error");
+                	}
+                });
+
+                this.on("error", function(file, errorMsg) {
+                	myDZ.removeAllFiles();
+                	swal("请求上传失败! ", errorMsg, "error");
+                });
+            },
+            // accept: function(file, done) {
+            // 	done();
+            // }
+        };
+        $(".dz-message span").html("点击或拖拽上传");
+
+        //论文列表
+        var data4 = {
+			paperItem: []
+        }
+        var app4 = new Vue({
+            el: '#vertical-timeline',
+            data: data4
+        });
 	</script>
 
     <script>
         $(document).ready(function(){
-   //          //个人信息显示
-	  //   	data1 = {
-   //              {% if current_user.email %}
-   //              firstName: [[current_user.first_name|tojson]],
-   //              lastName: [[current_user.last_name|tojson]],
-   //              avatarSrc: [[current_user.avatar|tojson]]
-   //              {% else %}
-   //              firstName: "",
-   //              lastName: "",
-   //              avatarSrc: ""
-   //              {% endif %}
-   //          }
-	  //       var app1 = new Vue({
-	  //           delimiters: ['{[', ']}'],
-	  //           el: '#status',
-	  //           data: data1
-	  //       });
-
-   //          data2 = {
-   //          	ifEdit: true,
-   //              {% if current_user.email %}
-   //              firstName: [[current_user.first_name|tojson]],
-   //              lastName: [[current_user.last_name|tojson]],
-   //              genderSelected: [[current_user.gender]],
-   //              degreeSelected: [[current_user.education]],
-   //              department: [[current_user.department|tojson]],
-   //              address: [[current_user.address|tojson]],
-   //              telephone: [[current_user.phone|tojson]],
-   //              avatarSrc: [[current_user.avatar|tojson]]
-   //              {% else %}
-   //              firstName: "",
-   //              lastName: "",
-   //              email: "",
-   //              genderSelected: "",
-   //              degreeSelected: "",
-   //              department: "",
-   //              address: "",
-   //              telephone: "",
-   //              avatarSrc: ""
-   //              {% endif %}
-   //          }
-			// var app2 = new Vue({
-	  //           delimiters: ['{[', ']}'],
-	  //           el: '#privateMessage',
-	  //           data: data2,
-	  //           methods: {
-   //  	            //个人信息确认按钮
-	  //           	profile_confirm: function() {
-	  //           		var vue2 = this
-
-	  //           		if (vue2.ifEdit == false) {
-	  //           			if (vue2.firstName==="" || vue2.lastName==="" || vue2.genderSelected==="" || vue2.degreeSelected==="") {
-	  //           				swal("*不能为空! ", "请重新修改! ", "error");
-	  //           			}
-	  //           			else {
-			// 					swal({
-			// 		                title: "修改个人信息",
-			// 		                text: "请问是否确认修改？",
-			// 		                type: "warning",
-			// 		                cancelButtonText: "取消",
-			// 		                showCancelButton: true,
-			// 		                confirmButtonColor: "#DD6B55",
-			// 		                confirmButtonText: "确认"
-			// 		            }, function (isConfirm) {
-			// 		            	if (isConfirm) {
-			// 			            	$.ajax({
-						            		
-			// 			            		url: '/api/modify_user',
-			// 			            		type: 'POST',
-			// 			            		data: {
-			// 			            			firstName: vue2.firstName,
-			// 					                lastName: vue2.lastName,
-			// 					                genderSelected: vue2.genderSelected,
-			// 					                degreeSelected: vue2.degreeSelected,
-			// 					                department: vue2.department,
-			// 					                address: vue2.address,
-			// 					                telephone: vue2.telephone,
-			// 			            		},
-			// 			            		success: function(args) {
-			// 			            			var res = JSON.parse(args);
-			// 			            			if (res.result == "success") {
-			// 						                swal({
-			// 						                	title: "保存成功！", 
-			// 						                	text: "您的个人信息已经修改成功！", 
-			// 						                	type: "success"
-			// 						                }, function(){
-			// 						                	data1.firstName = res.newData.newFirstName;
-			// 						                	data1.lastName = res.newData.newLastName;
-			// 						                }); 
-			// 							            vue2.ifEdit = true;
-			//             			            	$('#firstname').attr("disabled", true);
-			// 							        	$('#lastname').attr("disabled", true);
-			// 							        	$('#gender').attr("disabled", true);
-			// 							        	$('#degree').attr("disabled", true);
-			// 							        	$('#department').attr("disabled", true);
-			// 							        	$('#address').attr("disabled", true);
-			// 							        	$('#telephone').attr("disabled", true);
-			// 			            			}
-			// 			            			else {
-			// 					                	setTimeout(function(){
-			// 					                		window.location.reload();
-			// 					                	}, 500);
-			// 			            				swal("修改失败! ", "请重新修改! ", "error");
-			// 			            			}
-			// 			            		},
-			// 			            		error: function() {
-			// 		            				swal("请求修改失败! ", "请重新修改! ", "error");
-			// 			            		}
-			// 			            	});
-			// 			            }
-			// 		            	else {
-			// 		            		cancelEditProfile(vue2);
-			// 		            	}
-			// 		            });
-			// 				}
-		 //            	}
-		 //            	else {
-		 //            		swal("请先点击修改按钮! ", "", "error");
-		 //            	}
-	  //           	},
-	  //           	//修改信息按钮
-	  //           	profile_edit: function() {
-			//         	if (this.ifEdit == true) {
-			//         		this.ifEdit = false;
-			//             	$('#firstname').removeAttr("disabled");
-			// 	        	$('#lastname').removeAttr("disabled");
-			// 	        	$('#gender').removeAttr("disabled");
-			// 	        	$('#degree').removeAttr("disabled");
-			// 	        	$('#department').removeAttr("disabled");
-			// 	        	$('#address').removeAttr("disabled");
-			// 	        	$('#telephone').removeAttr("disabled");
-			//     		}
-			//         	else {
-			// 				cancelEditProfile(this);
-			//         	}
-			//         }
-			//     }
-	  //       });
-	        
-	  //       console.log([[current_user.focus_area|tojson]])
-	  //       console.log([[current_user.focus_area|tojson]].split(','))
-
-	  // 		var data3 = {
-		 //    	isShowMultiSelect: false,
-		 //      	source: [[current_user.focus_area|tojson]].split(',')
-		 //      	// source: ['Data Mining', 'Machine Learning', 'Social Network']
-		 //    }
-
-	  // 		var tags = {
-	  // 			template: '<div class="input tags-wrap"><div class="tag-list" transition="tags" v-for="(item,index) in dis_source"><a href=""><i class="fa fa-tag" style="margin-right: 3px;"></i>{{item.text}}</a><i class="fa fa-close" style="margin-left: 3px;" @click="del(index)"></i></div><input class="tags-input" type="text" placeholder="选择或输入按 Enter 创建" v-model="text" @keyup.enter="add(text)" v-on:focus="showMultiSelect"></div>',// v-on:blur="hideMultiSelect"
-	  // 			props: {
-			// 		source: {
-			// 			type: Array,
-			// 			default: []
-			// 		}
-			// 	},
-			// 	data: function(){
-			// 		var dis_source = []
-			//   		this.source.forEach(function (item) {
-			// 		    var obj = {
-			// 	      		text: item
-			// 		    }
-			// 	    	dis_source.push(obj)
-			// 	  	})
-			// 	  	return {
-			// 	    	text: '',
-			// 	    	dis_source: dis_source,
-			// 	  	}
-			// 	},
-			// 	methods: {
-			// 		add: function(text){
-			// 			var that = this
-			// 			var isExist = function(element){
-			// 				for (var i = 0;i < that.dis_source.length;i++) {
-			// 	    			if ( that.dis_source[i].text === element) {
-			// 	    				return true
-			// 	    			}
-			// 	    		}
-			// 	    		return false
-			// 			}
-			// 	    	if (text != ''){
-			// 	    		if (!isExist(text)){
-			// 	    			$.ajax({
-			// 	            		url: '/api/add_tag',
-			// 	            		type: 'POST',
-			// 	            		data: {
-			// 	            			text: text
-			// 	            		},
-			// 	            		success: function(args){
-			// 	            			var res = JSON.parse(args);
-			// 	            			if (res.result == "success") {
-			// 		            			that.dis_source.push({
-			// 					        		text: text
-			// 					      		})
-			// 					      		that.text = ''
-			// 	            			} 
-			// 	            			else {
-			// 	            				that.text = ''
-			// 	            				swal("添加标签失败! ", "请重新添加! ", "error");
-			// 	            			}
-			// 	            		},
-			// 	            		error: function(){
-			// 	            			that.text = ''
-			// 	            			swal("请求添加标签失败! ", "请重新添加! ", "error");
-			// 	            		}
-			// 					});
-			// 	    		}
-			// 	    		else{
-			// 	    			this.text = ''
-			// 	    			swal("已存在此标签! ", "", "error");
-			// 	    		}
-			// 	    	}
-			// 	  	},
-			// 	  	del: function(index){
-			// 	  		var that = this
-			// 	      	$.ajax({
-		 //            		url: '/api/del_tag',
-		 //            		type: 'POST',
-		 //            		data: {
-		 //            			index: index
-		 //            		},
-		 //            		success: function(args){
-		 //            			var res = JSON.parse(args);
-		 //            			if (res.result == "success") {
-		 //            				that.dis_source.splice(index, 1)
-		 //            			} 
-		 //            			else {
-		 //            				swal("删除标签失败! ", "请重新删除! ", "error");
-		 //            			}
-		 //            		},
-		 //            		error: function(){
-		 //            			swal("请求删除标签失败! ", "请重新删除! ", "error");
-		 //            		}
-			// 			});
-			//     	},
-			//     	showMultiSelect: function(event){
-			//     		data3.isShowMultiSelect = true;
-			//     		console.log('showMultiSelect');
-			//     	},
-			//     	hideMultiSelect: function(envet){
-			//     		data3.isShowMultiSelect = false;
-			//     		console.log('hideMultiSelect');
-			//     	}
-			// 	}
-			// }
-
-			// var app3 = new Vue({
-			// 	// delimiters: ['{[', ']}'],
-			//     el: '#tagsInput',
-			//     data: data3,
-			//     components: {
-			//       'v-tags': tags
-			//     }
-		 //  	})
-
-
+ 
         	// 跳到tab
         	$("#toTab3").click(function(){
         		$("#tab5").click();
@@ -1217,41 +1203,7 @@
 	        		swal("请输入不相同的新旧密码! ", "", "error");
 	        	}
 	        	else if (newPassword.length > 8 && newPassword.length < 16 && newPassword == confirm_newPassword) {
-					$.ajax({
-	            		url: '/api/modify_password',
-	            		type: 'POST',
-	            		data: {
-	            			oldPassword: oldPassword,
-	            			newPassword: newPassword,
-	            			confirm_newPassword: confirm_newPassword
-	            		},
-	            		success: function(data) {
-	            			var res = JSON.parse(data);
-	            			if (res.result == "success") {
-				                swal({
-				                	title: "新密码修改成功！", 
-				                	text: "", 
-				                	type: "success"
-				                }, function(){
-					        		$("#oldPassword").val("");
-					        		$("#newPassword").val("");
-					        		$("#confirm_newPassword").val("");
-				                });
-	            			}
-	            			else {
-				        		$("#oldPassword").val("");
-				        		$("#newPassword").val("");
-				        		$("#confirm_newPassword").val("");
-	            				swal("原密码错误! ", "请重新修改! ", "error");
-	            			}
-	            		},
-	            		error: function() {
-			        		$("#oldPassword").val("");
-			        		$("#newPassword").val("");
-			        		$("#confirm_newPassword").val("");
-            				swal("新密码请求修改失败! ", "请重新修改! ", "error");
-	            		}
-	            	});
+					editPassword(oldPassword, newPassword, confirm_newPassword);
 	        	}
 	        	else {
 	        		$("#oldPassword").val("");
@@ -1261,17 +1213,14 @@
 	        	}
 	        });
 
-            // 关注领域添加标签
+            // 关注领域[选择]添加标签
             $(".chosen-select").chosen({width: "350px"});
 			$("#addField").change(function(){
 				app3.$children[0].add($("#addField option:selected").val());
 				data3.isShowMultiSelect = false;
 			})
 			
-
-
-
-	        //关注
+	        //用户关注
 	        $(".followBtn").click(function(){
 	        	if (this.innerText == " Follow") {
 	        		$(this).html('<i class="fa fa-users"></i> Following');
@@ -1293,46 +1242,8 @@
 	        	}
 	        });
 
-        	// 我的论文上传
-            $("myDropzone").dropzone({
-            	url: "",
-            	method: "post",
-            	paramName: "uploadPaper",
-            	addRemoveLinks: true,
-                autoProcessQueue: false,
-                uploadMultiple: false,
-                parallelUploads: 1,
-                maxFiles: 1,
-                maxFilesize: 10,
-                acceptedFiles: "application/pdf",
-                dictMaxFilesExceeded: "您最多只能上传2个文件！",
-		        dictResponseError: "文件上传失败！",
-		        dictInvalidFileType: "您不能上传该类型文件,文件类型只能是*.pdf！",
-		        dictFallbackMessage: "浏览器不受支持！",
-		        dictFileTooBig: "文件过大,超出上传文件最大支持！",
-		        dictCancelUpload: "取消",
-		        dictCancelUploadConfirmation: "确认取消",
-		        dictRemoveFile: "删除",
-                init: function() {
-                    var myDropzone = this;
-                    this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        myDropzone.processQueue();
-                    });
-                    document.querySelector("#uploadPaperSubmit").addEventListener("click", function(e) {
-                    	console.log("上传论文");
-                    });
-                    this.on("sendingmultiple", function() {
-                    });
-                    this.on("successmultiple", function(files, response) {
-                    });
-                    this.on("errormultiple", function(files, response) {
-                    });
-                }
-            });
-            $(".dz-message").html("点击或拖拽上传");
-
+	        //论文列表
+	        getPaperList();
             function animationHover(element, animation) {
 			    element = $(element);
 			    element.hover(
@@ -1369,6 +1280,7 @@
 					console.log($(e.target).text());
         		}
         		else if ($(e.target).attr("id") == "tab6") { //关系图页
+        			getExpertNetwork();
         			console.log($(e.target).text());
         		}
         	});
@@ -1408,148 +1320,118 @@
         // app.title = '作者关系图';
 
         myChartGraph2.showLoading();
-        $.ajax({
-        	url: "/api/expert_network",
-        	data: {"name": "Martin Ester"},
-        	success: function(data){
-	        	myChartGraph2.hideLoading();
+        function getExpertNetwork() {
+	        $.ajax({
+	        	url: "/api/expert_network",
+	        	data: {"name": "Martin Ester"},
+	        	success: function(data){
+		        	myChartGraph2.hideLoading();
 
-	        	var graph = JSON.parse(data);
+		        	var graph = JSON.parse(data);
 
- 				var years = [];
-				for (var i=0;i<graph.length;i++){
- 					years.push(graph[i].year);
-				}
+	 				var years = [];
+					for (var i=0;i<graph.length;i++){
+	 					years.push(graph[i].year);
+					}
 
-	        	for (var i=0;i<graph.length;i++){
-		        	graph[i].nodes.forEach(function(node){
-	    		        node.itemStyle = null;
-				        // node.symbolSize = 10;
-				        // node.value = node.symbolSize;
-				        // node.category = node.attributes.modularity_class;
-				        // Use random x, y
-				        node.x = node.y = null;
-				        node.draggable = true;
-		        	})
-	        	}
+		        	for (var i=0;i<graph.length;i++){
+			        	graph[i].nodes.forEach(function(node){
+		    		        node.itemStyle = null;
+					        // node.symbolSize = 10;
+					        // node.value = node.symbolSize;
+					        // node.category = node.attributes.modularity_class;
+					        // Use random x, y
+					        node.x = node.y = null;
+					        node.draggable = true;
+			        	})
+		        	}
 
-        	    option2 = {
-        	    	baseOption: {
-        	    		timeline: {
-				            // y: 0,
-				            axisType: 'category',
-				            // realtime: false,
-				            // loop: false,
-				            autoPlay: false,
-				            // currentIndex: 2,
-				            // playInterval: 1000,
-				            // controlStyle: {
-				            //     position: 'left'
-				            // },
-				            data: years,
-				            label: {
-				                // formatter : function(s) {
-				                //     return (new Date(s)).getFullYear();
-				                // }
-				            }
-				        },
-				        title: {
-				            subtext: '',
-				            top: 'bottom',
-				            left: 'right'
-				        },
-				        tooltip: {},
-				        legend: {
-				            // selectedMode: 'single',
-				            data: ["Martin Ester"]
-				        },
-				        animation: false,
-				        series : [
-				            {
-				                name: '',
-				                type: 'graph',
-				                layout: 'force',
-				                roam: true,
-				                label: {
-				                    normal: {
-				                        position: 'right'
-				                    }
-				                },
-				                force: {
-				                    repulsion: 100
-				                }
-				            }
-				        ]
-				    },
-				    options: [
-						{
-				    		title: {text: '2008年'},
-				    		series: [
-				    			{
-				    				data: graph[0].nodes,
-				                	links: graph[0].links
-				    			}
-				    		]
-				    	},
-				    	{
-				    		title: {text: '2009年'},
-				    		series: [
-				    			{
-				    				data: graph[1].nodes,
-				                	links: graph[1].links
-				    			}
-				    		]
-				    	},
-				    	{
-				    		title: {text: '2010年'},
-				    		series: [
-				    			{
-				    				data: graph[2].nodes,
-				                	links: graph[2].links
-				    			}
-				    		]
-				    	}
-				    ]
-			    };
+	        	    option2 = {
+	        	    	baseOption: {
+	        	    		timeline: {
+					            // y: 0,
+					            axisType: 'category',
+					            // realtime: false,
+					            // loop: false,
+					            autoPlay: false,
+					            // currentIndex: 2,
+					            // playInterval: 1000,
+					            // controlStyle: {
+					            //     position: 'left'
+					            // },
+					            data: years,
+					            label: {
+					                // formatter : function(s) {
+					                //     return (new Date(s)).getFullYear();
+					                // }
+					            }
+					        },
+					        title: {
+					            subtext: '',
+					            top: 'bottom',
+					            left: 'right'
+					        },
+					        tooltip: {},
+					        legend: {
+					            // selectedMode: 'single',
+					            data: ["Martin Ester"]
+					        },
+					        animation: false,
+					        series : [
+					            {
+					                name: '',
+					                type: 'graph',
+					                layout: 'force',
+					                roam: true,
+					                label: {
+					                    normal: {
+					                        position: 'right'
+					                    }
+					                },
+					                force: {
+					                    repulsion: 100
+					                }
+					            }
+					        ]
+					    },
+					    options: [
+							{
+					    		title: {text: '2008年'},
+					    		series: [
+					    			{
+					    				data: graph[0].nodes,
+					                	links: graph[0].links
+					    			}
+					    		]
+					    	},
+					    	{
+					    		title: {text: '2009年'},
+					    		series: [
+					    			{
+					    				data: graph[1].nodes,
+					                	links: graph[1].links
+					    			}
+					    		]
+					    	},
+					    	{
+					    		title: {text: '2010年'},
+					    		series: [
+					    			{
+					    				data: graph[2].nodes,
+					                	links: graph[2].links
+					    			}
+					    		]
+					    	}
+					    ]
+				    };
 
-			    // option2 = {
-			    //     title: {
-			    //         text: '作者关系图',
-			    //         subtext: '',
-			    //         top: 'bottom',
-			    //         left: 'right'
-			    //     },
-			    //     tooltip: {},
-			    //     legend: [{
-			    //         // selectedMode: 'single',
-			    //         data: ["Martin Ester"]
-			    //     }],
-			    //     animation: false,
-			    //     series : [
-			    //         {
-			    //             name: '',
-			    //             type: 'graph',
-			    //             layout: 'force',
-			    //             data: graph[0].nodes,
-			    //             links: graph[0].links,
-			    //             roam: true,
-			    //             label: {
-			    //                 normal: {
-			    //                     position: 'right'
-			    //                 }
-			    //             },
-			    //             force: {
-			    //                 repulsion: 100
-			    //             }
-			    //         }
-			    //     ]
-			    // };
-			    myChartGraph2.setOption(option2);
-        	},
-        	error: function (errorMsg) {
-	            //alert("图表数据加载失败！");
-	        }
-        });
+				    myChartGraph2.setOption(option2);
+	        	},
+	        	error: function (errorMsg) {
+		            //alert("图表数据加载失败！");
+		        }
+	        });
+        }
 
         $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
             myChartGraph1.resize();
@@ -1580,7 +1462,6 @@
 		        $("#return-top").fadeOut();  
 		});  
 		$(window).trigger('scroll');
-
     </script>
 </body>
 </html>

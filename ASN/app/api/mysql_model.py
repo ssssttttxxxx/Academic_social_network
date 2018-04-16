@@ -181,8 +181,8 @@ class Upload_paper(db.Model):
 
     __bind_key__ = 'expert'
     __tablename__= 'upload_paper'
-    user_email = db.Column(db.String(45), primary_key=True)
-    file_url = db.Column(db.String(45))
+    user_email = db.Column(db.String(45))
+    file_url = db.Column(db.String(45), primary_key=True)
     time = db.Column(db.DateTime)
 
     def __init__(self, user_email=None, file_url=None, time=None):

@@ -106,6 +106,16 @@
 			color: inherit;
 			width: 12em;
 		}
+
+        /* 返回顶部 */
+        #return-top > a > img {
+            opacity: 0.6;
+            filter:alpha(opacity=60);
+        }
+        #return-top > a > img:hover {
+            opacity: 1.0;
+            filter:alpha(opacity=100);
+        }
     </style>
 
 </head>
@@ -653,13 +663,16 @@
 							                        <h5>上传论文</h5>
 							                    </div>
 							                    <div class="ibox-content">
-							                        <form id="my-awesome-dropzone" class="dropzone" action="#">
-							                            <div class="dropzone-previews"></div>
-							                        </form>
-							                        <div class="hr-line-dashed"></div>
-							                        <button type="submit" class="btn btn-primary pull-right">
-							                        	<i class="fa fa-upload"></i>&nbsp;上传提交
-							                    	</button>
+							                    	<div class="form-group">
+								                        <form id="my-awesome-dropzone" class="dropzone" method="POST" action="/api/upload_paper" enctype="multipart/form-data">
+								                            <!-- <div class="dropzone-previews"></div> -->
+						                                   	<div class="dropzone-previews"></div>
+													        <button type="submit" class="btn btn-primary pull-right" style="margin-top: 140px;cursor: pointer">
+									                        	<i class="fa fa-upload"></i>&nbsp;上传提交
+									                    	</button>
+								                        </form>
+							                    	</div>
+							                        
 							                    </div>
 							                </div>
 							            </div>
@@ -749,6 +762,58 @@
 									                                </div>
 									                            </div>
 							                                    <span class="vertical-date"> Yesterday <br/><small>Dec 23</small></span>
+							                                </div>
+							                            </div>
+
+							                            <div class="vertical-timeline-block">
+							                                <div class="vertical-timeline-icon yellow-bg">
+							                                    <i class="fa fa-phone"></i>
+							                                </div>
+
+							                                <div class="vertical-timeline-content">
+	                                                            <div class="file-box">
+									                                <div class="file">
+									                                    <a href="#">
+									                                        <span class="corner"></span>
+
+									                                        <div class="icon">
+									                                            <i class="fa fa-file"></i>
+									                                        </div>
+									                                        <div class="file-name">
+									                                            Document_2014.doc
+									                                            <br/>
+									                                            <small>Added: Jan 11, 2014</small>
+									                                        </div>
+									                                    </a>
+									                                </div>
+									                            </div>
+							                                    <span class="vertical-date">Yesterday <br/><small>Dec 23</small></span>
+							                                </div>
+							                            </div>
+
+							                            <div class="vertical-timeline-block">
+							                                <div class="vertical-timeline-icon yellow-bg">
+							                                    <i class="fa fa-phone"></i>
+							                                </div>
+
+							                                <div class="vertical-timeline-content">
+	                                                            <div class="file-box">
+									                                <div class="file">
+									                                    <a href="#">
+									                                        <span class="corner"></span>
+
+									                                        <div class="icon">
+									                                            <i class="fa fa-file"></i>
+									                                        </div>
+									                                        <div class="file-name">
+									                                            Document_2014.doc
+									                                            <br/>
+									                                            <small>Added: Jan 11, 2014</small>
+									                                        </div>
+									                                    </a>
+									                                </div>
+									                            </div>
+							                                    <span class="vertical-date">Yesterday <br/><small>Dec 23</small></span>
 							                                </div>
 							                            </div>
 
@@ -869,264 +934,313 @@
         }
 	</script>
 
+	<script type="text/javascript">
+       	//顶部个人信息显示
+    	data1 = {
+            {% if current_user.email %}
+            firstName: [[current_user.first_name|tojson]],
+            lastName: [[current_user.last_name|tojson]],
+            avatarSrc: [[current_user.avatar|tojson]]
+            {% else %}
+            firstName: "",
+            lastName: "",
+            avatarSrc: ""
+            {% endif %}
+        }
+        var app1 = new Vue({
+            delimiters: ['{[', ']}'],
+            el: '#status',
+            data: data1
+        });
+
+        //个人信息页
+        data2 = {
+        	ifEdit: true,
+            {% if current_user.email %}
+            firstName: [[current_user.first_name|tojson]],
+            lastName: [[current_user.last_name|tojson]],
+            genderSelected: [[current_user.gender]],
+            degreeSelected: [[current_user.education]],
+            department: [[current_user.department|tojson]],
+            address: [[current_user.address|tojson]],
+            telephone: [[current_user.phone|tojson]],
+            avatarSrc: [[current_user.avatar|tojson]]
+            {% else %}
+            firstName: "",
+            lastName: "",
+            email: "",
+            genderSelected: "",
+            degreeSelected: "",
+            department: "",
+            address: "",
+            telephone: "",
+            avatarSrc: ""
+            {% endif %}
+        }
+		var app2 = new Vue({
+            delimiters: ['{[', ']}'],
+            el: '#privateMessage',
+            data: data2,
+            methods: {
+	            //个人信息确认按钮
+            	profile_confirm: function() {
+            		var vue2 = this
+
+            		if (vue2.ifEdit == false) {
+            			if (vue2.firstName==="" || vue2.lastName==="" || vue2.genderSelected==="" || vue2.degreeSelected==="") {
+            				swal("*不能为空! ", "请重新修改! ", "error");
+            			}
+            			else {
+							swal({
+				                title: "修改个人信息",
+				                text: "请问是否确认修改？",
+				                type: "warning",
+				                cancelButtonText: "取消",
+				                showCancelButton: true,
+				                confirmButtonColor: "#DD6B55",
+				                confirmButtonText: "确认"
+				            }, function (isConfirm) {
+				            	if (isConfirm) {
+					            	$.ajax({
+					            		
+					            		url: '/api/modify_user',
+					            		type: 'POST',
+					            		data: {
+					            			firstName: vue2.firstName,
+							                lastName: vue2.lastName,
+							                genderSelected: vue2.genderSelected,
+							                degreeSelected: vue2.degreeSelected,
+							                department: vue2.department,
+							                address: vue2.address,
+							                telephone: vue2.telephone,
+					            		},
+					            		success: function(args) {
+					            			var res = JSON.parse(args);
+					            			if (res.result == "success") {
+								                swal({
+								                	title: "保存成功！", 
+								                	text: "您的个人信息已经修改成功！", 
+								                	type: "success"
+								                }, function(){
+								                	data1.firstName = res.newData.newFirstName;
+								                	data1.lastName = res.newData.newLastName;
+								                }); 
+									            vue2.ifEdit = true;
+		            			            	$('#firstname').attr("disabled", true);
+									        	$('#lastname').attr("disabled", true);
+									        	$('#gender').attr("disabled", true);
+									        	$('#degree').attr("disabled", true);
+									        	$('#department').attr("disabled", true);
+									        	$('#address').attr("disabled", true);
+									        	$('#telephone').attr("disabled", true);
+					            			}
+					            			else {
+							                	setTimeout(function(){
+							                		window.location.reload();
+							                	}, 500);
+					            				swal("修改失败! ", "请重新修改! ", "error");
+					            			}
+					            		},
+					            		error: function() {
+				            				swal("请求修改失败! ", "请重新修改! ", "error");
+					            		}
+					            	});
+					            }
+				            	else {
+				            		cancelEditProfile(vue2);
+				            	}
+				            });
+						}
+	            	}
+	            	else {
+	            		swal("请先点击修改按钮! ", "", "error");
+	            	}
+            	},
+            	//修改信息按钮
+            	profile_edit: function() {
+		        	if (this.ifEdit == true) {
+		        		this.ifEdit = false;
+		            	$('#firstname').removeAttr("disabled");
+			        	$('#lastname').removeAttr("disabled");
+			        	$('#gender').removeAttr("disabled");
+			        	$('#degree').removeAttr("disabled");
+			        	$('#department').removeAttr("disabled");
+			        	$('#address').removeAttr("disabled");
+			        	$('#telephone').removeAttr("disabled");
+		    		}
+		        	else {
+						cancelEditProfile(this);
+		        	}
+		        }
+		    }
+        });
+
+		//关注领域标签
+  		var data3 = {
+	    	isShowMultiSelect: false,
+	      	source: [[current_user.focus_area|tojson]].split(',')
+	      	// source: ['Data Mining', 'Machine Learning', 'Social Network']
+	    }
+  		var tags = {
+  			template: '<div class="input tags-wrap"><div class="tag-list" transition="tags" v-for="(item,index) in dis_source"><a href=""><i class="fa fa-tag" style="margin-right: 3px;"></i>{{item.text}}</a><i class="fa fa-close" style="margin-left: 3px;" @click="del(index)"></i></div><input class="tags-input" type="text" placeholder="选择或输入按 Enter 创建" v-model="text" @keyup.enter="add(text)" v-on:focus="showMultiSelect"></div>',// v-on:blur="hideMultiSelect"
+  			props: {
+				source: {
+					type: Array,
+					default: []
+				}
+			},
+			data: function(){
+				var dis_source = []
+		  		this.source.forEach(function (item) {
+				    var obj = {
+			      		text: item
+				    }
+			    	dis_source.push(obj)
+			  	})
+			  	return {
+			    	text: '',
+			    	dis_source: dis_source,
+			  	}
+			},
+			methods: {
+				add: function(text){
+					var that = this
+					var isExist = function(element){
+						for (var i = 0;i < that.dis_source.length;i++) {
+			    			if ( that.dis_source[i].text === element) {
+			    				return true
+			    			}
+			    		}
+			    		return false
+					}
+			    	if (text != ''){
+			    		if (!isExist(text)){
+			    			$.ajax({
+			            		url: '/api/add_tag',
+			            		type: 'POST',
+			            		data: {
+			            			text: text
+			            		},
+			            		success: function(args){
+			            			var res = JSON.parse(args);
+			            			if (res.result == "success") {
+				            			that.dis_source.push({
+							        		text: text
+							      		})
+							      		that.text = ''
+			            			} 
+			            			else {
+			            				that.text = ''
+			            				swal("添加标签失败! ", "请重新添加! ", "error");
+			            			}
+			            		},
+			            		error: function(){
+			            			that.text = ''
+			            			swal("请求添加标签失败! ", "请重新添加! ", "error");
+			            		}
+							});
+			    		}
+			    		else{
+			    			this.text = ''
+			    			swal("已存在此标签! ", "", "error");
+			    		}
+			    	}
+			  	},
+			  	del: function(index){
+			  		var that = this
+			      	$.ajax({
+	            		url: '/api/del_tag',
+	            		type: 'POST',
+	            		data: {
+	            			index: index
+	            		},
+	            		success: function(args){
+	            			var res = JSON.parse(args);
+	            			if (res.result == "success") {
+	            				that.dis_source.splice(index, 1)
+	            			} 
+	            			else {
+	            				swal("删除标签失败! ", "请重新删除! ", "error");
+	            			}
+	            		},
+	            		error: function(){
+	            			swal("请求删除标签失败! ", "请重新删除! ", "error");
+	            		}
+					});
+		    	},
+		    	showMultiSelect: function(event){
+		    		data3.isShowMultiSelect = true;
+		    		console.log('showMultiSelect');
+		    	},
+		    	hideMultiSelect: function(envet){
+		    		data3.isShowMultiSelect = false;
+		    		console.log('hideMultiSelect');
+		    	}
+			}
+		}
+		var app3 = new Vue({
+			// delimiters: ['{[', ']}'],
+		    el: '#tagsInput',
+		    data: data3,
+		    components: {
+		      'v-tags': tags
+		    }
+	  	})
+
+		//论文上传插件配置
+        Dropzone.options.myAwesomeDropzone = {
+        	paramName: "uploadPaper",
+        	addRemoveLinks: true,
+            autoProcessQueue: false,
+            uploadMultiple: false,
+            parallelUploads: 1,
+            maxFiles: 1,
+            maxFilesize: 10,
+            acceptedFiles: "application/pdf",
+            dictMaxFilesExceeded: "您最多只能上传1个文件！",
+	        dictResponseError: "文件上传失败！",
+	        dictInvalidFileType: "您不能上传该类型文件,文件类型只能是*.pdf！",
+	        dictFallbackMessage: "浏览器不受支持！",
+	        dictFileTooBig: "文件过大,超出上传文件最大支持！",
+	        dictCancelUpload: "取消",
+	        dictCancelUploadConfirmation: "确认取消",
+	        dictRemoveFile: "删除",
+            init: function() {
+                var myDZ = this;
+
+                this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    myDZ.processQueue();
+                });
+
+                this.on("success", function(file, args){
+                	var res = JSON.parse(args);
+                	if (res.result == "success") {
+                		myDZ.removeAllFiles();
+                		swal("已上传成功! ", "", "success");
+                	}
+                	else {
+                		myDZ.removeAllFiles();
+                		swal("上传失败! ", "请重新上传! ", "error");
+                	}
+                });
+
+                this.on("error", function(file, errorMsg) {
+                	myDZ.removeAllFiles();
+                	swal("请求上传失败! ", errorMsg, "error");
+                });
+            },
+            // accept: function(file, done) {
+            // 	done();
+            // }
+        };
+        $(".dz-message span").html("点击或拖拽上传");
+	</script>
+
     <script>
         $(document).ready(function(){
-            //个人信息显示
-	    	data1 = {
-                {% if current_user.email %}
-                firstName: [[current_user.first_name|tojson]],
-                lastName: [[current_user.last_name|tojson]],
-                avatarSrc: [[current_user.avatar|tojson]]
-                {% else %}
-                firstName: "",
-                lastName: "",
-                avatarSrc: ""
-                {% endif %}
-            }
-	        var app1 = new Vue({
-	            delimiters: ['{[', ']}'],
-	            el: '#status',
-	            data: data1
-	        });
-
-            data2 = {
-            	ifEdit: true,
-                {% if current_user.email %}
-                firstName: [[current_user.first_name|tojson]],
-                lastName: [[current_user.last_name|tojson]],
-                genderSelected: [[current_user.gender]],
-                degreeSelected: [[current_user.education]],
-                department: [[current_user.department|tojson]],
-                address: [[current_user.address|tojson]],
-                telephone: [[current_user.phone|tojson]],
-                avatarSrc: [[current_user.avatar|tojson]]
-                {% else %}
-                firstName: "",
-                lastName: "",
-                email: "",
-                genderSelected: "",
-                degreeSelected: "",
-                department: "",
-                address: "",
-                telephone: "",
-                avatarSrc: ""
-                {% endif %}
-            }
-			var app2 = new Vue({
-	            delimiters: ['{[', ']}'],
-	            el: '#privateMessage',
-	            data: data2,
-	            methods: {
-    	            //个人信息确认按钮
-	            	profile_confirm: function() {
-	            		var vue2 = this
-
-	            		if (vue2.ifEdit == false) {
-	            			if (vue2.firstName==="" || vue2.lastName==="" || vue2.genderSelected==="" || vue2.degreeSelected==="") {
-	            				swal("*不能为空! ", "请重新修改! ", "error");
-	            			}
-	            			else {
-								swal({
-					                title: "修改个人信息",
-					                text: "请问是否确认修改？",
-					                type: "warning",
-					                cancelButtonText: "取消",
-					                showCancelButton: true,
-					                confirmButtonColor: "#DD6B55",
-					                confirmButtonText: "确认"
-					            }, function (isConfirm) {
-					            	if (isConfirm) {
-						            	$.ajax({
-						            		
-						            		url: '/api/modify_user',
-						            		type: 'POST',
-						            		data: {
-						            			firstName: vue2.firstName,
-								                lastName: vue2.lastName,
-								                genderSelected: vue2.genderSelected,
-								                degreeSelected: vue2.degreeSelected,
-								                department: vue2.department,
-								                address: vue2.address,
-								                telephone: vue2.telephone,
-						            		},
-						            		success: function(args) {
-						            			var res = JSON.parse(args);
-						            			if (res.result == "success") {
-									                swal({
-									                	title: "保存成功！", 
-									                	text: "您的个人信息已经修改成功！", 
-									                	type: "success"
-									                }, function(){
-									                	data1.firstName = res.newData.newFirstName;
-									                	data1.lastName = res.newData.newLastName;
-									                }); 
-										            vue2.ifEdit = true;
-			            			            	$('#firstname').attr("disabled", true);
-										        	$('#lastname').attr("disabled", true);
-										        	$('#gender').attr("disabled", true);
-										        	$('#degree').attr("disabled", true);
-										        	$('#department').attr("disabled", true);
-										        	$('#address').attr("disabled", true);
-										        	$('#telephone').attr("disabled", true);
-						            			}
-						            			else {
-								                	setTimeout(function(){
-								                		window.location.reload();
-								                	}, 500);
-						            				swal("修改失败! ", "请重新修改! ", "error");
-						            			}
-						            		},
-						            		error: function() {
-					            				swal("请求修改失败! ", "请重新修改! ", "error");
-						            		}
-						            	});
-						            }
-					            	else {
-					            		cancelEditProfile(vue2);
-					            	}
-					            });
-							}
-		            	}
-		            	else {
-		            		swal("请先点击修改按钮! ", "", "error");
-		            	}
-	            	},
-	            	//修改信息按钮
-	            	profile_edit: function() {
-			        	if (this.ifEdit == true) {
-			        		this.ifEdit = false;
-			            	$('#firstname').removeAttr("disabled");
-				        	$('#lastname').removeAttr("disabled");
-				        	$('#gender').removeAttr("disabled");
-				        	$('#degree').removeAttr("disabled");
-				        	$('#department').removeAttr("disabled");
-				        	$('#address').removeAttr("disabled");
-				        	$('#telephone').removeAttr("disabled");
-			    		}
-			        	else {
-							cancelEditProfile(this);
-			        	}
-			        }
-			    }
-	        });
-	        
-	        console.log([[current_user.focus_area|tojson]])
-	        console.log([[current_user.focus_area|tojson]].split(','))
-
-	  		var data3 = {
-		    	isShowMultiSelect: false,
-		      	source: [[current_user.focus_area|tojson]].split(',')
-		      	// source: ['Data Mining', 'Machine Learning', 'Social Network']
-		    }
-
-	  		var tags = {
-	  			template: '<div class="input tags-wrap"><div class="tag-list" transition="tags" v-for="(item,index) in dis_source"><a href=""><i class="fa fa-tag" style="margin-right: 3px;"></i>{{item.text}}</a><i class="fa fa-close" style="margin-left: 3px;" @click="del(index)"></i></div><input class="tags-input" type="text" placeholder="选择或输入按 Enter 创建" v-model="text" @keyup.enter="add(text)" v-on:focus="showMultiSelect"></div>',// v-on:blur="hideMultiSelect"
-	  			props: {
-					source: {
-						type: Array,
-						default: []
-					}
-				},
-				data: function(){
-					var dis_source = []
-			  		this.source.forEach(function (item) {
-					    var obj = {
-				      		text: item
-					    }
-				    	dis_source.push(obj)
-				  	})
-				  	return {
-				    	text: '',
-				    	dis_source: dis_source,
-				  	}
-				},
-				methods: {
-					add: function(text){
-						var that = this
-						var isExist = function(element){
-							for (var i = 0;i < that.dis_source.length;i++) {
-				    			if ( that.dis_source[i].text === element) {
-				    				return true
-				    			}
-				    		}
-				    		return false
-						}
-				    	if (text != ''){
-				    		if (!isExist(text)){
-				    			$.ajax({
-				            		url: '/api/add_tag',
-				            		type: 'POST',
-				            		data: {
-				            			text: text
-				            		},
-				            		success: function(args){
-				            			var res = JSON.parse(args);
-				            			if (res.result == "success") {
-					            			that.dis_source.push({
-								        		text: text
-								      		})
-								      		that.text = ''
-				            			} 
-				            			else {
-				            				that.text = ''
-				            				swal("添加标签失败! ", "请重新添加! ", "error");
-				            			}
-				            		},
-				            		error: function(){
-				            			that.text = ''
-				            			swal("请求添加标签失败! ", "请重新添加! ", "error");
-				            		}
-								});
-				    		}
-				    		else{
-				    			this.text = ''
-				    			swal("已存在此标签! ", "", "error");
-				    		}
-				    	}
-				  	},
-				  	del: function(index){
-				  		var that = this
-				      	$.ajax({
-		            		url: '/api/del_tag',
-		            		type: 'POST',
-		            		data: {
-		            			index: index
-		            		},
-		            		success: function(args){
-		            			var res = JSON.parse(args);
-		            			if (res.result == "success") {
-		            				that.dis_source.splice(index, 1)
-		            			} 
-		            			else {
-		            				swal("删除标签失败! ", "请重新删除! ", "error");
-		            			}
-		            		},
-		            		error: function(){
-		            			swal("请求删除标签失败! ", "请重新删除! ", "error");
-		            		}
-						});
-			    	},
-			    	showMultiSelect: function(event){
-			    		data3.isShowMultiSelect = true;
-			    		console.log('showMultiSelect');
-			    	},
-			    	hideMultiSelect: function(envet){
-			    		data3.isShowMultiSelect = false;
-			    		console.log('hideMultiSelect');
-			    	}
-				}
-			}
-
-			var app3 = new Vue({
-				// delimiters: ['{[', ']}'],
-			    el: '#tagsInput',
-			    data: data3,
-			    components: {
-			      'v-tags': tags
-			    }
-		  	})
-
-
+ 
         	// 跳到tab
         	$("#toTab3").click(function(){
         		$("#tab5").click();
@@ -1198,16 +1312,13 @@
 	        	}
 	        });
 
-            // 关注领域添加标签
+            // 关注领域[选择]添加标签
             $(".chosen-select").chosen({width: "350px"});
 			$("#addField").change(function(){
 				app3.$children[0].add($("#addField option:selected").val());
 				data3.isShowMultiSelect = false;
 			})
 			
-
-
-
 	        //关注
 	        $(".followBtn").click(function(){
 	        	if (this.innerText == " Follow") {
@@ -1229,28 +1340,6 @@
 	        		$(this).html('<i class="fa fa-user-plus"></i> Follow');
 	        	}
 	        });
-
-        	// 我的论文上传
-            Dropzone.options.myAwesomeDropzone = {
-                autoProcessQueue: false,
-                uploadMultiple: true,
-                parallelUploads: 100,
-                maxFiles: 100,
-                init: function() {
-                    var myDropzone = this;
-                    this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        myDropzone.processQueue();
-                    });
-                    this.on("sendingmultiple", function() {
-                    });
-                    this.on("successmultiple", function(files, response) {
-                    });
-                    this.on("errormultiple", function(files, response) {
-                    });
-                }
-            }
 
             function animationHover(element, animation) {
 			    element = $(element);
@@ -1478,6 +1567,28 @@
         	myChartGraph1.resize();
         	myChartGraph2.resize();
         }
+    </script>
+
+    <div id="return-top" style="position: fixed;right: 1%;bottom: 4%;z-index: 99;">
+        <a onclick="backToTop()">
+            <img src="../static/common/img/return-top.png" title="返回顶部">
+        </a>
+    </div>
+    <script type="text/javascript">
+    	function backToTop() {  
+		    $('html,body').animate({  
+		        scrollTop: 0  
+		    }, 800);  
+		}
+
+		$(window).on('scroll', function () {
+		    if ($(window).scrollTop() > $(window).height())  
+		        $("#return-top").fadeIn();  
+		    else  
+		        $("#return-top").fadeOut();  
+		});  
+		$(window).trigger('scroll');
+
     </script>
 </body>
 </html>

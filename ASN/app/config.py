@@ -1,6 +1,6 @@
 # coding=utf-8
 import os
-
+from flask_uploads import DOCUMENTS
 
 
 class Config:
@@ -21,17 +21,17 @@ class Config:
     MONGO_AUTHORS_DBNAME = 'Co_authors'
 
     # 默认存储路径配置
-    UPLOADS_DEFAULT_DEST = './app/static/avatar'
-    UPLOADS_DEFAULT_URL = '../static/avatar'
+    UPLOADS_DEFAULT_DEST = './app/static/paper'
+    UPLOADS_DEFAULT_URL = '../static/paper'
 
     # 图片存储路径配置
     UPLOADED_PHOTOS_DEST = './app/static/avatar/'
     UPLOADED_PHOTOS_URL = '../static/avatar/'
 
     # 文件存储路径配置
-    UPLOADED_FILES_DEST ='./app/static/paper'
-    UPLOADS_FILES_URL = '../static/paper'
-
+    UPLOADED_PAPERS_DEST = './app/static/paper/'
+    UPLOADED_PAPERS_URL = '../static/paper/'
+    UPLOADED_PAPERS_ALLOW = set(['txt', 'pdf', 'doc', 'docx'])
 
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'

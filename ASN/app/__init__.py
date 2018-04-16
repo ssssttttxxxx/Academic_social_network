@@ -3,6 +3,8 @@ from flask import Flask, render_template, request
 from flask_login import LoginManager
 from flask_login import login_required, current_user
 from flask_pymongo import PyMongo
+from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, DOCUMENTS
+
 
 from route.user import user
 from api.app_api import api, login_manager
@@ -12,6 +14,8 @@ from api.app_api import api, login_manager
 from api.mysql_model import ASNUser, Expert_detail_total
 from api.mysql_model import db
 from api.mongodb_model import mongo
+from api.app_api import photos, papers
+
 from config import Config
 
 import os
@@ -56,8 +60,17 @@ login_manager.init_app(app)
 # app.config['UPLOADED_PHOTOS_URL'] = '../static/avatar/'
 #
 # # 文件存储路径配置
-# app.config['UPLOADED_FILES_DEST '] ='./app/static/paper'
-# app.config['UPLOADS_FILES_URL'] = '../static/paper'
+# app.config['UPLOADED_PAPERS_DEST '] ='./app/static/paper/'
+# app.config['UPLOADED_PAPERS_URL'] = '../static/paper/'
+# app.config['UPLOADED_PAPERS_ALLOW'] = DOCUMENTS
+# 注册
+# photos = UploadSet('PHOTOS', IMAGES)
+# configure_uploads(app, photos)
+# patch_request_class(app)
+#
+# files = UploadSet('FILES')
+configure_uploads(app, (photos, papers))
+patch_request_class(app)
 
 app.register_blueprint(user, url_prefix='/user')
 app.register_blueprint(api, url_prefix='/api')

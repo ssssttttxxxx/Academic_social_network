@@ -8,7 +8,7 @@ sys.setdefaultencoding('utf8')
 import json
 from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify, render_template, current_app
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager
-from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
+from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, DOCUMENTS
 from flask_wtf import FlaskForm
 
 import logging
@@ -19,8 +19,10 @@ from app.api.model import User, Lemma, Comment, db
 from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, Expert_detail_total, Upload_paper
 from app.api.construct_network_from_mongodb import ConstructCoauthorsTree, ConstructCitationTree
 from app.api.mongodb_model import mongo
+# from app import photos, files
 
-
+photos = UploadSet('PHOTOS', IMAGES)
+papers = UploadSet('PAPERS')
 
 api = Blueprint(
     'api',
@@ -30,6 +32,7 @@ api = Blueprint(
 login_manager = LoginManager()
 login_manager.login_view = '.login'
 login_manager.login_message = '请登录'
+
 
 @login_manager.user_loader
 def load_user(email):
@@ -565,9 +568,9 @@ def modify_password():
 @login_required
 def upload_avatar():
     # 注册
-    photos = UploadSet('PHOTOS', IMAGES)
-    configure_uploads(current_app, photos)
-    patch_request_class(current_app)
+    # photos = UploadSet('PHOTOS', IMAGES)
+    # configure_uploads(current_app, photos)
+    # patch_request_class(current_app)
 
     if request.method == 'POST':
         # check if the post request has the file part
@@ -694,23 +697,40 @@ def upload_paper():
     """
 
     # 注册配置
-    uploaded_files = UploadSet()
-    configure_uploads(current_app, uploaded_files)
-    patch_request_class(current_app)
 
-    if request.method == 'POST' and 'file' in request.files:
+    print "开始上传"
+    # files = UploadSet('FILES')
+    # configure_uploads(current_app, files)
+    # patch_request_class(current_app)
+
+    # print "request.files", request.files
+    if request.method == 'POST' and 'uploadPaper' in request.files:
+        # try:
+        email = current_user.get_id()
+        file = request.files['uploadPaper']
+        print "paper name",file.filename
+
+        filename = papers.save(file, name=file.filename)
+        file_url = papers.url(filename)
+
+        # file_url = current_app.config['UPLOADED_PAPERS_URL']+file.filename
+        # file.save(current_app.config['UPLOADED_PAPERS_DEST']+file.filename)
+
+        print "paper url", file_url
+        upload_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         try:
-            email = current_user.get_id()
-            filename = uploaded_files.save(request.files['file'])
-            file_url = uploaded_files.url(filename)
-            time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            upload_record = Upload_paper(user_email=email, file_url=file_url, time=time)
+            upload_record = Upload_paper(user_email=email, file_url=file_url, time=upload_time)
             db.session.add(upload_record)
             db.session.commit()
-            return json.dumps({'result': 'success', 'msg': file_url})
         except:
-            return json.dumps({'result': 'fail', 'msg': 'Error occurred'})
+            print "error: ", 'may be duplicate name of paper or connection timeout'
+            return json.dumps({'result': 'fail', 'msg': 'duplicate name of paper'})
+        return json.dumps({'result': 'success', 'name': file.filename, 'time': upload_time})
+        # except Exception, e:
+        #     print "error: ",e
+        #     return json.dumps({'result': 'fail', 'msg': 'Error occurred'})
     else:
+        print "no uploadPaper part"
         return json.dumps({'result': 'fail', 'msg': 'No file part'})
 
 

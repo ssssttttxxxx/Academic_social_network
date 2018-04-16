@@ -293,7 +293,6 @@ def searchBussiness():
 
 
 @api.route('/expert_network', methods=['GET'])
-# @api.route('/expert_network/<string:expert_name>')
 def expert_network():
     """
      返回作者的社交网络
@@ -340,21 +339,36 @@ def expert_network():
 
 
 @api.route('/paper_network', methods=['GET'])
-@api.route('/paper_network/<string:paper_id>')
-def paper_network(paper_id=None):
+def paper_network():
     """
     返回paper的引文网络
     :param paper_id:
     :return:
     """
-    # paper_id = request.form.get('paper_id')
-
+    paper_id = request.form.get('paper_id')
+    years = [2008, 2009, 2010]
+    nodes = []
+    edges = []
     print "paper_id"
     paper_network = ConstructCitationTree(paper_id)
     paper_network.construct()
     paper_network_edges = paper_network.edges()
-    # return paper_network_edges
-    return render_template('test_output.html', edges_list=paper_network_edges)
+    paper_network_nodes = paper_network.all_nodes()
+
+    for node in paper_network_nodes:
+        node_item = {
+            "name": str(node),
+            "value": 10
+        }
+        nodes.append(node_item)
+
+    for source, target in paper_network_edges:
+        edges_item = {
+            "source": source,
+            "target": target,
+        }
+        edges.append(edges_item)
+    return paper_network_edges
 
 
 @api.route('/author_paper', methods=['GET'])
@@ -442,6 +456,10 @@ def insert_new_item():
 @api.route('/modify_user', methods=['POST'])
 @login_required
 def modify_user():
+    """
+    修改用户个人信息
+    :return:
+    """
     try:
         current_email = current_user.get_id()
 
@@ -550,6 +568,10 @@ def follow():
 @api.route('/modify_password', methods=['POST'])
 @login_required
 def modify_password():
+    """
+    修改密码
+    :return:
+    """
     old_password = request.form.get('oldPassword')
     new_password = request.form.get('newPassword')
     current_email = current_user.get_id()
@@ -567,10 +589,11 @@ def modify_password():
 @api.route('/upload_avatar', methods=['POST'])
 @login_required
 def upload_avatar():
-    # 注册
-    # photos = UploadSet('PHOTOS', IMAGES)
-    # configure_uploads(current_app, photos)
-    # patch_request_class(current_app)
+
+    """
+    上传头像
+    :return:
+    """
 
     if request.method == 'POST':
         # check if the post request has the file part
@@ -644,7 +667,10 @@ def delete_avatar():
 @api.route('/add_tag', methods=['POST'])
 @login_required
 def add_tag():
-
+    """
+    添加tag
+    :return:
+    """
     try:
         current_email = current_user.get_id()
         area_text = request.form.get('text')
@@ -670,6 +696,10 @@ def add_tag():
 @api.route('/del_tag', methods=['POST'])
 @login_required
 def del_tag():
+    """
+    删除tag
+    :return:
+    """
     current_email = current_user.get_id()
     area_index = request.form.get('index')
     result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
@@ -705,30 +735,32 @@ def upload_paper():
 
     # print "request.files", request.files
     if request.method == 'POST' and 'uploadPaper' in request.files:
-        # try:
-        email = current_user.get_id()
-        file = request.files['uploadPaper']
-        print "paper name",file.filename
-
-        filename = papers.save(file, name=file.filename)
-        file_url = papers.url(filename)
-
-        # file_url = current_app.config['UPLOADED_PAPERS_URL']+file.filename
-        # file.save(current_app.config['UPLOADED_PAPERS_DEST']+file.filename)
-
-        print "paper url", file_url
-        upload_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         try:
-            upload_record = Upload_paper(user_email=email, file_url=file_url, time=upload_time)
-            db.session.add(upload_record)
-            db.session.commit()
-        except:
-            print "error: ", 'may be duplicate name of paper or connection timeout'
-            return json.dumps({'result': 'fail', 'msg': 'duplicate name of paper'})
-        return json.dumps({'result': 'success', 'name': file.filename, 'time': upload_time})
-        # except Exception, e:
-        #     print "error: ",e
-        #     return json.dumps({'result': 'fail', 'msg': 'Error occurred'})
+            email = current_user.get_id()
+            file = request.files['uploadPaper']
+            print "paper name",file.filename
+
+            filename = papers.save(file, name=file.filename)
+            file_url = papers.url(filename)
+
+            # file_url = current_app.config['UPLOADED_PAPERS_URL']+file.filename
+            # file.save(current_app.config['UPLOADED_PAPERS_DEST']+file.filename)
+
+            print "paper url", file_url
+            upload_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            print upload_time
+            try:
+                upload_record = Upload_paper(user_email=email, file_url=file_url, time=upload_time, file_name=file.filename)
+                db.session.add(upload_record)
+                db.session.commit()
+            except:
+                db.session.rollback()
+                print "error: ", 'may be duplicate name of paper or connection timeout'
+                return json.dumps({'result': 'fail', 'msg': 'duplicate name of paper'})
+            return json.dumps({'result': 'success', 'name': file.filename, 'time': upload_time})
+        except Exception, e:
+            print "error: ",e
+            return json.dumps({'result': 'fail', 'msg': 'Error occurred'})
     else:
         print "no uploadPaper part"
         return json.dumps({'result': 'fail', 'msg': 'No file part'})
@@ -737,12 +769,50 @@ def upload_paper():
 @api.route('/delete_paper', methods=['POST'])
 @login_required
 def delete_paper():
+    """
+    删除上传论文
+    :return:
+    """
     email = current_user.get_id()
     try:
         result = db.session.query(Upload_paper).filter(Upload_paper.user_email == email).first()
-        url = result.avatar.split('..')
+        url = result.file_url.split('..')
         delete_url = './app' + url[1]
         os.remove(delete_url)
         return json.dumps({'result': 'success'})
     except Exception, e:
         return json.dumps({'result': 'fail'})
+
+
+@api.route('/get_upload_paper', methods=['POST'])
+@login_required
+def get_upload_paper():
+    """
+    得到用户所有上传论文
+    :return:
+    """
+    email = request.form.get('userID')
+    # email = current_user.get_id()
+    print 'email',email
+    files = []
+    try:
+        results = db.session.query(Upload_paper).order_by(Upload_paper.time.desc()).\
+            filter(Upload_paper.user_email == email).all()
+
+        for result in results:
+            upload_dt = result.time.strftime("%Y-%m-%d %H:%M:%S").split(' ')
+
+            upload_date = upload_dt[0]
+            upload_time = upload_dt[1]
+            file = {
+                'fileName':result.file_name,
+                'fileURL':result.file_url,
+                'time':upload_time,
+                'date':upload_date,
+            }
+            files.append(file)
+        print "success"
+        return json.dumps({'result':'success', 'paperItem':files})
+    except Exception, e:
+        return json.dumps({'result':'fail', 'msg': 'database query fail'})
+

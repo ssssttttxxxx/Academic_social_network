@@ -184,11 +184,13 @@ class Upload_paper(db.Model):
     user_email = db.Column(db.String(45))
     file_url = db.Column(db.String(45), primary_key=True)
     time = db.Column(db.DateTime)
+    file_name = db.Column(db.String(45))
 
-    def __init__(self, user_email=None, file_url=None, time=None):
+    def __init__(self, user_email=None, file_url=None, time=None, file_name=None):
         self.user_email = user_email
         self.file_url = file_url
         self.time = time
+        self.file_name = file_name
 
     def __str__(self):
         return '上传论文<email:%s, file_url：%s>' % (self.user_email, self.file_url)

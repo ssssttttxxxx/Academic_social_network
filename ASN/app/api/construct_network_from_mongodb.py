@@ -26,27 +26,35 @@ class ConstructCitationTree():
         paper_id = self.paper_id
         # 存储相关的paper的id
         relevant_paper_ids = []
+        root = self.my_set.find_one({"paper_id": paper_id})
+        paper_title = root["title"]
+        year = root["title"]
+        self.Graph.add_node(paper_title, paper_title=paper_title, id=paper_id, year=year)
 
-        paper_title = self.my_set.find_one({"paper_id": paper_id})["title"]
+        # 查询根节点的引用论文id
         try:
             ref_list = self.my_set.find_one({"paper_id": paper_id})["ref_id"]
         except:
             ref_list = []
             logging.error("error happen in read data from mongodb")
 
+
         print len(ref_list)
         # print "引用文章id: ", ref_list
         ref_title_list = []
         for ref_id in ref_list:
-            ref_title_list.append(self.my_set.find_one({"paper_id": ref_id})["title"])
+            ref_node = self.my_set.find_one({"paper_id": ref_id})["title"]
+            ref_title_list.append((ref_node['paper_id'], ref_node['title'], ref_node['year']))
             relevant_paper_ids.append(ref_id)
         # print "ref_title_list: ", ref_title_list
 
         # 处理根节点与第一层引用节点的关系
-        for ref_title in ref_title_list:
+        for ref_id, ref_title, ref_year in ref_title_list:
+            self.Graph.add_node(ref_title, paper_title=ref_title, id=ref_id, year=ref_year)
             self.Graph.add_edge(paper_title, ref_title)
             print "引用文章id: ", ref_title
 
+        # 查询引用根节点的文章
         try:
             time_start = time.time()
             result = self.my_set.find(filter={"ref_id": paper_id})
@@ -59,8 +67,10 @@ class ConstructCitationTree():
         # print "被引用文章id： ", result
 
         for paper_info in result:
-            title = paper_info["title"]
-            id = paper_info["paper_id"]
+            title = paper_info['title']
+            id = paper_info['paper_id']
+            year = paper_info['year']
+            self.Graph.add_node(title, paper_title=title, id=id, year=year)
             self.Graph.add_edge(title, paper_title)
             print "被引用文章id： ", title
             relevant_paper_ids.append(id)
@@ -74,9 +84,11 @@ class ConstructCitationTree():
         for relevant_paper_id in relevant_paper_ids:
             time_start = time.time()
             # 查询引用文章的引用
-            rel_ref_ids = self.my_set.find_one({"paper_id": relevant_paper_id})["ref_id"]
+            rel_ref_node = self.my_set.find_one({"paper_id": relevant_paper_id})
+            rel_ref_ids = rel_ref_node['ref_id']
             time_end = time.time()
             # print "query time", time_end-time_start
+
             for rel_ref_id in rel_ref_ids:
 
                 if rel_ref_id not in second_layer_ref_ids:
@@ -84,26 +96,46 @@ class ConstructCitationTree():
 
                 # if rel_ref_id in relevant_paper_ids:
 
-                relevant_paper_title = self.query_paper_title(relevant_paper_id)
-                rel_ref_title = self.query_paper_title(rel_ref_id)
+                relevant_paper_id, relevant_paper_title, relevnat_paper_year = \
+                    self.query_paper_id_title_year(relevant_paper_id)
+
+                rel_ref_id, rel_ref_title, rel_ref_year\
+                    = self.query_paper_id_title_year(rel_ref_id)
                 print relevant_paper_title, "引用", rel_ref_title
+
+                self.Graph.add_node(
+                    relevant_paper_title,
+                    paper_title=relevant_paper_title,
+                    id=relevant_paper_id,
+                    year=relevnat_paper_year
+                )
+                self.Graph.add_node(
+                    relevant_paper_title,
+                    paper_title=rel_ref_title,
+                    id=rel_ref_id,
+                    year=rel_ref_year
+                )
                 self.Graph.add_edge(relevant_paper_title, rel_ref_title)
 
         # 处理第二层节点之间的关系
         print "第二层节点之间关系建立"
         for ref2_id in second_layer_ref_ids:
+
             # 查询第二层节点的引用
             ref_ref2_ids = self.my_set.find_one({"paper_id": ref2_id})["ref_id"]
             for ref_ref2_id in ref_ref2_ids:
+
                 # 第二层节点引用第二层节点的情况
                 if ref_ref2_id in second_layer_ref_ids:
-                    ref_ref2_title = self.query_paper_title(ref_ref2_id)
-                    ref2_title = self.query_paper_title(ref2_id)
+                    ref_ref2_id, ref_ref2_title, ref_ref2_year = self.query_paper_id_title_year(ref_ref2_id)
+                    ref2_id, ref2_title, ref2_year = self.query_paper_id_title_year(ref2_id)
                     print ref2_title, "引用", ref_ref2_title
+                    self.Graph.add_node(ref2_title, paper_title=ref2_title, id=ref2_id, year=ref2_year)
+                    self.Graph.add_node(ref_ref2_title, paper_title=ref_ref2_title, id=ref_ref2_id, year=ref_ref2_year)
                     self.Graph.add_edge(ref2_title, ref_ref2_title)
 
                 # 第二层节点引用第一层节点的情况
-                if ref_ref2_id in relevant_paper_id:
+                if ref_ref2_id in relevant_paper_ids:
                     print "反引用："
                     ref_ref2_title = self.query_paper_title(ref_ref2_id)
                     ref2_title = self.query_paper_title(ref2_id)
@@ -152,8 +184,24 @@ class ConstructCitationTree():
         paper_title = self.my_set.find_one({"paper_id": paper_id})["title"]
         return paper_title
 
+    def query_paper_id_title_year(self, paper_id):
+        """
+        返回论文的(id, title, year)
+        :param paper_id:
+        :return:
+        """
+        paper =  self.my_set.find_one({"paper_id": paper_id})
+        title = paper['title']
+        year = paper['year']
+        return (paper_id, title, year)
+
+
     def edges(self):
         return self.Graph.edges()
+
+    def all_nodes(self):
+        nodes = self.Graph.nodes()
+        return nodes
 
 class ConstructCoauthorsTree():
 
@@ -216,12 +264,13 @@ class ConstructCoauthorsTree():
         return edges_list
 
 if __name__ == "__main__":
-    # CTM = ConstructCitationTree()
-    # CTM.construct("00338203-9eb3-40c5-9f31-cbac73a519ec")
+    CTM = ConstructCitationTree("00338203-9eb3-40c5-9f31-cbac73a519ec")
+    CTM.construct()
     # years = [2008, 2009, 2010, 2011, 2012, 2013]
     # for year in years:
-    CCT = ConstructCoauthorsTree("Martin Ester", 2010)
-    CCT.construct()
+
+    # CCT = ConstructCoauthorsTree("Martin Ester", 2010)
+    # CCT.construct()
     # print CCT.all_edges()
-    for u,v,w in CCT.all_edges():
-        print u,v,w
+    # for u,v,w in CCT.all_edges():
+    #     print u,v,w

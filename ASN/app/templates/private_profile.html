@@ -819,7 +819,7 @@
         		error: function(){
         			console.log("请求获取论文列表失败! ");
         		}
-			});
+			})
         };
 
         function editProfile(arg) {
@@ -865,46 +865,95 @@
         		error: function() {
     				swal("请求修改失败! ", "请重新修改! ", "error");
         		}
-        	});
+        	})
+        };
 
-		    function editPassword(OP, NP, CNP) {
-		    	$.ajax({
-            		url: '/api/modify_password',
-            		type: 'POST',
-            		data: {
-            			oldPassword: OP,
-            			newPassword: NP,
-            			confirm_newPassword: CNP
-            		},
-            		success: function(data) {
-            			var res = JSON.parse(data);
-            			if (res.result == "success") {
-			                swal({
-			                	title: "新密码修改成功！", 
-			                	text: "", 
-			                	type: "success"
-			                }, function(){
-				        		$("#oldPassword").val("");
-				        		$("#newPassword").val("");
-				        		$("#confirm_newPassword").val("");
-			                });
-            			}
-            			else {
+	    function editPassword(OP, NP, CNP) {
+	    	$.ajax({
+        		url: '/api/modify_password',
+        		type: 'POST',
+        		data: {
+        			oldPassword: OP,
+        			newPassword: NP,
+        			confirm_newPassword: CNP
+        		},
+        		success: function(data) {
+        			var res = JSON.parse(data);
+        			if (res.result == "success") {
+		                swal({
+		                	title: "新密码修改成功！", 
+		                	text: "", 
+		                	type: "success"
+		                }, function(){
 			        		$("#oldPassword").val("");
 			        		$("#newPassword").val("");
 			        		$("#confirm_newPassword").val("");
-            				swal("原密码错误! ", "请重新修改! ", "error");
-            			}
-            		},
-            		error: function() {
+		                });
+        			}
+        			else {
 		        		$("#oldPassword").val("");
 		        		$("#newPassword").val("");
 		        		$("#confirm_newPassword").val("");
-        				swal("新密码请求修改失败! ", "请重新修改! ", "error");
-            		}
-            	});
-		    }
-        }
+        				swal("原密码错误! ", "请重新修改! ", "error");
+        			}
+        		},
+        		error: function() {
+	        		$("#oldPassword").val("");
+	        		$("#newPassword").val("");
+	        		$("#confirm_newPassword").val("");
+    				swal("新密码请求修改失败! ", "请重新修改! ", "error");
+        		}
+        	})
+	    };
+
+	    function addTag(text) {
+    		$.ajax({
+        		url: '/api/add_tag',
+        		type: 'POST',
+        		data: {
+        			text: text
+        		},
+        		success: function(args){
+        			var res = JSON.parse(args);
+        			if (res.result == "success") {
+            			that.dis_source.push({
+			        		text: text
+			      		})
+			      		that.text = ''
+        			} 
+        			else {
+        				that.text = ''
+        				swal("添加标签失败! ", "请重新添加! ", "error");
+        			}
+        		},
+        		error: function(){
+        			that.text = ''
+        			swal("请求添加标签失败! ", "请重新添加! ", "error");
+        		}
+			})
+	    };
+
+	    function deleteTag(index) {
+	      	$.ajax({
+        		url: '/api/del_tag',
+        		type: 'POST',
+        		data: {
+        			index: index
+        		},
+        		success: function(args){
+        			var res = JSON.parse(args);
+        			if (res.result == "success") {
+        				that.dis_source.splice(index, 1)
+        			} 
+        			else {
+        				swal("删除标签失败! ", "请重新删除! ", "error");
+        			}
+        		},
+        		error: function(){
+        			swal("请求删除标签失败! ", "请重新删除! ", "error");
+        		}
+			});
+      	};
 	</script>
 
 	<script type="text/javascript">
@@ -1043,30 +1092,7 @@
 					}
 			    	if (text != ''){
 			    		if (!isExist(text)){
-			        		$.ajax({
-			            		url: '/api/add_tag',
-			            		type: 'POST',
-			            		data: {
-			            			text: text
-			            		},
-			            		success: function(args){
-			            			var res = JSON.parse(args);
-			            			if (res.result == "success") {
-				            			that.dis_source.push({
-							        		text: text
-							      		})
-							      		that.text = ''
-			            			} 
-			            			else {
-			            				that.text = ''
-			            				swal("添加标签失败! ", "请重新添加! ", "error");
-			            			}
-			            		},
-			            		error: function(){
-			            			that.text = ''
-			            			swal("请求添加标签失败! ", "请重新添加! ", "error");
-			            		}
-							});
+			    			addTag(text);
 			    		}
 			    		else{
 			    			this.text = ''
@@ -1076,25 +1102,7 @@
 			  	},
 			  	del: function(index){
 			  		var that = this
-			      	$.ajax({
-		        		url: '/api/del_tag',
-		        		type: 'POST',
-		        		data: {
-		        			index: index
-		        		},
-		        		success: function(args){
-		        			var res = JSON.parse(args);
-		        			if (res.result == "success") {
-		        				that.dis_source.splice(index, 1)
-		        			} 
-		        			else {
-		        				swal("删除标签失败! ", "请重新删除! ", "error");
-		        			}
-		        		},
-		        		error: function(){
-		        			swal("请求删除标签失败! ", "请重新删除! ", "error");
-		        		}
-					});
+			  		deleteTag(index)
 		    	},
 		    	showMultiSelect: function(event){
 		    		data3.isShowMultiSelect = true;

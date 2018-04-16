@@ -43,7 +43,7 @@ class ConstructCitationTree():
         # print "引用文章id: ", ref_list
         ref_title_list = []
         for ref_id in ref_list:
-            ref_node = self.my_set.find_one({"paper_id": ref_id})["title"]
+            ref_node = self.my_set.find_one({"paper_id": ref_id})
             ref_title_list.append((ref_node['paper_id'], ref_node['title'], ref_node['year']))
             relevant_paper_ids.append(ref_id)
         # print "ref_title_list: ", ref_title_list

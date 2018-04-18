@@ -1,0 +1,41 @@
+2018-04-18 16:36:15,855 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-18 16:36:15,888 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-18 16:36:15,894 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-18 16:36:46,690 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-18 16:36:49,562 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-18 16:36:49,592 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-18 16:36:49,598 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-18 16:37:03,368 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:37:03] "GET /api/logout HTTP/1.1" 500 -
+2018-04-18 16:37:03,569 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:37:03] "GET /api/logout?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-18 16:37:03,684 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:37:03] "GET /api/logout?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-18 16:37:03,684 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:37:03] "GET /api/logout?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-18 16:37:03,811 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:37:03] "GET /api/logout?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-18 16:37:26,759 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:37:26] "GET /user/home HTTP/1.1" 200 -
+2018-04-18 16:37:26,881 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:37:26] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-18 16:37:27,796 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:37:27] "GET /user/home HTTP/1.1" 200 -
+2018-04-18 16:37:27,911 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:37:27] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-18 16:39:12,282 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:12] "GET /user/regist HTTP/1.1" 200 -
+2018-04-18 16:39:13,098 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-18 16:39:13,151 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:13] "GET /static/chosen/chosen.css HTTP/1.1" 200 -
+2018-04-18 16:39:13,190 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:13] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-18 16:39:13,605 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-18 16:39:16,854 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-18 16:39:16,891 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-18 16:39:16,904 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-18 16:39:28,553 - app_api.py[line:139] - INFO: yyyy@qq successfully registed
+2018-04-18 16:39:28,558 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:28] "POST /api/regist HTTP/1.1" 302 -
+2018-04-18 16:39:28,579 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:28] "GET /user/login HTTP/1.1" 200 -
+2018-04-18 16:39:29,025 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:29] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-18 16:39:32,038 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:32] "GET /user/home HTTP/1.1" 200 -
+2018-04-18 16:39:32,450 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:32] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-18 16:39:33,255 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:33] "GET /user/login HTTP/1.1" 200 -
+2018-04-18 16:39:33,647 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:33] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-18 16:39:39,440 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:39] "POST /api/login HTTP/1.1" 302 -
+2018-04-18 16:39:39,759 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:39] "GET /user/home HTTP/1.1" 200 -
+2018-04-18 16:39:40,000 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:40] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-18 16:39:40,647 - _internal.py[line:87] - INFO: 127.0.0.1 - - [18/Apr/2018 16:39:40] "GET /static/avatar/init.png HTTP/1.1" 200 -
+2018-04-18 16:45:33,697 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-18 16:45:34,612 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-18 16:45:39,747 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-18 16:45:39,792 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-18 16:45:39,799 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)

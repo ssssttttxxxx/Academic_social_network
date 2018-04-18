@@ -1,5 +1,5 @@
 # coding=utf-8
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, logging
 from flask_login import LoginManager
 from flask_login import login_required, current_user
 from flask_pymongo import PyMongo
@@ -8,7 +8,7 @@ from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_cl
 
 from route.user import user
 from api.app_api import api, login_manager
-
+from datetime import timedelta
 # from app.api.model import db, User
 
 from api.mysql_model import ASNUser, Expert_detail_total
@@ -20,8 +20,15 @@ from config import Config
 
 import os
 
+
 app = Flask(__name__)
 app.config.from_object(Config)
+
+
+@app.before_request
+def make_session_permanent():
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(minutes=5)
 
 app.jinja_env.variable_start_string = '[['
 app.jinja_env.variable_end_string = ']]'

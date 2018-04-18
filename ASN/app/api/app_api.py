@@ -6,7 +6,7 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 import json
-from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify, render_template, current_app
+from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify, render_template, current_app, session, logging
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, DOCUMENTS
 from flask_wtf import FlaskForm
@@ -32,10 +32,22 @@ api = Blueprint(
 login_manager = LoginManager()
 login_manager.login_view = '.login'
 login_manager.login_message = '请登录'
+# login_manager.session_protection = "strong"
 
+# refresh login 配置
+login_manager.refresh_view = ".login"
+login_manager.needs_refresh_message = (u"请重新登录")
+login_manager.needs_refresh_message_category = "info"
+
+@login_manager.needs_refresh_handler
+def refresh():
+    flash('You should log in!')
+    return logout()
 
 @login_manager.user_loader
 def load_user(email):
+    # remember 默认为 False
+
     """
     login manager 要求实现
     :param email:
@@ -44,6 +56,24 @@ def load_user(email):
     # print "ASNUser load_user: ", ASNUser.query.get(email)
     print "db load_user: ", db.session.query(ASNUser).filter(ASNUser.email==email).first()
     return db.session.query(ASNUser).filter(ASNUser.email==email).first()
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)  # Log等级总开关
+
+logfile = './logs/app.log'
+fh = logging.FileHandler(logfile, mode='a')
+fh.setLevel(logging.DEBUG)
+
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+
+formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s")
+fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+
+logger.addHandler(fh)
+logger.addHandler(ch)
 
 
 @api.route('/regist', methods=['POST', 'GET'])
@@ -85,7 +115,9 @@ def registBussiness():
             db.session.add(expert)
             db.session.commit()
         except Exception, e:
-            print '添加到作者表时发生错误: ', e
+            error_msg = '添加到作者表时发生错误: ', e
+            print error_msg
+            logging.error(error_msg)
 
         # 注册到用户表
         try:
@@ -94,7 +126,9 @@ def registBussiness():
             db.session.add(user)
             db.session.commit()
         except Exception, e:
-            print '添加到用户表时发生错误: ', e
+            error_msg = '添加到用户表时发生错误: ', e
+            print error_msg
+            logging.error(error_msg)
 
         # 注册时在mongodb初始化关注列表
         mongo_user = {"email": email, "follow": []}
@@ -102,6 +136,7 @@ def registBussiness():
 
         # login_user(user)
         flash('注册成功!请登录!')
+        logging.info(email+' successfully registed')
         return redirect(url_for('user.login'))
     else:
         flash('注册失败!帐号已存在,请重新注册!')
@@ -118,9 +153,7 @@ def loginBussiness():
     if nowUser:
         login_user(nowUser)
         return redirect(url_for('user.home'))
-        # status = {"loginStatus": True,
-        #           "logoutStatus": False}
-        # return render_template("index.html", Status=status)
+
     else:
         flash('登录失败，请检查账号和密码！')
         return redirect(url_for('user.login'))
@@ -129,7 +162,10 @@ def loginBussiness():
 @api.route('/logout', methods=['GET'])
 @login_required
 def logout():
-    logout_user()
+    try:
+        logout_user()
+    except:
+        logging.warning('session已过期')
     return redirect(url_for('user.home'))
 
 

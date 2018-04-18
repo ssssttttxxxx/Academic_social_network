@@ -49,12 +49,12 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="/user/private_profile" data-hover="dropdown" style="padding: 0px 0px;min-height: 0px;" title="用户">
                             <img alt="image" class="img-circle" :src="avatarSrc" width="40px" height="40px">
-                            <strong>{[ firstName ]}&nbsp;{[ lastName ]}</strong>
+                            <strong>{{ firstName }}&nbsp;{{ lastName }}</strong>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" style="margin-top: 10px;min-width: 100px;">
                             <li class="pull-right">
-                                <div href="#" style="padding: 3px 3px;margin: 4px;line-height: 25px;font-size: 14px;">{[ email ]}</div>
+                                <div href="#" style="padding: 3px 3px;margin: 4px;line-height: 25px;font-size: 14px;">{{ email }}</div>
                             </li>
                         </ul>
                     </li>
@@ -178,7 +178,6 @@
     <script type="text/javascript">
 		
         new Vue({
-            delimiters: ['{[', ']}'],
             el: '#status',
             data: {
                 loginStatus: [[Status.loginStatus|tojson]],
@@ -205,7 +204,7 @@
                 //     this.loginStatus = false;
                 // }
             }
-        })
+        });
 
         
     </script>

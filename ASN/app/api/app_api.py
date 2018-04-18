@@ -36,6 +36,11 @@ login_manager.login_message = '请登录'
 
 @login_manager.user_loader
 def load_user(email):
+    """
+    login manager 要求实现
+    :param email:
+    :return:
+    """
     # print "ASNUser load_user: ", ASNUser.query.get(email)
     print "db load_user: ", db.session.query(ASNUser).filter(ASNUser.email==email).first()
     return db.session.query(ASNUser).filter(ASNUser.email==email).first()
@@ -43,6 +48,10 @@ def load_user(email):
 
 @api.route('/regist', methods=['POST', 'GET'])
 def registBussiness():
+    """
+
+    :return:
+    """
     name = request.form.get('email')
     nowUser = ASNUser.query.filter_by(email=name).first()
     if not nowUser:
@@ -292,7 +301,7 @@ def searchBussiness():
             return json.dumps({"error": "can not found the author"})
 
 
-@api.route('/expert_network', methods=['GET'])
+@api.route('/expert_network', methods=['POST'])
 def expert_network():
     """
      返回作者的社交网络
@@ -302,11 +311,12 @@ def expert_network():
     # expert_id = request.form.get('expert_id')
     # expert_name = request.form.get('expert_name')
     # year = request.form.get('year')
-    min_year = 1954
+    # min_year = 1954
+    min_year = 2013
     max_year = 2017
     years = []
     datas = []
-    expert_name = request.args.get('name')
+    expert_name = request.form.get('name')
     print "expert_name", expert_name
 
     for year in range (min_year, max_year):
@@ -317,16 +327,18 @@ def expert_network():
         coauthor_network.construct()
 
         # 网络中只有作者自己，则进行下一年的关系网络构建
-        if coauthor_network.nodes_num()==1:
-            break
-        
+        if coauthor_network.nodes_num() == 1:
+            print year,'break'
+            continue
+
         coauthor_nodes = coauthor_network.all_nodes()
         nodes = []
         for node in coauthor_nodes:
             node_item = {
                 "name": str(node),
-                "value": 10
+                "value": 10,
             }
+
             nodes.append(node_item)
 
         coauthor_network_edges = coauthor_network.all_edges()
@@ -348,27 +360,41 @@ def expert_network():
     # return render_template('old_tem/test_output.html', edges_list=coauthor_network_edges)
 
 
-@api.route('/paper_network', methods=['GET'])
+@api.route('/paper_network', methods=['POST'])
 def paper_network():
     """
     返回paper的引文网络
     :param paper_id:
     :return:
     """
-    paper_id = request.form.get('paper_id')
+    paper_id = request.form.get('paperID')
     years = [2008, 2009, 2010]
     nodes = []
     edges = []
-    print "paper_id"
+    print "paper_id",paper_id
     paper_network = ConstructCitationTree(paper_id)
     paper_network.construct()
     paper_network_edges = paper_network.edges()
     paper_network_nodes = paper_network.all_nodes()
 
-    for node in paper_network_nodes:
+    for pi,t,y in paper_network_nodes:
+        # node_detail = {
+        #     'node':[
+        #         {'name': 'ii',
+        #          'id': '1'},
+        #         {
+        #
+        #         }
+        #     ]
+        # }
+
         node_item = {
-            "name": str(node),
-            "value": 10
+            "name": pi,
+            "attributes": {"title": pi,"year": y,},
+            "value": 10,
+            # "itemStyle":{
+            #     "color": '#FF3030'
+            # }
         }
         nodes.append(node_item)
 
@@ -376,9 +402,13 @@ def paper_network():
         edges_item = {
             "source": source,
             "target": target,
+            "values": 2,
+            # "lineStyle":{
+            #     "color":'#000000'
+            # }
         }
         edges.append(edges_item)
-    return paper_network_edges
+    return json.dumps({"nodes": nodes, "links": edges})
 
 
 @api.route('/author_paper', methods=['GET'])

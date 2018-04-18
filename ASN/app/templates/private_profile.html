@@ -346,7 +346,7 @@
 												                        </div>
 												                    </div>
 												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong><img alt="image"\ src="../static/common/img/male.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;"></h3>
+												                        <h4><strong>张三张三</strong><img alt="image"\ src="../static/common/img/male.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;"></h4>
 												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
 												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
 												                        <p><i class="fa fa-phone"></i> 1377777777</p>
@@ -809,7 +809,7 @@
         		},
         		success: function(args){
         			var res = JSON.parse(args);
-        			if (res.result == "success") {
+        			if (res.result === "success") {
         				data4.paperItem = res.paperItem
         			} 
         			else {
@@ -837,7 +837,7 @@
         		},
         		success: function(args) {
         			var res = JSON.parse(args);
-        			if (res.result == "success") {
+        			if (res.result === "success") {
 		                swal({
 		                	title: "保存成功！", 
 		                	text: "您的个人信息已经修改成功！", 
@@ -879,7 +879,7 @@
         		},
         		success: function(data) {
         			var res = JSON.parse(data);
-        			if (res.result == "success") {
+        			if (res.result === "success") {
 		                swal({
 		                	title: "新密码修改成功！", 
 		                	text: "", 
@@ -915,7 +915,7 @@
         		},
         		success: function(args){
         			var res = JSON.parse(args);
-        			if (res.result == "success") {
+        			if (res.result === "success") {
             			that.dis_source.push({
 			        		text: text
 			      		})
@@ -942,7 +942,7 @@
         		},
         		success: function(args){
         			var res = JSON.parse(args);
-        			if (res.result == "success") {
+        			if (res.result === "success") {
         				that.dis_source.splice(index, 1)
         			} 
         			else {
@@ -1006,7 +1006,7 @@
             	profile_confirm: function() {
             		var vue2 = this
 
-            		if (vue2.ifEdit == false) {
+            		if (vue2.ifEdit === false) {
             			if (vue2.firstName==="" || vue2.lastName==="" || vue2.genderSelected==="" || vue2.degreeSelected==="") {
             				swal("*不能为空! ", "请重新修改! ", "error");
             			}
@@ -1035,7 +1035,7 @@
             	},
             	//修改信息按钮
             	profile_edit: function() {
-		        	if (this.ifEdit == true) {
+		        	if (this.ifEdit === true) {
 		        		this.ifEdit = false;
 		            	$('#firstname').removeAttr("disabled");
 			        	$('#lastname').removeAttr("disabled");
@@ -1149,7 +1149,7 @@
 
                 this.on("success", function(file, args){
                 	var res = JSON.parse(args);
-                	if (res.result == "success") {
+                	if (res.result === "success") {
                 		myDZ.removeAllFiles();
                 		getPaperList()
                 		swal("已上传成功! ", "", "success");
@@ -1204,13 +1204,13 @@
 	        	var newPassword = $("#newPassword").val()
 	        	var confirm_newPassword = $("#confirm_newPassword").val()
 
-	        	if (oldPassword == newPassword) {
+	        	if (oldPassword === newPassword) {
 	        		$("#oldPassword").val("");
 	        		$("#newPassword").val("");
 	        		$("#confirm_newPassword").val("");
 	        		swal("请输入不相同的新旧密码! ", "", "error");
 	        	}
-	        	else if (newPassword.length > 8 && newPassword.length < 16 && newPassword == confirm_newPassword) {
+	        	else if (newPassword.length > 8 && newPassword.length < 16 && newPassword === confirm_newPassword) {
 					editPassword(oldPassword, newPassword, confirm_newPassword);
 	        	}
 	        	else {
@@ -1230,7 +1230,7 @@
 			
 	        //用户关注
 	        $(".followBtn").click(function(){
-	        	if (this.innerText == " Follow") {
+	        	if (this.innerText === " Follow") {
 	        		$(this).html('<i class="fa fa-users"></i> Following');
 	        		$(this).bind({
 	        			mouseenter: function(e) {
@@ -1272,22 +1272,23 @@
         	/*mainTab标签页请求*/
         	$('#mainTab a[data-toggle="tab"]').on('show.bs.tab', function(e) {
 
-        		if ($(e.target).attr("id") == "tab1") { //个人信息页
+        		if ($(e.target).attr("id") === "tab1") { //个人信息页
         			console.log($(e.target).text());
         		}
-        		else if ($(e.target).attr("id") == "tab2") { //关注领域页
+        		else if ($(e.target).attr("id") === "tab2") { //关注领域页
         			console.log($(e.target).text());
         		}
-        		else if ($(e.target).attr("id") == "tab3") { //我的关注页
+        		else if ($(e.target).attr("id") === "tab3") { //我的关注页
         			console.log($(e.target).text());
         		}
-        		else if ($(e.target).attr("id") == "tab4") { //谁关注我页
+        		else if ($(e.target).attr("id") === "tab4") { //谁关注我页
         			console.log($(e.target).text());
         		}
-        		else if ($(e.target).attr("id") == "tab5") { //我的论文页
+        		else if ($(e.target).attr("id") === "tab5") { //我的论文页
 					console.log($(e.target).text());
         		}
-        		else if ($(e.target).attr("id") == "tab6") { //关系图页
+        		else if ($(e.target).attr("id") === "tab6") { //关系图页
+        			getPaperNetwork();
         			getExpertNetwork();
         			console.log($(e.target).text());
         		}
@@ -1302,23 +1303,106 @@
         var myChartGraph1 = echarts.init(dom1);
         option1 = null;
         // app.title = '论文关系图';
-        myChartGraph1.showLoading();
 
-  //       option1 = {
-		//     xAxis: {
-		//         type: 'category',
-		//         data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-		//     },
-		//     yAxis: {
-		//         type: 'value'
-		//     },
-		//     series: [{
-		//         data: [820, 932, 901, 934, 1290, 1330, 1320],
-		//         type: 'line'
-		//     }]
-		// };
+        var sendData1 = {"paperID": "001c58d3-26ad-46b3-ab3a-c1e557d16821"}
+		myChartGraph1.showLoading();
 
-		// myChartGraph1.setOption(option1);
+        function getPaperNetwork() {
+	        $.ajax({
+	        	url: "/api/paper_network",
+	        	type: "POST",
+	        	data: sendData1,
+	        	success: function(data){
+		        	myChartGraph1.hideLoading();
+
+		        	var graph = JSON.parse(data);
+
+		        	graph.nodes.forEach(function(node){
+		        		if (node.name === sendData1.paperID) {
+		    		        node.itemStyle = {
+		    		        	color: '#66CCFF'
+		    		        };
+		        		}
+		        		else {
+		    		        node.itemStyle = {
+		    		        	color: '#FF3030'
+		    		        };
+		    		    }					        
+		        		// node.symbolSize = 10;
+				        // node.value = node.symbolSize;
+				        // node.category = node.attributes.modularity_class;
+				        // Use random x, y
+				        node.x = node.y = null;
+				        node.draggable = false;
+				        // node.label = {
+				        // 	show: true,
+				        // 	position: 'bottom'
+				        // };
+				        // node.tooltip = {           
+				        // 	position: function (point, params, dom, rect, size) {
+				        //         $(dom).html('<div class="contact-box" style="color: #676a6c;background-color: #F0FFFF;padding: 10px;width: 120%;"><div style="width: 40%;float: left;"><div class="text-center" style="text-align: center;"><img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/init.png" width="64px" height="64px"><div class="m-t-xs font-bold">博士</div></div></div><div style="width: 60%;float: left;"><h4><strong>'+ node.name +'</strong><img alt="image"\ src="../static/common/img/female.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;"></h4><p><i class="fa fa-institution"></i> 华南理工大学</p><p><i class="fa fa-map-marker"></i> 广州大学城</p><p><i class="fa fa-phone"></i> 1377777777</p></div><div class="clearfix"></div></div>')
+				        //     },
+				        //     backgroundColor: '#FFFFFF'
+				        // }
+		        	})
+
+		        	graph.links.forEach(function(link) {
+		        		link.lineStyle = {
+		        			width: link.values,
+		        			color: '#000000'
+		        		}
+		        	})
+
+	        	    option1 = {
+				        title: {
+				        	text: 'paper',
+				            subtext: '',
+				            top: 'bottom',
+				            left: 'right'
+				        },
+				        tooltip: {},
+				        toolbox: {
+				        	show: true,
+				        	feature: {
+				        		dataView: {readOnly: true},
+				        		restore: {},
+				        		saveAsImage: {}
+				        	}
+				        },
+				        legend: {
+				            // selectedMode: 'single',
+				            data: []
+				        },
+				        animation: false,
+				        series : [
+				            {
+				                name: '',
+				                type: 'graph',
+				                layout: 'force',
+                                data: graph.nodes,
+            					links: graph.links,
+				                roam: true,
+				                forceNodeAdjacency: true,
+				                cursor: 'pointer',
+				                label: {
+				                    normal: {
+				                        position: 'right'
+				                    }
+				                },
+				                force: {
+				                    repulsion: 100
+				                }
+				            }
+				        ]
+				    };
+
+				    myChartGraph1.setOption(option1);
+	        	},
+	        	error: function (errorMsg) {
+		            //alert("图表数据加载失败！");
+		        }
+	        });
+        }
 
 		//作者关系图
         var dom2 = document.getElementById("coauthorGraph");
@@ -1327,11 +1411,14 @@
         option2 = null;
         // app.title = '作者关系图';
 
-        myChartGraph2.showLoading();
+        var sendData2 = {"name": "Martin Ester"}
+    	myChartGraph2.showLoading();
+
         function getExpertNetwork() {
 	        $.ajax({
 	        	url: "/api/expert_network",
-	        	data: {"name": "Martin Ester"},
+	        	type: "POST",
+	        	data: sendData2,
 	        	success: function(data){
 		        	myChartGraph2.hideLoading();
 
@@ -1344,18 +1431,53 @@
 
 		        	for (var i=0;i<graph.length;i++){
 			        	graph[i].nodes.forEach(function(node){
-		    		        node.itemStyle = null;
-					        // node.symbolSize = 10;
+			        		if (node.name === sendData2.name) {
+			    		        node.itemStyle = {
+			    		        	color: '#66CCFF'
+			    		        };
+			        		}
+			        		else {
+			    		        node.itemStyle = {
+			    		        	color: '#FF3030'
+			    		        };
+			        		}						        
+			        		// node.symbolSize = 10;
 					        // node.value = node.symbolSize;
 					        // node.category = node.attributes.modularity_class;
 					        // Use random x, y
 					        node.x = node.y = null;
-					        node.draggable = true;
+					        node.draggable = false;
+					        node.label = {
+					        	show: true,
+					        	position: 'bottom'
+					        }
+					        node.tooltip = {           
+					        	position: function (point, params, dom, rect, size) {
+					                $(dom).html('<div class="contact-box" style="color: #676a6c;background-color: #F0FFFF;padding: 10px;width: 120%;"><div style="width: 40%;float: left;"><div class="text-center" style="text-align: center;"><img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/init.png" width="64px" height="64px"><div class="m-t-xs font-bold">博士</div></div></div><div style="width: 60%;float: left;"><h4><strong>'+ node.name +'</strong><img alt="image"\ src="../static/common/img/female.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;"></h4><p><i class="fa fa-institution"></i> 华南理工大学</p><p><i class="fa fa-map-marker"></i> 广州大学城</p><p><i class="fa fa-phone"></i> 1377777777</p></div><div class="clearfix"></div></div>')
+					            },
+					            backgroundColor: '#FFFFFF'
+					        }
 			        	})
+			        	graph[i].links.forEach(function(link) {
+			        		link.lineStyle = {
+			        			width: link.values,
+			        			color: '#000000'
+			        		}
+			        	})
+		        	}
+
+		        	var optionInit = []
+		        	for (var i=0;i<graph.length;i++){
+		        		var nodeItem = {title: {}, series:[{}]}
+		        		nodeItem.title.text = years[i] + ''
+		        		nodeItem.series[0].data = graph[i].nodes
+		        		nodeItem.series[0].links = graph[i].links
+		        		optionInit.push(nodeItem)
 		        	}
 
 	        	    option2 = {
 	        	    	baseOption: {
+
 	        	    		timeline: {
 					            // y: 0,
 					            axisType: 'category',
@@ -1380,6 +1502,14 @@
 					            left: 'right'
 					        },
 					        tooltip: {},
+					        toolbox: {
+					        	show: true,
+					        	feature: {
+					        		dataView: {readOnly: true},
+					        		restore: {},
+					        		saveAsImage: {}
+					        	}
+					        },
 					        legend: {
 					            // selectedMode: 'single',
 					            data: ["Martin Ester"]
@@ -1391,6 +1521,8 @@
 					                type: 'graph',
 					                layout: 'force',
 					                roam: true,
+					                forceNodeAdjacency: true,
+					                cursor: 'pointer',
 					                label: {
 					                    normal: {
 					                        position: 'right'
@@ -1402,35 +1534,7 @@
 					            }
 					        ]
 					    },
-					    options: [
-							{
-					    		title: {text: '2008年'},
-					    		series: [
-					    			{
-					    				data: graph[0].nodes,
-					                	links: graph[0].links
-					    			}
-					    		]
-					    	},
-					    	{
-					    		title: {text: '2009年'},
-					    		series: [
-					    			{
-					    				data: graph[1].nodes,
-					                	links: graph[1].links
-					    			}
-					    		]
-					    	},
-					    	{
-					    		title: {text: '2010年'},
-					    		series: [
-					    			{
-					    				data: graph[2].nodes,
-					                	links: graph[2].links
-					    			}
-					    		]
-					    	}
-					    ]
+					    options: optionInit
 				    };
 
 				    myChartGraph2.setOption(option2);
@@ -1440,6 +1544,20 @@
 		        }
 	        });
         }
+
+        myChartGraph2.on('click', function (params) {
+			if (params.componentType === 'series') {
+		        if (params.seriesType === 'graph') {
+		            if (params.dataType === 'node') {
+
+		            }
+		            else {
+
+		            }
+		        }
+		    }
+
+		});
 
         $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
             myChartGraph1.resize();

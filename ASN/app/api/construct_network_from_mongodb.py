@@ -29,7 +29,7 @@ class ConstructCitationTree():
         root = self.my_set.find_one({"paper_id": paper_id})
         paper_title = root["title"]
         year = root["title"]
-        self.Graph.add_node(paper_title, paper_title=paper_title, id=paper_id, year=year)
+        self.Graph.add_node(paper_id, paper_title=paper_title, id=paper_id, year=year)
 
         # 查询根节点的引用论文id
         try:
@@ -50,8 +50,8 @@ class ConstructCitationTree():
 
         # 处理根节点与第一层引用节点的关系
         for ref_id, ref_title, ref_year in ref_title_list:
-            self.Graph.add_node(ref_title, paper_title=ref_title, id=ref_id, year=ref_year)
-            self.Graph.add_edge(paper_title, ref_title)
+            self.Graph.add_node(ref_id, paper_title=ref_title, id=ref_id, year=ref_year)
+            self.Graph.add_edge(paper_id, ref_id)
             print "引用文章id: ", ref_title
 
         # 查询引用根节点的文章
@@ -62,6 +62,7 @@ class ConstructCitationTree():
             print "query time: ", time_end - time_start
         except:
             result = []
+            print "error"
             logging.error("error happen in read data from mysql")
         # print len(result)
         # print "被引用文章id： ", result
@@ -70,8 +71,8 @@ class ConstructCitationTree():
             title = paper_info['title']
             id = paper_info['paper_id']
             year = paper_info['year']
-            self.Graph.add_node(title, paper_title=title, id=id, year=year)
-            self.Graph.add_edge(title, paper_title)
+            self.Graph.add_node(id, paper_title=title, id=id, year=year)
+            self.Graph.add_edge(id, paper_id)
             print "被引用文章id： ", title
             relevant_paper_ids.append(id)
 
@@ -93,7 +94,7 @@ class ConstructCitationTree():
             relevant_paper_title = rel_node['title']
 
             self.Graph.add_node(
-                rel_node['title'],
+                rel_node['paper_id'],
                 paper_title=rel_node['title'],
                 id=rel_node['paper_id'],
                 year=rel_node['year']
@@ -109,12 +110,12 @@ class ConstructCitationTree():
                 rel_ref_id, rel_ref_title, rel_ref_year\
                     = self.query_paper_id_title_year(rel_ref_id)
                 self.Graph.add_node(
-                    rel_ref_title,
+                    rel_ref_id,
                     paper_title=rel_ref_title,
                     id=rel_ref_id,
                     year=rel_ref_year
                 )
-                self.Graph.add_edge(relevant_paper_title, rel_ref_title)
+                self.Graph.add_edge(relevant_paper_id, rel_ref_id)
 
                 print relevant_paper_title, "引用", rel_ref_title
 
@@ -123,7 +124,7 @@ class ConstructCitationTree():
         for ref2_id in second_layer_ref_ids:
 
             ref2_id, ref2_title, ref2_year = self.query_paper_id_title_year(ref2_id)
-            self.Graph.add_node(ref2_title, paper_title=ref2_title, id=ref2_id, year=ref2_year)
+            self.Graph.add_node(ref2_id, paper_title=ref2_title, id=ref2_id, year=ref2_year)
 
             # 查询第二层节点的引用
             ref_ref2_ids = self.my_set.find_one({"paper_id": ref2_id})["ref_id"]
@@ -133,16 +134,17 @@ class ConstructCitationTree():
                 if ref_ref2_id in second_layer_ref_ids:
                     ref_ref2_id, ref_ref2_title, ref_ref2_year = self.query_paper_id_title_year(ref_ref2_id)
                     print ref2_title, "引用", ref_ref2_title
-                    self.Graph.add_node(ref_ref2_title, paper_title=ref_ref2_title, id=ref_ref2_id, year=ref_ref2_year)
-                    self.Graph.add_edge(ref2_title, ref_ref2_title)
+                    self.Graph.add_node(ref_ref2_id, paper_title=ref_ref2_title, id=ref_ref2_id, year=ref_ref2_year)
+                    self.Graph.add_edge(ref2_id, ref_ref2_id)
 
                 # 第二层节点引用第一层节点的情况
                 if ref_ref2_id in relevant_paper_ids:
                     print "反引用："
-                    ref_ref2_title = self.query_paper_title(ref_ref2_id)
-                    ref2_title = self.query_paper_title(ref2_id)
+                    ref_ref2_id, ref_ref2_title, ref_ref2_year = self.query_paper_id_title_year(ref_ref2_id)
+                    self.Graph.add_node(ref_ref2_id, paper_title=ref_ref2_title, id=ref_ref2_id, year=ref_ref2_year)
+                    # ref2_id, ref2_title, ref2_year = self.query_paper_id_title_year(ref2_id)
                     print ref2_title, "引用", ref_ref2_title
-                    self.Graph.add_edge(ref2_title, ref_ref2_title)
+                    self.Graph.add_edge(ref2_id, ref_ref2_id)
 
                     # for relevant_paper_id in relevant_paper_ids:
         # # 查询引用paper引用文章的papers
@@ -207,18 +209,20 @@ class ConstructCitationTree():
     def all_nodes(self):
         node_list = []
         nodes = self.Graph.nodes()
-        for node in nodes:
+        for i, node in enumerate(nodes):
             pi = self.Graph.node[node]['id']
+            # print "pi", pi
             t = self.Graph.node[node]['paper_title']
+            # print "t", t
             y = self.Graph.node[node]['year']
-            # print pi,t,y
+            # print "y", y
             node_list.append((pi,t,y))
         return node_list
 
 class ConstructCoauthorsTree():
 
     def __init__(self, author_name, year):
-        self.Graph = nx.Graph()
+        self.Graph = nx.DiGraph()
         self.client = pymongo.MongoClient('localhost', 27017)
         self.mongdb = self.client.Paper
         self.my_set = self.mongdb.Co_authors_added_year
@@ -233,6 +237,7 @@ class ConstructCoauthorsTree():
             author_list = self.my_set.find({"co_authors": author_name, "year": year})
         except:
             logging.error("no such name")
+
         self.Graph.add_node(author_name, name=author_name)
         for author in author_list:
             co_author_list = author["co_authors"]

@@ -8,6 +8,7 @@ class Config:
     DEBUG = True  # debug 模式下网页不会缓存
 
     SECRET_KEY = '1frMFuWRVPV1'
+    SECURITY_PASSWORD_SALT = 'my_precious_two'
 
     # MySql
     SQLALCHEMY_DATABASE_URI = "mysql://%s:%s@%s/%s" % ('root', 'stx11stx11', '127.0.0.1', 'dblp_ref')
@@ -34,10 +35,23 @@ class Config:
     UPLOADED_PAPERS_ALLOW = set(['txt', 'pdf', 'doc', 'docx'])
 
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
-    FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
-    FLASKY_MAIL_SENDER = 'Flasky Admin <flasky@example.com>'
-    FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
+    # FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
+    # FLASKY_MAIL_SENDER = 'Flasky Admin <flasky@example.com>'
+    # FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
 
+    # email server
+    MAIL_SERVER = 'smtp.163.com'
+    MAIL_PORT = 25
+    MAIL_USE_TLS = True
+    MAIL_USE_SSL = False
+    MAIL_USERNAME = 'stx17@163.com'
+    MAIL_PASSWORD = '2860533'
+
+    # administrator list
+    ADMINS = ['your-gmail-username@gmail.com']
+
+    # mail accounts
+    MAIL_DEFAULT_SENDER = 'stx17@163.com'
 
     @staticmethod
     # 此注释可表明使用类名可以直接调用该方法

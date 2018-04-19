@@ -6,19 +6,24 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 import json
-from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify, render_template, current_app, session, logging
+from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify,\
+    render_template, current_app, session, logging, g
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, DOCUMENTS
 from flask_wtf import FlaskForm
+from flask_mail import Message, Mail
+
 
 import logging
 import datetime
 from PIL import Image
+from token import generate_confirmation_token, confirm_token
 
 from app.api.model import User, Lemma, Comment, db
 from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, Expert_detail_total, Upload_paper
 from app.api.construct_network_from_mongodb import ConstructCoauthorsTree, ConstructCitationTree
 from app.api.mongodb_model import mongo
+
 # from app import photos, files
 
 photos = UploadSet('PHOTOS', IMAGES)
@@ -30,9 +35,9 @@ api = Blueprint(
 )
 
 login_manager = LoginManager()
-login_manager.login_view = '.login'
+login_manager.login_view = 'user.login'
 login_manager.login_message = '请登录'
-# login_manager.session_protection = "strong"
+login_manager.session_protection = "strong"
 
 # refresh login 配置
 login_manager.refresh_view = ".login"
@@ -59,7 +64,7 @@ def load_user(email):
 
 
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)  # Log等级总开关
+logger.setLevel(logging.DEBUG)
 
 logfile = './logs/app.log'
 fh = logging.FileHandler(logfile, mode='a')
@@ -75,11 +80,68 @@ ch.setFormatter(formatter)
 logger.addHandler(fh)
 logger.addHandler(ch)
 
+mail = Mail()
+
+def another_send_email(to, subject, template=None, **kwargs):
+    # app = current_app._get_current_object()
+    msg = Message(subject,sender=current_app.config['MAIL_USERNAME'], recipients=[to])
+    # msg.body = render_template(template + '.txt', **kwargs)
+    # msg.html = render_template(template + '.html', **kwargs)#将准备好的模板添加到msg对象上，字典传的参里包括token(即生成的一长串字符串)，链接的组装，页面的渲染在里面用jinja2语法完成
+    msg.body = '<b>Hello Web</b>'
+    # with app.app_context():
+    mail.send(msg) #发射
+
+def send_email(to, subject, template):
+    msg = Message(
+        subject,
+        recipients=[to],
+        html=template,
+        sender=current_app.config['MAIL_DEFAULT_SENDER']
+    )
+    mail.send(msg)
+
+@api.route('/confirm/<token>')
+@login_required
+def confirm_email(token):
+    try:
+        email = confirm_token(token)
+    except:
+        flash('The confirmation link is invalid or has expired.', 'danger')
+    user = ASNUser.query.filter_by(email=email).first_or_404()
+    if user.confirmed:
+        flash('Account already confirmed. Please login.', 'success')
+    else:
+        user.confirmed = True
+        user.confirmed_on = datetime.datetime.now()
+        db.session.add(user)
+        db.session.commit()
+        flash('You have confirmed your account. Thanks!', 'success')
+    return redirect(url_for('user.login'))
+
+@api.route('/unconfirmed')
+@login_required
+def unconfirmed():
+    if current_user.confirmed:
+        return redirect('user.home')
+    else:
+        flash('Please confirm your account!', 'warning')
+        return render_template('unconfirmed.html')
+
+@api.route('/resend')
+@login_required
+def resend_confirmation():
+    token = generate_confirmation_token(current_user.email)
+    confirm_url = url_for('api.confirm_email', token=token, _external=True)
+    html = render_template('user/activate.html', confirm_url=confirm_url)
+    subject = "Please confirm your email"
+    send_email(current_user.email, subject, html)
+    flash('A new confirmation email has been sent.', 'success')
+    return redirect(url_for('api.unconfirmed'))
 
 @api.route('/regist', methods=['POST', 'GET'])
 def registBussiness():
     """
-
+    注册事务
     :return:
     """
     name = request.form.get('email')
@@ -103,6 +165,17 @@ def registBussiness():
             education = "master"
         elif degree == "2":
             education = "Ph.D"
+
+        # token = generate_confirmation_token()
+        # send_email('709778550@qq.com', "hello", )
+
+
+        token = generate_confirmation_token(email)
+        confirm_url = url_for('api.confirm_email', token=token, _external=True)
+        print "confirm_url", confirm_url
+        html = render_template('activate.html', confirm_url=confirm_url)
+        subject = "Please confirm your email"
+        send_email('709778550@qq.com', subject, html)
 
         # 注册时添加到作者表中
         try:
@@ -145,6 +218,8 @@ def registBussiness():
 
 @api.route('/login', methods=['POST'])
 def loginBussiness():
+    # if current_user.is_active():
+    #     return redirect(url_for('user.home'))
     name = request.form.get('email')
     password = request.form.get('password')
     # nowUser = ASNUser.query.filter_by(email=name, password=password).first()
@@ -162,10 +237,7 @@ def loginBussiness():
 @api.route('/logout', methods=['GET'])
 @login_required
 def logout():
-    try:
-        logout_user()
-    except:
-        logging.warning('session已过期')
+    logout_user()
     return redirect(url_for('user.home'))
 
 
@@ -280,15 +352,19 @@ def search_paper(paper_name=None):
 
 
 @api.route('/search', methods=['POST', 'GET'])
-def searchBussiness():
+def searchBussiness(page=1):
     """
     根据请求的搜索类型返回paper或者author的搜索结果
     :return:
     """
     item_number = 10
-    searchtext = request.form.get('searchtext')  # 搜索字段需要存入页面之中，否则难以获取0
+    searchtext = request.form.get('searchtext')  # 搜索字段需要存入页面之中，否则难以获取
     search_type = request.form.get('searchType')
-    page_number = request.form.get('page')  # 用户点击搜索时page_number为1
+
+    page_number = request.form.get('page')
+    if page_number is None:
+        page_number = page
+
     start_item_number = (page_number - 1) * item_number
 
     if search_type == "authors":

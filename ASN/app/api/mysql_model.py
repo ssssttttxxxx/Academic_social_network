@@ -35,14 +35,16 @@ class ASNUser(db.Model, UserMixin):
     address = db.Column(db.String(45))
     avatar = db.Column(db.String(100))
     focus_area = db.Column(db.String(100))
+    confirmed = db.Column(db.Boolean)
+
     def __str__(self):
         return '用户<email:%s, password:%s>' % (self.email, self.password)
 
     def __init__(self, email="", password="", gender="",
                  education="", department="", phone="",
                  first_name="", last_name="", address="",
-                 avatar = "../static/avatar/init.png",
-                 focus_area = ""):
+                 avatar="../static/avatar/init.png",
+                 focus_area="", confirm=False):
         self.email = email
         self.password = password
         self.gender = gender
@@ -55,6 +57,7 @@ class ASNUser(db.Model, UserMixin):
         self.address = address
         self.avatar = avatar
         self.focus_area = focus_area
+        self.confirm = confirm
 
     def __repr__(self):
         return '<ASNUser %r>' % self.usernam

@@ -83,3 +83,7 @@ def follow():
 @login_required
 def private_profile():
     return render_template('private_profile.html')
+
+# @user.route('/confirm_url')
+# def confirm():
+#     pass

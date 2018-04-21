@@ -13,8 +13,7 @@ from datetime import timedelta
 
 from api.mysql_model import ASNUser, Expert_detail_total
 from api.mysql_model import db
-from api.mongodb_model import mongo
-from api.app_api import photos, papers, mail
+from api.app_api import photos, papers, mail, mongo
 
 from config import Config
 
@@ -32,7 +31,7 @@ mail.init_app(app)
 @app.before_request
 def make_session_permanent():
     session.permanent = True
-    app.permanent_session_lifetime = timedelta(seconds=5)
+    app.permanent_session_lifetime = timedelta(minutes=5)
     session.modified = True
 
 
@@ -54,7 +53,6 @@ db.init_app(app)
 # app.config['MONGO_AUTHORS_DBNAME'] = 'Co_authors'
 
 # mongo = PyMongo(app, config_prefix='MONGO3')
-# mongo = PyMongo(app)
 mongo.init_app(app)
 
 # login_manager = LoginManager()

@@ -6,28 +6,35 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 import json
-from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify,\
+from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify, \
     render_template, current_app, session, logging, g
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, DOCUMENTS
 from flask_wtf import FlaskForm
 from flask_mail import Message, Mail
+from flask_pymongo import PyMongo
 
-
+import re
+import time
 import logging
 import datetime
+import MySQLdb
 from PIL import Image
 from token import generate_confirmation_token, confirm_token
+from decorators import check_confirmed
 
-from app.api.model import User, Lemma, Comment, db
-from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, Expert_detail_total, Upload_paper
+# from app.api.model import User, Lemma, Comment, db
+from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, Expert_detail_total, Upload_paper, db
 from app.api.construct_network_from_mongodb import ConstructCoauthorsTree, ConstructCitationTree
-from app.api.mongodb_model import mongo
+
+mysql_db = MySQLdb.connect("47.106.157.16", "root", "123456", "citation", charset='utf8')
 
 # from app import photos, files
 
 photos = UploadSet('PHOTOS', IMAGES)
 papers = UploadSet('PAPERS')
+
+mongo = PyMongo()
 
 api = Blueprint(
     'api',
@@ -44,10 +51,12 @@ login_manager.refresh_view = ".login"
 login_manager.needs_refresh_message = (u"请重新登录")
 login_manager.needs_refresh_message_category = "info"
 
+
 @login_manager.needs_refresh_handler
 def refresh():
     flash('You should log in!')
     return logout()
+
 
 @login_manager.user_loader
 def load_user(email):
@@ -59,8 +68,8 @@ def load_user(email):
     :return:
     """
     # print "ASNUser load_user: ", ASNUser.query.get(email)
-    print "db load_user: ", db.session.query(ASNUser).filter(ASNUser.email==email).first()
-    return db.session.query(ASNUser).filter(ASNUser.email==email).first()
+    print "db load_user: ", db.session.query(ASNUser).filter(ASNUser.email == email).first()
+    return db.session.query(ASNUser).filter(ASNUser.email == email).first()
 
 
 logger = logging.getLogger()
@@ -82,14 +91,16 @@ logger.addHandler(ch)
 
 mail = Mail()
 
+
 def another_send_email(to, subject, template=None, **kwargs):
     # app = current_app._get_current_object()
-    msg = Message(subject,sender=current_app.config['MAIL_USERNAME'], recipients=[to])
+    msg = Message(subject, sender=current_app.config['MAIL_USERNAME'], recipients=[to])
     # msg.body = render_template(template + '.txt', **kwargs)
     # msg.html = render_template(template + '.html', **kwargs)#将准备好的模板添加到msg对象上，字典传的参里包括token(即生成的一长串字符串)，链接的组装，页面的渲染在里面用jinja2语法完成
     msg.body = '<b>Hello Web</b>'
     # with app.app_context():
-    mail.send(msg) #发射
+    mail.send(msg)  # 发射
+
 
 def send_email(to, subject, template):
     msg = Message(
@@ -100,23 +111,28 @@ def send_email(to, subject, template):
     )
     mail.send(msg)
 
-@api.route('/confirm/<token>')
+
+@api.route('/confirm/<string:token>')
 @login_required
-def confirm_email(token):
+def confirm_email(token=None):
+    print "token", token
+
     try:
         email = confirm_token(token)
+        print "email", email
     except:
         flash('The confirmation link is invalid or has expired.', 'danger')
+
     user = ASNUser.query.filter_by(email=email).first_or_404()
     if user.confirmed:
         flash('Account already confirmed. Please login.', 'success')
     else:
         user.confirmed = True
-        user.confirmed_on = datetime.datetime.now()
-        db.session.add(user)
+        # db.session.add(user)
         db.session.commit()
         flash('You have confirmed your account. Thanks!', 'success')
     return redirect(url_for('user.login'))
+
 
 @api.route('/unconfirmed')
 @login_required
@@ -127,16 +143,22 @@ def unconfirmed():
         flash('Please confirm your account!', 'warning')
         return render_template('unconfirmed.html')
 
+
 @api.route('/resend')
 @login_required
 def resend_confirmation():
+    sender_email = '709778550@qq.com'
     token = generate_confirmation_token(current_user.email)
+
     confirm_url = url_for('api.confirm_email', token=token, _external=True)
-    html = render_template('user/activate.html', confirm_url=confirm_url)
+    html = render_template('activate.html', confirm_url=confirm_url)
     subject = "Please confirm your email"
-    send_email(current_user.email, subject, html)
+    # send_email(current_user.email, subject, html)
+    send_email(sender_email, subject, html)
+
     flash('A new confirmation email has been sent.', 'success')
-    return redirect(url_for('api.unconfirmed'))
+    return redirect(url_for('user.login'))
+
 
 @api.route('/regist', methods=['POST', 'GET'])
 def registBussiness():
@@ -169,22 +191,23 @@ def registBussiness():
         # token = generate_confirmation_token()
         # send_email('709778550@qq.com', "hello", )
 
-
-        token = generate_confirmation_token(email)
-        confirm_url = url_for('api.confirm_email', token=token, _external=True)
-        print "confirm_url", confirm_url
-        html = render_template('activate.html', confirm_url=confirm_url)
-        subject = "Please confirm your email"
-        send_email('709778550@qq.com', subject, html)
+        # 发送验证邮件
+        to_email = '709778550@qq.com'
+        # token = generate_confirmation_token(email)
+        # confirm_url = url_for('api.confirm_email', token=token, _external=True)
+        # print "confirm_url", confirm_url
+        # html = render_template('activate.html', confirm_url=confirm_url)
+        # subject = "Please confirm your email"
+        # send_email('709778550@qq.com', subject, html)
 
         # 注册时添加到作者表中
         try:
-            res = db.session.query(db.func.max(Expert_detail_total.total_id).label('max_id')).one()
-            # max_id = db.session.query(db.func.max(Expert_detail_total)).scalar().total_id
+            res = db.session.query(db.func.max(Expert_detail_total.author_id).label('max_id')).one()
+            # max_id = db.session.query(db.func.max(Expert_detail_total)).scalar().author_id
             max_id = res.max_id
             print "max_id: ", max_id
             expert = Expert_detail_total(id=max_id, email=email, name=first_name + " " + last_name, gender=sex,
-                                         education=education, total_id=max_id + 1)
+                                         education=education, author_id=max_id + 1)
             db.session.add(expert)
             db.session.commit()
         except Exception, e:
@@ -209,7 +232,7 @@ def registBussiness():
 
         # login_user(user)
         flash('注册成功!请登录!')
-        logging.info(email+' successfully registed')
+        logging.info(email + ' successfully registed')
         return redirect(url_for('user.login'))
     else:
         flash('注册失败!帐号已存在,请重新注册!')
@@ -286,12 +309,32 @@ def search_expert(expert_name=None):
     :param expert_name:
     :return:
     """
+    page = 1
+    pagesize = 20
     print "name", expert_name
+
     if expert_name is None:
         return render_template("asn_detail.html")
     else:
-        results = Expert_detail.query.filter(Expert_detail.name.like("%" + expert_name + "%")).all()
+        # cursor = mysql_db.cursor()
+        # sql = "select * from expert_user_detail where name like '%" + expert_name + "%'"
+        # print "sql", sql
+        # cursor.execute(sql)
+        # results = cursor.fetchall()
+
+
+        results = db.session.query(Expert_detail_total).filter(
+            Expert_detail_total.name.like('%' + expert_name + '%')).order_by(Expert_detail_total.name).all()
         if results is not None:
+            print "results", results
+            for index, result in enumerate(results):
+                print index, result
+                # if result is not None:
+                try:
+                    print index, result.name
+                except:
+                    print index, "result is None"
+                    # print result.name
             return render_template('asn_detail.html', experts=results)
         else:
             return "no expert found!fxxx_expert_detail"
@@ -331,86 +374,145 @@ def search_paper(paper_name=None):
     :param paper_name:
     :return:
     """
+    page = 1
+    pagesize = 20
+
     print "paper_name", paper_name
     if paper_name is None:
-        return render_template("asn_search_papers.html")
+        return render_template("../old_tem/asn_search_papers.html")
     else:
-        # print "before query"
+        print "before query"
+        begin = time.time()
         Paper_detail.query.limit(10)
-        results = Paper_detail.query.filter(Paper_detail.title.like("%" + paper_name + "%")).slice(0, 10).all()
-        # resultss = db.session.query(Paper_detail.title).filter(Paper_detail.title.like("%" + paper_name + "%")).first()
+        results_sum = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(paper_name)}).count()
+
+        print "条目总数", results_sum
+
+        # 使用mongodb查询
+        results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(paper_name)}).skip(
+            page - 1).sort('title', -1).limit(pagesize)
+
+        # 使用mysql查询 model
+        # results = Paper_detail.query.order_by(Paper_detail.year.desc()).filter(Paper_detail.title.like("%" + paper_name + "%")).slice(0, 10).all()
+
+        # 使用mysql查询 not model
+        # results = db.session.query(Paper_detail.title).filter(Paper_detail.title.like("%" + paper_name + "%")).slice(0, 10).all()
+
         # resultsss = Paper_detail.query.limit(10).all()
-        # print "after query"
+        end = time.time()
+        print "after query"
+        print "query time %d", end - begin
+
         paper_search_results = []
         for result in results:
+            print result
             paper_search_results.append(result["title"])
+            # paper_search_results.append(result.title)
+
         if results is not None:
-            print "resultss: ", results
-            return render_template("search_papers.html", papers=paper_search_results)
+            print "results: ", paper_search_results
+            print 'length', len(paper_search_results)
+            return render_template("../old_tem/asn_search_papers.html", papers=paper_search_results)
         else:
             return "no paper found!paper_search"
 
 
 @api.route('/search', methods=['POST', 'GET'])
-def searchBussiness(page=1):
+# @api.route('/paper/<string:search_content>/<int:page>')
+def search():
     """
     根据请求的搜索类型返回paper或者author的搜索结果
     :return:
     """
+    page = request.args.get('page', default=1, type=int)
+    searchtext = request.args.get('content', default='*', type=str)
+    print "page", page
+    print "content", searchtext
+
     item_number = 10
-    searchtext = request.form.get('searchtext')  # 搜索字段需要存入页面之中，否则难以获取
-    search_type = request.form.get('searchType')
+    # searchtext = request.form.get('searchtext')  # 搜索字段需要存入页面之中，否则难以获取
 
     page_number = request.form.get('page')
     if page_number is None:
-        page_number = page
+        page_number = int(page)
+
+    print "page_number", page_number
 
     start_item_number = (page_number - 1) * item_number
+    end_item_number = page_number*item_number
+    # 使用mysql查询 not model
+    author_results = db.session.query(Expert_detail_total).filter(
+            Expert_detail_total.name.like('%' + searchtext + '%')).order_by(Expert_detail_total.name).slice(start_item_number,).all()
 
-    if search_type == "authors":
-        author_results = Expert_detail.query.filter(
-            Expert_detail.name.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
-        if author_results is not None:
-            # 存放所有研究者信息的数组
-            authors_detail = []
-            for author in author_results:
-                author_detail = {
-                    "id": author["id"],
-                    "mid": author["mid"],
-                    "department": author["department"],
-                    "name": author["name"],
-                    "email": author["email"],
-                }
-                authors_detail.append(author_detail)
-            json_authors_detail = json.dumps({"authors_detail": authors_detail})
-            return json_authors_detail
-            # return render_template("AuthorSearchResults.html", json_authors_detail)
-        else:
-            return json.dumps({"error": "can not found the author"})
+    # 使用mysql查询 model
+    # author_results = Expert_detail.query.filter(Expert_detail.name.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
 
-    elif search_type == "papers":
-        paper_results = Paper_detail.query.filter(
-            Paper_detail.title.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
-        if paper_results is not None:
-            # 存放所有paper信息的数据
-            papers_detail = []
-            for paper in paper_results:
-                paper_detail = {
-                    "id": paper["id"],
-                    "title": paper["title"],
-                    "authors": paper["authors"],
-                    "venue": paper["venue"],
-                    "year": paper["year"],
-                    "ref": paper["ref"],
-                    "abtract": paper["abtract"],
-                }
-                papers_detail.append(paper_detail)
-            json_paper_detail = json.dumps({"papers_detail": papers_detail})
-            return json_paper_detail
-            # return render_template("PaperSearchResults.html", json_authors_detail)
+    # 使用mongodb查询
+    # author_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
+    #     (page - 1) * item_number).sort('title', -1).limit(item_number)
 
-        else:
-            return json.dumps({"error": "can not found the author"})
+    json_authors_detail = []
+
+    if author_results is not None:
+        # 存放所有研究者信息的数组
+        authors_detail = []
+        for author in author_results:
+            tags = author.tags.split(';')
+            author_detail = {
+                "id": author.id,
+                "position": author.position,
+                "mid": author.mid,
+                "name": author.name,
+                "name_zh": author.name_zh,
+                "phone": author.phone,
+                "fax": author.fax,
+                "email": author.email,
+                "department": author.department,
+                "address": author.address,
+                "homepage": author.homepage,
+                "education": author.education,
+                "experience": author.experience,
+                "biography": author.biography,
+                "avatar": author.avatar,
+                "h_index": author.h_index,
+                "g_index": author.g_index,
+                "gender": author.gender,
+                "cite_num": author.cite_num,
+                "tags": tags,
+                "author_id": author.author_id,
+            }
+            authors_detail.append(author_detail)
+        json_authors_detail = json.dumps({"authors_detail": authors_detail})
+
+    # 使用mysql查询 model
+    # paper_results = Paper_detail.query.filter(Paper_detail.title.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
+
+    # 使用mongodb查询
+    paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
+        (page - 1) * item_number).sort('title', -1).limit(item_number)
+
+    json_paper_detail = []
+
+    if paper_results is not None:
+        # 存放所有paper信息的数据
+        papers_detail = []
+        for paper in paper_results:
+            paper_detail = {
+                "id": paper["id"],
+                "title": paper["title"],
+                "authors": paper["authors"],
+                # "venue": paper["venue"],
+                "year": paper["year"],
+                "ref": paper["ref"],
+                "abtract": paper["abtract"],
+            }
+            papers_detail.append(paper_detail)
+        json_paper_detail = json.dumps({"papers_detail": papers_detail})
+
+    return json.dumps({'result': 'success',
+                       'paper': json_paper_detail,
+                       'author': json_authors_detail,
+                       })
 
 
 @api.route('/expert_network', methods=['POST'])
@@ -431,7 +533,7 @@ def expert_network():
     expert_name = request.form.get('name')
     print "expert_name", expert_name
 
-    for year in range (min_year, max_year):
+    for year in range(min_year, max_year):
         years.append(year)
     # years = [2008, 2009, 2010]
     for year in years:
@@ -440,7 +542,7 @@ def expert_network():
 
         # 网络中只有作者自己，则进行下一年的关系网络构建
         if coauthor_network.nodes_num() == 1:
-            print year,'break'
+            print year, 'break'
             continue
 
         coauthor_nodes = coauthor_network.all_nodes()
@@ -483,13 +585,13 @@ def paper_network():
     years = [2008, 2009, 2010]
     nodes = []
     edges = []
-    print "paper_id",paper_id
+    print "paper_id", paper_id
     paper_network = ConstructCitationTree(paper_id)
     paper_network.construct()
     paper_network_edges = paper_network.edges()
     paper_network_nodes = paper_network.all_nodes()
 
-    for pi,t,y in paper_network_nodes:
+    for pi, t, y in paper_network_nodes:
         # node_detail = {
         #     'node':[
         #         {'name': 'ii',
@@ -502,7 +604,7 @@ def paper_network():
 
         node_item = {
             "name": pi,
-            "attributes": {"title": pi,"year": y,},
+            "attributes": {"title": pi, "year": y,},
             "value": 10,
             # "itemStyle":{
             #     "color": '#FF3030'
@@ -594,7 +696,7 @@ def insert_new_item():
     item = Expert_detail_total(id, mid, name, name_zh, position,
                                phone, fax, email, department, address,
                                homepage, education, experience, biography, avatar,
-                               h_index, g_index, gender, cite_num, tags)
+                               h_index, g_index, gender, cite_num, tags, )
 
     try:
         db.session.add(item)
@@ -634,8 +736,9 @@ def modify_user():
             department = request.form.get("department")
             address = request.form.get("address")
             phone = request.form.get("telephone")
-        result = ASNUser.query.filter(ASNUser.email == current_user.get_id()).first()
-        another_result = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
+
+        # result = ASNUser.query.filter(ASNUser.email == current_user.get_id()).first()
+        # another_result = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
         # print "first_name", request.form['firstName']
         if first_name is not None:
             print "firstName", first_name
@@ -645,7 +748,13 @@ def modify_user():
             print "department", department
             print "address", address
             print "phone", phone
-            result_user = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
+            try:
+                result_user = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
+            except Exception, e:
+                print "modify_user：mysql 查询用户表出错"
+                print "error: ", e
+                logging.error(e)
+                return json.dumps({'result': 'fail', 'msg': 'can not query mysql'})
         else:
             print "firstName", first_name
             print "lastName", last_name
@@ -663,7 +772,15 @@ def modify_user():
         result_user.address = address
         result_user.phone = phone
 
-        result_expert = db.session.query(Expert_detail_total).filter(Expert_detail_total.email == current_email).first()
+        try:
+            result_expert = db.session.query(Expert_detail_total).filter(
+                Expert_detail_total.email == current_email).first()
+        except Exception, e:
+            print "modify_user：mysql 查询作者表出错"
+            print "error: ", e
+            logging.error(e)
+            return json.dumps({'result': 'fail', 'msg': 'can not query mysql'})
+
         result_expert.name = first_name + " " + last_name
         sex = ""
         if gender == "0":
@@ -694,9 +811,6 @@ def modify_user():
         db.session.commit()
         return json.dumps({'result': 'success', 'newData': data})
 
-    except Exception, e:
-        print "error: ", e
-        return json.dumps({'result': 'fail'})
     except Exception, e:
         print "error: ", e
         return json.dumps({'result': 'fail'})
@@ -741,7 +855,6 @@ def modify_password():
 @api.route('/upload_avatar', methods=['POST'])
 @login_required
 def upload_avatar():
-
     """
     上传头像
     :return:
@@ -781,7 +894,7 @@ def upload_avatar():
 
                     db.session.commit()
                 except Exception, e:
-                    print "无法更新头像"
+                    print "无法更新头像", e
                     return json.dumps({'result': "failed", 'filename': '', 'msg': 'Error occurred'})
 
                 # 图片压缩
@@ -845,6 +958,7 @@ def add_tag():
     except:
         return json.dumps({'result': 'fail'})
 
+
 @api.route('/del_tag', methods=['POST'])
 @login_required
 def del_tag():
@@ -860,7 +974,7 @@ def del_tag():
     del area_list[int(area_index)]
     area_str = ""
     for index, area in enumerate(area_list):
-        if index == len(area_list)-1:
+        if index == len(area_list) - 1:
             area_str = area_str + area
         else:
             area_str = area_str + area + ','
@@ -890,7 +1004,7 @@ def upload_paper():
         try:
             email = current_user.get_id()
             file = request.files['uploadPaper']
-            print "paper name",file.filename
+            print "paper name", file.filename
 
             filename = papers.save(file, name=file.filename)
             file_url = papers.url(filename)
@@ -902,7 +1016,8 @@ def upload_paper():
             upload_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             print upload_time
             try:
-                upload_record = Upload_paper(user_email=email, file_url=file_url, time=upload_time, file_name=file.filename)
+                upload_record = Upload_paper(user_email=email, file_url=file_url, time=upload_time,
+                                             file_name=file.filename)
                 db.session.add(upload_record)
                 db.session.commit()
             except:
@@ -911,7 +1026,7 @@ def upload_paper():
                 return json.dumps({'result': 'fail', 'msg': 'duplicate name of paper'})
             return json.dumps({'result': 'success', 'name': file.filename, 'time': upload_time})
         except Exception, e:
-            print "error: ",e
+            print "error: ", e
             return json.dumps({'result': 'fail', 'msg': 'Error occurred'})
     else:
         print "no uploadPaper part"
@@ -945,10 +1060,10 @@ def get_upload_paper():
     """
     email = request.form.get('userID')
     # email = current_user.get_id()
-    print 'email',email
+    print 'email', email
     files = []
     try:
-        results = db.session.query(Upload_paper).order_by(Upload_paper.time.desc()).\
+        results = db.session.query(Upload_paper).order_by(Upload_paper.time.desc()). \
             filter(Upload_paper.user_email == email).all()
 
         for result in results:
@@ -957,14 +1072,13 @@ def get_upload_paper():
             upload_date = upload_dt[0]
             upload_time = upload_dt[1]
             file = {
-                'fileName':result.file_name,
-                'fileURL':result.file_url,
-                'time':upload_time,
-                'date':upload_date,
+                'fileName': result.file_name,
+                'fileURL': result.file_url,
+                'time': upload_time,
+                'date': upload_date,
             }
             files.append(file)
         print "success"
-        return json.dumps({'result':'success', 'paperItem':files})
+        return json.dumps({'result': 'success', 'paperItem': files})
     except Exception, e:
-        return json.dumps({'result':'fail', 'msg': 'database query fail'})
-
+        return json.dumps({'result': 'fail', 'msg': 'database query fail'})

@@ -579,3 +579,1472 @@
 2018-04-19 00:28:14,950 - _internal.py[line:87] - WARNING:  * Debugger is active!
 2018-04-19 00:28:14,987 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
 2018-04-19 00:28:14,996 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 10:53:18,391 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:18] "GET /user/regist HTTP/1.1" 200 -
+2018-04-19 10:53:20,096 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 304 -
+2018-04-19 10:53:20,104 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-04-19 10:53:20,118 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 304 -
+2018-04-19 10:53:20,128 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/common/login/ace-fonts.css HTTP/1.1" 304 -
+2018-04-19 10:53:20,151 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 304 -
+2018-04-19 10:53:20,167 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/common/animate.css HTTP/1.1" 304 -
+2018-04-19 10:53:20,420 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/common/style.css HTTP/1.1" 304 -
+2018-04-19 10:53:20,436 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/chosen/chosen.css HTTP/1.1" 304 -
+2018-04-19 10:53:20,456 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 304 -
+2018-04-19 10:53:20,473 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 304 -
+2018-04-19 10:53:20,503 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 304 -
+2018-04-19 10:53:20,519 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-04-19 10:53:20,747 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 304 -
+2018-04-19 10:53:20,798 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:20] "GET /static/common/img/logo.png HTTP/1.1" 304 -
+2018-04-19 10:53:21,219 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:21] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 304 -
+2018-04-19 10:53:21,385 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:21] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 10:53:45,927 - app_api.py[line:212] - INFO: 789987@qq successfully registed
+2018-04-19 10:53:45,936 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:45] "POST /api/regist HTTP/1.1" 302 -
+2018-04-19 10:53:45,977 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:45] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 10:53:46,460 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:46] "GET /static/icheck/css/custom.css HTTP/1.1" 304 -
+2018-04-19 10:53:46,487 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:46] "GET /static/icheck/js/icheck.min.js HTTP/1.1" 304 -
+2018-04-19 10:53:46,723 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:46] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 10:53:46,976 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 10:53:46] "GET /static/icheck/css/green.png HTTP/1.1" 304 -
+2018-04-19 11:14:00,992 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:14:04,976 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:14:05,022 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:14:05,028 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:14:08,283 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:08] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 302 -
+2018-04-19 11:14:08,507 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:08] "GET /user/login?next=%2Fapi%2Fconfirm%2FIjc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 200 -
+2018-04-19 11:14:09,487 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-04-19 11:14:09,513 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-04-19 11:14:09,528 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/common/login/ace-fonts.css HTTP/1.1" 200 -
+2018-04-19 11:14:09,552 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/icheck/css/custom.css HTTP/1.1" 200 -
+2018-04-19 11:14:09,569 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-04-19 11:14:09,585 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-04-19 11:14:09,834 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-04-19 11:14:09,861 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 200 -
+2018-04-19 11:14:09,884 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 200 -
+2018-04-19 11:14:09,904 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 200 -
+2018-04-19 11:14:09,921 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-04-19 11:14:09,936 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:09] "GET /static/icheck/js/icheck.min.js HTTP/1.1" 200 -
+2018-04-19 11:14:10,247 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:10] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-04-19 11:14:10,703 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:10] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:14:10,726 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:10] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-04-19 11:14:10,953 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:14:10] "GET /static/icheck/css/green.png HTTP/1.1" 200 -
+2018-04-19 11:14:57,938 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:15:01,549 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:15:01,579 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:15:01,585 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:15:12,371 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:15:12] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 302 -
+2018-04-19 11:15:12,612 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:15:12] "GET /user/login?next=%2Fapi%2Fconfirm%2FIjc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 200 -
+2018-04-19 11:15:12,844 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:15:12] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:16:13,230 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:13] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 11:16:13,414 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:13] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 11:16:13,546 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:13] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:16:26,834 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:26] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 11:16:27,147 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:27] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 11:16:27,707 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:27] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-04-19 11:16:27,730 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:27] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 200 -
+2018-04-19 11:16:28,098 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:28] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:16:28,292 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:28] "GET /static/avatar/init.png HTTP/1.1" 200 -
+2018-04-19 11:16:29,503 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:29] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-19 11:16:29,855 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:29] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-04-19 11:16:29,872 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:29] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 200 -
+2018-04-19 11:16:29,904 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:29] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-04-19 11:16:29,924 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:29] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 200 -
+2018-04-19 11:16:29,959 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:29] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 200 -
+2018-04-19 11:16:29,973 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:29] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 200 -
+2018-04-19 11:16:30,178 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:30] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 200 -
+2018-04-19 11:16:30,289 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:30] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-04-19 11:16:30,614 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:30] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:16:30,786 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:30] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-19 11:16:30,808 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:30] "GET /static/common/img/male.png HTTP/1.1" 200 -
+2018-04-19 11:16:30,834 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:30] "GET /static/common/img/female.png HTTP/1.1" 200 -
+2018-04-19 11:16:30,861 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:30] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-04-19 11:16:32,661 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:32] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 11:16:33,059 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:16:33] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:20:40,575 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:20:43,171 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:20:43,198 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:20:43,204 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:20:46,973 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:20:50,022 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:20:50,053 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:20:50,062 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:21:24,782 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:21:27,306 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:21:27,335 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:21:27,341 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:22:56,960 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:22:56] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 11:22:57,201 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:22:57] "GET /user/login?next=%2Fuser%2Fprivate_profile HTTP/1.1" 200 -
+2018-04-19 11:22:57,305 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:22:57] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:23:13,421 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:23:13] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 11:23:13,676 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:23:13] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 11:23:13,789 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:23:13] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:24:47,709 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:24:47] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 500 -
+2018-04-19 11:24:47,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:24:47] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:24:48,019 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:24:48] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:24:48,020 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:24:48] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:24:48,131 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:24:48] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-19 11:26:08,342 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 11:26:08,690 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:26:11,479 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:26:11,512 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:26:11,516 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:27:18,829 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 11:27:19,427 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:27:22,513 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:27:22,542 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:27:22,548 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:27:39,342 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:27:41,990 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:27:42,020 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:27:42,026 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:28:24,924 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:28:24] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 302 -
+2018-04-19 11:28:25,170 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:28:25] "GET /user/login?next=%2Fapi%2Fconfirm%2FIjc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 200 -
+2018-04-19 11:28:25,290 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:28:25] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:28:35,092 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:28:35] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 302 -
+2018-04-19 11:28:35,344 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:28:35] "GET /user/login?next=%2Fapi%2Fconfirm%2FIjc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 200 -
+2018-04-19 11:28:35,464 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:28:35] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:29:27,039 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:29:29,734 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:29:29,763 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:29:29,769 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:29:31,865 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:29:31] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 302 -
+2018-04-19 11:29:32,111 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:29:32] "GET /user/login?next=%2Fapi%2Fconfirm%2FIjc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 200 -
+2018-04-19 11:29:32,190 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:29:32] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:30:23,891 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 11:30:24,437 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:30:27,153 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:30:27,190 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:30:27,200 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:30:54,292 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:30:54] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 11:30:54,502 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:30:54] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 11:30:54,628 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:30:54] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:30:58,938 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:30:58] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 302 -
+2018-04-19 11:30:59,125 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:30:59] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 11:30:59,246 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:30:59] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:35:17,825 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:35:20,417 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:35:20,446 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:35:20,451 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:35:22,602 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:35:22] "GET /api/confirm/Ijc4OTk4N0BxcSI.DbmWNg.Npz-a_1lG8pl48aOdOM_paUpm28 HTTP/1.1" 302 -
+2018-04-19 11:35:22,805 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:35:22] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 11:35:22,920 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:35:22] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:37:26,960 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\mysql_model.py', reloading
+2018-04-19 11:37:27,496 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:37:30,148 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:37:30,174 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:37:30,180 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:41:13,611 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 11:41:13,967 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:41:48,415 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:41:51,029 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:41:51,056 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:41:51,062 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:42:24,247 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:42:26,769 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:42:26,796 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:42:26,802 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:42:28,733 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:28] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 11:42:28,963 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:28] "GET /user/login?next=%2Fuser%2Fprivate_profile HTTP/1.1" 200 -
+2018-04-19 11:42:29,059 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:29] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:42:45,609 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:45] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 11:42:45,848 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:45] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 11:42:45,947 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:45] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:42:47,545 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:47] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-19 11:42:47,846 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:47] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:42:48,349 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:48] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-19 11:42:49,948 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:49] "GET /api/logout HTTP/1.1" 302 -
+2018-04-19 11:42:50,263 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:50] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 11:42:50,512 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:50] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:42:52,098 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:52] "GET /user/regist HTTP/1.1" 200 -
+2018-04-19 11:42:52,835 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:52] "GET /static/chosen/chosen.css HTTP/1.1" 200 -
+2018-04-19 11:42:52,854 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:52] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:42:55,436 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:55] "GET /user/regist HTTP/1.1" 200 -
+2018-04-19 11:42:55,684 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:42:55] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:43:19,095 - app_api.py[line:217] - INFO: 678876@qq successfully registed
+2018-04-19 11:43:19,096 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:43:19] "POST /api/regist HTTP/1.1" 302 -
+2018-04-19 11:43:19,102 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:43:19] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 11:43:19,503 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:43:19] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:43:31,566 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:43:31] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 11:43:31,818 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:43:31] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 11:43:31,926 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:43:31] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 11:43:34,252 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:43:34] "GET /user/private_profile HTTP/1.1" 500 -
+2018-04-19 11:43:34,437 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:43:34] "GET /user/private_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:43:34,565 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:43:34] "GET /user/private_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:43:34,565 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:43:34] "GET /user/private_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:44:05,289 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:44:08,147 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:44:08,174 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:44:08,180 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:44:10,319 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:10] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 11:44:10,618 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:10] "GET /api/unconfirmed HTTP/1.1" 500 -
+2018-04-19 11:44:10,644 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:10] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:44:10,944 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:10] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:44:10,946 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:10] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:44:11,282 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:11] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-19 11:44:34,414 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:44:36,871 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:44:36,900 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:44:36,905 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:44:38,301 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:38] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 11:44:38,509 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:38] "GET /api/unconfirmed HTTP/1.1" 500 -
+2018-04-19 11:44:38,609 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:38] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:44:38,822 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:38] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:44:38,825 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:44:38] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:46:20,457 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:46:23,055 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:46:23,082 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:46:23,088 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:46:27,483 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:27] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 11:46:27,729 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:27] "GET /api/unconfirmed HTTP/1.1" 500 -
+2018-04-19 11:46:27,788 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:27] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:46:28,038 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:28] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:46:28,039 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:28] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:46:41,605 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:41] "GET /api/unconfirmed HTTP/1.1" 500 -
+2018-04-19 11:46:41,828 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:41] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:46:41,915 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:41] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:46:41,917 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:41] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:46:44,571 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:44] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 11:46:44,900 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:44] "GET /api/unconfirmed HTTP/1.1" 500 -
+2018-04-19 11:46:45,127 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:45] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:46:45,210 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:45] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:46:45,210 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:46:45] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:47:08,134 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:47:08] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 11:47:08,387 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:47:08] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-19 11:47:52,043 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:47:52] "GET /api/unconfirmed HTTP/1.1" 500 -
+2018-04-19 11:47:52,273 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:47:52] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:47:52,358 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:47:52] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:47:52,364 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:47:52] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:48:04,638 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:04] "GET /api/unconfirmed HTTP/1.1" 500 -
+2018-04-19 11:48:04,862 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:04] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:48:04,974 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:04] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:48:04,976 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:04] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:48:34,568 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:34] "GET /api/unconfirmed HTTP/1.1" 500 -
+2018-04-19 11:48:34,792 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:34] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:48:34,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:34] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:48:34,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:34] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:48:38,890 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:38] "GET /api/unconfirmed HTTP/1.1" 500 -
+2018-04-19 11:48:39,200 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:39] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:48:39,201 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:39] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:48:39,203 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:39] "GET /api/unconfirmed?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:48:41,732 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:41] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-19 11:48:43,296 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:43] "GET /api/resend HTTP/1.1" 500 -
+2018-04-19 11:48:43,523 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:43] "GET /api/resend?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 11:48:43,608 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:43] "GET /api/resend?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 11:48:43,609 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:43] "GET /api/resend?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 11:48:43,648 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:48:43] "GET /api/resend?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-19 11:49:48,035 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:49:50,576 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:49:50,617 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:49:50,622 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 11:50:17,911 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:50:17] "GET /api/resend HTTP/1.1" 302 -
+2018-04-19 11:50:17,923 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:50:17] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-19 11:50:39,687 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:50:39] "GET /api/resend HTTP/1.1" 302 -
+2018-04-19 11:50:39,697 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 11:50:39] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-19 11:55:30,911 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 11:55:31,494 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 11:55:34,293 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 11:55:34,322 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 11:55:34,328 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 13:50:00,030 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:00] "GET / HTTP/1.1" 200 -
+2018-04-19 13:50:00,802 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:00] "GET /static/vue/js/vue.js HTTP/1.1" 304 -
+2018-04-19 13:50:00,808 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:00] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 304 -
+2018-04-19 13:50:01,220 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:01] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 13:50:03,197 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:03] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 13:50:03,572 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:03] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 13:50:05,944 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:05] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 13:50:06,312 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:06] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 13:50:14,138 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:14] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 13:50:14,450 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:14] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 13:50:14,700 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:14] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 13:50:30,375 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:30] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 13:50:30,621 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:30] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 13:50:30,734 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:30] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 13:50:35,910 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:35] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 13:50:36,150 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:36] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 13:50:36,224 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:50:36] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 13:51:07,957 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:51:07] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 13:51:08,328 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:51:08] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 13:51:08,430 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:51:08] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 13:51:08,819 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:51:08] "GET /static/avatar/006CEGiVgy1fcddv417q5j30g008yta5_1.jpg HTTP/1.1" 200 -
+2018-04-19 13:51:09,808 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:51:09] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 13:51:10,122 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:51:10] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-19 13:51:19,661 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:51:19] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 13:51:19,671 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:51:19] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-19 13:51:22,993 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:51:22] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 13:51:23,006 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:51:23] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-19 13:52:03,678 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:52:03] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 13:52:03,927 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:52:03] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 13:52:04,023 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:52:04] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 13:52:29,674 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:52:29] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 13:52:29,931 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:52:29] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 13:52:30,078 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:52:30] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 13:52:31,789 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:52:31] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 13:52:32,042 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 13:52:32] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-19 16:23:02,601 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 16:23:03,877 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 16:23:08,673 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 16:23:08,723 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 16:23:08,737 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 16:26:29,430 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 16:26:30,121 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 16:26:33,394 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 16:26:33,423 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 16:26:33,428 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 16:30:25,779 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 16:30:26,401 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 16:30:29,591 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 16:30:29,634 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 16:30:29,644 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 16:31:10,407 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 16:31:11,151 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 16:31:14,214 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 16:31:14,244 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 16:31:14,252 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 16:31:39,500 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 16:31:39,979 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 16:35:59,588 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 16:36:02,674 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 16:36:02,703 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 16:36:02,710 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 16:39:00,414 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 16:39:01,078 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 16:39:04,253 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 16:39:04,285 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 16:39:04,292 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 16:39:25,641 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 16:39:25] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-19 16:39:25,766 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 16:39:25] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 16:39:25,967 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 16:39:25] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 16:39:25,971 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 16:39:25] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 16:39:26,167 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 16:39:26] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-19 16:41:23,801 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 16:41:26,936 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 16:41:26,967 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 16:41:26,974 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 17:31:22,921 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 17:31:26,621 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 17:31:26,653 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 17:31:26,663 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 17:33:38,611 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 17:33:38] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-19 17:35:32,358 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 17:35:35,647 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 17:35:35,676 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 17:35:35,683 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 18:22:17,786 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 18:22:22,003 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 18:22:22,033 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 18:22:22,108 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 18:22:32,703 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:22:32] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-19 18:23:33,707 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 18:23:34,358 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 18:23:37,065 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 18:23:37,092 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 18:23:37,096 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 18:24:06,101 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:24:06] "GET /api/logout HTTP/1.1" 302 -
+2018-04-19 18:24:06,117 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:24:06] "GET /user/login?next=%2Fapi%2Flogout HTTP/1.1" 200 -
+2018-04-19 18:24:06,289 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:24:06] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 18:24:06,578 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:24:06] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-19 18:25:02,266 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:25:02] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-19 18:25:02,720 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:25:02] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 18:25:02,721 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:25:02] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 18:25:02,723 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:25:02] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 18:25:03,088 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:25:03] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-19 18:26:03,427 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 18:26:04,039 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 18:26:09,032 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 18:26:09,058 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 18:26:09,063 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 18:37:27,240 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:37:27] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-19 18:37:58,157 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:37:58] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-19 18:37:58,473 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:37:58] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 18:37:58,474 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:37:58] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 18:37:58,477 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 18:37:58] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 21:27:21,852 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 21:27:27,809 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 21:27:44,648 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 21:27:44,756 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 21:27:44,792 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 21:28:15,469 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 21:28:16,440 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 21:28:29,075 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 21:28:29,233 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 21:28:29,263 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 21:28:50,111 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 21:28:58,855 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 21:28:58,963 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 21:28:58,983 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 21:55:38,553 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:55:38] "GET / HTTP/1.1" 200 -
+2018-04-19 21:55:39,319 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:55:39] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 21:55:45,683 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:55:45] "GET /user/regist HTTP/1.1" 200 -
+2018-04-19 21:55:45,852 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:55:45] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 21:55:47,959 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:55:47] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 21:55:48,121 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:55:48] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 21:55:49,446 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:55:49] "GET /user/regist HTTP/1.1" 200 -
+2018-04-19 21:55:49,700 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:55:49] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 21:56:21,282 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:56:21] "POST /api/regist HTTP/1.1" 302 -
+2018-04-19 21:56:21,469 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:56:21] "GET /user/regist HTTP/1.1" 200 -
+2018-04-19 21:56:21,740 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:56:21] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 21:56:59,930 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:56:59] "POST /api/regist HTTP/1.1" 302 -
+2018-04-19 21:57:00,180 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:57:00] "GET /user/regist HTTP/1.1" 200 -
+2018-04-19 21:57:00,395 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:57:00] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 21:58:02,802 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 21:58:08,073 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 21:58:08,122 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 21:58:08,131 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 21:58:28,779 - app_api.py[line:222] - INFO: fghfgh@qq successfully registed
+2018-04-19 21:58:28,789 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:58:28] "POST /api/regist HTTP/1.1" 302 -
+2018-04-19 21:58:28,838 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:58:28] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 21:58:29,418 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 21:58:29] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:00:22,526 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:22] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 22:00:22,766 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:22] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:00:35,115 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:35] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 22:00:35,380 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:35] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 22:00:35,575 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:35] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:00:37,331 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:37] "GET /static/avatar/init.png HTTP/1.1" 200 -
+2018-04-19 22:00:37,895 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:37] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 22:00:38,213 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:38] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-19 22:00:40,818 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:40] "GET /api/resend HTTP/1.1" 500 -
+2018-04-19 22:00:41,155 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:41] "GET /api/resend?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 22:00:41,160 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:41] "GET /api/resend?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 22:00:41,167 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:41] "GET /api/resend?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 22:00:41,404 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:00:41] "GET /api/resend?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-19 22:01:00,647 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 22:01:01,137 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 22:01:10,392 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 22:01:16,190 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 22:01:16,269 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 22:01:16,305 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 22:01:20,755 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:01:20] "GET /api/resend HTTP/1.1" 302 -
+2018-04-19 22:01:20,783 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:01:20] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 22:01:21,365 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:01:21] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:06:52,798 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-19 22:06:53,201 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 22:07:02,112 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 22:07:02,190 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 22:07:02,207 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 22:07:37,438 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:07:37] "GET /api/confirm/IjcwOTc3ODU1MEBxcS5jb20i.DboyAg.m6hQtEOUXKB1Kf1sZJXwvLq6dZg HTTP/1.1" 302 -
+2018-04-19 22:07:37,653 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:07:37] "GET /user/login?next=%2Fapi%2Fconfirm%2FIjcwOTc3ODU1MEBxcS5jb20i.DboyAg.m6hQtEOUXKB1Kf1sZJXwvLq6dZg HTTP/1.1" 200 -
+2018-04-19 22:07:37,890 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:07:37] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:08:13,323 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:08:13] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 22:08:13,543 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:08:13] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 22:08:13,822 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:08:13] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:08:31,354 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:08:31] "GET /api/confirm/IjcwOTc3ODU1MEBxcS5jb20i.DboyAg.m6hQtEOUXKB1Kf1sZJXwvLq6dZg HTTP/1.1" 404 -
+2018-04-19 22:08:44,305 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:08:44] "GET /api/confirm/IjcwOTc3ODU1MEBxcS5jb20i.DboyAg.m6hQtEOUXKB1Kf1sZJXwvLq6dZg HTTP/1.1" 404 -
+2018-04-19 22:09:51,907 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 22:09:57,994 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 22:09:58,040 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 22:09:58,049 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 22:10:00,342 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:10:00] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-19 22:10:00,540 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:10:00] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-19 22:10:02,729 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:10:02] "GET /api/resend HTTP/1.1" 500 -
+2018-04-19 22:10:03,062 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:10:03] "GET /api/resend?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-19 22:10:03,068 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:10:03] "GET /api/resend?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-19 22:10:03,075 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:10:03] "GET /api/resend?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-19 22:10:40,127 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 22:10:45,536 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 22:10:45,594 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 22:10:45,601 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 22:10:50,200 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:10:50] "GET /api/resend HTTP/1.1" 302 -
+2018-04-19 22:10:50,227 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:10:50] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 22:10:50,573 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:10:50] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:13:59,174 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:13:59] "GET /api/confirm/ImZnaGZnaEBxcSI.Dbo06A.O7LTwBK3Dh1fNXyjJBtq9q1LiAU HTTP/1.1" 302 -
+2018-04-19 22:13:59,345 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:13:59] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 22:13:59,493 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:13:59] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:14:07,565 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:07] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 22:14:07,898 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:07] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 22:14:08,131 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:08] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:14:09,480 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:09] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-19 22:14:10,793 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:10] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-04-19 22:14:10,821 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:10] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-04-19 22:14:10,841 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:10] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 200 -
+2018-04-19 22:14:10,868 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:10] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 200 -
+2018-04-19 22:14:10,884 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:10] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 200 -
+2018-04-19 22:14:10,937 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:10] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-04-19 22:14:11,257 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:11] "GET /static/common/img/male.png HTTP/1.1" 200 -
+2018-04-19 22:14:11,500 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:11] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:14:11,605 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:11] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-19 22:14:11,612 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:11] "GET /static/common/img/female.png HTTP/1.1" 200 -
+2018-04-19 22:14:11,625 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:11] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-04-19 22:14:16,403 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:16] "GET /user/regist HTTP/1.1" 200 -
+2018-04-19 22:14:16,882 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:16] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:14:30,473 - app_api.py[line:223] - INFO: ghjghj@qq successfully registed
+2018-04-19 22:14:30,474 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:30] "POST /api/regist HTTP/1.1" 302 -
+2018-04-19 22:14:30,493 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:30] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 22:14:30,957 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:30] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:14:43,637 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:14:43] "GET /api/confirm/IjcwOTc3ODU1MEBxcS5jb20i.Dbo1xQ.ayIKPpcJ9hztMSFUwiV2ITF2rxY HTTP/1.1" 404 -
+2018-04-19 22:15:24,628 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-19 22:15:28,726 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-19 22:15:28,765 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-19 22:15:28,773 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-19 22:15:31,384 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:15:31] "GET /user/regist HTTP/1.1" 200 -
+2018-04-19 22:15:31,609 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:15:31] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:15:47,233 - app_api.py[line:223] - INFO: fgbfgb@qq successfully registed
+2018-04-19 22:15:47,237 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:15:47] "POST /api/regist HTTP/1.1" 302 -
+2018-04-19 22:15:47,259 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:15:47] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 22:15:47,736 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:15:47] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:16:15,286 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:16:15] "GET /api/confirm/ImZnYmZnYkBxcSI.Dbo2EQ.mKKKooqM_bzVnOEIGByEwZWdJhk HTTP/1.1" 302 -
+2018-04-19 22:16:15,500 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:16:15] "GET /user/login HTTP/1.1" 200 -
+2018-04-19 22:16:15,640 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:16:15] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-19 22:16:29,431 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:16:29] "POST /api/login HTTP/1.1" 302 -
+2018-04-19 22:16:29,700 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:16:29] "GET /user/home HTTP/1.1" 200 -
+2018-04-19 22:16:29,867 - _internal.py[line:87] - INFO: 127.0.0.1 - - [19/Apr/2018 22:16:29] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-20 12:31:19,694 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 12:31:47,828 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 12:31:48,392 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 12:31:48,405 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 13:10:34,119 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 13:10:35,049 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 13:10:38,276 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 13:10:38,322 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 13:10:38,338 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 15:19:13,286 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 15:21:28,463 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 15:21:31,028 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 15:21:31,052 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 15:21:31,059 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 15:24:25,865 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 15:24:28,530 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 15:24:28,556 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 15:24:28,563 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 15:25:47,888 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 15:25:48,282 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 15:25:51,161 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 15:25:51,206 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 15:25:51,211 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 15:31:13,505 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:31:13] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-20 15:31:13,861 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:31:13] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 15:31:13,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:31:13] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 15:31:13,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:31:13] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 15:31:35,342 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 15:31:38,596 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 15:31:38,628 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 15:31:38,635 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 15:36:17,295 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 15:36:20,250 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 15:36:20,276 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 15:36:20,282 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 15:37:41,045 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 15:37:43,543 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 15:37:43,569 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 15:37:43,575 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 15:40:20,706 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:40:20] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-20 15:40:21,056 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:40:21] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 15:40:21,061 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:40:21] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 15:40:21,065 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:40:21] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 15:51:34,898 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 15:51:38,562 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 15:51:38,608 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 15:51:38,618 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 15:52:57,082 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:52:57] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-20 15:52:59,234 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:52:59] "GET /api/logout HTTP/1.1" 302 -
+2018-04-20 15:52:59,470 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:52:59] "GET /user/login?next=%2Fapi%2Flogout HTTP/1.1" 200 -
+2018-04-20 15:53:00,082 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-04-20 15:53:00,086 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 304 -
+2018-04-20 15:53:00,112 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/common/login/ace-fonts.css HTTP/1.1" 304 -
+2018-04-20 15:53:00,117 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/common/animate.css HTTP/1.1" 304 -
+2018-04-20 15:53:00,119 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/common/style.css HTTP/1.1" 304 -
+2018-04-20 15:53:00,127 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/icheck/css/custom.css HTTP/1.1" 304 -
+2018-04-20 15:53:00,392 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 304 -
+2018-04-20 15:53:00,414 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 304 -
+2018-04-20 15:53:00,444 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 304 -
+2018-04-20 15:53:00,486 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 304 -
+2018-04-20 15:53:00,496 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-04-20 15:53:00,503 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/icheck/js/icheck.min.js HTTP/1.1" 304 -
+2018-04-20 15:53:00,816 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:00] "GET /static/common/img/logo.png HTTP/1.1" 304 -
+2018-04-20 15:53:01,066 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:01] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-20 15:53:01,187 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:01] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 304 -
+2018-04-20 15:53:01,193 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:01] "GET /static/icheck/css/green.png HTTP/1.1" 304 -
+2018-04-20 15:53:01,487 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:01] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-20 15:53:16,464 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:16] "GET /user/paper/perish HTTP/1.1" 404 -
+2018-04-20 15:53:46,326 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:46] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 15:53:46,640 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:46] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 15:53:46,642 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:46] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 15:53:46,642 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:46] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 15:53:46,890 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 15:53:46] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-20 15:55:01,331 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 15:55:01,924 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 15:55:04,548 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 15:55:04,575 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 15:55:04,579 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 15:56:06,900 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 15:56:07,226 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 15:56:09,809 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 15:56:09,835 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 15:56:09,842 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:01:05,263 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:01:25,207 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:01:27,621 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:01:27,644 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:01:27,651 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:01:39,851 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:01:39] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 16:01:39,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:01:39] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:01:39,880 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:01:39] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:01:39,881 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:01:39] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:02:40,851 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 16:02:41,394 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:02:44,302 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:02:44,328 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:02:44,335 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:03:21,638 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:03:21] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 16:03:21,957 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:03:21] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:03:21,959 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:03:21] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:03:21,960 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:03:21] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:03:54,661 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:03:57,154 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:03:57,180 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:03:57,187 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:04:39,624 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:04:39] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 16:04:39,936 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:04:39] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:04:39,937 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:04:39] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:04:39,940 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:04:39] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:05:18,805 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:05:21,454 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:05:21,480 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:05:21,486 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:05:55,805 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:05:55] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 16:05:56,121 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:05:56] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:05:56,122 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:05:56] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:05:56,124 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:05:56] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:06:49,303 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:06:51,783 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:06:51,809 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:06:51,815 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:09:41,729 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 16:09:42,174 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:09:45,290 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:09:45,322 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:09:45,326 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:11:40,410 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:11:42,993 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:11:43,019 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:11:43,025 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:14:26,456 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:14:29,267 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:14:29,293 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:14:29,299 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:16:07,482 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:16:07] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 16:16:07,822 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:16:07] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:16:07,823 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:16:07] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:16:07,825 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:16:07] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:17:01,194 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:17:03,763 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:17:03,788 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:17:03,793 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:23:31,114 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:23:38,914 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:23:41,414 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:23:41,443 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:23:41,447 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:24:14,558 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:24:14] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 16:24:14,575 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:24:14] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:24:14,875 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:24:14] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:24:14,877 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:24:14] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:30:22,223 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:30:24,720 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:30:24,744 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:30:24,750 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:30:48,009 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:30:48] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-20 16:30:50,875 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:30:50] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-20 16:30:50,888 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:30:50] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:30:50,891 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:30:50] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:30:50,892 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:30:50] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:30:50,927 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:30:50] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-20 16:31:09,904 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:31:12,380 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:31:12,404 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:31:12,410 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:31:16,052 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:31:16] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-20 16:31:16,062 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:31:16] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:31:16,063 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:31:16] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:31:16,065 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:31:16] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:34:34,101 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:34:36,618 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:34:36,644 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:34:36,648 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:34:44,634 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:34:44] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-20 16:34:44,644 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:34:44] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:34:44,647 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:34:44] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:34:44,650 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:34:44] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:39:06,401 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:39:09,421 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:39:09,447 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:39:09,453 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:39:11,944 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:39:11] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-20 16:39:11,953 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:39:11] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:39:11,956 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:39:11] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:39:11,959 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:39:11] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:39:59,479 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:40:02,066 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:40:02,092 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:40:02,101 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 16:40:36,575 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:40:36] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-20 16:40:36,589 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:40:36] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 16:40:36,592 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:40:36] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 16:40:36,595 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 16:40:36] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 16:45:03,720 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 16:45:06,282 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 16:45:06,306 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 16:45:06,312 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 17:21:59,892 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 17:22:04,631 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 17:22:04,667 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 17:22:04,674 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 17:23:07,477 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:07] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-20 17:23:07,880 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:07] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 17:23:07,881 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:07] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:23:08,325 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:08] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 17:23:08,576 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:08] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:23:22,471 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:22] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-20 17:23:22,480 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:22] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 17:23:22,483 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:22] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 17:23:22,486 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:22] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:23:31,917 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:31] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-20 17:23:43,342 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:43] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 17:23:43,355 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:43] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 17:23:43,355 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:43] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 17:23:43,358 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:23:43] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:32:18,344 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 17:32:20,187 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 17:33:37,272 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 17:33:37,342 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 17:33:37,355 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 17:40:33,282 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 17:40:35,924 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 17:40:35,956 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 17:40:35,960 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 17:42:54,908 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:42:54] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 17:42:55,723 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:42:55] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 17:42:55,724 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:42:55] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:42:55,730 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:42:55] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 17:42:55,973 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:42:55] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:43:23,401 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 17:43:24,275 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 17:43:31,292 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 17:43:31,319 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 17:43:31,328 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 17:44:07,657 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 17:44:10,332 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 17:44:10,359 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 17:44:10,367 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 17:45:40,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:45:40] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 17:45:41,200 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:45:41] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 17:45:41,201 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:45:41] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 17:45:41,203 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:45:41] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:46:57,411 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 17:47:00,236 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 17:47:00,266 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 17:47:00,272 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 17:48:32,862 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:48:32] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 17:48:33,211 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:48:33] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 17:48:33,213 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:48:33] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 17:48:33,214 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:48:33] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:50:10,665 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 17:50:13,736 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 17:50:13,780 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 17:50:13,789 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 17:51:25,726 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:51:25] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 17:51:26,045 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:51:26] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 17:51:26,046 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:51:26] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 17:51:26,049 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:51:26] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:52:15,625 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 17:52:19,288 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 17:52:19,332 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 17:52:19,338 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 17:53:31,059 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:53:31] "GET /api/paper/perish HTTP/1.1" 500 -
+2018-04-20 17:53:31,377 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:53:31] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 17:53:31,378 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:53:31] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 17:53:31,381 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:53:31] "GET /api/paper/perish?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:53:49,744 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:53:49] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-20 17:53:54,976 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:53:54] "GET /api/paper/data HTTP/1.1" 500 -
+2018-04-20 17:53:55,390 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:53:55] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 17:53:55,392 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:53:55] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 17:53:55,401 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 17:53:55] "GET /api/paper/data?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 17:54:42,789 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 17:54:43,697 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 17:54:46,351 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 17:54:46,378 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 17:54:46,384 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 18:17:03,858 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 18:17:07,242 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 18:17:14,292 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 18:17:14,331 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 18:17:14,345 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 18:29:25,651 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 18:29:25,933 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 18:29:34,954 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 18:29:34,983 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 18:29:34,990 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 20:14:32,267 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\mysql_model.py', reloading
+2018-04-20 20:14:33,648 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 20:14:41,506 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 20:14:41,555 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 20:14:41,568 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 23:05:55,407 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 23:05:57,461 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 23:06:10,247 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 23:06:10,309 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 23:06:10,318 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 23:13:42,493 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 23:13:43,359 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 23:13:53,109 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 23:13:53,161 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 23:13:53,173 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 23:20:11,832 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-20 23:20:12,516 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 23:20:18,815 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 23:20:18,845 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 23:20:18,852 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 23:20:26,066 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:20:26] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-20 23:20:26,108 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:20:26] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 23:20:26,109 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:20:26] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 23:20:26,437 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:20:26] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 23:20:26,845 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:20:26] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-20 23:21:29,892 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 23:21:34,900 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 23:21:34,947 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 23:21:34,960 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 23:21:49,266 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:21:49] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-20 23:21:49,285 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:21:49] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 23:21:49,288 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:21:49] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 23:21:49,290 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:21:49] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 23:22:23,127 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 23:22:26,253 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 23:22:26,283 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 23:22:26,292 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 23:22:29,611 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:22:29] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-20 23:22:29,628 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:22:29] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 23:22:29,631 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:22:29] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 23:22:29,632 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:22:29] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 23:22:50,286 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 23:22:54,437 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 23:22:54,476 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 23:22:54,483 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 23:22:57,496 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:22:57] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-20 23:22:57,523 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:22:57] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 23:22:57,530 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:22:57] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 23:22:57,535 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:22:57] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 23:23:42,404 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 23:23:45,358 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 23:23:45,391 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 23:23:45,397 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 23:23:47,362 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:23:47] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-20 23:23:47,375 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:23:47] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 23:23:47,378 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:23:47] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 23:23:47,381 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:23:47] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-20 23:24:13,473 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-20 23:24:16,519 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-20 23:24:16,549 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-20 23:24:16,555 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-20 23:24:20,571 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:24:20] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-20 23:24:20,588 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:24:20] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-20 23:24:20,592 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:24:20] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-20 23:24:20,595 - _internal.py[line:87] - INFO: 127.0.0.1 - - [20/Apr/2018 23:24:20] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:06:45,154 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:06:50,880 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:06:51,039 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:06:51,056 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:06:55,602 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:06:55] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 00:06:55,630 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:06:55] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:06:55,634 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:06:55] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:06:55,638 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:06:55] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:07:24,767 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:07:30,312 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:07:30,357 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:07:30,372 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:07:34,111 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:07:34] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 00:07:34,142 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:07:34] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:07:34,145 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:07:34] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:07:34,150 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:07:34] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:07:53,446 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:07:58,332 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:07:58,365 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:07:58,375 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:08:03,069 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:08:03] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 00:08:03,085 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:08:03] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:08:03,091 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:08:03] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:08:03,099 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:08:03] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:08:35,914 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\mysql_model.py', reloading
+2018-04-21 00:08:36,756 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:08:41,859 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:08:41,907 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:08:41,917 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:10:44,355 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:10:44] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:10:44,460 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:10:44] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-21 00:10:44,463 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:10:44] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:10:44,467 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:10:44] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:10:44,469 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:10:44] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:10:44,894 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:10:44] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-21 00:11:20,710 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:11:24,596 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:11:24,638 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:11:24,645 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:11:36,358 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:11:36] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:11:36,388 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:11:36] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:11:36,392 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:11:36] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:11:36,400 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:11:36] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:11:59,082 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:12:04,480 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:12:04,526 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:12:04,538 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:12:08,122 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:12:08] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:12:08,141 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:12:08] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:12:08,144 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:12:08] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:12:08,148 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:12:08] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:12:26,723 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:12:30,769 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:12:30,825 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:12:30,835 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:23:12,549 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:23:12] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:23:12,562 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:23:12] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:23:12,566 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:23:12] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:23:12,572 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:23:12] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:24:56,096 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:25:01,019 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:25:01,075 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:25:01,084 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:25:13,796 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:25:13] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:25:13,828 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:25:13] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:25:13,832 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:25:13] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:25:13,907 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:25:13] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:25:57,625 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:26:12,763 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:26:16,553 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:26:16,592 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:26:16,601 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:27:06,335 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:27:06] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:27:06,351 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:27:06] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:27:06,354 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:27:06] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:27:06,357 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:27:06] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:27:20,387 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:27:24,309 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:27:24,358 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:27:24,368 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:27:29,230 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:27:29] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:27:29,244 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:27:29] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:27:29,250 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:27:29] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:27:29,253 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:27:29] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:28:06,775 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:28:12,437 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:28:12,476 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:28:12,484 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:28:13,657 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:28:13] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:28:13,677 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:28:13] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:28:13,680 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:28:13] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:28:13,684 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:28:13] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:28:59,696 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:28:59] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:28:59,723 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:28:59] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:28:59,726 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:28:59] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:28:59,733 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:28:59] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:29:26,977 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:29:31,405 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:29:31,450 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:29:31,463 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:29:33,278 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:29:33] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:29:33,303 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:29:33] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:29:33,309 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:29:33] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:29:33,311 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:29:33] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:31:58,479 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:32:02,141 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:32:02,206 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:32:02,217 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:32:33,586 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:32:33] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:32:33,602 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:32:33] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:32:33,608 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:32:33] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:32:33,611 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:32:33] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:33:11,318 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 00:33:11,993 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:33:17,390 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:33:17,461 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:33:17,477 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:34:44,900 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:34:49,755 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:34:49,792 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:34:49,801 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:34:55,752 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:34:55] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:34:55,775 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:34:55] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:34:55,779 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:34:55] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:34:55,903 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:34:55] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:35:21,617 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:35:25,684 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:35:25,730 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:35:25,736 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:35:44,713 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:35:44] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:35:44,726 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:35:44] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:35:44,734 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:35:44] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:35:44,737 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:35:44] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:37:12,424 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:37:16,240 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:37:16,282 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:37:16,296 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 00:37:22,357 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:37:22] "GET /api/expert_search/mark HTTP/1.1" 500 -
+2018-04-21 00:37:22,375 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:37:22] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 00:37:22,381 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:37:22] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 00:37:22,384 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 00:37:22] "GET /api/expert_search/mark?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 00:53:54,579 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 00:54:00,640 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 00:54:00,697 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 00:54:00,711 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 01:26:03,933 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 01:26:07,857 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 01:26:07,915 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 01:26:07,924 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 01:26:15,960 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:26:15] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-21 01:26:28,436 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:26:28] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 01:26:28,461 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:26:28] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 01:26:28,463 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:26:28] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 01:26:28,601 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:26:28] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 01:26:46,483 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 01:27:01,469 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 01:27:04,730 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 01:27:04,760 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 01:27:04,767 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 01:27:09,946 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:27:09] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 01:27:09,960 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:27:09] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 01:27:09,966 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:27:09] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 01:27:09,970 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:27:09] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 01:27:43,184 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 01:27:46,654 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 01:27:46,687 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 01:27:46,697 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 01:27:49,950 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:27:49] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 01:27:49,966 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:27:49] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 01:27:49,967 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:27:49] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 01:27:49,970 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:27:49] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 01:29:35,329 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 01:29:39,095 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 01:29:39,138 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 01:29:39,144 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 01:30:45,319 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:30:45] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 01:30:45,331 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:30:45] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 01:30:45,338 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:30:45] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 01:30:45,341 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:30:45] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 01:31:08,374 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 01:31:12,132 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 01:31:12,184 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 01:31:12,196 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 01:31:17,937 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:31:17] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 01:31:17,951 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:31:17] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 01:31:17,957 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:31:17] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 01:31:17,960 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 01:31:17] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 01:54:55,528 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 01:54:56,092 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 01:55:00,040 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 01:55:00,084 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 01:55:00,095 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 01:57:14,733 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 01:57:15,380 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 01:57:19,270 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 01:57:19,302 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 01:57:19,309 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 01:57:23,513 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 01:57:24,019 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 01:57:27,773 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 01:57:27,812 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 01:57:27,822 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 01:58:47,017 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 15:32:44,967 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 15:32:50,596 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 15:32:50,733 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 15:32:50,763 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:00:11,618 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\mysql_model.py', reloading
+2018-04-21 16:00:17,923 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:00:27,388 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:00:27,476 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:00:27,494 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:03:03,079 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:03:13,003 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:03:13,227 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:03:13,249 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:03:18,344 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:18] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-21 16:03:28,673 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:28] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 16:03:28,831 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:28] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:03:29,157 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:29] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:03:29,163 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:29] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:03:29,413 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:29] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:03:42,894 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:42] "GET /api/expert_search/olk HTTP/1.1" 500 -
+2018-04-21 16:03:42,960 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:42] "GET /api/expert_search/olk?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:03:42,969 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:42] "GET /api/expert_search/olk?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:03:42,977 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:42] "GET /api/expert_search/olk?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:03:43,111 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:43] "GET /api/expert_search/olk?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-21 16:03:57,519 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:57] "GET /api/expert_search/fo HTTP/1.1" 500 -
+2018-04-21 16:03:57,561 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:57] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:03:57,575 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:57] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:03:57,578 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:57] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:03:57,743 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:03:57] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-21 16:04:37,930 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:04:37] "GET /api/expert_search/holy HTTP/1.1" 500 -
+2018-04-21 16:04:37,946 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:04:37] "GET /api/expert_search/holy?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:04:37,980 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:04:37] "GET /api/expert_search/holy?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:04:37,986 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:04:37] "GET /api/expert_search/holy?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:04:38,066 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:04:38] "GET /api/expert_search/holy?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-21 16:04:49,907 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:04:49] "GET /api/expert_search/tom HTTP/1.1" 500 -
+2018-04-21 16:04:49,930 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:04:49] "GET /api/expert_search/tom?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:04:49,973 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:04:49] "GET /api/expert_search/tom?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:04:49,976 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:04:49] "GET /api/expert_search/tom?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:04:50,075 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:04:50] "GET /api/expert_search/tom?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-21 16:06:26,868 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:06:31,486 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:06:31,540 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:06:31,555 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:06:39,617 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:06:39] "GET /api/expert_search/tom HTTP/1.1" 500 -
+2018-04-21 16:06:39,657 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:06:39] "GET /api/expert_search/tom?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:06:39,664 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:06:39] "GET /api/expert_search/tom?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:06:39,676 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:06:39] "GET /api/expert_search/tom?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:07:15,063 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:07:19,424 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:07:19,467 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:07:19,474 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:07:25,835 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:07:25] "GET /api/expert_search/tom HTTP/1.1" 500 -
+2018-04-21 16:07:25,869 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:07:25] "GET /api/expert_search/tom?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:07:25,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:07:25] "GET /api/expert_search/tom?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:07:25,887 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:07:25] "GET /api/expert_search/tom?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:07:40,795 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:07:40] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 16:07:40,834 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:07:40] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:07:40,835 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:07:40] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:07:40,838 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:07:40] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:08:14,596 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:08:19,361 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:08:19,398 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:08:19,407 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:08:28,486 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:08:28] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 16:08:28,515 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:08:28] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:08:28,519 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:08:28] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:08:28,523 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:08:28] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:08:48,628 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:08:53,236 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:08:53,279 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:08:53,292 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:09:13,934 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:09:13] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 16:09:13,956 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:09:13] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:09:13,960 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:09:13] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:09:13,963 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:09:13] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:14:56,066 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:15:03,049 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:15:03,108 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:15:03,121 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:15:09,316 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:09] "GET /api/expert_search/mar HTTP/1.1" 500 -
+2018-04-21 16:15:09,341 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:09] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:15:09,349 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:09] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:15:09,354 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:09] "GET /api/expert_search/mar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:15:24,842 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:24] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-21 16:15:28,973 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:28] "GET /api/expert_search/era HTTP/1.1" 500 -
+2018-04-21 16:15:29,174 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:29] "GET /api/expert_search/era?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:15:29,181 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:29] "GET /api/expert_search/era?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:15:29,186 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:29] "GET /api/expert_search/era?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:15:29,301 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:29] "GET /api/expert_search/era?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-21 16:15:54,799 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:54] "GET /api/expert_search/fo HTTP/1.1" 500 -
+2018-04-21 16:15:54,823 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:54] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:15:54,829 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:54] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:15:54,836 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:15:54] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:17:16,730 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:17:23,571 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:17:23,645 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:17:23,665 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:20:36,677 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:20:36] "GET /api/expert_search/fo HTTP/1.1" 500 -
+2018-04-21 16:20:36,707 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:20:36] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:20:36,713 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:20:36] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:20:36,723 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:20:36] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:21:12,328 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:21:19,055 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:21:19,134 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:21:19,151 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:21:32,019 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:21:32] "GET /api/expert_search/fo HTTP/1.1" 500 -
+2018-04-21 16:21:32,053 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:21:32] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:21:32,058 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:21:32] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:21:32,061 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:21:32] "GET /api/expert_search/fo?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:25:58,161 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:25:58] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-21 16:25:58,936 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:25:58] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 16:25:59,071 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:25:59] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:25:59,082 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:25:59] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:25:59,088 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:25:59] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:25:59,263 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:25:59] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-21 16:30:28,756 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:30:37,905 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:30:38,002 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:30:38,023 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:30:43,334 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:30:43] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 16:30:43,374 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:30:43] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:30:43,378 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:30:43] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:30:43,382 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:30:43] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:31:12,983 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:31:23,115 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:31:23,239 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:31:23,273 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:31:35,191 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:31:35] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 16:31:35,253 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:31:35] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:31:35,256 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:31:35] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:31:35,292 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:31:35] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:31:35,605 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:31:35] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:31:35,933 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:31:35] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:32:11,223 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:32:20,805 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:32:20,891 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:32:20,914 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:32:33,703 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:32:33] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 16:32:33,742 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:32:33] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 16:32:33,749 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:32:33] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 16:32:33,752 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:32:33] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 16:39:03,726 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 16:39:04,767 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:39:16,325 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:39:16,446 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:39:16,471 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:43:27,289 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 16:43:27,786 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:43:35,953 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:43:36,032 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:43:36,042 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:46:26,868 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:46:35,575 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:46:35,663 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:46:35,694 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:51:20,700 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:51:29,441 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:51:29,532 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:51:29,549 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:52:25,043 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:25] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-21 16:52:26,569 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:26] "GET / HTTP/1.1" 200 -
+2018-04-21 16:52:28,690 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:28] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-04-21 16:52:28,740 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:28] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 200 -
+2018-04-21 16:52:28,808 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:28] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 200 -
+2018-04-21 16:52:28,851 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:28] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 200 -
+2018-04-21 16:52:28,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:28] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-04-21 16:52:28,924 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:28] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-04-21 16:52:29,025 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:29] "GET /static/common/login/ace-fonts.css HTTP/1.1" 200 -
+2018-04-21 16:52:29,068 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:29] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-04-21 16:52:29,142 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:29] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-04-21 16:52:29,178 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:29] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-04-21 16:52:29,236 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:29] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-04-21 16:52:29,346 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:29] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 200 -
+2018-04-21 16:52:29,691 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:29] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-04-21 16:52:30,216 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:30] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-04-21 16:52:30,234 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:30] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-21 16:52:32,983 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:32] "GET /user/login HTTP/1.1" 200 -
+2018-04-21 16:52:33,345 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:33] "GET /static/icheck/css/custom.css HTTP/1.1" 200 -
+2018-04-21 16:52:33,387 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:33] "GET /static/icheck/js/icheck.min.js HTTP/1.1" 200 -
+2018-04-21 16:52:33,571 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:33] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-21 16:52:33,915 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:33] "GET /static/icheck/css/green.png HTTP/1.1" 200 -
+2018-04-21 16:52:40,440 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:40] "POST /api/login HTTP/1.1" 302 -
+2018-04-21 16:52:40,460 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:40] "GET /user/login HTTP/1.1" 200 -
+2018-04-21 16:52:40,987 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:40] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-21 16:52:48,171 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:48] "POST /api/login HTTP/1.1" 302 -
+2018-04-21 16:52:48,539 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:48] "GET /user/home HTTP/1.1" 200 -
+2018-04-21 16:52:48,987 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:48] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-21 16:52:49,576 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:49] "GET /static/avatar/5170f26egw1f7y8o3v4tgj20dt0jjtb9.jpg HTTP/1.1" 200 -
+2018-04-21 16:52:50,634 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:50] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-21 16:52:51,009 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:51] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-04-21 16:52:51,071 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:51] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 200 -
+2018-04-21 16:52:51,112 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:51] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-04-21 16:52:51,145 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:51] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 200 -
+2018-04-21 16:52:51,190 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:51] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 200 -
+2018-04-21 16:52:51,247 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:51] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 200 -
+2018-04-21 16:52:51,344 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:51] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 200 -
+2018-04-21 16:52:51,618 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:51] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-04-21 16:52:51,960 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:51] "GET /static/common/img/male.png HTTP/1.1" 200 -
+2018-04-21 16:52:52,203 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:52] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-21 16:52:52,301 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:52] "GET /static/common/img/female.png HTTP/1.1" 200 -
+2018-04-21 16:52:52,338 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:52] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-04-21 16:52:52,813 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:52:52] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-21 16:53:06,976 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:53:06] "POST /api/upload_avatar HTTP/1.1" 200 -
+2018-04-21 16:53:07,009 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:53:07] "GET /user/Error%20occurred HTTP/1.1" 404 -
+2018-04-21 16:54:39,650 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:54:48,395 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:54:48,520 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:54:48,545 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 16:54:51,641 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:54:51] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-21 16:54:52,680 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:54:52] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-21 16:54:55,760 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:54:55] "GET /static/avatar/4f0e16afa40f4bfb9abddbb10a4f78f0f63618f6.jpg HTTP/1.1" 200 -
+2018-04-21 16:54:55,806 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:54:55] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-21 16:55:03,411 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:55:03] "POST /api/upload_avatar HTTP/1.1" 200 -
+2018-04-21 16:55:03,437 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:55:03] "GET /user/Error%20occurred HTTP/1.1" 404 -
+2018-04-21 16:55:42,267 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:55:42] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-21 16:55:43,168 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:55:43] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-21 16:55:43,551 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:55:43] "GET /static/avatar/006BfNx5gy1fbvuazk3w0j30ic0mbgoq.jpg HTTP/1.1" 200 -
+2018-04-21 16:55:43,980 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:55:43] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-21 16:56:16,763 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 16:56:16] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-21 16:58:28,437 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 16:58:36,305 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 16:58:36,398 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 16:58:36,414 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:02:15,230 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:02:15] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:02:15,276 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:02:15] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:02:15,280 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:02:15] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:02:15,285 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:02:15] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:03:18,176 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 17:03:19,042 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:11:11,500 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:11:17,901 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:11:17,970 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:11:17,986 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:11:39,009 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:11:39] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:11:39,036 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:11:39] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:11:39,040 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:11:39] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:11:39,048 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:11:39] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:13:10,816 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:13:16,946 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:13:16,996 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:13:17,015 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:13:23,693 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:13:23] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:13:23,714 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:13:23] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:13:23,719 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:13:23] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:13:23,723 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:13:23] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:13:41,420 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 17:13:41,882 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:13:49,148 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:13:49,219 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:13:49,232 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:14:48,131 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:14:55,529 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:14:55,607 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:14:55,624 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:14:58,326 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:14:58] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:14:58,371 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:14:58] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:14:58,380 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:14:58] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:14:58,385 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:14:58] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:16:23,421 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:16:29,437 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:16:29,490 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:16:29,503 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:16:55,760 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 17:16:56,364 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:17:04,892 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:17:04,959 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:17:04,973 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:17:09,456 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:17:09] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:17:09,490 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:17:09] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:17:09,499 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:17:09] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:17:09,798 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:17:09] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:19:11,831 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 17:19:12,717 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:21:10,858 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:21:21,381 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:21:21,482 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:21:21,499 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:21:22,065 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:21:22] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:21:22,115 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:21:22] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:21:22,417 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:21:22] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:21:22,424 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:21:22] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:21:50,232 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:21:56,974 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:21:57,049 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:21:57,069 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:22:01,980 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:22:01] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:22:02,009 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:22:02] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:22:02,013 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:22:02] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:22:02,148 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:22:02] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:22:48,470 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:22:56,065 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:22:56,115 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:22:56,128 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:23:32,137 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:23:32] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:23:32,164 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:23:32] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:23:32,167 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:23:32] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:23:32,173 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:23:32] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:24:08,256 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:24:14,618 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:24:14,687 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:24:14,700 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:29:34,783 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:29:38,803 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:29:38,852 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:29:38,865 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:29:52,687 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:29:52] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:29:52,706 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:29:52] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:29:52,710 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:29:52] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:29:52,713 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:29:52] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:32:31,397 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\mysql_model.py', reloading
+2018-04-21 17:32:31,881 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:32:38,355 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:32:38,388 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:32:38,398 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:34:21,065 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:34:25,359 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:34:25,398 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:34:25,408 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:34:32,890 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:34:32] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:34:32,908 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:34:32] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:34:32,914 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:34:32] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:34:32,927 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:34:32] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:34:54,334 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 17:34:54,844 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:35:00,240 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:35:00,290 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:35:00,299 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:35:38,240 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:35:43,358 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:35:43,451 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:35:43,467 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:35:53,344 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:35:53] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:35:53,371 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:35:53] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:35:53,375 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:35:53] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:35:53,378 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:35:53] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:36:35,095 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 17:36:35,750 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:36:40,454 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:36:40,507 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:36:40,516 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:37:10,384 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:37:16,125 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:37:16,173 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:37:16,180 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:37:17,555 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:37:17] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:37:17,575 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:37:17] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:37:17,581 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:37:17] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:37:17,584 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:37:17] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:37:20,278 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:37:20] "GET /api/expert_search/fox HTTP/1.1" 500 -
+2018-04-21 17:37:20,477 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:37:20] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 17:37:20,483 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:37:20] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 17:37:20,486 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 17:37:20] "GET /api/expert_search/fox?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 17:37:52,362 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 17:37:52,790 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:37:55,697 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:37:55,723 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:37:55,730 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:50:42,322 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 17:50:42,802 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:50:46,594 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:50:46,635 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:50:46,642 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 17:53:50,859 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 17:53:51,444 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 17:53:54,612 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 17:53:54,640 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 17:53:54,647 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 18:03:39,680 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 18:03:39,938 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 18:03:42,875 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 18:03:42,910 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 18:03:42,917 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 18:11:05,963 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 18:11:06,586 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 18:11:09,841 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 18:11:09,878 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 18:11:09,884 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 18:11:55,878 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 18:11:59,269 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 18:11:59,316 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 18:11:59,332 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 18:12:01,223 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 18:12:01] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-21 18:12:48,430 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 18:12:48,980 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 18:12:52,279 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 18:12:52,306 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 18:12:52,312 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 18:13:15,493 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 18:13:15] "GET /api/search?page=1&content=fox HTTP/1.1" 500 -
+2018-04-21 18:13:15,509 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 18:13:15] "GET /api/search?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 18:13:15,510 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 18:13:15] "GET /api/search?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 18:13:15,513 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 18:13:15] "GET /api/search?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 18:13:15,703 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 18:13:15] "GET /api/search?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-21 18:14:59,440 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 18:15:02,509 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 18:15:02,536 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 18:15:02,542 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 18:15:49,671 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 18:15:49] "GET /api/search?page=1&content=fox HTTP/1.1" 500 -
+2018-04-21 18:15:49,989 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 18:15:49] "GET /api/search?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-21 18:15:49,990 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 18:15:49] "GET /api/search?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-21 18:15:49,993 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/Apr/2018 18:15:49] "GET /api/search?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-21 18:16:50,582 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 18:16:50,752 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 18:16:54,101 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 18:16:54,135 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 18:16:54,144 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-21 18:17:09,921 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-21 18:17:10,253 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-21 18:17:13,072 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-21 18:17:13,105 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-21 18:17:13,111 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)

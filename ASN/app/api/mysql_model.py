@@ -44,7 +44,7 @@ class ASNUser(db.Model, UserMixin):
                  education="", department="", phone="",
                  first_name="", last_name="", address="",
                  avatar="../static/avatar/init.png",
-                 focus_area="", confirm=False):
+                 focus_area="", confirmed=False):
         self.email = email
         self.password = password
         self.gender = gender
@@ -57,7 +57,7 @@ class ASNUser(db.Model, UserMixin):
         self.address = address
         self.avatar = avatar
         self.focus_area = focus_area
-        self.confirm = confirm
+        self.confirmed = confirmed
 
     def __repr__(self):
         return '<ASNUser %r>' % self.usernam
@@ -79,9 +79,9 @@ class ASNUser(db.Model, UserMixin):
 
 
 class Expert_detail_total(db.Model):
-    __bind_key__ = 'expert'
+    __bind_key__ = 'ali'
     __tablename__ = 'expert_user_detail'
-    id = db.Column(db.String(45))
+    id = db.Column(db.String(45),  primary_key=True)
     mid = db.Column(db.String(45))
     name = db.Column(db.String(45))
     name_zh = db.Column(db.String(45))
@@ -103,16 +103,16 @@ class Expert_detail_total(db.Model):
     gender = db.Column(db.String(5))
     cite_num = db.Column(db.String(10))
     tags = db.Column(db.String(100))
-    total_id = db.Column(db.Integer, primary_key=True)
+    author_id = db.Column(db.Integer)
 
     def __str__(self):
-        return '作者详细<id:%s, 名字：%s>' % (self.id, self.name)
+        return '作者id<id:%s, 名字：%s>' % (self.id, self.name)
 
     def __init__(self, id=None, mid=None, name=None, name_zh=None, position=None,
                  phone=None, fax=None, email=None, department=None,
                  address=None, homepage=None, education=None, experience=None,
                  biography=None, avatar = "../static/avatar/files/init.png", h_index=None, g_index=None,
-                 gender=None, cite_num=None, tags=None, total_id=None):
+                 gender=None, cite_num=None, tags=None, author_id=None):
         self.id = id
         self.mid = mid
         self.name = name
@@ -133,7 +133,7 @@ class Expert_detail_total(db.Model):
         self.gender = gender
         self.cite_num = cite_num
         self.tags = tags
-        self.total_id = total_id
+        self.author_id = author_id
 
 
 class Expert_detail(db.Model):
@@ -166,7 +166,7 @@ class Paper_detail(db.Model):
     venue = db.Column(db.TEXT)
     year = db.Column(db.Integer)
     ref = db.Column(db.TEXT)
-    abstract = db.Column(db.TEXT)
+    abtract = db.Column(db.TEXT)
 
     def __str__(self):
         return '论文<id:%s, title：%s>' % (self.id, self.title)

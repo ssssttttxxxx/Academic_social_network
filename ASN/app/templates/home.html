@@ -90,17 +90,17 @@
                         <div class="ibox-content">
                             <div class="row"> -->
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="search-form">
-                                        <form action="index.html" method="get">
+                                    <div class="search-form" id="searchInput">
+                                        <!-- <form action="index.html" method="get"> -->
                                             <div class="input-group">
-                                                <input type="text" placeholder="请根据作者或论文分类搜索" name="search" class="form-control input-lg">
+                                                <input type="text" placeholder="请根据作者或论文分类搜索" class="form-control input-lg" v-model="searchValue">
                                                 <div class="input-group-btn">
-                                                    <button class="btn btn-lg btn-primary" type="submit">
+                                                    <button class="btn btn-lg btn-primary" type="button" v-on:click="searchButton">
                                                         <i class="fa fa-search"></i>
                                                     </button>
                                                 </div>
                                             </div>
-                                        </form>
+                                        <!-- </form> -->
                                     </div>
                                 </div>
 <!--                             </div>
@@ -177,7 +177,7 @@
 	
     <script type="text/javascript">
 		
-        new Vue({
+        var app1 = new Vue({
             el: '#status',
             data: {
                 loginStatus: [[Status.loginStatus|tojson]],
@@ -206,6 +206,38 @@
             }
         });
 
+        var app2 = new Vue({
+            el: '#searchInput',
+            data: {
+                searchValue: ""
+            },
+            methods: {
+                searchButton: function() {
+                    var that = this
+                    if (that.searchValue === "") {
+                        swal("搜索内容不能为空! ", "请重新搜索! ", "error");
+                    }
+                    else {
+                        window.open('' + that.searchValue);
+                        $.ajax({
+                            url: '/api/',
+                            type: 'POST',
+                            data: {
+                                searchVal: that.searchValue
+                            },
+                            success: function(args) {
+
+                            },
+                            error: function() {
+                                swal("请求搜索失败! ", "请重新搜索! ", "error");
+                            }
+                        });
+                    }
+                    
+                }
+            }
+
+        })
         
     </script>
 </body>

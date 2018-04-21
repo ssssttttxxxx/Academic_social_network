@@ -31,8 +31,12 @@
     <!-- bootstrap-hover-dropdown -->
     <script src="../static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
 
+    <!-- jqPaginator -->
+    <script src="../static/jqPaginator/js/jqpaginator.min.js"></script>
+
     <link href="../static/common/animate.css" rel="stylesheet">
     <link href="../static/common/style.css" rel="stylesheet">
+    <link href="../static/common/style2.css" rel="stylesheet">
 
 
 </head>
@@ -40,7 +44,7 @@
 
 	<div class="navbar-wrapper">
 	    <nav class="navbar navbar-default navbar-fixed-top white-bg" role="navigation">
-	        <div class="container">
+	        <div class="container" id="status">
 	            <div class="navbar-header">
                     <a class="navbar-brand" href="/user/home" style="margin-left: 0px;padding: 7.5px 0px;">
                         <img src="../static/common/img/logo.png" height="40px" />
@@ -113,69 +117,21 @@
                             </ul>
                             <div class="tab-content">
                                 <div id="tab-1" class="tab-pane active">
-                                    <div class="panel-body">
+                                    <div class="panel-body" id="searchAuthorList">
 
                                         <fieldset class="form-horizontal">
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
+                                            <div v-for="item in authorItems">
+                                                <div class="search-result" >
+                                                    <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
+                                                    <h3><a href="#">{{ item.title }}</a></h3>
+                                                    <a href="#" class="search-link">{{ item.subtitle }}</a>
+                                                    <p>{{ item.profile }}</p>
+                                                </div>
+                                                <div class="hr-line-dashed"></div>
                                             </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
 
                                             <div class="text-center">
-                                                <div class="btn-group">
-                                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-left"></i></button>
-                                                    <button class="btn btn-white  active">1</button>
-                                                    <button class="btn btn-white">2</button>
-                                                    <button class="btn btn-white">3</button>
-                                                    <button class="btn btn-white">4</button>
-                                                    <button class="btn btn-white">5</button>
-                                                    <button class="btn btn-white">6</button>
-                                                    <button class="btn btn-white">7</button>
-                                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-right"></i> </button>
-                                                </div>
+                                                <ul class="pagination" id="authorPaging"></ul>
                                             </div>
                                         </fieldset>
 
@@ -183,10 +139,10 @@
                                 </div>
 
                                 <div id="tab-2" class="tab-pane">
-                                    <div class="panel-body">
+                                    <div class="panel-body" id="searchPaperList">
 
                                         <fieldset class="form-horizontal">
-                                            <div class="search-result">
+                                            <div class="search-result" v-for="item in Paperitems">
                                                 <img alt="image" src="../static/common/img/icon-paper.png" width="50px" height="50px" style="float: left;margin: 0px 10px;">
                                                 <h3><a href="#">Data mining: concepts and techniques</a></h3>
                                                 <a href="#" class="search-link">Jiawei Han, Micheline Kamber</a>
@@ -235,17 +191,7 @@
                                             <div class="hr-line-dashed"></div>
 
                                             <div class="text-center">
-                                                <div class="btn-group">
-                                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-left"></i></button>
-                                                    <button class="btn btn-white">1</button>
-                                                    <button class="btn btn-white  active">2</button>
-                                                    <button class="btn btn-white">3</button>
-                                                    <button class="btn btn-white">4</button>
-                                                    <button class="btn btn-white">5</button>
-                                                    <button class="btn btn-white">6</button>
-                                                    <button class="btn btn-white">7</button>
-                                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-right"></i> </button>
-                                                </div>
+                                                <ul class="pagination" id="paperPaging"></ul>
                                             </div>
                                         </fieldset>
                                     </div>
@@ -257,25 +203,31 @@
             </div>
         </div>
     </div>
-    
+
     <script type="text/javascript">
         
-        new Vue({
+        var app1 = new Vue({
             el: '#status',
             data: {
-                loginStatus: [[Status.loginStatus|tojson]],
-                logoutStatus: [[Status.logoutStatus|tojson]],
-                {% if current_user.email %}
-                firstName: [[current_user.first_name|tojson]],
-                lastName: [[current_user.last_name|tojson]],
-                email: [[current_user.email|tojson]],
-                avatarSrc: [[current_user.avatar|tojson]]
-                {% else %}
+                // loginStatus: [[Status.loginStatus|tojson]],
+                // logoutStatus: [[Status.logoutStatus|tojson]],
+                // {% if current_user.email %}
+                // firstName: [[current_user.first_name|tojson]],
+                // lastName: [[current_user.last_name|tojson]],
+                // email: [[current_user.email|tojson]],
+                // avatarSrc: [[current_user.avatar|tojson]]
+                // {% else %}
+                // firstName: "",
+                // lastName: "",
+                // email: "",
+                // avatarSrc: ""
+                // {% endif %}
+                loginStatus: true,
+                logoutStatus: false,
                 firstName: "",
                 lastName: "",
                 email: "",
                 avatarSrc: ""
-                {% endif %}
             },
             methods: {
                 // showLogin: function() {
@@ -289,7 +241,52 @@
             }
         });
 
-        
+        data2 = {authorItems: []}
+        for (var i=0;i<10;i++) {
+            data2.authorItems.push({
+                title: 'Jiawei Han(韩家炜)',
+                subtitle: 'h-index:  164  |  #Paper:  1207  |  #Citation:  159667',
+                profile: 'Professor'
+            })
+        }
+        // console.log(data2)
+        var app2 = new Vue({
+            el: '#searchAuthorList',
+            data: data2,
+            methods: {
+
+            }
+        })
+
+        $("#authorPaging").jqPaginator({
+            totalPages: 20,
+            visiblePages: 10,
+            currentPage: 1,
+
+            first: '<li class="first"><a href="javascript:void(0);"><i class="fa fa-angle-double-left fa-lg"></i></a></li>',
+            prev: '<li class="prev"><a href="javascript:void(0);"><i class="fa fa-angle-left fa-lg"></i></a></li>',
+            next: '<li class="next"><a href="javascript:void(0);"><i class="fa fa-angle-right fa-lg"></i></a></li>',
+            last: '<li class="last"><a href="javascript:void(0);"><i class="fa fa-angle-double-right fa-lg"></i></a></li>',
+            page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+            onPageChange: function (n) {
+                console.log("di "+ n + " ye");
+            }
+        });
+
+        $("#paperPaging").jqPaginator({
+            totalPages: 20,
+            visiblePages: 10,
+            currentPage: 1,
+
+            first: '<li class="first"><a href="javascript:void(0);"><i class="fa fa-angle-double-left fa-lg"></i></a></li>',
+            prev: '<li class="prev"><a href="javascript:void(0);"><i class="fa fa-angle-left fa-lg"></i></a></li>',
+            next: '<li class="next"><a href="javascript:void(0);"><i class="fa fa-angle-right fa-lg"></i></a></li>',
+            last: '<li class="last"><a href="javascript:void(0);"><i class="fa fa-angle-double-right fa-lg"></i></a></li>',
+            page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+            onPageChange: function (n) {
+                // console.log("di "+ n + " ye");
+            }
+        });
     </script>
 
     <div id="return-top" style="position: fixed;right: 1%;bottom: 4%;z-index: 99;">

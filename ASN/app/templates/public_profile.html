@@ -61,7 +61,7 @@
                     	<img src="../static/common/img/logo.png" height="40px" />
                     </a>
                 </div>
-                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-show="loginStatus">
+                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-if="loginStatus">
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="/user/private_profile" data-hover="dropdown" style="padding: 0px 0px;min-height: 0px;" title="用户">
                             <img alt="image" class="img-circle" :src="avatarSrc" width="40px" height="40px">
@@ -81,7 +81,7 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-show="logoutStatus">
+                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-else>
                     <li>
                         <a title="注册" href="/user/regist">
                             <i class="fa fa-registered fa-lg"></i> Register
@@ -734,7 +734,6 @@
 		//顶部用户信息显示
     	data1 = {
             // loginStatus: [[Status.loginStatus|tojson]],
-            // logoutStatus: [[Status.logoutStatus|tojson]],
             // {% if current_user.email %}
             // firstName: [[current_user.first_name|tojson]],
             // lastName: [[current_user.last_name|tojson]],
@@ -748,7 +747,6 @@
             // {% endif %}
 
             loginStatus: true,
-            logoutStatus: false,
             firstName: "张",
             lastName: "三丰",
             email: "11@qq.com",

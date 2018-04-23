@@ -31,6 +31,10 @@
     <!-- bootstrap-hover-dropdown -->
     <script src="../static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
 
+    <!-- sweetalert -->
+    <link href="../static/sweetalert/css/sweetalert.css" rel="stylesheet">
+    <script src="../static/sweetalert/js/sweetalert.min.js"></script>
+
     <link href="../static/common/animate.css" rel="stylesheet">
     <link href="../static/common/style.css" rel="stylesheet">
 
@@ -45,7 +49,7 @@
                     	<img src="../static/common/img/logo.png" height="40px" />
                     </a>
                 </div>
-                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-show="loginStatus">
+                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-if="loginStatus">
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="/user/private_profile" data-hover="dropdown" style="padding: 0px 0px;min-height: 0px;" title="用户">
                             <img alt="image" class="img-circle" :src="avatarSrc" width="40px" height="40px">
@@ -65,7 +69,7 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-show="logoutStatus">
+                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-else>
                     <li>
                         <a title="注册" href="/user/regist">
                             <i class="fa fa-registered fa-lg"></i> Register
@@ -85,28 +89,20 @@
     <div class="wrapper wrapper-content animated fadeInRight" style="padding-top: 100px;">
         <div class="container">
             <div class="row">
-<!--                 <div class="col-lg-12">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-content">
-                            <div class="row"> -->
-                                <div class="col-md-8 col-md-offset-2">
-                                    <div class="search-form" id="searchInput">
-                                        <!-- <form action="index.html" method="get"> -->
-                                            <div class="input-group">
-                                                <input type="text" placeholder="请根据作者或论文分类搜索" class="form-control input-lg" v-model="searchValue">
-                                                <div class="input-group-btn">
-                                                    <button class="btn btn-lg btn-primary" type="button" v-on:click="searchButton">
-                                                        <i class="fa fa-search"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        <!-- </form> -->
-                                    </div>
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="search-form"><!-- id="searchInput" -->
+                        <form action="/api/search_result" method="get">
+                            <div class="input-group">
+                                <input type="text" placeholder="请根据作者或论文分类搜索" class="form-control input-lg" name="content"><!-- v-model="searchContent" -->
+                                <div class="input-group-btn">
+                                    <button class="btn btn-lg btn-primary" type="submit" ><!-- v-on:click="searchButton" -->
+                                        <i class="fa fa-search"></i>
+                                    </button>
                                 </div>
-<!--                             </div>
-                        </div>
+                            </div>
+                        </form>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
@@ -181,7 +177,6 @@
             el: '#status',
             data: {
                 loginStatus: [[Status.loginStatus|tojson]],
-                logoutStatus: [[Status.logoutStatus|tojson]],
                 {% if current_user.email %}
                 firstName: [[current_user.first_name|tojson]],
                 lastName: [[current_user.last_name|tojson]],
@@ -196,48 +191,47 @@
             },
             methods: {
                 // showLogin: function() {
-                //     this.logoutStatus = false;
                 //     this.loginStatus = true;
                 // },
                 // showLogout: function() {
-                //     this.logoutStatus = true;
                 //     this.loginStatus = false;
                 // }
             }
         });
 
-        var app2 = new Vue({
-            el: '#searchInput',
-            data: {
-                searchValue: ""
-            },
-            methods: {
-                searchButton: function() {
-                    var that = this
-                    if (that.searchValue === "") {
-                        swal("搜索内容不能为空! ", "请重新搜索! ", "error");
-                    }
-                    else {
-                        window.open('' + that.searchValue);
-                        $.ajax({
-                            url: '/api/',
-                            type: 'POST',
-                            data: {
-                                searchVal: that.searchValue
-                            },
-                            success: function(args) {
+        // var app2 = new Vue({
+        //     el: '#searchInput',
+        //     data: {
+        //         searchContent: ""
+        //     },
+        //     methods: {
+        //         searchButton: function() {
+        //             var that = this
+        //             if (that.searchContent === "") {
+        //                 swal("搜索内容不能为空! ", "请重新搜索! ", "error");
+        //             }
+        //             else {
+        //                 console.log(that.searchContent);
+        //                 window.location.href = "/api/search?page=1&content=" + that.searchContent;
+        //                 // $.ajax({
+        //                 //     url: '/api/',
+        //                 //     type: 'POST',
+        //                 //     data: {
+        //                 //         searchVal: that.searchContent
+        //                 //     },
+        //                 //     success: function(args) {
 
-                            },
-                            error: function() {
-                                swal("请求搜索失败! ", "请重新搜索! ", "error");
-                            }
-                        });
-                    }
+        //                 //     },
+        //                 //     error: function() {
+        //                 //         swal("请求搜索失败! ", "请重新搜索! ", "error");
+        //                 //     }
+        //                 // });
+        //             }
                     
-                }
-            }
+        //         }
+        //     }
 
-        })
+        // })
         
     </script>
 </body>

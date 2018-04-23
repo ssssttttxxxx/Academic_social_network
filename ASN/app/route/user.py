@@ -80,7 +80,7 @@ def follow():
 
 @user.route('/private_profile', methods=['POST', 'GET'])
 @login_required
-# @check_confirmed
+@check_confirmed
 def private_profile():
     return render_template('private_profile.html')
 

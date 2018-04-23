@@ -3874,3 +3874,61 @@
 2018-04-22 23:40:54,736 - _internal.py[line:87] - INFO: 127.0.0.1 - - [22/Apr/2018 23:40:54] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
 2018-04-22 23:40:59,443 - _internal.py[line:87] - INFO: 127.0.0.1 - - [22/Apr/2018 23:40:59] "GET /api/search?type=author&content=try&p_page=1&a_page=2 HTTP/1.1" 200 -
 2018-04-22 23:41:00,052 - _internal.py[line:87] - INFO: 127.0.0.1 - - [22/Apr/2018 23:41:00] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 13:35:57,775 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 13:36:00,803 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 13:36:00,834 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 13:36:00,842 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 13:36:05,062 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:05] "GET / HTTP/1.1" 200 -
+2018-04-23 13:36:06,157 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-04-23 13:36:06,161 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 304 -
+2018-04-23 13:36:06,165 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/common/login/ace-fonts.css HTTP/1.1" 304 -
+2018-04-23 13:36:06,170 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 304 -
+2018-04-23 13:36:06,174 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/common/animate.css HTTP/1.1" 304 -
+2018-04-23 13:36:06,180 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/common/style.css HTTP/1.1" 304 -
+2018-04-23 13:36:06,466 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 304 -
+2018-04-23 13:36:06,476 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 304 -
+2018-04-23 13:36:06,480 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 304 -
+2018-04-23 13:36:06,484 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 304 -
+2018-04-23 13:36:06,490 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-04-23 13:36:06,493 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/vue/js/vue.js HTTP/1.1" 304 -
+2018-04-23 13:36:06,773 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 304 -
+2018-04-23 13:36:06,786 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:06] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 304 -
+2018-04-23 13:36:07,095 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:07] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 304 -
+2018-04-23 13:36:07,232 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:07] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 13:36:07,243 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:07] "GET /static/common/img/logo.png HTTP/1.1" 304 -
+2018-04-23 13:36:09,203 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:09] "GET /user/regist HTTP/1.1" 200 -
+2018-04-23 13:36:09,549 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:09] "GET /static/chosen/chosen.css HTTP/1.1" 200 -
+2018-04-23 13:36:09,788 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:09] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 13:36:25,823 - app_api.py[line:241] - INFO: uiouio@qq successfully registed
+2018-04-23 13:36:25,825 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:25] "POST /api/regist HTTP/1.1" 302 -
+2018-04-23 13:36:25,836 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:25] "GET /user/login HTTP/1.1" 200 -
+2018-04-23 13:36:26,184 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:26] "GET /static/icheck/css/custom.css HTTP/1.1" 200 -
+2018-04-23 13:36:26,200 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:26] "GET /static/icheck/js/icheck.min.js HTTP/1.1" 200 -
+2018-04-23 13:36:26,407 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:26] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 13:36:26,578 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:26] "GET /static/icheck/css/green.png HTTP/1.1" 200 -
+2018-04-23 13:36:58,719 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:58] "POST /api/login HTTP/1.1" 302 -
+2018-04-23 13:36:58,974 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:58] "GET /user/home HTTP/1.1" 200 -
+2018-04-23 13:36:59,125 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:59] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 13:36:59,515 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:36:59] "GET /static/avatar/init.png HTTP/1.1" 304 -
+2018-04-23 13:37:01,680 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:01] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 13:37:02,017 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-04-23 13:37:02,032 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-04-23 13:37:02,036 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/common/style2.css HTTP/1.1" 304 -
+2018-04-23 13:37:02,081 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 200 -
+2018-04-23 13:37:02,119 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 200 -
+2018-04-23 13:37:02,145 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 200 -
+2018-04-23 13:37:02,443 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 13:37:02,907 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 13:37:02,940 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-04-23 13:37:02,946 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/common/img/male.png HTTP/1.1" 200 -
+2018-04-23 13:37:02,957 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/common/img/female.png HTTP/1.1" 200 -
+2018-04-23 13:37:02,963 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:37:02] "GET /static/common/img/return-top.png HTTP/1.1" 304 -
+2018-04-23 13:38:02,322 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\route\\user.py', reloading
+2018-04-23 13:38:02,338 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:38:02] "GET /user/home HTTP/1.1" 200 -
+2018-04-23 13:38:02,447 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:38:02] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 13:38:02,921 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 13:38:06,026 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 13:38:06,052 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 13:38:06,062 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 13:38:08,019 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:38:08] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-23 13:38:08,193 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:38:08] "GET /api/unconfirmed HTTP/1.1" 200 -

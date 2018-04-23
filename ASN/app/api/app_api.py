@@ -199,12 +199,12 @@ def registBussiness():
 
         # 发送验证邮件
         to_email = '709778550@qq.com'
-        # token = generate_confirmation_token(email)
-        # confirm_url = url_for('api.confirm_email', token=token, _external=True)
-        # print "confirm_url", confirm_url
-        # html = render_template('activate.html', confirm_url=confirm_url)
-        # subject = "Please confirm your email"
-        # send_email('709778550@qq.com', subject, html)
+        token = generate_confirmation_token(email)
+        confirm_url = url_for('api.confirm_email', token=token, _external=True)
+        print "confirm_url", confirm_url
+        html = render_template('activate.html', confirm_url=confirm_url)
+        subject = "Please confirm your email"
+        send_email('709778550@qq.com', subject, html)
 
         # 注册时添加到作者表中
         try:

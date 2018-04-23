@@ -14,6 +14,7 @@ from datetime import timedelta
 from api.mysql_model import ASNUser, Expert_detail_total
 from api.mysql_model import db
 from api.app_api import photos, papers, mail, mongo
+# from api.mongodb_model import mongo
 
 from config import Config
 
@@ -47,13 +48,11 @@ app.jinja_env.variable_end_string = ']]'
 db.init_app(app)
 
 #mongodb 配置
-# app.config['MONGO3_HOST'] = '127.0.0.1'
-# app.config['MONGO3_PORT'] = 27017
-# app.config['MONGO_DBNAME'] = 'Paper'
-# app.config['MONGO_AUTHORS_DBNAME'] = 'Co_authors'
 
-# mongo = PyMongo(app, config_prefix='MONGO3')
-mongo.init_app(app)
+# app.config['MONGO_HOST'] = '47.106.157.16'
+# app.config['MONGO_PORT'] = 27017
+# app.config['MONGO_DBNAME'] = 'Paper'
+mongo.init_app(app, config_prefix='MONGO')
 
 # login_manager = LoginManager()
 # login_manager.login_view = 'user.login'

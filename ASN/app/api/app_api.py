@@ -16,20 +16,26 @@ from flask_pymongo import PyMongo
 
 import re
 import time
+import math
 import logging
 import datetime
 import MySQLdb
 from PIL import Image
 from token import generate_confirmation_token, confirm_token
+from werkzeug.contrib.cache import SimpleCache
 from decorators import check_confirmed
 
 # from app.api.model import User, Lemma, Comment, db
 from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, Expert_detail_total, Upload_paper, db
 from app.api.construct_network_from_mongodb import ConstructCoauthorsTree, ConstructCitationTree
+# from app.api.mongodb_model import mongo
+
+# 缓存
+cache = SimpleCache()
+
+
 
 mysql_db = MySQLdb.connect("47.106.157.16", "root", "123456", "citation", charset='utf8')
-
-# from app import photos, files
 
 photos = UploadSet('PHOTOS', IMAGES)
 papers = UploadSet('PAPERS')
@@ -424,95 +430,202 @@ def search():
     根据请求的搜索类型返回paper或者author的搜索结果
     :return:
     """
-    page = request.args.get('page', default=1, type=int)
-    searchtext = request.args.get('content', default='*', type=str)
-    print "page", page
-    print "content", searchtext
+
+    # if request.method == 'GET':
+    #     print 'GET'
+    #     searchtext = request.args.get('content', default='*', type=str).strip()
+    # elif request.method == 'POST':
+    #     print 'POST'
+    #     searchtext = request.form.get('content', default='*', type=str).strip()
+    #
+    # page = request.args.get('page', default=1, type=int)
+    # print "page", page
+    # print "content", searchtext
+
+    searchtext = request.args.get('content').strip()
+    search_type = request.args.get('type')
+    paper_page_num = int(request.args.get('p_page'))
+    author_page_num = int(request.args.get('a_page'))
+
+    nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
+    print "home current user:", nowUser
+    if not nowUser:
+        print "not current user"
+        status = {"loginStatus": False}
+    else:
+        print "with current user"
+        status = {"loginStatus": True}
 
     item_number = 10
-    # searchtext = request.form.get('searchtext')  # 搜索字段需要存入页面之中，否则难以获取
 
-    page_number = request.form.get('page')
-    if page_number is None:
-        page_number = int(page)
+    papers_detail = {}
+    authors_detail = {}
+    paper_total_page = 1
+    author_total_page = 1
+    paper_cache = cache.get('paper')
+    author_cache = cache.get('author')
+    # print "paper_cache", paper_cache
+    # print "author_cache", author_cache
 
-    print "page_number", page_number
 
-    start_item_number = (page_number - 1) * item_number
-    end_item_number = page_number*item_number
-    # 使用mysql查询 not model
-    author_results = db.session.query(Expert_detail_total).filter(
-            Expert_detail_total.name.like('%' + searchtext + '%')).order_by(Expert_detail_total.name).slice(start_item_number,).all()
+    if search_type == 'paper' and author_cache is not None:
+        print "have author cache"
+        authors_detail=author_cache
+    else:
+        start_item_number = (author_page_num - 1) * item_number
+        end_item_number = author_page_num * item_number
 
-    # 使用mysql查询 model
-    # author_results = Expert_detail.query.filter(Expert_detail.name.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
+        # 使用mysql查询 not model
+        author_results = db.session.query(Expert_detail_total).filter(
+            Expert_detail_total.name.like('%' + searchtext + '%')).order_by(Expert_detail_total.name).slice(
+            start_item_number, end_item_number).all()
 
-    # 使用mongodb查询
-    # author_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
-    #     (page - 1) * item_number).sort('title', -1).limit(item_number)
+        author_num = db.session.query(Expert_detail_total).filter(
+            Expert_detail_total.name.like('%' + searchtext + '%')).count()
+        print "author_num", author_num
 
-    json_authors_detail = []
+        author_total_page = int(math.ceil(author_num / float(item_number)))
+        if author_total_page == 0:
+            author_total_page = 1
 
-    if author_results is not None:
-        # 存放所有研究者信息的数组
-        authors_detail = []
-        for author in author_results:
-            tags = author.tags.split(';')
-            author_detail = {
-                "id": author.id,
-                "position": author.position,
-                "mid": author.mid,
-                "name": author.name,
-                "name_zh": author.name_zh,
-                "phone": author.phone,
-                "fax": author.fax,
-                "email": author.email,
-                "department": author.department,
-                "address": author.address,
-                "homepage": author.homepage,
-                "education": author.education,
-                "experience": author.experience,
-                "biography": author.biography,
-                "avatar": author.avatar,
-                "h_index": author.h_index,
-                "g_index": author.g_index,
-                "gender": author.gender,
-                "cite_num": author.cite_num,
-                "tags": tags,
-                "author_id": author.author_id,
-            }
-            authors_detail.append(author_detail)
-        json_authors_detail = json.dumps({"authors_detail": authors_detail})
+        # 使用mysql查询 model
+        # author_results = Expert_detail.query.filter(Expert_detail.name.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
 
-    # 使用mysql查询 model
-    # paper_results = Paper_detail.query.filter(Paper_detail.title.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
+        # 使用mongodb查询
+        # author_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
+        #     (page - 1) * item_number).sort('title', -1).limit(item_number)
 
-    # 使用mongodb查询
-    paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
-        (page - 1) * item_number).sort('title', -1).limit(item_number)
+        if author_results is not None:
+            # 存放所有研究者信息的数组
+            authors_detail = []
+            for author in author_results:
+                tags = re.split(r'[\[\];]', author.tags)
+                tags_str = ""
+                for i,tag in enumerate(tags):
+                    if i == len(tags):
+                        tags_str = tags_str + tag
+                    else:
+                        tags_str = tags_str + tag + ', '
+                while '' in tags:
+                    tags.remove('')
+                author_detail = {
+                    "id": author.id,
+                    "position": author.position,
+                    "mid": author.mid,
+                    "name": author.name,
+                    "name_zh": author.name_zh,
+                    "phone": author.phone,
+                    "fax": author.fax,
+                    "email": author.email,
+                    "department": author.department,
+                    "address": author.address,
+                    "homepage": author.homepage,
+                    "education": author.education,
+                    "experience": author.experience,
+                    "biography": author.biography,
+                    "avatar": author.avatar,
+                    "h_index": author.h_index,
+                    "g_index": author.g_index,
+                    "gender": author.gender,
+                    "cite_num": author.cite_num,
+                    "tags": tags_str,
+                    "author_id": author.author_id,
+                }
+                authors_detail.append(author_detail)
+                # json_authors_detail = json.dumps({"authors_detail": authors_detail})
 
-    json_paper_detail = []
 
-    if paper_results is not None:
-        # 存放所有paper信息的数据
-        papers_detail = []
-        for paper in paper_results:
-            paper_detail = {
-                "id": paper["id"],
-                "title": paper["title"],
-                "authors": paper["authors"],
-                # "venue": paper["venue"],
-                "year": paper["year"],
-                "ref": paper["ref"],
-                "abtract": paper["abtract"],
-            }
-            papers_detail.append(paper_detail)
-        json_paper_detail = json.dumps({"papers_detail": papers_detail})
 
-    return json.dumps({'result': 'success',
-                       'paper': json_paper_detail,
-                       'author': json_authors_detail,
-                       })
+    if search_type == 'author' and paper_cache is not None:
+        print "have paper cache"
+        papers_detail = paper_cache
+    else:
+        start_item_number = (paper_page_num - 1) * item_number
+        end_item_number = paper_page_num * item_number
+
+        # 使用mysql查询 model
+        # paper_results = Paper_detail.query.filter(Paper_detail.title.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
+
+        # 使用mongodb查询
+        paper_num = mongo.db.Citation_total.find({'title': re.compile(searchtext)}).count()
+        print "paper num", paper_num
+
+        paper_total_page = int(math.ceil(paper_num / float(item_number)))
+        if paper_total_page == 0:
+            paper_total_page = 1
+        print "paper page total", paper_total_page
+
+        paper_results = mongo.db.Citation_total.find({'title': re.compile(searchtext)}).skip(
+            start_item_number).sort('title', -1).limit(item_number)
+
+        if paper_results is not None:
+            # 存放所有paper信息的数据
+            papers_detail = []
+            for paper in paper_results:
+                paper_detail = {
+                    "id": paper["paper_id"],
+                    "title": paper["title"],
+                    "authors": paper["co_authors"],
+                    # "venue": paper["venue"],
+                    "year": paper["year"],
+                    # "ref": paper["ref_id"],
+                    "abstract": paper["abstract"],
+                }
+                papers_detail.append(paper_detail)
+
+    cache.set('paper', papers_detail)
+    cache.set('author', authors_detail)
+
+    pages = {
+        'PaperCurrentPage': paper_page_num,
+        'TotalPaperPage': paper_total_page,
+        'AuthorCurrentPage': author_page_num,
+        'TotalAuthorPage': author_total_page,
+    }
+
+    results = {
+        'result': 'success',
+        'paper': papers_detail,
+        'author': authors_detail,
+        'pages': pages,
+    }
+
+    print "return"
+    results = json.dumps(results)
+    return render_template(
+        'search_results.html',
+        Status=status, SearchContent=searchtext,
+        Results=results, SearchType=search_type,
+    )
+
+
+    # return redirect(url_for('user.search_results', SearchContent=searchtext, Results=results), code=302, Response=None)
+
+
+@api.route('/search_result', methods=['GET', 'POST'])
+def search_result():
+    if request.method == 'GET':
+        print 'GET'
+        searchtext = request.args.get('content', default='*', type=str).strip()
+        search_type = request.args.get('type', default='paper', type=str)
+        paper_page_num = request.args.get('p_page', default=1, type=int)
+        author_page_num = request.args.get('a_page', default=1, type=int)
+
+
+    elif request.method == 'POST':
+        print 'POST'
+        searchtext = request.form.get('content', default='*', type=str).strip()
+        search_type = request.form.get('type', default='paper', type=str)
+        paper_page_num = request.form.get('p_page', default=1, type=int)
+        author_page_num = request.form.get('a_page', default=1, type=int)
+
+    print "p_page", paper_page_num
+    print "a_page", author_page_num
+    print "content", searchtext
+    print "type", search_type
+
+    return redirect(
+        url_for('api.search',type=search_type, content=searchtext, p_page=paper_page_num, a_page=author_page_num))
 
 
 @api.route('/expert_network', methods=['POST'])
@@ -671,6 +784,10 @@ def author_detail(author_name=None):
 
 @api.route('/insert_new_item', methods=['POST'])
 def insert_new_item():
+    """
+
+    :return:
+    """
     info = request.args.get('mydata')
     id = 1
     mid = ""

@@ -25,36 +25,72 @@
 	<!-- ace styles -->
 	<!-- <link rel="stylesheet" href="../static/common/login/ace.css" /> -->
 
+    <!-- vue -->
+    <script src="../static/vue/js/vue.js" type="text/javascript"></script>
+
+    <!-- bootstrap-hover-dropdown -->
+    <script src="../static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+
+    <!-- jqPaginator -->
+    <script src="../static/jqPaginator/js/jqpaginator.min.js"></script>
+
+    <!-- sweetalert -->
+    <link href="../static/sweetalert/css/sweetalert.css" rel="stylesheet">
+    <script src="../static/sweetalert/js/sweetalert.min.js"></script>
+
     <link href="../static/common/animate.css" rel="stylesheet">
     <link href="../static/common/style.css" rel="stylesheet">
+    <link href="../static/common/style2.css" rel="stylesheet">
 
-
+    <style type="text/css">
+        .tabs-container p {
+            overflow: hidden; /*自动隐藏文字*/
+            text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+            white-space: nowrap;/*强制不换行*/
+            width: 80em;/*不允许出现半汉字截断*/
+        }
+    </style>
 </head>
 <body class="gray-bg">
 
 	<div class="navbar-wrapper">
 	    <nav class="navbar navbar-default navbar-fixed-top white-bg" role="navigation">
-	        <div class="container">
+	        <div class="container" id="status">
 	            <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html" style="margin-left: 0px;padding: 7.5px 0px;">
-                    	<img src="../static/common/img/logo.png" height="40px" />
+                    <a class="navbar-brand" href="/user/home" style="margin-left: 0px;padding: 7.5px 0px;">
+                        <img src="../static/common/img/logo.png" height="40px" />
                     </a>
                 </div>
-<!--                 <div class="navbar-right" style="margin-top: 10px;">
-                	<span>还没注册?&nbsp;</span>
-                	<a href="register.html" class="btn btn-primary btn-sm">注册</a>
-                </div> -->
-                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;">
+                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-if="loginStatus">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="/user/private_profile" data-hover="dropdown" style="padding: 0px 0px;min-height: 0px;" title="用户">
+                            <img alt="image" class="img-circle" :src="avatarSrc" width="40px" height="40px">
+                            <strong>{{ firstName }}&nbsp;{{ lastName }}</strong>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" style="margin-top: 10px;min-width: 100px;">
+                            <li class="pull-right">
+                                <div href="#" style="padding: 3px 3px;margin: 4px;line-height: 25px;font-size: 14px;">{{ email }}</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <span style="padding:15px 0px 5px 0px;margin: 0px 2px 0px 6px;border-left: 1px solid #999c9e;font-size: 0;"></span>
                     <li>
-                        <a href="profile.html" style="padding: 0px 0px;min-height: 0px;" title="用户">
-                            <img alt="image" class="img-circle" src="../static/common/img/a4.jpg" width="40px" height="40px">
-                            <strong>Monica Smith</strong>
+                        <a title="注销" href="/api/logout">
+                            <i class="fa fa-sign-out fa-lg"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links navbar-right" style="margin-right: -40px;" v-else>
+                    <li>
+                        <a title="注册" href="/user/regist">
+                            <i class="fa fa-registered fa-lg"></i> Register
                         </a>
                     </li>
                     <span style="padding:15px 0px 5px 0px;margin: 0px 2px 0px 6px;border-left: 1px solid #999c9e;font-size: 0;"></span>
                     <li>
-                        <a href="login.html" title="注销">
-                            <i class="fa fa-sign-out fa-lg"></i> Log out
+                        <a title="登录"  href="/user/login">
+                            <i class="fa fa-sign-in fa-lg"></i> Log in&nbsp;&nbsp;&nbsp;
                         </a>
                     </li>
                 </ul>
@@ -62,181 +98,313 @@
 	    </nav>
 	</div>
 
-    <div class="animated fadeInRight container" style="padding-top: 100px;">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="search-form" >
-                    <form action="index.html" method="get">
-                        <div class="input-group">
-                            <input type="text" placeholder="请根据作者或论文分类搜索" name="search" class="form-control input-lg">
-                            <div class="input-group-btn">
-                                <button class="btn btn-lg btn-primary" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
+    <div id="searchList">
+        <div class="animated fadeInRight container" style="padding-top: 100px;">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="search-form" >
+                        <!-- <form action="/api/search_result" method="POST" action="/api/search_result" id="searchButton"> name="content"-->
+                            <div class="input-group">
+                                <input type="text" placeholder="请根据作者或论文分类搜索" class="form-control input-lg" v-model="searchContent" v-on:keyup.enter="searchButton">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-lg btn-primary" type="button" v-on:click="searchButton">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        <!-- </form> -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="wrapper wrapper-content animated fadeInRight">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tabs-container">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#tab-1"> 作者</a></li>
-                                <li class=""><a data-toggle="tab" href="#tab-2"> 论文</a></li>
-                            </ul>
-                            <div class="tab-content">
-                                <div id="tab-1" class="tab-pane active">
-                                    <div class="panel-body">
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tabs-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#tab-1"> 论文</a></li>
+                                    <li class=""><a data-toggle="tab" href="#tab-2"> 作者</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="tab-1" class="tab-pane active">
+                                        <div class="panel-body"><!--  id="searchPaperList" -->
 
-                                        <fieldset class="form-horizontal">
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/a4.jpg" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Jiawei Han(韩家炜)</a></h3>
-                                                <a href="#" class="search-link">h-index:  164  |  #Paper:  1207  |  #Citation:  159667</a>
-                                                <p>Professor</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="text-center">
-                                                <div class="btn-group">
-                                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-left"></i></button>
-                                                    <button class="btn btn-white  active">1</button>
-                                                    <button class="btn btn-white">2</button>
-                                                    <button class="btn btn-white">3</button>
-                                                    <button class="btn btn-white">4</button>
-                                                    <button class="btn btn-white">5</button>
-                                                    <button class="btn btn-white">6</button>
-                                                    <button class="btn btn-white">7</button>
-                                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-right"></i> </button>
+                                            <div v-if="loading" style="height: 480px;padding-top: 200px;">
+                                                <div class="sk-spinner sk-spinner-three-bounce">
+                                                    <div class="sk-bounce1"></div>
+                                                    <div class="sk-bounce2"></div>
+                                                    <div class="sk-bounce3"></div>
                                                 </div>
                                             </div>
-                                        </fieldset>
 
+                                            <fieldset class="form-horizontal" v-else>
+                                                <div v-for="item in paperItems">
+                                                    <div class="search-result">
+                                                        <img alt="image" :src="item.avatarSrc" width="50px" height="50px" style="float: left;margin: 0px 10px;">
+                                                        <div style="margin-left: 75px;">
+                                                            <h3><a href="#">{{ item.title }}</a></h3>
+                                                            <a href="#" class="search-link">{{ item.subtitle }}</a>
+                                                            <p>{{ item.profile }}</p>  
+                                                        </div>
+                                                    </div>
+                                                    <div class="hr-line-dashed"></div>
+                                                </div>
+
+                                                <div class="text-center">
+                                                    <ul class="pagination" id="paperPaging"></ul>
+                                                </div>
+                                            </fieldset>
+
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div id="tab-2" class="tab-pane">
-                                    <div class="panel-body">
+                                    <div id="tab-2" class="tab-pane">                                    
+                                        <div class="panel-body"><!--  id="searchAuthorList" -->
 
-                                        <fieldset class="form-horizontal">
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/icon-paper.png" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Data mining: concepts and techniques</a></h3>
-                                                <a href="#" class="search-link">Jiawei Han, Micheline Kamber</a>
-                                                <p>Cited by 38688</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/icon-paper.png" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Data mining: concepts and techniques</a></h3>
-                                                <a href="#" class="search-link">Jiawei Han, Micheline Kamber</a>
-                                                <p>Cited by 38688</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/icon-paper.png" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Data mining: concepts and techniques</a></h3>
-                                                <a href="#" class="search-link">Jiawei Han, Micheline Kamber</a>
-                                                <p>Cited by 38688</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/icon-paper.png" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Data mining: concepts and techniques</a></h3>
-                                                <a href="#" class="search-link">Jiawei Han, Micheline Kamber</a>
-                                                <p>Cited by 38688</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/icon-paper.png" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Data mining: concepts and techniques</a></h3>
-                                                <a href="#" class="search-link">Jiawei Han, Micheline Kamber</a>
-                                                <p>Cited by 38688</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="search-result">
-                                                <img alt="image" src="../static/common/img/icon-paper.png" width="50px" height="50px" style="float: left;margin: 0px 10px;">
-                                                <h3><a href="#">Data mining: concepts and techniques</a></h3>
-                                                <a href="#" class="search-link">Jiawei Han, Micheline Kamber</a>
-                                                <p>Cited by 38688</p>
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-
-                                            <div class="text-center">
-                                                <div class="btn-group">
-                                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-left"></i></button>
-                                                    <button class="btn btn-white">1</button>
-                                                    <button class="btn btn-white  active">2</button>
-                                                    <button class="btn btn-white">3</button>
-                                                    <button class="btn btn-white">4</button>
-                                                    <button class="btn btn-white">5</button>
-                                                    <button class="btn btn-white">6</button>
-                                                    <button class="btn btn-white">7</button>
-                                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-right"></i> </button>
+                                            <div v-if="loading" style="height: 480px;padding-top: 200px;">
+                                                <div class="sk-spinner sk-spinner-three-bounce">
+                                                    <div class="sk-bounce1"></div>
+                                                    <div class="sk-bounce2"></div>
+                                                    <div class="sk-bounce3"></div>
                                                 </div>
                                             </div>
-                                        </fieldset>
+
+                                            <fieldset class="form-horizontal" v-else>
+                                                <div v-for="item in authorItems">
+                                                    <div class="search-result" >
+                                                        <img alt="image" :src="item.avatarSrc" width="50px" height="50px" style="float: left;margin: 0px 10px;">
+                                                        <div style="margin-left: 75px;">
+                                                            <h3><a href="#">{{ item.title }}</a></h3>
+                                                            <a href="#" class="search-link">{{ item.subtitle }}</a>
+                                                            <p>{{ item.profile }}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="hr-line-dashed"></div>
+                                                </div>
+
+                                                <div class="text-center">
+                                                    <ul class="pagination" id="authorPaging"></ul>
+                                                </div>
+                                            </fieldset>
+
+                                        </div>
+                                        
                                     </div>
+                                    
                                 </div>
-                                
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
+    <script type="text/javascript">
+        
+        var app1 = new Vue({
+            el: '#status',
+            data: {
+                loginStatus: [[Status.loginStatus|tojson]],
+                {% if current_user.email %}
+                firstName: [[current_user.first_name|tojson]],
+                lastName: [[current_user.last_name|tojson]],
+                email: [[current_user.email|tojson]],
+                avatarSrc: [[current_user.avatar|tojson]]
+                {% else %}
+                firstName: "",
+                lastName: "",
+                email: "",
+                avatarSrc: ""
+                {% endif %}
+                // loginStatus: true,
+                // firstName: "",
+                // lastName: "",
+                // email: "",
+                // avatarSrc: ""
+            },
+            methods: {
+                // showLogin: function() {
+                //     this.loginStatus = true;
+                // },
+                // showLogout: function() {
+                //     this.loginStatus = false;
+                // }
+            }
+        });
+
+        data2 = {
+            {% if SearchContent %}
+            searchContent: [[SearchContent|tojson]],
+            {% else %}
+            searchContent: "",
+            {% endif %}
+            paperItems:[], 
+            authorItems: [],
+            loading: false
+        }
+
+        var res = JSON.parse([[Results|tojson]])
+        for (var i = 0;i < res.paper.length;i++) {
+            data2.paperItems.push({
+                avatarSrc: "../static/common/img/icon-paper.png",
+                title: res.paper[i].title,
+                subtitle: res.paper[i].authors + ' | ' + res.paper[i].year,
+                profile: res.paper[i].abstract
+            })
+        }
+        for (var i = 0;i < res.author.length;i++) {                                                
+            if (res.author[i].avatar === "") {
+                res.author[i].avatar = "../static/avatar/init.png"
+            }
+            data2.authorItems.push({
+                avatarSrc: res.author[i].avatar,
+                title: res.author[i].name,
+                subtitle: 'h-index: ' + res.author[i].h_index + ' | ' +  'g-index: ' + res.author[i].g_index,
+                profile: res.author[i].tags
+            })
+        }
+
+        if ([[SearchType|tojson]] === "paper") {
+            $("a[href='#tab-1']").click();
+        }
+        else if ([[SearchType|tojson]] === "author") {
+            $("a[href='#tab-2']").click();
+        }
+
+
+        function searchProcess(searchType, searchContent, searchPaperPage, searchAuthorPage) {
+            window.location.href = "/api/search?type=" + searchType + "&content=" + searchContent + "&p_page=" + searchPaperPage + "&a_page=" + searchAuthorPage
+            
+            // $.ajax({
+            //     url: "/api/search_result",
+            //     type: 'GET',
+            //     dataType: "html",
+            //     // data: "type="+ searchType + "&content=" + searchContent + "&page=" + searchPage,
+            //     data: "content=" + searchContent + "&page=" + searchPage,
+
+            //     success: function(args) {
+
+            //         console.log(args)
+            //         // window.open(args)
+
+            //         // var res = JSON.parse(args);
+            //         // if (res.result === "success") {
+            //         //     if (searchType === "paper") {
+            //         //         data2.paperItems = []
+            //         //         for (var i = 0;i < res.paper.length;i++) {
+            //         //             data2.paperItems.push({
+            //         //                 title: res.paper[i].title,
+            //         //                 subtitle: res.paper[i].authors + ' | ' + res.paper[i].year,
+            //         //                 profile: res.paper[i].abstract
+            //         //             })
+            //         //         }
+            //         //     }
+            //         //     else if (searchType === "author") {
+            //         //         data2.authorItems = []
+            //         //         for (var i = 0;i < res.author.length;i++) {                                                
+            //         //             if (res.author[i].avatar === "") {
+            //         //                 res.author[i].avatar = "../static/avatar/init.png"
+            //         //             }
+            //         //             data2.authorItems.push({
+            //         //                 avatarSrc: res.author[i].avatar,
+            //         //                 title: res.author[i].name,
+            //         //                 subtitle: 'h-index: ' + res.author[i].h_index + ' | ' +  'g-index: ' + res.author[i].g_index,
+            //         //                 profile: res.author[i].tags
+            //         //             })
+            //         //         }
+            //         //     }
+            //         // }
+            //         // else {
+            //             // swal("搜索失败! ", "请重新搜索! ", "error");
+            //         // }
+            //     },
+            //     error: function() {
+            //         swal("请求搜索失败! ", "请重新搜索! ", "error");
+            //     }
+            // });
+        }
+
+        var app2 = new Vue({
+            el: '#searchList',
+            data: data2,
+            methods: {
+                searchButton: function() {
+                    var that = this
+                    if (that.searchContent === "") {
+                        swal("搜索内容不能为空! ", "请重新搜索! ", "error");
+                    }
+                    else {
+                        console.log("asdfjasd")
+                        that.loading = true
+                        searchProcess("paper", that.searchContent, 1, 1);
+                        // searchProcess("author", that.searchContent, 1);
+                    }
+                }
+            }
+        })
+
+        var author_if_firsttime = true
+        $("#authorPaging").jqPaginator({
+            totalPages: res.pages.TotalAuthorPage,
+            // totalPages: 20,
+            visiblePages: 10,
+            currentPage: res.pages.AuthorCurrentPage,
+            // currentPage:1,
+
+            first: '<li class="first"><a href="javascript:void(0);"><i class="fa fa-angle-double-left fa-lg"></i></a></li>',
+            prev: '<li class="prev"><a href="javascript:void(0);"><i class="fa fa-angle-left fa-lg"></i></a></li>',
+            next: '<li class="next"><a href="javascript:void(0);"><i class="fa fa-angle-right fa-lg"></i></a></li>',
+            last: '<li class="last"><a href="javascript:void(0);"><i class="fa fa-angle-double-right fa-lg"></i></a></li>',
+            page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+            onPageChange: function (n) {
+                if(author_if_firsttime){
+                    author_if_firsttime = false;
+                }
+                else if(!author_if_firsttime){
+                    // console.log("di "+ n + " ye");
+                    data2.loading = true
+                    // window.location.href = "/api/search?content=" + data2.searchContent + "&page=" + n
+                    searchProcess("author", data2.searchContent, res.pages.PaperCurrentPage, n);
+                }
+
+            }
+        });
+
+        var paper_if_firsttime = true;
+        $("#paperPaging").jqPaginator({
+            totalPages: res.pages.TotalPaperPage,
+            // totalPages: 20,
+            visiblePages: 10,
+            currentPage: res.pages.PaperCurrentPage,
+            // currentPage:1,
+
+            first: '<li class="first"><a href="javascript:void(0);"><i class="fa fa-angle-double-left fa-lg"></i></a></li>',
+            prev: '<li class="prev"><a href="javascript:void(0);"><i class="fa fa-angle-left fa-lg"></i></a></li>',
+            next: '<li class="next"><a href="javascript:void(0);"><i class="fa fa-angle-right fa-lg"></i></a></li>',
+            last: '<li class="last"><a href="javascript:void(0);"><i class="fa fa-angle-double-right fa-lg"></i></a></li>',
+            page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+            onPageChange: function (n) {
+                if(paper_if_firsttime){
+                    paper_if_firsttime = false;
+                }
+                else if(!paper_if_firsttime){
+                    // console.log("di "+ n + " ye");
+                    data2.loading = true
+                    // window.location.href = "/api/search?content=" + data2.searchContent + "&page=" + n
+                    searchProcess("paper", data2.searchContent, n, res.pages.AuthorCurrentPage);
+                    // console.log(data)
+                    // $("#searchButton").action = "/api/search_result?content=" + data2.searchContent + "&page=" + n;
+                    // $("#searchButton").attr("action", "/api/search_result?content=" + data2.searchContent + "&page=" + n);
+
+                    // $("#searchButton").submit();
+                }
+            }
+        });
+
+    </script>
+
     <div id="return-top" style="position: fixed;right: 1%;bottom: 4%;z-index: 99;">
         <a onclick="backToTop()">
             <img src="../static/common/img/return-top.png" title="返回顶部">

@@ -14,13 +14,18 @@ class Config:
     SQLALCHEMY_DATABASE_URI = "mysql://%s:%s@%s/%s" % ('root', 'stx11stx11', '127.0.0.1', 'dblp_ref')
     SQLALCHEMY_BINDS = {
         'paper':    r'mysql://root:stx11stx11@127.0.0.1/dblp_ref',
-        # 'expert':   r'mysql://root:stx11stx11@127.0.0.1/expert_example',
+        'expert':   r'mysql://root:stx11stx11@127.0.0.1/expert_example',
         'ali':      r'mysql://root:123456@47.106.157.16/citation',
         }
 
     # Mongo
+    MONGO_HOST = '47.106.157.16'
+    # MONGO_HOST = '127.0.0.1'
+    MONGO_PORT = 27017
+    MONGO_USERNAME=''
+    MONGO_PASSWORD=''
     MONGO_DBNAME = 'Paper'
-    MONGO_AUTHORS_DBNAME = 'Co_authors'
+    # MONGO_AUTHORS_DBNAME = 'Co_authors'
 
     # 默认存储路径配置
     UPLOADS_DEFAULT_DEST = './app/static/paper'

@@ -1,0 +1,70 @@
+/*标签*/
+.tags-wrap {
+	width: 100%;
+	height: 100%;
+	/*outline: black solid 1px;*/
+	overflow: hidden;
+	&::after{
+		content: "";
+		display: block;
+		height: 0;
+		clear: both;
+	}
+}
+.tag-list {
+	font-size: 13px;
+	background-color: #f3f3f4;
+	padding: 5px 12px;
+	color: inherit;
+	border-radius: 2px;
+	border: 1px solid #e7eaec;
+	margin-right: 5px;
+	margin-top: 5px;
+	display: block;
+	float: left;
+}
+.tags, .tags-input{
+	position: relative;
+	float: left;
+	background-color: green;
+	color: blue;
+	line-height: 32px;
+	/*margin: 0 4px 4px 0;*/
+	margin-right: 5px;
+	margin-top: 5px;
+	/*padding: 0 22px 0 10px;*/
+	padding: 5px 12px;
+	border-radius: 6px;
+	/*border: none;*/
+	outline: none;
+	.content{
+		line-height: 28px;
+	}
+  	.del{
+	    width: 22px;
+	    height: 28px;
+	    text-align: center;
+	    cursor: pointer;
+	    position: absolute;
+	    top: -1px;
+	    right: 0;
+  	}
+}
+.tags-input{
+	font-size: 13px;
+	padding: 0;
+	background-color: inherit;
+	border: none;
+	color: inherit;
+	width: 12em;
+}
+
+/* 返回顶部 */
+#return-top > a > img {
+    opacity: 0.6;
+    filter:alpha(opacity=60);
+}
+#return-top > a > img:hover {
+    opacity: 1.0;
+    filter:alpha(opacity=100);
+}

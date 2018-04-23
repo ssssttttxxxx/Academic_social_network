@@ -21,12 +21,10 @@ def home():
     print "home current user:", nowUser
     if not nowUser:
         print "not current user"
-        status = {"loginStatus": False,
-                  "logoutStatus": True}
+        status = {"loginStatus": False}
     else:
         print "with current user"
-        status = {"loginStatus": True,
-                  "logoutStatus": False}
+        status = {"loginStatus": True}
     return render_template('home.html', Status=status)
 
 
@@ -86,6 +84,22 @@ def follow():
 def private_profile():
     return render_template('private_profile.html')
 
+
+@user.route('/search_results', methods=['GET'])
+def search_results():
+    searchContent = request.args.get('SearchContent')
+    results = request.args.get('Results')
+    print "user search", searchContent
+    nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
+    print "home current user:", nowUser
+    if not nowUser:
+        print "not current user"
+        status = {"loginStatus": False}
+    else:
+        print "with current user"
+        status = {"loginStatus": True}
+
+    return render_template('search_results.html', Status=status, SearchContent=searchContent, Results=results)
 # @user.route('/confirm_url')
 # def confirm():
 #     pass

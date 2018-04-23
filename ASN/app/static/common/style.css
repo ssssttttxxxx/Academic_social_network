@@ -1205,7 +1205,7 @@ button.dim:active:before {
   float: left;
   line-height: 1.42857;
   margin-left: -1px;
-  padding: 4px 10px;
+  padding: 8px 14px;
   position: relative;
   text-decoration: none;
 }

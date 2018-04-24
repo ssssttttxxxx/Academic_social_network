@@ -4782,3 +4782,106 @@
 2018-04-24 20:15:47,780 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:15:47] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
 2018-04-24 20:15:49,680 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:15:49] "GET /api/to_public_profile?id=53f35e79dabfae4b3497bb28 HTTP/1.1" 404 -
 2018-04-24 20:15:54,002 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:15:54] "GET /api/to_public_profile?id=53f35e79dabfae4b3497bb28 HTTP/1.1" 404 -
+2018-04-24 20:50:29,002 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 20:50:36,302 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 20:50:36,584 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 20:50:36,627 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 20:50:44,220 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:50:44] "GET / HTTP/1.1" 200 -
+2018-04-24 20:50:45,026 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:50:45] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 20:55:16,582 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:55:16] "GET /api/search_result?content=fox HTTP/1.1" 302 -
+2018-04-24 20:55:37,434 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:55:37] "GET /api/search?content=fox&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-24 20:55:51,006 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:55:51] "GET /api/to_public_profile?id=54325d04dabfaeb54215035f HTTP/1.1" 302 -
+2018-04-24 20:55:51,407 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:55:51] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 200 -
+2018-04-24 20:55:52,882 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:55:52] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 20:56:25,591 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:56:25] "GET /api/search?type=paper&content=Metabolic%20Syndrome&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-24 21:07:02,993 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:07:02] "GET /api/to_paper_detail?id=ed647475-574b-44ca-a738-d8c23edaab9e HTTP/1.1" 302 -
+2018-04-24 21:07:05,131 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:07:05] "GET /api/paper_detail?paperID=ed647475-574b-44ca-a738-d8c23edaab9e HTTP/1.1" 200 -
+2018-04-24 21:07:06,460 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:07:06] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 21:07:28,180 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:07:28] "GET /api/to_paper_detail?id=ee8b205c-a308-484b-b958-c8855fe68fd2 HTTP/1.1" 302 -
+2018-04-24 21:07:38,553 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:07:38] "GET /api/paper_detail?paperID=ee8b205c-a308-484b-b958-c8855fe68fd2 HTTP/1.1" 200 -
+2018-04-24 21:07:40,720 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:07:40] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 21:07:46,359 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:07:46] "GET /api/to_paper_detail?id=6f78082b-588f-4cf5-a331-1707d497c6db HTTP/1.1" 302 -
+2018-04-24 21:07:49,252 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:07:49] "GET /api/paper_detail?paperID=6f78082b-588f-4cf5-a331-1707d497c6db HTTP/1.1" 200 -
+2018-04-24 21:07:53,530 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:07:53] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 21:53:07,000 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:53:07] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 500 -
+2018-04-24 21:53:07,033 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:53:07] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-24 21:53:07,036 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:53:07] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-24 21:53:07,086 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:53:07] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-24 21:53:42,901 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 21:53:52,605 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 21:53:53,206 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 21:53:53,217 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 21:53:59,194 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:53:59] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 200 -
+2018-04-24 21:54:00,928 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:54:00] "GET /static/footable/css/footable.core.css HTTP/1.1" 200 -
+2018-04-24 21:54:00,946 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:54:00] "GET /static/footable/js/footable.all.min.js HTTP/1.1" 200 -
+2018-04-24 21:54:01,306 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:54:01] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 21:56:07,848 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:56:07] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-24 21:56:07,865 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 21:56:07] "GET /static/footable/css/fonts/footable.woff HTTP/1.1" 200 -
+2018-04-24 21:56:30,188 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-24 21:56:31,380 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 22:06:05,586 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 22:06:16,009 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 22:06:16,255 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 22:06:16,289 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 22:09:19,989 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 22:09:23,713 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 22:09:23,740 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 22:09:23,747 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 22:12:31,772 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 22:12:34,780 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 22:12:34,811 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 22:12:34,818 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 22:33:53,780 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:33:53] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 500 -
+2018-04-24 22:34:19,157 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 22:34:23,160 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 22:34:23,334 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 22:34:23,342 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 22:34:36,632 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:34:36] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 500 -
+2018-04-24 22:34:37,088 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:34:37] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-24 22:34:37,088 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:34:37] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-24 22:34:37,089 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:34:37] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-24 22:38:47,382 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:38:47] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 500 -
+2018-04-24 22:38:47,523 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:38:47] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-24 22:38:47,700 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:38:47] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-24 22:38:47,703 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:38:47] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-24 22:38:48,667 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-24 22:38:49,154 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 22:38:52,605 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 22:38:52,638 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 22:38:52,651 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 22:38:58,596 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:38:58] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 500 -
+2018-04-24 22:38:58,615 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:38:58] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-24 22:38:58,617 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:38:58] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-24 22:38:58,618 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:38:58] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-24 22:40:19,453 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 22:40:22,377 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 22:40:22,408 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 22:40:22,417 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 22:40:25,125 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:40:25] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 500 -
+2018-04-24 22:40:25,141 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:40:25] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-24 22:40:25,144 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:40:25] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-24 22:40:25,145 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:40:25] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-24 22:40:53,344 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 22:40:56,546 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 22:40:56,575 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 22:40:56,582 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 22:40:58,148 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:40:58] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 200 -
+2018-04-24 22:40:59,684 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:40:59] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 22:41:08,914 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:41:08] "GET /user/home HTTP/1.1" 200 -
+2018-04-24 22:41:09,305 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:41:09] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 22:41:12,114 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:41:12] "GET /api/search_result?content=fox HTTP/1.1" 302 -
+2018-04-24 22:42:50,757 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:42:50] "GET /api/search?content=fox&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-24 22:42:51,732 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:42:51] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 22:43:04,711 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:43:04] "GET /api/to_public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 302 -
+2018-04-24 22:43:05,038 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:43:05] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 500 -
+2018-04-24 22:43:05,045 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:43:05] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-24 22:43:05,348 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:43:05] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-24 22:43:05,349 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:43:05] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-24 22:43:15,065 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-24 22:43:15,528 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 22:43:19,292 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 22:43:22,029 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 22:43:22,056 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 22:43:22,063 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 22:43:25,799 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:43:25] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-24 22:43:26,216 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 22:43:26] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -

@@ -346,83 +346,6 @@ def search_expert(expert_name=None):
             return "no expert found!fxxx_expert_detail"
 
 
-# 不启用
-@api.route('/authors')
-@api.route('/authors/<string:paper_id>')
-def search_authors(paper_id=None):
-    """
-    返回论文id的所有作者
-    :param paper_id:
-    :return:
-    """
-    print "paper_id", paper_id
-    if paper_id is None:
-        return render_template("asn_authors.html")
-    else:
-        results = mongo.db.Co_authors.find_one({'paper_id': paper_id})
-        if results is not None:
-            paper_authors = {
-                'paper_id': results['paper_id'],
-                'co_authors': results['co_authors'],
-            }
-            print paper_authors
-            return render_template("asn_authors.html", authors=paper_authors)
-        else:
-            return "no expert found!fxxx_authors"
-
-
-# 不启用
-@api.route('/paper')
-@api.route('/paper/<string:paper_name>')
-def search_paper(paper_name=None):
-    """
-    返回论文搜索结果
-    :param paper_name:
-    :return:
-    """
-    page = 1
-    pagesize = 20
-
-    print "paper_name", paper_name
-    if paper_name is None:
-        return render_template("../old_tem/asn_search_papers.html")
-    else:
-        print "before query"
-        begin = time.time()
-        Paper_detail.query.limit(10)
-        results_sum = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(paper_name)}).count()
-
-        print "条目总数", results_sum
-
-        # 使用mongodb查询
-        results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(paper_name)}).skip(
-            page - 1).sort('title', -1).limit(pagesize)
-
-        # 使用mysql查询 model
-        # results = Paper_detail.query.order_by(Paper_detail.year.desc()).filter(Paper_detail.title.like("%" + paper_name + "%")).slice(0, 10).all()
-
-        # 使用mysql查询 not model
-        # results = db.session.query(Paper_detail.title).filter(Paper_detail.title.like("%" + paper_name + "%")).slice(0, 10).all()
-
-        # resultsss = Paper_detail.query.limit(10).all()
-        end = time.time()
-        print "after query"
-        print "query time %d", end - begin
-
-        paper_search_results = []
-        for result in results:
-            print result
-            paper_search_results.append(result["title"])
-            # paper_search_results.append(result.title)
-
-        if results is not None:
-            print "results: ", paper_search_results
-            print 'length', len(paper_search_results)
-            return render_template("../old_tem/asn_search_papers.html", papers=paper_search_results)
-        else:
-            return "no paper found!paper_search"
-
-
 @api.route('/search', methods=['POST', 'GET'])
 # @api.route('/paper/<string:search_content>/<int:page>')
 def search():
@@ -655,6 +578,24 @@ def public_profile():
         print "with current user"
         status = {"loginStatus": True}
 
+    author_name = result.name
+    print "author_name",author_name
+    print "查询论文"
+    paper_result = mongo.db.Paper_of_author.find_one({'author_name':author_name})
+    print "end"
+    paper_detail_list = []
+
+    if paper_result is not None:
+        papers = paper_result['papers']
+        for paper in papers:
+            paper_detail = {
+                'id':paper['paper_id'],
+                'year':paper['year'],
+                'title':paper['title'],
+                # 'venue':paper['venue']
+            }
+            paper_detail_list.append(paper_detail)
+
     author_detail = {
         "id": result.id,
         "position": result.position,
@@ -677,7 +618,11 @@ def public_profile():
         "cite_num": result.cite_num,
         "tags": tags,
         "author_id": result.author_id,
+        "paper_list": paper_detail_list
     }
+
+
+
     author_detail_json = json.dumps(author_detail)
     return render_template('public_profile.html', Status=status, authorDetail=author_detail_json)
 

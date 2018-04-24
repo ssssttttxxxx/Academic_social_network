@@ -662,16 +662,16 @@
 						                	<div class="ibox-content">
 						                		<div class="tabs-container">
 							                        <ul class="nav nav-tabs" style="border-bottom: none;" id="chartTab">
-							                            <li class="active"><a data-toggle="tab" href="#chart1"> 论文关系图</a></li>
-							                            <li class=""><a data-toggle="tab" href="#chart2"> 作者关系图</a></li>
+							                            <!-- <li class="active"><a data-toggle="tab" href="#chart1"> 论文关系图</a></li> -->
+							                            <li class="active"><a data-toggle="tab" href="#chart2"> 作者关系图</a></li>
 							                        </ul>
 							                        <div class="tab-content">
-							                            <div id="chart1" class="tab-pane active">
+<!-- 							                            <div id="chart1" class="tab-pane active">
 						                            		<div class="panel-body" style="margin: 0;width: 100%;height: 500px;">
 							                                    <div id="paperGraph" style="height: 100%;"></div>
 							                                </div>
-							                            </div>
-							                            <div id="chart2" class="tab-pane">
+							                            </div> -->
+							                            <div id="chart2" class="tab-pane active">
 							                                <div class="panel-body" style="margin: 0;width: 100%;height: 500px;">
 																<div id="coauthorGraph" style="height: 100%;"></div>
 							                                </div>
@@ -1272,7 +1272,7 @@
 					console.log($(e.target).text());
         		}
         		else if ($(e.target).attr("id") === "tab6") { //关系图页
-        			getPaperNetwork();
+        			// getPaperNetwork();
         			getExpertNetwork();
         			console.log($(e.target).text());
         		}
@@ -1282,111 +1282,6 @@
     </script>
 
     <script type="text/javascript">
-        //论文关系图
-        var dom1 = document.getElementById("paperGraph");
-        var myChartGraph1 = echarts.init(dom1);
-        option1 = null;
-        // app.title = '论文关系图';
-
-        var sendData1 = {"paperID": "001c58d3-26ad-46b3-ab3a-c1e557d16821"}
-		myChartGraph1.showLoading();
-
-        function getPaperNetwork() {
-	        $.ajax({
-	        	url: "/api/paper_network",
-	        	type: "POST",
-	        	data: sendData1,
-	        	success: function(data){
-		        	myChartGraph1.hideLoading();
-
-		        	var graph = JSON.parse(data);
-
-		        	graph.nodes.forEach(function(node){
-		        		if (node.name === sendData1.paperID) {
-		    		        node.itemStyle = {
-		    		        	color: '#66CCFF'
-		    		        };
-		        		}
-		        		else {
-		    		        node.itemStyle = {
-		    		        	color: '#FF3030'
-		    		        };
-		    		    }					        
-		        		// node.symbolSize = 10;
-				        // node.value = node.symbolSize;
-				        // node.category = node.attributes.modularity_class;
-				        // Use random x, y
-				        node.x = node.y = null;
-				        node.draggable = false;
-				        // node.label = {
-				        // 	show: true,
-				        // 	position: 'bottom'
-				        // };
-				        // node.tooltip = {           
-				        // 	position: function (point, params, dom, rect, size) {
-				        //         $(dom).html('<div class="contact-box" style="color: #676a6c;background-color: #F0FFFF;padding: 10px;width: 120%;"><div style="width: 40%;float: left;"><div class="text-center" style="text-align: center;"><img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/init.png" width="64px" height="64px"><div class="m-t-xs font-bold">博士</div></div></div><div style="width: 60%;float: left;"><h4><strong>'+ node.name +'</strong><img alt="image"\ src="../static/common/img/female.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;"></h4><p><i class="fa fa-institution"></i> 华南理工大学</p><p><i class="fa fa-map-marker"></i> 广州大学城</p><p><i class="fa fa-phone"></i> 1377777777</p></div><div class="clearfix"></div></div>')
-				        //     },
-				        //     backgroundColor: '#FFFFFF'
-				        // }
-		        	})
-
-		        	graph.links.forEach(function(link) {
-		        		link.lineStyle = {
-		        			width: link.values,
-		        			color: '#000000'
-		        		}
-		        	})
-
-	        	    option1 = {
-				        title: {
-				        	text: 'paper',
-				            subtext: '',
-				            top: 'bottom',
-				            left: 'right'
-				        },
-				        tooltip: {},
-				        toolbox: {
-				        	show: true,
-				        	feature: {
-				        		dataView: {readOnly: true},
-				        		restore: {},
-				        		saveAsImage: {}
-				        	}
-				        },
-				        legend: {
-				            // selectedMode: 'single',
-				            data: []
-				        },
-				        animation: false,
-				        series : [
-				            {
-				                name: '',
-				                type: 'graph',
-				                layout: 'force',
-                                data: graph.nodes,
-            					links: graph.links,
-				                roam: true,
-				                forceNodeAdjacency: true,
-				                cursor: 'pointer',
-				                label: {
-				                    normal: {
-				                        position: 'right'
-				                    }
-				                },
-				                force: {
-				                    repulsion: 100
-				                }
-				            }
-				        ]
-				    };
-
-				    myChartGraph1.setOption(option1);
-	        	},
-	        	error: function (errorMsg) {
-		            //alert("图表数据加载失败！");
-		        }
-	        });
-        }
 
 		//作者关系图
         var dom2 = document.getElementById("coauthorGraph");
@@ -1544,11 +1439,11 @@
 		});
 
         $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
-            myChartGraph1.resize();
+            // myChartGraph1.resize();
             myChartGraph2.resize();  
 	    });         
 	    window.onresize = function() {
-        	myChartGraph1.resize();
+        	// myChartGraph1.resize();
         	myChartGraph2.resize();
         }
     </script>

@@ -242,20 +242,20 @@ class ConstructCitationTree():
         # print "edges: ", self.Graph.edges()
         # print "node: ", self.Graph.nodes()
 
-        colors = []
-        for node in self.Graph.nodes():
-            # print node
-            if str(node) == paper_id:
-                colors.append('r')
-            else:
-                colors.append('b')
-
-        # nx.draw(self.Graph, with_labels=True)
-        nw.draw(self.Graph, node_size=100, width=0.3,
-                # pos=nx.spring_layout(self.Graph),
-                node_color=colors)
-        plt.savefig(paper_id + "_modify")
-        plt.show()
+        # colors = []
+        # for node in self.Graph.nodes():
+        #     # print node
+        #     if str(node) == paper_id:
+        #         colors.append('r')
+        #     else:
+        #         colors.append('b')
+        #
+        # # nx.draw(self.Graph, with_labels=True)
+        # nw.draw(self.Graph, node_size=100, width=0.3,
+        #         # pos=nx.spring_layout(self.Graph),
+        #         node_color=colors)
+        # plt.savefig(paper_id + "_modify")
+        # plt.show()
 
     # def construct_from_source(self, paper_id):
 

@@ -117,6 +117,14 @@ def public_profile():
     return render_template('public_profile.html', Status=status)
 
 
-@user.route('/get_paper', methods=['GET'])
+@user.route('/paper_detail', methods=['GET'])
 def get_paper():
-    pass
+    nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
+    if not nowUser:
+        print "not current user"
+        status = {"loginStatus": False}
+    else:
+        print "with current user"
+        status = {"loginStatus": True}
+
+    return render_template('paper_detail.html', Status=status)

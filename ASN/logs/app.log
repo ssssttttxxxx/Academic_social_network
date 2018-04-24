@@ -4614,3 +4614,171 @@
 2018-04-23 17:26:08,869 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:26:08] "GET /api/search?type=paper&content=Linear%20Dynamical%20System&p_page=1&a_page=1 HTTP/1.1" 200 -
 2018-04-23 17:26:09,025 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:26:09] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
 2018-04-23 21:49:04,052 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 21:49:04] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-24 18:45:41,711 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 18:45:44,653 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 18:45:44,765 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 18:45:44,834 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 18:45:51,526 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:51] "GET / HTTP/1.1" 200 -
+2018-04-24 18:45:52,335 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 304 -
+2018-04-24 18:45:52,339 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 304 -
+2018-04-24 18:45:52,342 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 304 -
+2018-04-24 18:45:52,346 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 304 -
+2018-04-24 18:45:52,349 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-04-24 18:45:52,352 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 304 -
+2018-04-24 18:45:52,641 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/common/login/ace-fonts.css HTTP/1.1" 304 -
+2018-04-24 18:45:52,645 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 304 -
+2018-04-24 18:45:52,650 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/common/animate.css HTTP/1.1" 304 -
+2018-04-24 18:45:52,694 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/common/style.css HTTP/1.1" 304 -
+2018-04-24 18:45:52,700 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-04-24 18:45:52,704 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/vue/js/vue.js HTTP/1.1" 304 -
+2018-04-24 18:45:52,948 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 304 -
+2018-04-24 18:45:52,953 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:52] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 304 -
+2018-04-24 18:45:53,325 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:53] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 304 -
+2018-04-24 18:45:53,601 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:53] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 18:45:53,607 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:45:53] "GET /static/common/img/logo.png HTTP/1.1" 304 -
+2018-04-24 18:46:04,862 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:46:04] "GET /user/home HTTP/1.1" 200 -
+2018-04-24 18:46:04,993 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:46:04] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 18:46:07,638 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:46:07] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-24 18:46:12,236 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:46:12] "GET /user/paper_detail HTTP/1.1" 404 -
+2018-04-24 18:46:30,217 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 18:46:32,931 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 18:46:32,959 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 18:46:32,966 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 18:46:36,548 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:46:36] "GET /user/paper_detail HTTP/1.1" 200 -
+2018-04-24 18:46:42,503 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:46:42] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-04-24 18:47:18,344 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:47:18] "GET /user/paper_detail HTTP/1.1" 200 -
+2018-04-24 18:47:41,236 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:47:41] "GET /user/paper_detail HTTP/1.1" 200 -
+2018-04-24 18:47:41,464 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:47:41] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 304 -
+2018-04-24 18:48:45,634 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:48:45] "GET /user/paper_detail HTTP/1.1" 200 -
+2018-04-24 18:49:46,621 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:49:46] "GET /user/paper_detail HTTP/1.1" 200 -
+2018-04-24 18:49:52,213 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:49:52] "POST /api/paper_network HTTP/1.1" 500 -
+2018-04-24 18:50:28,244 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:50:28] "GET /user/paper_detail HTTP/1.1" 200 -
+2018-04-24 18:50:28,480 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:50:28] "GET /static/common/img/return-top.png HTTP/1.1" 304 -
+2018-04-24 18:50:29,249 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:50:29] "POST /api/paper_network HTTP/1.1" 500 -
+2018-04-24 18:50:58,450 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 18:51:02,417 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 18:51:02,461 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 18:51:02,467 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 18:51:13,151 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:51:13] "GET /user/paper_detail HTTP/1.1" 200 -
+2018-04-24 18:51:14,056 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:51:14] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 18:52:07,614 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:52:07] "GET /user/paper_detail HTTP/1.1" 200 -
+2018-04-24 18:52:08,516 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:52:08] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 18:54:22,592 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:54:22] "GET /user/paper_detail HTTP/1.1" 200 -
+2018-04-24 18:54:23,283 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 18:54:23] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 18:59:34,457 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-24 18:59:35,072 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 18:59:37,890 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 18:59:37,917 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 18:59:37,924 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 19:04:46,746 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-24 19:04:47,476 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 19:08:56,155 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 19:08:59,013 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 19:08:59,040 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 19:08:59,048 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 19:09:01,272 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:09:01] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-24 19:09:01,644 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:09:01] "GET / HTTP/1.1" 200 -
+2018-04-24 19:09:01,917 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:09:01] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 19:09:04,165 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:09:04] "GET /api/search_result?content=fox HTTP/1.1" 302 -
+2018-04-24 19:10:20,043 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:20] "GET /api/search?content=fox&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-24 19:10:20,832 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:20] "GET /static/common/style2.css HTTP/1.1" 200 -
+2018-04-24 19:10:20,836 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:20] "GET /static/jqPaginator/js/jqpaginator.min.js HTTP/1.1" 304 -
+2018-04-24 19:10:20,956 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:20] "GET /static/common/img/icon-paper.png HTTP/1.1" 304 -
+2018-04-24 19:10:21,257 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:21] "GET /static/avatar/init.png HTTP/1.1" 200 -
+2018-04-24 19:10:35,778 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:35] "GET /api/public_profile?id=54325d04dabfaeb54215035f HTTP/1.1" 200 -
+2018-04-24 19:10:35,970 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:35] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 304 -
+2018-04-24 19:10:36,138 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:36] "GET /static/chosen/css/chosen.css HTTP/1.1" 304 -
+2018-04-24 19:10:36,144 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:36] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 304 -
+2018-04-24 19:10:36,153 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:36] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 304 -
+2018-04-24 19:10:36,290 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:36] "GET /static/common/img/a4.jpg HTTP/1.1" 304 -
+2018-04-24 19:10:36,905 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:10:36] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 19:16:09,926 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-24 19:16:10,332 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 19:16:13,244 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 19:16:13,273 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 19:16:13,279 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 19:35:40,085 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-24 19:35:40,404 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 19:35:43,006 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 19:35:43,035 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 19:35:43,042 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 19:37:18,177 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-24 19:37:18,742 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 19:37:21,434 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 19:37:21,471 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 19:37:21,479 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 19:37:38,698 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 19:37:41,497 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 19:37:41,525 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 19:37:41,532 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 19:38:18,168 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:38:18] "GET /api/search?content=fox&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-24 19:38:18,680 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:38:18] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 19:38:21,411 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:38:21] "GET /api/to_paper_detail?id=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 302 -
+2018-04-24 19:39:57,822 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 19:40:00,614 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 19:40:00,644 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 19:40:00,651 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 19:40:06,016 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:40:06] "GET /api/to_paper_detail?id=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 302 -
+2018-04-24 19:40:22,229 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:40:22] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 500 -
+2018-04-24 19:40:22,585 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:40:22] "GET /api/paper_detail?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-24 19:40:22,588 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:40:22] "GET /api/paper_detail?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-24 19:40:22,588 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:40:22] "GET /api/paper_detail?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-24 19:40:22,877 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:40:22] "GET /api/paper_detail?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-24 19:41:27,655 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 19:41:30,382 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 19:41:30,410 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 19:41:30,417 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 19:41:38,319 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:41:38] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 500 -
+2018-04-24 19:41:38,332 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:41:38] "GET /api/paper_detail?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-24 19:41:38,336 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:41:38] "GET /api/paper_detail?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-24 19:41:38,342 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:41:38] "GET /api/paper_detail?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-24 19:43:19,279 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-24 19:43:22,022 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-24 19:43:22,062 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-24 19:43:22,069 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-24 19:43:29,326 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:43:29] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 19:43:31,194 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:43:31] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 19:52:16,417 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:52:16] "GET /api/search?type=paper&content=host%20file%20system&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-24 19:53:35,729 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:53:35] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 19:53:36,750 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:53:36] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 19:54:30,799 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:54:30] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 19:54:32,165 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:54:32] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 19:58:30,118 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:58:30] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 19:58:31,311 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:58:31] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 19:58:46,085 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:58:46] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 19:58:47,114 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:58:47] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 19:59:55,713 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:59:55] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 19:59:56,713 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 19:59:56] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:00:04,523 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:00:04] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 20:00:05,572 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:00:05] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:02:02,730 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:02:02] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 20:02:03,914 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:02:03] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:03:00,693 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:03:00] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 20:03:01,585 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:03:01] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:03:36,194 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:03:36] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 20:03:37,221 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:03:37] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:04:10,730 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:04:10] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 20:04:11,801 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:04:11] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:08:35,440 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:08:35] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 20:08:36,365 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:08:36] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:08:58,348 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:08:58] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 20:08:59,313 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:08:59] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:09:37,086 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:09:37] "GET /api/search?type=paper&content=Anil%20Saini&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-24 20:11:43,411 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:11:43] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 20:11:44,403 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:11:44] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:12:00,819 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:12:00] "GET /api/search?type=undefined&content=browser%20extension&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-24 20:12:27,302 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:12:27] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 20:12:28,163 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:12:28] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:12:30,023 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:12:30] "GET /api/search?type=author&content=Anil%20Saini&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-24 20:12:30,217 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:12:30] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 20:14:02,963 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:14:02] "GET /api/search?type=author&content=Manoj%20Singh%20Gaur&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-24 20:14:03,131 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:14:03] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 20:14:08,951 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:14:08] "GET /api/to_public_profile?id=53f431f6dabfaec22ba52932 HTTP/1.1" 404 -
+2018-04-24 20:14:25,266 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:14:25] "GET /api/to_public_profile?id=53f431f6dabfaec22ba52932 HTTP/1.1" 404 -
+2018-04-24 20:14:59,993 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:14:59] "GET /api/to_public_profile?id=53f431f6dabfaec22ba52932 HTTP/1.1" 404 -
+2018-04-24 20:15:41,388 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:15:41] "GET /api/paper_detail?paperID=62e74114-e52b-4441-b39c-6cab360ad9ed HTTP/1.1" 200 -
+2018-04-24 20:15:42,319 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:15:42] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-24 20:15:47,641 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:15:47] "GET /api/search?type=author&content=Vijay%20Laxmi&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-24 20:15:47,780 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:15:47] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-24 20:15:49,680 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:15:49] "GET /api/to_public_profile?id=53f35e79dabfae4b3497bb28 HTTP/1.1" 404 -
+2018-04-24 20:15:54,002 - _internal.py[line:87] - INFO: 127.0.0.1 - - [24/Apr/2018 20:15:54] "GET /api/to_public_profile?id=53f35e79dabfae4b3497bb28 HTTP/1.1" 404 -

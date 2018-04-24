@@ -630,10 +630,14 @@ def search_result():
     return redirect(
         url_for('api.search',type=search_type, content=searchtext, p_page=paper_page_num, a_page=author_page_num))
 
+@api.route('/to_public_profile', methods=['GET'])
+def to_public_profile():
+    id = request.args.get('id')
+    return redirect(url_for('api.public_profile', ID=id))
 
 @api.route('/public_profile', methods=['GET'])
 def public_profile():
-    id = request.args.get('id')
+    id = request.args.get('ID')
     print 'id', id
 
     result = db.session.query(Expert_detail_total).filter(Expert_detail_total.id == id).first()
@@ -674,8 +678,8 @@ def public_profile():
         "tags": tags,
         "author_id": result.author_id,
     }
-
-    return render_template('public_profile.html', Status=status, authorDetail=author_detail)
+    author_detail_json = json.dumps(author_detail)
+    return render_template('public_profile.html', Status=status, authorDetail=author_detail_json)
 
 
 @api.route('get_paper', methods=['GET'])
@@ -694,17 +698,54 @@ def get_paper():
         for paper_kv in papers_kv:
             paper_keywords.append(paper_kv['keyword'])
         item = {
-            'paper_id':paper_detail['paper_id'],
+            'id':paper_detail['paper_id'],
             'title':paper_detail['title'],
             'co_authors':paper_detail['co_authors'],
             'year':paper_detail['year'],
-            'abstract':paper_detail['abstarct'],
+            'abstract':paper_detail['abstract'],
             'venue':paper_detail['venue'],
             'ref_id':paper_detail['ref_id'],
             'keywords':paper_keywords,
         }
 
         items.append(item)
+
+@api.route('/to_paper_detail', methods=['GET'])
+def to_paper_detail():
+    paper_id = request.args.get('id')
+    print "paper_id", paper_id
+    return redirect(url_for('api.paper_detail', paperID=paper_id))
+
+
+@api.route('/paper_detail', methods=['GET'])
+def paper_detail():
+    paper_id = request.args.get('paperID')
+    print "paper id", paper_id
+
+    nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
+    if not nowUser:
+        print "not current user"
+        status = {"loginStatus": False}
+    else:
+        print "with current user"
+        status = {"loginStatus": True}
+    paper = mongo.db.Citation_total.find_one({'paper_id': paper_id})
+    paper_keywords = []
+    papers_kv = mongo.db.paper_keywords.find_one({'paper_id': paper_id})['keyword_and_val']
+    for paper_kv in papers_kv:
+        paper_keywords.append(paper_kv['keyword'])
+    paper_detail = {
+        'id': paper['paper_id'],
+        'title': paper['title'],
+        'co_authors': paper['co_authors'],
+        'abstract':paper['abstract'],
+        'venue': paper['venue'],
+        'year': paper['year'],
+        'ref_id': paper['ref_id'],
+        'keywords': paper_keywords,
+    }
+    paper_detail_json = json.dumps(paper_detail)
+    return render_template('paper_detail.html', paperDetail=paper_detail_json, Status=status)
 
 
 

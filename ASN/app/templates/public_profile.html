@@ -163,7 +163,7 @@
 			                        <div class="ibox-content">
 										<h3 class="tag-title">Ta感兴趣的领域</h3>
 
-			                            <ul class="tag-list" id="fieldList" style="padding: 0" v-for="item in tagSource">
+			                            <ul class="tag-list" style="padding: 0" v-for="item in tagSource">
 			                                <li><a v-on:click="toSearchPage(item)"><i class="fa fa-tag"></i> {{ item }}</a></li>
 			                                <!-- <li><a href=""><i class="fa fa-tag"></i> Social Network</a></li> -->
 			                            </ul>
@@ -758,8 +758,7 @@
 
         //作者信息
 
-        // var res = JSON.parse([[authorDetail|tojson]])
-        var res = [[authorDetail|tojson]]
+        var res = JSON.parse([[authorDetail|tojson]])
         data2 = {
         	author_name: res.name,
         	author_name_zh: '',
@@ -981,6 +980,7 @@
         	myChartGraph2.resize();
         }
     </script>
+
     <div id="return-top" style="position: fixed;right: 1%;bottom: 4%;z-index: 99;">
 	    <a onclick="backToTop()">
 	        <img src="../static/common/img/return-top.png" title="返回顶部">

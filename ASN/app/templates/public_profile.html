@@ -31,20 +31,12 @@
     <!-- bootstrap-hover-dropdown -->
     <script src="../static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
 
-	<!-- dropzone-5.4.0 -->
-	<link href="../static/dropzone-5.4.0/css/dropzone.css" rel="stylesheet">
-	<script src="../static/dropzone-5.4.0/js/dropzone.js"></script>
-
-    <!-- sweetalert -->
-    <link href="../static/sweetalert/css/sweetalert.css" rel="stylesheet">
-    <script src="../static/sweetalert/js/sweetalert.min.js"></script>
-
-    <!-- chosen -->
-    <link href="../static/chosen/css/chosen.css" rel="stylesheet">
-    <script src="../static/chosen/js/chosen.jquery.js"></script>
-
     <!-- echarts -->
     <script src="../static/echarts/js/echarts.min.js"></script>
+
+    <!-- footable -->
+	<link href="../static/footable/css/footable.core.css" type="text/css" rel="stylesheet" />
+	<script src="../static/footable/js/footable.all.min.js"></script>
 
     <link href="../static/common/animate.css" rel="stylesheet">
     <link href="../static/common/style.css" rel="stylesheet">
@@ -107,9 +99,9 @@
 	</div>
 
 	<div class="wrapper wrapper-content" style="padding-top: 100px;">
-		<div class="container">
+		<div class="container" id="author_profile">
 
-			<div class="row" id="author_profile">
+			<div class="row">
 				<div class="col-lg-12 animated fadeInDown">
 					<div class="ibox">
 	            		<div class="ibox-content">
@@ -163,7 +155,7 @@
 			                        <div class="ibox-content">
 										<h3 class="tag-title">Ta感兴趣的领域</h3>
 
-			                            <ul class="tag-list" id="fieldList" style="padding: 0" v-for="item in tagSource">
+			                            <ul class="tag-list" style="padding: 0" v-for="item in tagSource">
 			                                <li><a v-on:click="toSearchPage(item)"><i class="fa fa-tag"></i> {{ item }}</a></li>
 			                                <!-- <li><a href=""><i class="fa fa-tag"></i> Social Network</a></li> -->
 			                            </ul>
@@ -183,7 +175,7 @@
 	                        <ul class="nav nav-tabs" id="mainTab">
 	                            <li class="active"><a data-toggle="tab" href="#tab-1" id="tab1"><i class="fa fa-circle text-info"></i> Ta的关注&nbsp;&nbsp;<span class="badge badge-info">10</span></a></li>
 	                            <li class=""><a data-toggle="tab" href="#tab-2" id="tab2"><i class="fa fa-circle text-warning"></i> 谁关注Ta&nbsp;&nbsp;<span class="badge badge-warning">6</span></a></li>
-	                            <li class=""><a data-toggle="tab" href="#tab-3" id="tab3"><i class="fa fa-circle text-danger"></i> Ta的论文&nbsp;&nbsp;<span class="badge badge-danger">10</span></a></li>
+	                            <li class=""><a data-toggle="tab" href="#tab-3" id="tab3"><i class="fa fa-circle text-danger"></i> Ta的论文&nbsp;&nbsp;<span class="badge badge-danger">{{ paper_list_total }}</span></a></li>
 	                            <li class=""><a data-toggle="tab" href="#tab-4" id="tab4"><i class="fa fa-circle text-muted"></i> 关系图</a></li>
 	                        </ul>
 	                        <div class="tab-content">
@@ -517,118 +509,32 @@
 						            	<div class="col-lg-12 animated bounce">
 						            		<div class="ibox">
 						            			<div class="ibox-content">
-									            	<div id="vertical-timeline" class="vertical-container dark-timeline center-orientation">
-							                            <div class="vertical-timeline-block">
-							                                <div class="vertical-timeline-icon navy-bg">
-							                                    <i class="fa fa-briefcase"></i>
-							                                </div>
+						            				<input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="Search in table">
 
-							                                <div class="vertical-timeline-content">
-	                                                            <div class="file-box" style="margin-left: 18%;">
-									                                <div class="file">
-									                                    <a href="#">
-									                                        <span class="corner"></span>
+						                            <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
+						                                <thead>
+							                                <tr>
+							                                    <th>Title</th>
+							                                    <!-- <th>Venue</th> -->
+							                                    <th>Year</th>
+							                                </tr>
+						                                </thead>
 
-									                                        <div class="icon">
-									                                            <i class="fa fa-file"></i>
-									                                        </div>
-									                                        <div class="file-name">
-									                                            Document_2014.doc
-									                                            <br/>
-									                                            <small>Added: Jan 11, 2014</small>
-									                                        </div>
-									                                    </a>
-									                                </div>
-									                            </div>
-							                                    <span class="vertical-date">
-							                                        Today <br/>
-							                                        <small>Dec 24</small>
-							                                    </span>
-							                                </div>
-							                            </div>
+						                                <tbody >
+							                                <tr v-for="item in paperList">
+							                                    <td><a v-on:click="toPaperDetail(item.id)">{{ item.title }}</a></td>
+							                                    <td>{{ item.year }}</td>
+							                                </tr>
+						                                </tbody>
 
-							                            <div class="vertical-timeline-block">
-							                                <div class="vertical-timeline-icon blue-bg">
-							                                    <i class="fa fa-file-text"></i>
-							                                </div>
-
-							                                <div class="vertical-timeline-content">
-	                                                            <div class="file-box">
-									                                <div class="file">
-									                                    <a href="#">
-									                                        <span class="corner"></span>
-
-									                                        <div class="icon">
-									                                            <i class="fa fa-file"></i>
-									                                        </div>
-									                                        <div class="file-name">
-									                                            Document_2014.doc
-									                                            <br/>
-									                                            <small>Added: Jan 11, 2014</small>
-									                                        </div>
-									                                    </a>
-									                                </div>
-									                            </div>
-							                                    <span class="vertical-date">
-							                                        Today <br/>
-							                                        <small>Dec 24</small>
-							                                    </span>
-							                                </div>
-							                            </div>
-
-							                            <div class="vertical-timeline-block">
-							                                <div class="vertical-timeline-icon lazur-bg">
-							                                    <i class="fa fa-coffee"></i>
-							                                </div>
-
-							                                <div class="vertical-timeline-content">
-	                                                            <div class="file-box">
-									                                <div class="file">
-									                                    <a href="#">
-									                                        <span class="corner"></span>
-
-									                                        <div class="icon">
-									                                            <i class="fa fa-file"></i>
-									                                        </div>
-									                                        <div class="file-name">
-									                                            Document_2014.doc
-									                                            <br/>
-									                                            <small>Added: Jan 11, 2014</small>
-									                                        </div>
-									                                    </a>
-									                                </div>
-									                            </div>
-							                                    <span class="vertical-date"> Yesterday <br/><small>Dec 23</small></span>
-							                                </div>
-							                            </div>
-
-							                            <div class="vertical-timeline-block">
-							                                <div class="vertical-timeline-icon yellow-bg">
-							                                    <i class="fa fa-phone"></i>
-							                                </div>
-
-							                                <div class="vertical-timeline-content">
-	                                                            <div class="file-box">
-									                                <div class="file">
-									                                    <a href="#">
-									                                        <span class="corner"></span>
-
-									                                        <div class="icon">
-									                                            <i class="fa fa-file"></i>
-									                                        </div>
-									                                        <div class="file-name">
-									                                            Document_2014.doc
-									                                            <br/>
-									                                            <small>Added: Jan 11, 2014</small>
-									                                        </div>
-									                                    </a>
-									                                </div>
-									                            </div>
-							                                    <span class="vertical-date">Yesterday <br/><small>Dec 23</small></span>
-							                                </div>
-							                            </div>
-
-						                        	</div>
+						                                <tfoot>
+							                                <tr>
+							                                    <td colspan="2">
+							                                        <ul class="pagination pull-right"></ul>
+							                                    </td>
+							                                </tr>
+						                                </tfoot>
+						                            </table>
 						            			</div>
 						            		</div>
 						            	</div>
@@ -674,24 +580,7 @@
     <script>
         $(document).ready(function(){
 
-        	// 论文
-            function animationHover(element, animation) {
-			    element = $(element);
-			    element.hover(
-			        function () {
-			            element.addClass('animated ' + animation);
-			        },
-			        function () {
-			            //wait for animation to finish before removing classes
-			            window.setTimeout(function () {
-			                element.removeClass('animated ' + animation);
-			            }, 2000);
-			        });
-			}
-            $(".file-box").each(function() {
-                animationHover(this, 'pulse');
-            });
-
+        	$('.footable').footable();
 	        //关注
 	      //   $(".followBtn").click(function(){
 	      //   	if (this.innerText == " Follow") {
@@ -717,15 +606,6 @@
 				$(this).attr("disabled",true); 
 			})
 
-	        // 关系图
-	        // var dom = $("#paperGraph");
-	        // var myChart = echarts.init(dom);
-	        // option = null;
-	        // app.title = '论文关系图';
-
-	        // myChart.showLoading();
-
-	        //
        });
     </script>
 
@@ -758,8 +638,7 @@
 
         //作者信息
 
-        // var res = JSON.parse([[authorDetail|tojson]])
-        var res = [[authorDetail|tojson]]
+        var res = JSON.parse([[authorDetail|tojson]])
         data2 = {
         	author_name: res.name,
         	author_name_zh: '',
@@ -770,8 +649,11 @@
         	author_telephone: res.phone,
         	author_avatarSrc: res.avatar,
         	isFollow: false,
-        	tagSource: res.tags
+        	tagSource: res.tags,
+        	paperList: res.paper_list,
+        	paper_list_total: res.paper_list.length
         }
+        console.log(data2.paperList)
         if (res.name_zh !== '') {
         	data2.author_name_zh = '(' + res.name_zh + ')'
         }
@@ -791,6 +673,9 @@
         		},
         		toSearchPage: function(searchContent) {
         			window.open("/api/search?type=paper" + "&content=" + searchContent + "&p_page=1&a_page=1")
+        		},
+        		toPaperDetail: function(ID) {
+        			window.open("/api/to_paper_detail?id=" + ID)
         		}
         	}
         });
@@ -981,6 +866,7 @@
         	myChartGraph2.resize();
         }
     </script>
+
     <div id="return-top" style="position: fixed;right: 1%;bottom: 4%;z-index: 99;">
 	    <a onclick="backToTop()">
 	        <img src="../static/common/img/return-top.png" title="返回顶部">

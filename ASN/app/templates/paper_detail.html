@@ -15,6 +15,12 @@
 	<!-- font-awesome-4.7.0 -->
 	<link href="../static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
+    <!-- vue -->
+    <script src="../static/vue/js/vue.js" type="text/javascript"></script>
+
+    <!-- echarts -->
+    <script src="../static/echarts/js/echarts.min.js"></script>
+
     <link href="../static/common/animate.css" rel="stylesheet">
     <link href="../static/common/style.css" rel="stylesheet">
 
@@ -68,13 +74,13 @@
 	</div>
 
 	<div class="wrapper wrapper-content" style="padding-top: 100px;">
-		<div class="container">
+		<div class="container" id="paper_detail">
 			<div class="row">
 				<div class="col-lg-9">
 					<div class="ibox">
 	                    <div class="ibox-content">
-	                    	<h1>TITLE
-	                    		<a class="pull-right" href="" title="查看原文"><i class="fa fa-file-pdf-o "></i></a>
+	                    	<h1>{{ paper_title }}
+	                    		<!-- <a class="pull-right" href="" title="查看原文"><i class="fa fa-file-pdf-o "></i></a> -->
 	                    	</h1>
 
 	                    </div>
@@ -92,7 +98,7 @@
 
 	                    <div class="ibox-content">
 	                        <p>
-	                            Easily create knob input style.
+	                            {{ paper_abstract }}
 	                        </p>
 	                    </div>
 	                </div>
@@ -109,7 +115,7 @@
 
 	                    <div class="ibox-content">
 	                        <p>
-	                            Easily create knob input style.
+	                            {{ paper_reference }}
 	                        </p>
 	                    </div>
 	                </div>
@@ -136,17 +142,19 @@
 	                    <h3>About</h3>
 	                    <!-- <img src="img/zender_logo.png" class="img-responsive"> -->
 	                    <p class="small">
-	                        co-author
+	                        <span class="font-bold"><i class="fa fa-circle text-danger"></i> Co-authors: </span><a v-for="item in paper_coauthors" v-on:click="toSearchPage('author', item)">{{ item }},&nbsp;</a>
 	                    </p>
-	                    <p class="small font-bold">
-	                        <span><i class="fa fa-circle text-warning"></i> VENUE</span>
+	                    <p class="small">
+	                        <span class="font-bold"><i class="fa fa-circle text-warning"></i> Venue: </span>{{ paper_venue }}
 	                    </p>
-	                    <h5>Related fields</h5>
-	                    <ul class="tag-list" style="padding: 0;">
-	                        <li><a href=""><i class="fa fa-tag"></i> Zender</a></li>
-	                        <li><a href=""><i class="fa fa-tag"></i> Lorem ipsum</a></li>
-	                        <li><a href=""><i class="fa fa-tag"></i> Passages</a></li>
-	                        <li><a href=""><i class="fa fa-tag"></i> Variations</a></li>
+	                    <p class="small">
+	                        <span class="font-bold"><i class="fa fa-circle text-info"></i> Year: </span>{{ paper_year }}
+	                    </p>
+	                    <p class="small">
+	                        <span class="font-bold"><i class="fa fa-circle text-success"></i> Related fields: </span>
+	                    </p>
+	                    <ul class="tag-list" style="padding: 0;" v-for="item in paper_keywords">
+	                        <li><a v-on:click="toSearchPage('paper', item)"><i class="fa fa-tag"></i> {{ item }}</a></li>
 	                    </ul>
 	                </div>
 
@@ -195,7 +203,26 @@
         });
 
         //论文信息
+        var res = JSON.parse([[paperDetail|tojson]])
+        data2 = {
+        	paper_title: res.title,
+        	paper_abstract: res.abstract,
+        	paper_reference: res.ref_id,
+        	paper_coauthors: res.co_authors,
+        	paper_venue: res.venue,
+        	paper_year: res.year,
+        	paper_keywords: res.keywords
+        }
         
+        var app2 = new Vue({
+        	el: '#paper_detail',
+        	data: data2,
+        	methods: {
+        		toSearchPage: function(searchType, searchContent) {
+        			window.open("/api/search?type=" + searchType + "&content=" + searchContent + "&p_page=1&a_page=1")
+        		}
+        	}
+        })
 	</script>
 
 	<script type="text/javascript">
@@ -205,8 +232,8 @@
         option1 = null;
         // app.title = '论文关系图';
 
-        var sendData1 = {"paperID": "001c58d3-26ad-46b3-ab3a-c1e557d16821"}
-       	myChartGraph1.resize({width: 798, height: 458});
+        var sendData1 = {"paperID": res.id}
+       	myChartGraph1.resize({width: 805, height: 459});
 		myChartGraph1.showLoading();
 
         function getPaperNetwork() {
@@ -313,7 +340,30 @@
 	    window.onresize = function() {
         	myChartGraph1.resize();
         }
+
+        getPaperNetwork();
 	</script>
+
+	<div id="return-top" style="position: fixed;right: 1%;bottom: 4%;z-index: 99;">
+	    <a onclick="backToTop()">
+	        <img src="../static/common/img/return-top.png" title="返回顶部">
+	    </a>
+    </div>
+    <script type="text/javascript">
+    	function backToTop() {  
+		    $('html,body').animate({  
+		        scrollTop: 0  
+		    }, 800);  
+		}
+
+		$(window).on('scroll', function () {
+		    if ($(window).scrollTop() > $(window).height())  
+		        $("#return-top").fadeIn();  
+		    else  
+		        $("#return-top").fadeOut();  
+		});  
+		$(window).trigger('scroll');
+    </script>
 </body>
 
 </html>

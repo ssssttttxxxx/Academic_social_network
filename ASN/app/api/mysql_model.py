@@ -108,11 +108,11 @@ class Expert_detail_total(db.Model):
     def __str__(self):
         return '作者id<id:%s, 名字：%s>' % (self.id, self.name)
 
-    def __init__(self, id=None, mid=None, name=None, name_zh=None, position=None,
-                 phone=None, fax=None, email=None, department=None,
-                 address=None, homepage=None, education=None, experience=None,
-                 biography=None, avatar = "../static/avatar/files/init.png", h_index=None, g_index=None,
-                 gender=None, cite_num=None, tags=None, author_id=None):
+    def __init__(self, id="", mid="", name="", name_zh="", position="",
+                 phone="", fax="", email="", department="",
+                 address="", homepage="", education="", experience="",
+                 biography="", avatar = "../static/avatar/init.png", h_index="", g_index="",
+                 gender="", cite_num="", tags="", author_id=""):
         self.id = id
         self.mid = mid
         self.name = name

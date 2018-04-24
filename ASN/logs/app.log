@@ -3932,3 +3932,685 @@
 2018-04-23 13:38:06,062 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
 2018-04-23 13:38:08,019 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:38:08] "GET /user/private_profile HTTP/1.1" 302 -
 2018-04-23 13:38:08,193 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 13:38:08] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-23 13:49:33,312 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 13:49:36,242 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 13:49:36,273 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 13:49:36,282 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 13:59:19,500 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 13:59:22,394 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 13:59:22,421 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 13:59:22,434 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:04:18,440 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-23 14:04:19,076 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:04:21,854 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:04:21,881 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:04:21,891 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:06:55,197 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:06:58,071 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:06:58,099 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:06:58,108 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:07:05,384 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:07:05] "GET /api/search_result?content=try HTTP/1.1" 302 -
+2018-04-23 14:07:32,664 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:07:32] "GET /api/search?content=try&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-23 14:07:33,740 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:07:33] "GET /static/jqPaginator/js/jqpaginator.min.js HTTP/1.1" 304 -
+2018-04-23 14:07:33,776 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:07:33] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 14:07:40,346 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:07:43,072 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:07:43,101 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:07:43,109 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:07:44,805 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:07:44] "GET /api/search_result?content=try HTTP/1.1" 302 -
+2018-04-23 14:13:00,118 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:13:03,680 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:13:03,729 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:13:03,742 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:13:12,595 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:13:12] "GET /api/search_result?content=deep HTTP/1.1" 302 -
+2018-04-23 14:23:23,694 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:23:26,572 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:23:26,598 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:23:26,605 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:24:14,092 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:24:14] "GET / HTTP/1.1" 200 -
+2018-04-23 14:24:14,553 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:24:14] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 14:24:14,956 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:24:14] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-23 14:24:19,233 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:24:19] "GET /api/search_result?content=try HTTP/1.1" 302 -
+2018-04-23 14:26:48,772 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:26:51,596 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:26:51,661 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:26:51,668 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:26:59,420 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:26:59] "GET /api/search_result?content=try HTTP/1.1" 302 -
+2018-04-23 14:27:12,839 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:27:12] "GET /api/search?content=try&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-23 14:27:13,367 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:27:13] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 14:28:09,438 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:28:09] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-04-23 14:30:01,134 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:30:01] "GET /api/search?content=try&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-23 14:30:01,859 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:30:01] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 14:30:43,387 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:30:43] "GET /api/search_result?content=try HTTP/1.1" 302 -
+2018-04-23 14:30:48,517 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:30:48] "GET /api/search?content=try&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-23 14:30:48,779 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:30:48] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 14:32:35,854 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:32:35] "GET /api/search?content=try&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-23 14:32:36,051 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:32:36] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 14:33:22,319 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:33:22] "GET /api/search?content=try&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-23 14:33:22,836 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:33:22] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 14:33:22,967 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:33:22] "GET /static/common/img/icon-paper.png HTTP/1.1" 304 -
+2018-04-23 14:34:25,210 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:25] "GET /api/public_profile?id=53f44c7ddabfaeb22f4d8f95 HTTP/1.1" 500 -
+2018-04-23 14:34:25,433 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:25] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-23 14:34:25,566 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:25] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-23 14:34:25,569 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:25] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-23 14:34:25,700 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:25] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-23 14:34:31,181 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:31] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 500 -
+2018-04-23 14:34:31,424 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:31] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-23 14:34:31,490 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:31] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-23 14:34:31,493 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:31] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-23 14:34:33,428 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:33] "GET /api/public_profile?id=53f45799dabfaec22bb0a541 HTTP/1.1" 500 -
+2018-04-23 14:34:33,737 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:33] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-23 14:34:33,739 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:33] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-23 14:34:33,740 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:33] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-23 14:34:36,115 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:36] "GET /api/public_profile?id=53f4350adabfaee02acbe31e HTTP/1.1" 500 -
+2018-04-23 14:34:36,421 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:36] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-23 14:34:36,424 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:36] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-23 14:34:36,427 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:34:36] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-23 14:35:12,994 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-23 14:35:13,326 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:35:15,894 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:35:15,921 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:35:15,927 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:35:39,678 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:35:42,081 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:35:42,108 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:35:42,115 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:35:52,779 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:35:52] "GET /api/search?content=try&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-23 14:35:53,098 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:35:53] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 14:35:55,979 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:35:55] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 500 -
+2018-04-23 14:35:56,223 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:35:56] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-23 14:35:56,289 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:35:56] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-23 14:35:56,289 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 14:35:56] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-23 14:40:46,430 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-23 14:40:46,604 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:40:49,165 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:40:49,197 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:40:49,209 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:43:13,411 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-23 14:43:13,986 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:43:16,506 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:43:16,533 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:43:16,540 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:45:31,829 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-23 14:45:32,359 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:45:34,917 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:45:34,944 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:45:34,953 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 14:45:52,882 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-23 14:45:53,063 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 14:45:55,631 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 14:45:55,657 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 14:45:55,663 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 15:01:37,538 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:01:37] "GET /api/search?content=try&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-23 15:01:37,855 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:01:37] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:01:41,249 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:01:41] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 500 -
+2018-04-23 15:01:41,487 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:01:41] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-23 15:01:41,559 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:01:41] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-23 15:01:41,559 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:01:41] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-23 15:02:53,375 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 15:02:55,805 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 15:02:55,831 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 15:02:55,838 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 15:02:59,661 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:02:59] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:03:00,184 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:03:00] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-04-23 15:03:00,220 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:03:00] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-04-23 15:03:00,234 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:03:00] "GET /static/common/img/a4.jpg HTTP/1.1" 200 -
+2018-04-23 15:03:00,489 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:03:00] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:04:02,818 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:04:02] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:04:03,325 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:04:03] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:06:18,855 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:06:18] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:06:19,401 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:06:19] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:06:19,796 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:06:19] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-04-23 15:09:24,618 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:09:24] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:09:25,197 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:09:25] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:11:15,782 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:11:15] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:11:16,257 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:11:16] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:15:41,352 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:15:41] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:15:41,868 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:15:41] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:19:03,891 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:19:03] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:19:04,381 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:19:04] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:24:59,211 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:24:59] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:24:59,720 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:24:59] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:26:11,312 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:26:11] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:26:11,818 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:26:11] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:26:21,401 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:26:21] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-23 15:26:22,125 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:26:22] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:26:22,644 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:26:22] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:30:20,158 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:30:20] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:30:20,770 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:30:20] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:30:45,581 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:30:45] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 15:30:58,970 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:30:58] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 15:31:55,959 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:31:55] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:31:56,361 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:31:56] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:32:07,512 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:32:07] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 15:32:14,572 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:32:14] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:32:14,943 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:32:14] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:32:26,071 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:32:26] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 15:32:28,572 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:32:28] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:32:28,946 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:32:28] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:32:46,717 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:32:46] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 15:33:11,301 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:33:11] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:33:11,796 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:33:11] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:33:23,638 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:33:23] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 15:33:39,619 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:33:39] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:33:40,107 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:33:40] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:33:52,545 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:33:52] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 15:35:47,609 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:35:47] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:35:47,971 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:35:47] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:36:31,499 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 15:36:34,035 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 15:36:34,065 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 15:36:34,072 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 15:36:36,046 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:36:36] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 200 -
+2018-04-23 15:36:36,427 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:36:36] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:44:29,088 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:29] "GET /user/regist HTTP/1.1" 200 -
+2018-04-23 15:44:29,736 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:29] "GET /static/chosen/chosen.css HTTP/1.1" 200 -
+2018-04-23 15:44:29,755 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:29] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:44:34,065 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:34] "GET /user/login HTTP/1.1" 200 -
+2018-04-23 15:44:34,285 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:34] "GET /static/icheck/css/custom.css HTTP/1.1" 200 -
+2018-04-23 15:44:34,394 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:34] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:44:34,637 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:34] "GET /static/icheck/css/green.png HTTP/1.1" 200 -
+2018-04-23 15:44:48,585 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:48] "POST /api/login HTTP/1.1" 302 -
+2018-04-23 15:44:48,788 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:48] "GET /user/login HTTP/1.1" 200 -
+2018-04-23 15:44:49,019 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:49] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:44:58,766 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:58] "POST /api/login HTTP/1.1" 302 -
+2018-04-23 15:44:59,073 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:59] "GET /user/home HTTP/1.1" 200 -
+2018-04-23 15:44:59,345 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:44:59] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:45:02,193 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:45:02] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-23 15:45:02,470 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:45:02] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-23 15:45:13,075 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:45:13] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-23 15:45:13,105 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:45:13] "GET /api/unconfirmed HTTP/1.1" 200 -
+2018-04-23 15:46:16,456 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:46:16] "GET /api/resend HTTP/1.1" 302 -
+2018-04-23 15:46:16,473 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:46:16] "GET /user/login HTTP/1.1" 200 -
+2018-04-23 15:46:17,026 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:46:17] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:46:57,585 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:46:57] "GET /api/confirm/InVpb3Vpb0BxcSI.Db8gxg.VT_xd2cXpzR7AggGhbcTAnUZdXs HTTP/1.1" 302 -
+2018-04-23 15:46:57,753 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:46:57] "GET /user/login HTTP/1.1" 200 -
+2018-04-23 15:46:57,894 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:46:57] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:47:09,569 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:47:09] "POST /api/login HTTP/1.1" 302 -
+2018-04-23 15:47:09,828 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:47:09] "GET /user/home HTTP/1.1" 200 -
+2018-04-23 15:47:09,913 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:47:09] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:47:11,562 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:47:11] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 15:47:11,746 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:47:11] "GET /static/common/img/male.png HTTP/1.1" 200 -
+2018-04-23 15:47:11,905 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:47:11] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:47:12,101 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:47:12] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 15:47:12,197 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:47:12] "GET /static/common/img/female.png HTTP/1.1" 200 -
+2018-04-23 15:49:15,698 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:49:15] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 15:49:16,141 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:49:16] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:49:16,720 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:49:16] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 15:51:02,344 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:51:02] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-23 15:51:12,750 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:51:12] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 15:51:12,809 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:51:12] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 15:51:13,561 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:51:13] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:51:13,785 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:51:13] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 15:51:18,141 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:51:18] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 15:51:18,842 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:51:18] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:51:19,006 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:51:19] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 15:53:27,780 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:53:27] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 15:53:28,217 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:53:28] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 15:53:28,753 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:53:28] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 15:54:42,148 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:54:42] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 15:54:42,513 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:54:42] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 15:54:42,989 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:54:42] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 15:54:43,173 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:54:43] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 15:54:44,746 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:54:44] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 15:54:45,227 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:54:45] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 15:54:45,392 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 15:54:45] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 16:00:23,404 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:00:23] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-23 16:00:23,657 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:00:23] "GET /user/login?next=%2Fuser%2Fprivate_profile HTTP/1.1" 200 -
+2018-04-23 16:00:24,089 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:00:24] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:00:29,993 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:00:29] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-23 16:00:30,006 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:00:30] "GET /user/login?next=%2Fuser%2Fprivate_profile HTTP/1.1" 200 -
+2018-04-23 16:00:30,207 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:00:30] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:00:58,210 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:00:58] "POST /api/login HTTP/1.1" 302 -
+2018-04-23 16:00:58,467 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:00:58] "GET /user/home HTTP/1.1" 200 -
+2018-04-23 16:00:58,753 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:00:58] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:01:00,262 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:01:00] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:01:00,713 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:01:00] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:01:01,253 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:01:01] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:01:31,736 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:01:31] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:01:32,183 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:01:32] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:01:32,714 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:01:32] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:01:56,375 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:01:56] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:01:56,844 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:01:56] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:01:57,388 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:01:57] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:02:02,015 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:02:02] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 16:03:56,617 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:03:56] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:03:57,085 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:03:57] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:03:57,634 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:03:57] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:03:59,844 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:03:59] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 16:04:04,492 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:04:04] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:04:04,973 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:04:04] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:04:05,467 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:04:05] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:06:14,555 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:14] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:06:14,999 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:14] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:06:15,546 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:15] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:06:50,516 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:50] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:06:50,934 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:50] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:06:51,477 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:51] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:06:52,924 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:52] "GET /static/chosen/css/chosen-sprite.png HTTP/1.1" 200 -
+2018-04-23 16:06:54,497 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:54] "POST /api/add_tag HTTP/1.1" 200 -
+2018-04-23 16:06:56,206 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:56] "POST /api/add_tag HTTP/1.1" 200 -
+2018-04-23 16:06:58,213 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:58] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:06:58,648 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:58] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:06:59,160 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:06:59] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:07:30,737 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:07:30] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:07:31,339 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:07:31] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:07:31,940 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:07:31] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:08:02,240 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:08:02,499 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-04-23 16:08:02,596 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-04-23 16:08:02,605 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/common/login/ace-fonts.css HTTP/1.1" 200 -
+2018-04-23 16:08:02,609 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-04-23 16:08:02,630 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 200 -
+2018-04-23 16:08:02,635 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-04-23 16:08:02,831 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-04-23 16:08:02,907 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-04-23 16:08:02,915 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/common/style2.css HTTP/1.1" 200 -
+2018-04-23 16:08:02,946 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-04-23 16:08:02,971 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:02] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 200 -
+2018-04-23 16:08:03,003 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 200 -
+2018-04-23 16:08:03,165 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 200 -
+2018-04-23 16:08:03,257 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-04-23 16:08:03,275 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-04-23 16:08:03,323 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 200 -
+2018-04-23 16:08:03,328 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 200 -
+2018-04-23 16:08:03,362 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 200 -
+2018-04-23 16:08:03,487 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 200 -
+2018-04-23 16:08:03,572 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 200 -
+2018-04-23 16:08:03,618 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map HTTP/1.1" 200 -
+2018-04-23 16:08:03,818 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:03] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-04-23 16:08:04,181 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:04] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-04-23 16:08:04,226 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:04] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-04-23 16:08:04,388 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:04] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:08:04,474 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:04] "GET /static/common/img/male.png HTTP/1.1" 200 -
+2018-04-23 16:08:04,526 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:04] "GET /static/common/img/female.png HTTP/1.1" 200 -
+2018-04-23 16:08:04,549 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:04] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:08:04,576 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:04] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-04-23 16:08:04,665 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:08:04] "GET /static/avatar/init.png HTTP/1.1" 200 -
+2018-04-23 16:09:11,915 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:11] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:09:12,453 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:12] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:09:13,006 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:13] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:09:25,223 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:09:25,473 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-04-23 16:09:25,578 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-04-23 16:09:25,586 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/common/login/ace-fonts.css HTTP/1.1" 200 -
+2018-04-23 16:09:25,592 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-04-23 16:09:25,595 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 200 -
+2018-04-23 16:09:25,599 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-04-23 16:09:25,780 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-04-23 16:09:25,888 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-04-23 16:09:25,894 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/common/style2.css HTTP/1.1" 200 -
+2018-04-23 16:09:25,921 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-04-23 16:09:25,928 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 200 -
+2018-04-23 16:09:25,934 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:25] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 200 -
+2018-04-23 16:09:26,091 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:26] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 200 -
+2018-04-23 16:09:26,196 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:26] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-04-23 16:09:26,206 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:26] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-04-23 16:09:26,227 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:26] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 200 -
+2018-04-23 16:09:26,240 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:26] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 200 -
+2018-04-23 16:09:26,246 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:26] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 200 -
+2018-04-23 16:09:26,398 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:26] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 200 -
+2018-04-23 16:09:26,507 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:26] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 200 -
+2018-04-23 16:09:26,526 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:26] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map HTTP/1.1" 200 -
+2018-04-23 16:09:26,720 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:26] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-04-23 16:09:27,036 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:27] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-04-23 16:09:27,173 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:27] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:09:27,236 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:27] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:09:27,243 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:27] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-04-23 16:09:27,256 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:27] "GET /static/common/img/male.png HTTP/1.1" 200 -
+2018-04-23 16:09:27,289 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:27] "GET /static/common/img/female.png HTTP/1.1" 200 -
+2018-04-23 16:09:27,345 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:27] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-04-23 16:09:27,479 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:27] "GET /static/avatar/init.png HTTP/1.1" 200 -
+2018-04-23 16:09:33,542 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:33] "GET /api/public_profile?id=53f38398dabfae4b34a04bef HTTP/1.1" 500 -
+2018-04-23 16:09:33,684 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:33] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-23 16:09:33,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:33] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-23 16:09:33,880 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:09:33] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-23 16:10:12,247 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:12] "GET /favicon.ico HTTP/1.1" 404 -
+2018-04-23 16:10:13,509 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:13] "GET / HTTP/1.1" 200 -
+2018-04-23 16:10:13,812 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:13] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:10:16,403 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:16] "GET /user/login HTTP/1.1" 200 -
+2018-04-23 16:10:16,657 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:16] "GET /static/icheck/css/custom.css HTTP/1.1" 200 -
+2018-04-23 16:10:16,730 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:16] "GET /static/icheck/js/icheck.min.js HTTP/1.1" 200 -
+2018-04-23 16:10:16,793 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:16] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:10:17,177 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:17] "GET /static/icheck/css/green.png HTTP/1.1" 200 -
+2018-04-23 16:10:19,115 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:19] "GET /user/home HTTP/1.1" 200 -
+2018-04-23 16:10:19,405 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:19] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:10:20,539 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:20] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:10:21,075 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:21] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:10:21,342 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:21] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:10:25,918 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:25] "GET /user/home HTTP/1.1" 200 -
+2018-04-23 16:10:26,450 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:26] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:10:28,302 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:28] "GET /api/search_result?content=fox HTTP/1.1" 302 -
+2018-04-23 16:10:35,322 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:35] "GET /api/search?content=fox&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-23 16:10:35,361 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:35] "GET /static/jqPaginator/js/jqpaginator.min.js HTTP/1.1" 200 -
+2018-04-23 16:10:35,844 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:35] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:10:35,986 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:35] "GET /static/common/img/icon-paper.png HTTP/1.1" 200 -
+2018-04-23 16:10:39,105 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:39] "GET /api/public_profile?id=53f59e29dabfaef125f8045b HTTP/1.1" 200 -
+2018-04-23 16:10:39,444 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:39] "GET /static/common/img/a4.jpg HTTP/1.1" 200 -
+2018-04-23 16:10:39,698 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:10:39] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:12:18,426 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:18] "GET /api/public_profile?id=53f59e29dabfaef125f8045b HTTP/1.1" 200 -
+2018-04-23 16:12:19,006 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:19] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:12:52,052 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /api/public_profile?id=53f59e29dabfaef125f8045b HTTP/1.1" 200 -
+2018-04-23 16:12:52,259 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-04-23 16:12:52,407 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-04-23 16:12:52,411 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/common/login/ace-fonts.css HTTP/1.1" 200 -
+2018-04-23 16:12:52,415 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-04-23 16:12:52,420 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 200 -
+2018-04-23 16:12:52,426 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-04-23 16:12:52,571 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-04-23 16:12:52,717 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-04-23 16:12:52,729 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/common/style2.css HTTP/1.1" 200 -
+2018-04-23 16:12:52,736 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-04-23 16:12:52,746 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 200 -
+2018-04-23 16:12:52,755 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 200 -
+2018-04-23 16:12:52,884 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:52] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 200 -
+2018-04-23 16:12:53,032 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-04-23 16:12:53,039 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-04-23 16:12:53,049 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 200 -
+2018-04-23 16:12:53,053 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 200 -
+2018-04-23 16:12:53,069 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 200 -
+2018-04-23 16:12:53,193 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 200 -
+2018-04-23 16:12:53,339 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 200 -
+2018-04-23 16:12:53,354 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map HTTP/1.1" 200 -
+2018-04-23 16:12:53,506 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-04-23 16:12:53,826 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-04-23 16:12:53,921 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:53] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:12:54,053 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:54] "GET /static/common/img/a4.jpg HTTP/1.1" 200 -
+2018-04-23 16:12:54,079 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:54] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-04-23 16:12:54,134 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:12:54] "GET /static/avatar/init.png HTTP/1.1" 200 -
+2018-04-23 16:13:11,147 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:13:11] "GET /api/public_profile?id=53f59e29dabfaef125f8045b HTTP/1.1" 200 -
+2018-04-23 16:13:11,457 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:13:11] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:16:39,926 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:16:39] "GET /api/public_profile?id=53f59e29dabfaef125f8045b HTTP/1.1" 200 -
+2018-04-23 16:16:40,335 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:16:40] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:17:52,775 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:17:52] "GET /api/public_profile?id=53f4c804dabfaedce5663e75 HTTP/1.1" 200 -
+2018-04-23 16:17:53,102 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:17:53] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:18:31,976 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:18:31] "GET /api/public_profile?id=53f59e29dabfaef125f8045b HTTP/1.1" 200 -
+2018-04-23 16:18:32,427 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:18:32] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:18:36,267 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:18:36] "GET /api/public_profile?id=53f4c804dabfaedce5663e75 HTTP/1.1" 200 -
+2018-04-23 16:18:36,710 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:18:36] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:18:41,540 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:18:41] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 16:18:41,874 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:18:41] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:19:32,894 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:19:32] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:19:43,828 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:19:43] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:21:59,032 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:21:59] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-04-23 16:21:59,038 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:21:59] "GET /static/common/img/female.png HTTP/1.1" 200 -
+2018-04-23 16:22:30,200 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:22:30] "GET /api/search?type=paper&content=123&p_page=1&a_page=1 HTTP/1.1" 500 -
+2018-04-23 16:22:30,303 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:22:30] "GET /api/search?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-23 16:22:30,535 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:22:30] "GET /api/search?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-23 16:22:30,536 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:22:30] "GET /api/search?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-23 16:22:30,604 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:22:30] "GET /api/search?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-04-23 16:23:10,816 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:23:13,388 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:23:13,415 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:23:13,426 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:23:19,608 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:23:19] "GET /api/search?content=fox&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-04-23 16:23:20,066 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:23:20] "GET /static/jqPaginator/js/jqpaginator.min.js HTTP/1.1" 200 -
+2018-04-23 16:23:20,230 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:23:20] "GET /static/common/img/icon-paper.png HTTP/1.1" 200 -
+2018-04-23 16:23:23,667 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:23:23] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:23:24,125 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:23:24] "GET /static/common/img/male.png HTTP/1.1" 200 -
+2018-04-23 16:23:24,742 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:23:24] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:23:40,898 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:23:40] "GET /api/search?type=paper&content=123&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 16:25:58,661 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:25:58] "GET /api/search?type=paper&content=123&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 16:26:12,868 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:26:12] "GET /api/search?type=paper&content=123&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 16:26:13,088 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:26:13] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:26:17,084 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:26:17] "GET /api/search?type=author&content=123&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 16:26:17,364 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:26:17] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:26:17,799 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:26:17] "GET /static/avatar/files/init.png HTTP/1.1" 404 -
+2018-04-23 16:27:45,479 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:27:45] "GET /api/search?type=author&content=123&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 16:27:45,673 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:27:45] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:28:07,753 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\mysql_model.py', reloading
+2018-04-23 16:28:08,423 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:28:10,970 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:28:10,996 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:28:11,002 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:28:12,868 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:28:12] "GET /api/public_profile?id=27060 HTTP/1.1" 500 -
+2018-04-23 16:28:12,930 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:28:12] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-23 16:28:13,178 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:28:13] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-23 16:28:13,180 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:28:13] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-23 16:29:00,068 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:29:02,545 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:29:02,572 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:29:02,581 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:29:05,568 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:29:05] "GET /api/public_profile?id=27060 HTTP/1.1" 200 -
+2018-04-23 16:29:06,030 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:29:06] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:29:23,055 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:29:23] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:29:23,436 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:29:23] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:29:23,957 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:29:23] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:30:40,566 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-23 16:30:40,842 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:32:32,575 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:32:35,016 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:32:35,042 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:32:35,049 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:32:37,365 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:32:37] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:32:37,874 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:32:37] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:32:38,132 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:32:38] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:34:55,926 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-04-23 16:34:56,440 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:38:12,348 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:38:14,849 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:38:14,875 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:38:14,881 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:39:33,342 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:39:35,799 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:39:35,825 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:39:35,832 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:39:46,846 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:46] "POST /api/del_tag HTTP/1.1" 302 -
+2018-04-23 16:39:47,082 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:47] "GET /user/login?next=%2Fapi%2Fdel_tag HTTP/1.1" 200 -
+2018-04-23 16:39:48,515 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:48] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-23 16:39:48,813 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:48] "GET /user/login?next=%2Fuser%2Fprivate_profile HTTP/1.1" 200 -
+2018-04-23 16:39:49,214 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:49] "GET /static/icheck/css/custom.css HTTP/1.1" 200 -
+2018-04-23 16:39:49,217 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:49] "GET /static/icheck/js/icheck.min.js HTTP/1.1" 200 -
+2018-04-23 16:39:49,252 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:49] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:39:49,303 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:49] "GET /static/icheck/css/green.png HTTP/1.1" 200 -
+2018-04-23 16:39:58,772 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:58] "POST /api/login HTTP/1.1" 302 -
+2018-04-23 16:39:59,012 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:59] "GET /user/home HTTP/1.1" 200 -
+2018-04-23 16:39:59,121 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:39:59] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:40:13,855 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:13] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:40:14,111 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:14] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:40:14,562 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:14] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:40:19,227 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:19] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 16:40:20,842 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:20] "POST /api/del_tag HTTP/1.1" 200 -
+2018-04-23 16:40:30,426 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:30] "GET /static/chosen/css/chosen-sprite.png HTTP/1.1" 200 -
+2018-04-23 16:40:33,128 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:33] "POST /api/add_tag HTTP/1.1" 200 -
+2018-04-23 16:40:35,993 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:35] "POST /api/add_tag HTTP/1.1" 200 -
+2018-04-23 16:40:38,796 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:38] "GET /api/public_profile?id=27060 HTTP/1.1" 500 -
+2018-04-23 16:40:39,026 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:39] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-04-23 16:40:39,107 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:39] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-04-23 16:40:39,111 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:40:39] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-04-23 16:41:19,151 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:41:19] "GET /api/search?type=author&content=123&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 16:41:19,414 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:41:19] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:41:23,864 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:41:23] "GET /api/public_profile?id=uiouio@qq HTTP/1.1" 200 -
+2018-04-23 16:41:24,194 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:41:24] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:41:52,526 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:41:55,020 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:41:55,046 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:41:55,055 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:41:59,246 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:41:59] "GET /api/public_profile?id=uiouio@qq HTTP/1.1" 200 -
+2018-04-23 16:41:59,624 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:41:59] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:42:04,055 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:42:04] "GET /api/public_profile?id=uiouio@qq HTTP/1.1" 200 -
+2018-04-23 16:42:04,417 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:42:04] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:42:07,246 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:42:07] "GET /api/public_profile?id=uiouio@qq HTTP/1.1" 200 -
+2018-04-23 16:42:07,575 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:42:07] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:42:23,868 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:42:23] "GET /api/public_profile?id=uiouio@qq HTTP/1.1" 200 -
+2018-04-23 16:42:24,351 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:42:24] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:43:35,121 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\mysql_model.py', reloading
+2018-04-23 16:43:35,742 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:43:38,292 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:43:38,321 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:43:38,329 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:44:24,598 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:44:27,086 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:44:27,112 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:44:27,119 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:48:14,852 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:48:14] "GET /api/public_profile?id=uiouio@qq HTTP/1.1" 200 -
+2018-04-23 16:48:15,342 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:48:15] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:48:30,312 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:48:30] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:48:30,832 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:48:30] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 16:48:31,177 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:48:31] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:48:43,750 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:48:43] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:49:15,230 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:15] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 16:49:15,707 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:15] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-04-23 16:49:15,713 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:15] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-04-23 16:49:15,720 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:15] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-04-23 16:49:15,726 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:15] "GET /static/common/login/ace-fonts.css HTTP/1.1" 200 -
+2018-04-23 16:49:15,732 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:15] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-04-23 16:49:15,736 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:15] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 200 -
+2018-04-23 16:49:16,016 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-04-23 16:49:16,022 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-04-23 16:49:16,052 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-04-23 16:49:16,068 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/common/style2.css HTTP/1.1" 200 -
+2018-04-23 16:49:16,078 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 200 -
+2018-04-23 16:49:16,089 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 200 -
+2018-04-23 16:49:16,328 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 200 -
+2018-04-23 16:49:16,361 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-04-23 16:49:16,371 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-04-23 16:49:16,385 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 200 -
+2018-04-23 16:49:16,398 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 200 -
+2018-04-23 16:49:16,404 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 200 -
+2018-04-23 16:49:16,645 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 200 -
+2018-04-23 16:49:16,671 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 200 -
+2018-04-23 16:49:16,963 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:16] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-04-23 16:49:17,415 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:17] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-04-23 16:49:17,420 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:17] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:49:17,467 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:17] "GET /static/common/img/a4.jpg HTTP/1.1" 200 -
+2018-04-23 16:49:17,497 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:17] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-04-23 16:49:37,279 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:37] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:49:37,282 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:49:37] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map HTTP/1.1" 200 -
+2018-04-23 16:50:08,890 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:08] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 16:50:09,394 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:09] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:50:19,426 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:19] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 16:50:19,638 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:19] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-04-23 16:50:19,776 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:19] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-04-23 16:50:19,783 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:19] "GET /static/common/login/ace-fonts.css HTTP/1.1" 200 -
+2018-04-23 16:50:19,788 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:19] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-04-23 16:50:19,792 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:19] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 200 -
+2018-04-23 16:50:19,795 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:19] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-04-23 16:50:19,947 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:19] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-04-23 16:50:20,084 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-04-23 16:50:20,089 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/common/style2.css HTTP/1.1" 200 -
+2018-04-23 16:50:20,101 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,108 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,111 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,255 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,391 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,398 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,415 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,421 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,436 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,565 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,701 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 200 -
+2018-04-23 16:50:20,719 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map HTTP/1.1" 200 -
+2018-04-23 16:50:20,875 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:20] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-04-23 16:50:21,190 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:21] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-04-23 16:50:21,289 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:21] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:50:21,375 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:21] "GET /static/common/img/a4.jpg HTTP/1.1" 200 -
+2018-04-23 16:50:21,448 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:50:21] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-04-23 16:51:13,315 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:51:15,852 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:51:15,880 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:51:15,888 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:51:18,845 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:51:18] "GET /user/login HTTP/1.1" 200 -
+2018-04-23 16:51:19,407 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:51:19] "GET /static/icheck/css/custom.css HTTP/1.1" 200 -
+2018-04-23 16:51:19,411 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:51:19] "GET /static/icheck/js/icheck.min.js HTTP/1.1" 200 -
+2018-04-23 16:51:19,480 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:51:19] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:51:20,201 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:51:20] "GET /static/icheck/css/green.png HTTP/1.1" 200 -
+2018-04-23 16:51:23,898 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:51:23] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 16:51:24,730 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:51:24] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:51:43,190 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:51:43] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:51:59,752 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:51:59] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-04-23 16:51:59,756 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:51:59] "GET /static/common/img/female.png HTTP/1.1" 200 -
+2018-04-23 16:52:37,687 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:37] "GET /user/private_profile HTTP/1.1" 302 -
+2018-04-23 16:52:37,941 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:37] "GET /user/login?next=%2Fuser%2Fprivate_profile HTTP/1.1" 200 -
+2018-04-23 16:52:38,190 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:38] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:52:45,742 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:45] "POST /api/login HTTP/1.1" 302 -
+2018-04-23 16:52:46,017 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:46] "GET /user/home HTTP/1.1" 200 -
+2018-04-23 16:52:46,262 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:46] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:52:46,664 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:46] "GET /static/avatar/init.png HTTP/1.1" 200 -
+2018-04-23 16:52:47,592 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:47] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:52:47,959 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:47] "GET /static/common/img/male.png HTTP/1.1" 200 -
+2018-04-23 16:52:48,207 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:48] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:52:48,384 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:48] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:52:50,575 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:52:50] "POST /api/paper_network HTTP/1.1" 200 -
+2018-04-23 16:53:03,344 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:53:03] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:53:03,355 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:53:03] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:53:04,312 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:53:04] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:53:04,450 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:53:04] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:53:16,625 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\__init__.py', reloading
+2018-04-23 16:53:17,177 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 16:53:19,839 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 16:53:19,877 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 16:53:19,890 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 16:56:36,956 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:56:36] "GET /user/private_profile HTTP/1.1" 200 -
+2018-04-23 16:56:37,413 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:56:37] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:56:37,987 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:56:37] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-04-23 16:56:45,838 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:56:45] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 16:56:46,223 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:56:46] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:57:00,401 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:57:00] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:57:20,348 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:57:20] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:57:20,388 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:57:20] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 16:57:21,030 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:57:21] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:57:33,446 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:57:33] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:58:01,948 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:58:01] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 16:58:30,773 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:58:30] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 16:58:31,220 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:58:31] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 16:58:44,479 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 16:58:44] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:00:26,599 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:00:26] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:00:43,332 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:00:43] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:01:46,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:01:46] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:01:47,358 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:01:47] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:02:01,680 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:02:01] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:02:20,354 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:02:20] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:02:31,115 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:02:31] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:02:31,155 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:02:31] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:02:31,930 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:02:31] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:03:34,921 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:03:34] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:07:36,535 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:07:36] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:07:36,859 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:07:36] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:07:49,448 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:07:49] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:08:04,607 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:08:04] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:08:04,950 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:08:04] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:08:18,539 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:08:18] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:09:11,443 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:09:11] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:09:11,790 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:09:11] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:09:24,608 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:09:24] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:11:49,763 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:11:49] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:11:50,270 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:11:50] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:12:09,716 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:12:09] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:12:10,157 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:12:10] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:12:43,905 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:12:43] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:12:44,390 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:12:44] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:13:00,180 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:13:00] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:13:27,456 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:13:27] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:13:27,904 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:13:27] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:13:42,321 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:13:42] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:13:53,382 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:13:53] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:13:53,723 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:13:53] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:14:06,947 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:14:06] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:15:51,346 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:15:51] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:16:02,052 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:16:02] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:17:36,039 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:17:36] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:17:36,536 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:17:36] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:18:05,394 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:18:05] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:18:16,019 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:18:16] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:19:26,424 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:19:26] "POST /api/expert_network HTTP/1.1" 200 -
+2018-04-23 17:24:15,372 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:24:15] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:24:15,736 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:24:15] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:24:23,232 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:24:23] "GET /api/search?type=paper&content=Hidden%20Markov%20Model&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 17:24:23,898 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:24:23] "GET /static/jqPaginator/js/jqpaginator.min.js HTTP/1.1" 200 -
+2018-04-23 17:24:23,986 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:24:23] "GET /static/common/img/icon-paper.png HTTP/1.1" 200 -
+2018-04-23 17:24:39,523 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:24:39] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:24:45,990 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:24:45] "GET /api/search?type=paper&content=Hidden%20Markov%20Model&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 17:24:57,697 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-04-23 17:25:00,207 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-04-23 17:25:00,233 - _internal.py[line:87] - INFO:  * Debugger pin code: 231-602-368
+2018-04-23 17:25:00,240 - _internal.py[line:87] - INFO:  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2018-04-23 17:25:05,388 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:25:05] "GET /api/public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-04-23 17:25:06,213 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:25:06] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:25:13,562 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:25:13] "GET /api/search?type=paper&content=Hidden%20Markov%20Model&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 17:25:14,006 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:25:14] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:25:47,875 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:25:47] "GET /api/search?type=paper&content=Synthetic%20Data&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 17:25:48,003 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:25:48] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 17:26:08,869 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:26:08] "GET /api/search?type=paper&content=Linear%20Dynamical%20System&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-04-23 17:26:09,025 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 17:26:09] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-04-23 21:49:04,052 - _internal.py[line:87] - INFO: 127.0.0.1 - - [23/Apr/2018 21:49:04] "GET /favicon.ico HTTP/1.1" 404 -

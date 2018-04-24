@@ -19,8 +19,8 @@ class Config:
         }
 
     # Mongo
-    MONGO_HOST = '47.106.157.16'
-    # MONGO_HOST = '127.0.0.1'
+    # MONGO_HOST = '47.106.157.16'
+    MONGO_HOST = '127.0.0.1'
     MONGO_PORT = 27017
     MONGO_USERNAME=''
     MONGO_PASSWORD=''

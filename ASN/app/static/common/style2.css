@@ -11,7 +11,7 @@
 		clear: both;
 	}
 }
-.tag-list {
+.tags-list {
 	font-size: 13px;
 	background-color: #f3f3f4;
 	padding: 5px 12px;
@@ -68,3 +68,14 @@
     opacity: 1.0;
     filter:alpha(opacity=100);
 }
+
+/*Tab*/
+/*.tab-content > .tab-pane {
+    display: block;
+    height: 0;
+    overflow-y: hidden;
+}
+
+.tab-content > .active {
+    height: auto;
+}*/

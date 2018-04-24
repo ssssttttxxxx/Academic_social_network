@@ -91,7 +91,6 @@ def search_results():
     results = request.args.get('Results')
     print "user search", searchContent
     nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
-    print "home current user:", nowUser
     if not nowUser:
         print "not current user"
         status = {"loginStatus": False}
@@ -103,3 +102,21 @@ def search_results():
 # @user.route('/confirm_url')
 # def confirm():
 #     pass
+
+
+@user.route('/public_profile', methods=['GET'])
+def public_profile():
+    nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
+    if not nowUser:
+        print "not current user"
+        status = {"loginStatus": False}
+    else:
+        print "with current user"
+        status = {"loginStatus": True}
+
+    return render_template('public_profile.html', Status=status)
+
+
+@user.route('/get_paper', methods=['GET'])
+def get_paper():
+    pass

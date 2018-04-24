@@ -1,8 +1,40 @@
+<!DOCTYPE html>
+<html>
 
+<head>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h1>Welcome!</h1>
-<br>
-<p>You have not confirmed your account. Please check your inbox (and your spam folder) - you should have received an email with a confirmation link.</p>
-<p>Didn't get the email? <a href="[[ url_for('api.resend_confirmation') ]]">Resend</a>.</p>
+    <title>Academic Social Network Platform - unconfirmed</title>
 
+	<!-- jquery -->
+	<script type="text/javascript" src="../static/jquery/jquery-3.3.1.min.js"></script>
+	<!-- bootstrap-3.3.7 -->
+	<link href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- font-awesome-4.7.0 -->
+	<link href="../static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="../static/common/animate.css" rel="stylesheet">
+    <link href="../static/common/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+	<div class="wrapper wrapper-content">
+	    <div class="middle-box text-center animated fadeInDown">
+<!--         	<h1>Welcome!</h1> -->
+	        <h3 class="font-bold">This is unconfirmed page</h3>
+
+	        <div class="error-desc">
+				<p style="text-align: left;">You have not confirmed your account. Please check your inbox (and your spam folder) - you should have received an email with a confirmation link.</p>
+				<p>Didn't get the email? <a href="[[ url_for('api.resend_confirmation') ]]">Resend</a>.</p>
+	        </div>
+    	</div>
+	</div>
+
+</body>
+
+</html>

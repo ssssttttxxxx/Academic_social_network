@@ -50,6 +50,14 @@
     <link href="../static/common/style.css" rel="stylesheet">
     <link href="../static/common/style2.css" rel="stylesheet">
 
+    <style type="text/css">
+    	.dl-horizontal dt {
+    		width: 80px;
+    	}
+    	.dl-horizontal dd {
+    		margin-left: 100px;
+    	}
+    </style>
 </head>
 <body class="gray-bg">
 
@@ -110,10 +118,10 @@
 			                        <div class="widget-head-color-box navy-bg p-lg text-center">
 			                            <div class="m-b-md">
 				                            <h2 class="font-bold no-margins">
-				                                {{ author_firstName }}&nbsp;{{ author_lastName }}
+				                                {{ author_name }}
 				                            </h2>
 			                            </div>
-			                            <img :src="author_avatarSrc" class="img-circle circle-border m-b-md" alt="profile">
+			                            <img :src="author_avatarSrc" class="img-circle circle-border m-b-md" alt="profile" width="140px" height="140px">
 			                            <div>
 			                            	<div class="btn-group" v-if="isFollow" v-on:click="toUnfollow" id="btn-follow">
 			                            		<a class="btn btn-sm btn-white" style="background:transparent;">
@@ -134,21 +142,11 @@
 			                                <a href="#tab-3" id="toTab3"><small class="label label-warning"><i class="fa fa-hand-paper-o"></i> 610 粉丝</small></a> 
 			                            </div>
 			                        </div>
-			                        <div class="ibox-content">
-										<h3 class="tag-title">Ta感兴趣的领域</h3>
-
-			                            <ul class="tag-list" id="fieldList" style="padding: 0" v-for="item in tagSource">
-			                                <li><a href=""><i class="fa fa-tag"></i> {{ item }}</a></li>
-			                                <!-- <li><a href=""><i class="fa fa-tag"></i> Social Network</a></li> -->
-			                            </ul>
-			                            <div class="clearfix"></div>
-			                        </div>
-
 			                    </div>
 
 			                    <div class="col-md-6" style="margin-top: 10px;">
 			                    	<dl class="dl-horizontal" style="font-size: 16px;">
-                                        <dt>姓名:</dt> <dd>{{ author_firstName }}&nbsp;{{ author_lastName }}</dd>
+                                        <dt>姓名:</dt> <dd>{{ author_name }}&nbsp;{{ author_name_zh }}</dd>
                                         <div class="hr-line-dashed"></div>
                                         <dt>性别:</dt> <dd>{{ author_gender }}</dd>
                                         <div class="hr-line-dashed"></div>
@@ -161,6 +159,17 @@
                                         <dt>电话:</dt> <dd>{{ author_telephone }}</dd>
                                     </dl>
 			                    </div>
+			                    <div class="col-md-12" style="margin-top: 20px;">
+			                        <div class="ibox-content">
+										<h3 class="tag-title">Ta感兴趣的领域</h3>
+
+			                            <ul class="tag-list" id="fieldList" style="padding: 0" v-for="item in tagSource">
+			                                <li><a v-on:click="toSearchPage(item)"><i class="fa fa-tag"></i> {{ item }}</a></li>
+			                                <!-- <li><a href=""><i class="fa fa-tag"></i> Social Network</a></li> -->
+			                            </ul>
+			                            <div class="clearfix"></div>
+			                        </div>
+			                    </div>
 			                </div>
 	            		</div>
 	            	</div>
@@ -171,11 +180,11 @@
                 <div class="col-lg-12">
                     <div class="tabs-container">
                         <div class="tabs-left">
-	                        <ul class="nav nav-tabs">
+	                        <ul class="nav nav-tabs" id="mainTab">
 	                            <li class="active"><a data-toggle="tab" href="#tab-1" id="tab1"><i class="fa fa-circle text-info"></i> Ta的关注&nbsp;&nbsp;<span class="badge badge-info">10</span></a></li>
 	                            <li class=""><a data-toggle="tab" href="#tab-2" id="tab2"><i class="fa fa-circle text-warning"></i> 谁关注Ta&nbsp;&nbsp;<span class="badge badge-warning">6</span></a></li>
 	                            <li class=""><a data-toggle="tab" href="#tab-3" id="tab3"><i class="fa fa-circle text-danger"></i> Ta的论文&nbsp;&nbsp;<span class="badge badge-danger">10</span></a></li>
-	                            <li class=""><a data-toggle="tab" href="#tab-4"><i class="fa fa-circle text-muted"></i> 关系图</a></li>
+	                            <li class=""><a data-toggle="tab" href="#tab-4" id="tab4"><i class="fa fa-circle text-muted"></i> 关系图</a></li>
 	                        </ul>
 	                        <div class="tab-content">
                              	<div id="tab-1" class="tab-pane active">
@@ -631,19 +640,19 @@
 
 						                <div class="col-lg-12">
 						                    <div class="tabs-container">
-						                        <ul class="nav nav-tabs" style="border-bottom: none;">
-						                            <li class="active"><a data-toggle="tab" href="#tab-7"> 论文关系图</a></li>
-						                            <li class=""><a data-toggle="tab" href="#tab-8"> 作者关系图</a></li>
+						                        <ul class="nav nav-tabs" style="border-bottom: none;" id="chartTab">
+						                            <!-- <li class="active"><a data-toggle="tab" href="#tab-7"> 论文关系图</a></li> -->
+						                            <li class="active"><a data-toggle="tab" href="#chart2"> 作者关系图</a></li>
 						                        </ul>
 						                        <div class="tab-content">
-						                            <div id="tab-7" class="tab-pane active">
+<!-- 						                            <div id="tab-7" class="tab-pane active">
 						                                <div class="panel-body" style="width: 100%;margin-left: 0%;">
 						                                    <div id="paperGraph" style="height: 100%"></div>
 						                                </div>
-						                            </div>
-						                            <div id="tab-8" class="tab-pane">
-						                                <div class="panel-body" style="width: 100%;margin-left: 0%;">
-															<div id="authorGraph" style="height: 100%"></div>
+						                            </div> -->
+						                            <div id="chart2" class="tab-pane active">
+						                                <div class="panel-body" style="margin: 0;width: 100%;height: 500px;">
+															<div id="coauthorGraph" style="height: 100%;width: 100%;"></div>
 						                                </div>
 						                            </div>
 						                        </div>
@@ -664,16 +673,6 @@
             
     <script>
         $(document).ready(function(){
-        	// 跳到tab
-        	$("#toTab1").click(function(){
-        		$("#tab3").click();
-        	});
-        	$("#toTab2").click(function(){
-        		$("#tab1").click();
-        	})
-        	$("#toTab3").click(function(){
-        		$("#tab2").click();
-        	})
 
         	// 论文
             function animationHover(element, animation) {
@@ -733,24 +732,24 @@
     <script type="text/javascript">
 		//顶部用户信息显示
     	data1 = {
-            // loginStatus: [[Status.loginStatus|tojson]],
-            // {% if current_user.email %}
-            // firstName: [[current_user.first_name|tojson]],
-            // lastName: [[current_user.last_name|tojson]],
-            // email: [[current_user.email|tojson]],
-            // avatarSrc: [[current_user.avatar|tojson]]
-            // {% else %}
-            // firstName: "",
-            // lastName: "",
-            // email: "",
-            // avatarSrc: ""
-            // {% endif %}
+            loginStatus: [[Status.loginStatus|tojson]],
+            {% if current_user.email %}
+            firstName: [[current_user.first_name|tojson]],
+            lastName: [[current_user.last_name|tojson]],
+            email: [[current_user.email|tojson]],
+            avatarSrc: [[current_user.avatar|tojson]]
+            {% else %}
+            firstName: "",
+            lastName: "",
+            email: "",
+            avatarSrc: ""
+            {% endif %}
 
-            loginStatus: true,
-            firstName: "张",
-            lastName: "三丰",
-            email: "11@qq.com",
-            avatarSrc: "../static/common/img/init.png"
+            // loginStatus: true,
+            // firstName: "张",
+            // lastName: "三丰",
+            // email: "11@qq.com",
+            // avatarSrc: "../static/common/img/init.png"
         }
         var app1 = new Vue({
             el: '#status',
@@ -758,18 +757,28 @@
         });
 
         //作者信息
+
+        // var res = JSON.parse([[authorDetail|tojson]])
+        var res = [[authorDetail|tojson]]
         data2 = {
-        	author_firstName: '张',
-        	author_lastName: '三',
-        	author_gender: '男',
-        	author_degree: '学士',
-        	author_department: '1',
-        	author_address: '广东华南理工大学',
-        	author_telephone: '13777777777',
-        	author_avatarSrc: '../static/common/img/a4.jpg',
+        	author_name: res.name,
+        	author_name_zh: '',
+        	author_gender: res.gender,
+        	author_degree: res.education,
+        	author_department: res.department,
+        	author_address: res.address,
+        	author_telephone: res.phone,
+        	author_avatarSrc: res.avatar,
         	isFollow: false,
-        	tagSource: ["Machine Learning", "Social Network"]
+        	tagSource: res.tags
         }
+        if (res.name_zh !== '') {
+        	data2.author_name_zh = '(' + res.name_zh + ')'
+        }
+        if (res.avatar === '') {
+        	data2.author_avatarSrc = '../static/avatar/init.png'
+        }
+
         var app2 = new Vue({
         	el: '#author_profile',
         	data: data2,
@@ -779,12 +788,199 @@
         		},
         		toUnfollow: function() {
         			this.isFollow = false;
+        		},
+        		toSearchPage: function(searchContent) {
+        			window.open("/api/search?type=paper" + "&content=" + searchContent + "&p_page=1&a_page=1")
         		}
         	}
         });
+
+    	// 跳到tab
+    	$("#toTab1").click(function(){
+    		$("#tab3").click();
+    	});
+    	$("#toTab2").click(function(){
+    		$("#tab1").click();
+    	})
+    	$("#toTab3").click(function(){
+    		$("#tab2").click();
+    	})
+
+    	/*mainTab标签页请求*/
+    	$('#mainTab a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+
+    		if ($(e.target).attr("id") === "tab1") { //Ta的关注页
+    			console.log($(e.target).text());
+    		}
+    		else if ($(e.target).attr("id") === "tab2") { //谁关注Ta页
+    			console.log($(e.target).text());
+    		}
+    		else if ($(e.target).attr("id") === "tab3") { //Ta的论文页
+    			console.log($(e.target).text());
+    		}
+    		else if ($(e.target).attr("id") === "tab4") { //关系图页
+    			getExpertNetwork();
+    			console.log($(e.target).text());
+    		}
+    	});
         
     </script>
 
+    <script type="text/javascript">
+		//作者关系图
+        var dom2 = document.getElementById("coauthorGraph");
+        var myChartGraph2 = echarts.init(dom2);
+        // var app = {};
+        option2 = null;
+        // app.title = '作者关系图';
+
+        var sendData2 = {"name": res.name}
+       	myChartGraph2.resize({width: 798, height: 458});
+        myChartGraph2.showLoading();
+
+        function getExpertNetwork() { 
+
+        	
+	        $.ajax({
+	        	url: "/api/expert_network",
+	        	type: "POST",
+	        	data: sendData2,
+	        	success: function(data){
+		        	myChartGraph2.hideLoading();
+
+		        	var graph = JSON.parse(data);
+
+	 				var years = [];
+					for (var i=0;i<graph.length;i++){
+	 					years.push(graph[i].year);
+					}
+
+		        	for (var i=0;i<graph.length;i++){
+			        	graph[i].nodes.forEach(function(node){
+			        		if (node.name === sendData2.name) {
+			    		        node.itemStyle = {
+			    		        	color: '#66CCFF'
+			    		        };
+			        		}
+			        		else {
+			    		        node.itemStyle = {
+			    		        	color: '#FF3030'
+			    		        };
+			        		}						        
+			        		// node.symbolSize = 10;
+					        // node.value = node.symbolSize;
+					        // node.category = node.attributes.modularity_class;
+					        // Use random x, y
+					        node.x = node.y = null;
+					        node.draggable = false;
+					        node.label = {
+					        	show: true,
+					        	position: 'bottom'
+					        }
+					        node.tooltip = {           
+					        	position: function (point, params, dom, rect, size) {
+					                $(dom).html('<div class="contact-box" style="color: #676a6c;background-color: #F0FFFF;padding: 10px;width: 120%;"><div style="width: 40%;float: left;"><div class="text-center" style="text-align: center;"><img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/init.png" width="64px" height="64px"><div class="m-t-xs font-bold">博士</div></div></div><div style="width: 60%;float: left;"><h4><strong>'+ node.name +'</strong><img alt="image"\ src="../static/common/img/female.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;"></h4><p><i class="fa fa-institution"></i> 华南理工大学</p><p><i class="fa fa-map-marker"></i> 广州大学城</p><p><i class="fa fa-phone"></i> 1377777777</p></div><div class="clearfix"></div></div>')
+					            },
+					            backgroundColor: '#FFFFFF'
+					        }
+			        	})
+			        	graph[i].links.forEach(function(link) {
+			        		link.lineStyle = {
+			        			width: link.values,
+			        			color: '#000000'
+			        		}
+			        	})
+		        	}
+
+		        	var optionInit = []
+		        	for (var i=0;i<graph.length;i++){
+		        		var nodeItem = {title: {}, series:[{}]}
+		        		nodeItem.title.text = years[i] + ''
+		        		nodeItem.series[0].data = graph[i].nodes
+		        		nodeItem.series[0].links = graph[i].links
+		        		optionInit.push(nodeItem)
+		        	}
+
+	        	    option2 = {
+	        	    	baseOption: {
+
+	        	    		timeline: {
+					            // y: 0,
+					            axisType: 'category',
+					            // realtime: false,
+					            // loop: false,
+					            autoPlay: false,
+					            // currentIndex: 2,
+					            // playInterval: 1000,
+					            // controlStyle: {
+					            //     position: 'left'
+					            // },
+					            data: years,
+					            label: {
+					                // formatter : function(s) {
+					                //     return (new Date(s)).getFullYear();
+					                // }
+					            }
+					        },
+					        title: {
+					            subtext: '',
+					            top: 'bottom',
+					            left: 'right'
+					        },
+					        tooltip: {},
+					        toolbox: {
+					        	show: true,
+					        	feature: {
+					        		dataView: {readOnly: true},
+					        		restore: {},
+					        		saveAsImage: {}
+					        	}
+					        },
+					        legend: {
+					            // selectedMode: 'single',
+					            data: ["Martin Ester"]
+					        },
+					        animation: false,
+					        series : [
+					            {
+					                name: '',
+					                type: 'graph',
+					                layout: 'force',
+					                roam: true,
+					                forceNodeAdjacency: true,
+					                cursor: 'pointer',
+					                label: {
+					                    normal: {
+					                        position: 'right'
+					                    }
+					                },
+					                force: {
+					                    repulsion: 100
+					                }
+					            }
+					        ]
+					    },
+					    options: optionInit
+				    };
+
+				    myChartGraph2.setOption(option2);
+				    myChartGraph2.resize();
+	        	},
+	        	error: function (errorMsg) {
+		            //alert("图表数据加载失败！");
+		        }
+	        });
+        }
+
+        $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
+            // myChartGraph1.resize();
+            myChartGraph2.resize();
+	    });         
+	    window.onresize = function() {
+        	// myChartGraph1.resize();
+        	myChartGraph2.resize();
+        }
+    </script>
     <div id="return-top" style="position: fixed;right: 1%;bottom: 4%;z-index: 99;">
 	    <a onclick="backToTop()">
 	        <img src="../static/common/img/return-top.png" title="返回顶部">

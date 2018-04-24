@@ -212,7 +212,7 @@ def registBussiness():
             # max_id = db.session.query(db.func.max(Expert_detail_total)).scalar().author_id
             max_id = res.max_id
             print "max_id: ", max_id
-            expert = Expert_detail_total(id=max_id, email=email, name=first_name + " " + last_name, gender=sex,
+            expert = Expert_detail_total(id=email, email=email, name=first_name + " " + last_name, gender=sex,
                                          education=education, author_id=max_id + 1)
             db.session.add(expert)
             db.session.commit()
@@ -499,9 +499,12 @@ def search():
             # 存放所有研究者信息的数组
             authors_detail = []
             for author in author_results:
-                tags = re.split(r'[\[\];]', author.tags)
+                tags = author.tags
+                if tags is None:
+                    tags = ""
+                tags = re.split(r'[\[\];,]', str(tags))
                 tags_str = ""
-                for i,tag in enumerate(tags):
+                for i, tag in enumerate(tags):
                     if i == len(tags):
                         tags_str = tags_str + tag
                     else:
@@ -547,7 +550,7 @@ def search():
         # paper_results = Paper_detail.query.filter(Paper_detail.title.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
 
         # 使用mongodb查询
-        paper_num = mongo.db.Citation_total.find({'title': re.compile(searchtext)}).count()
+        paper_num = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).count()
         print "paper num", paper_num
 
         paper_total_page = int(math.ceil(paper_num / float(item_number)))
@@ -555,7 +558,7 @@ def search():
             paper_total_page = 1
         print "paper page total", paper_total_page
 
-        paper_results = mongo.db.Citation_total.find({'title': re.compile(searchtext)}).skip(
+        paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
             start_item_number).sort('title', -1).limit(item_number)
 
         if paper_results is not None:
@@ -626,6 +629,53 @@ def search_result():
 
     return redirect(
         url_for('api.search',type=search_type, content=searchtext, p_page=paper_page_num, a_page=author_page_num))
+
+
+@api.route('/public_profile', methods=['GET'])
+def public_profile():
+    id = request.args.get('id')
+    print 'id', id
+
+    result = db.session.query(Expert_detail_total).filter(Expert_detail_total.id == id).first()
+    tags = result.tags
+    if tags is None:
+        tags = ""
+    tags = re.split(r'[\[\];,]', str(tags))
+    while '' in tags:
+        tags.remove('')
+    nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
+    if not nowUser:
+        print "not current user"
+        status = {"loginStatus": False}
+    else:
+        print "with current user"
+        status = {"loginStatus": True}
+
+    author_detail = {
+        "id": result.id,
+        "position": result.position,
+        "mid": result.mid,
+        "name": result.name,
+        "name_zh": result.name_zh,
+        "phone": result.phone,
+        "fax": result.fax,
+        "email": result.email,
+        "department": result.department,
+        "address": result.address,
+        "homepage": result.homepage,
+        "education": result.education,
+        "experience": result.experience,
+        "biography": result.biography,
+        "avatar": result.avatar,
+        "h_index": result.h_index,
+        "g_index": result.g_index,
+        "gender": result.gender,
+        "cite_num": result.cite_num,
+        "tags": tags,
+        "author_id": result.author_id,
+    }
+
+    return render_template('public_profile.html', Status=status, authorDetail=author_detail)
 
 
 @api.route('/expert_network', methods=['POST'])
@@ -1070,6 +1120,10 @@ def add_tag():
         area_str = area_list
         print "area str", area_str
         result.focus_area = area_str
+
+        result_author = db.session.query(Expert_detail_total).filter(Expert_detail_total.id == current_email).first()
+        result_author.tags = area_str
+
         db.session.commit()
         return json.dumps({'result': 'success'})
     except:
@@ -1087,6 +1141,7 @@ def del_tag():
     area_index = request.form.get('index')
     result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
     area_list = result.focus_area.split(',')
+
     # area_list.remove(area_text)
     del area_list[int(area_index)]
     area_str = ""
@@ -1095,8 +1150,11 @@ def del_tag():
             area_str = area_str + area
         else:
             area_str = area_str + area + ','
-
     result.focus_area = area_str
+
+    result_author = db.session.query(Expert_detail_total).filter(Expert_detail_total.id == current_email).first()
+    result_author.tags = area_str
+
     db.session.commit()
     return json.dumps({'result': 'success'})
 

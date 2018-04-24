@@ -28,14 +28,14 @@ class ConstructCitationTree():
         paper_id = self.paper_id
         self.total_node_list.append((paper_id))
 
-        # 存储相关的paper的id
-        relevant_paper_ids = []
+
+        relevant_paper_ids = [] # 存储相关的paper的id (第一层节点 即引用root和被root引用的论文)
         root = self.my_set.find_one({"paper_id": paper_id})
         paper_title = root["title"]
         year = root["title"]
         self.Graph.add_node(paper_id, paper_title=paper_title, id=paper_id, year=year)
 
-        # 查询根节点的引用论文id
+        # 查询根节点的引用论文id (node → root)
         try:
             ref_list = self.my_set.find_one({"paper_id": paper_id})["ref_id"]
         except:
@@ -52,7 +52,7 @@ class ConstructCitationTree():
             relevant_paper_ids.append(ref_id)
         # print "ref_title_list: ", ref_title_list
 
-        # 处理根节点与第一层引用节点的关系
+        # 处理root与第一层引用root的节点的关系
         for ref_id, ref_title, ref_year in ref_title_list:
 
             self.total_node_list.append(ref_id)
@@ -61,7 +61,7 @@ class ConstructCitationTree():
             self.Graph.add_edge(paper_id, ref_id)
             print "引用文章id: ", ref_title
 
-        # 查询引用根节点的文章
+        # 查询引用根节点的论文 (node ← root)
         try:
             time_start = time.time()
             result = self.my_set.find(filter={"ref_id": paper_id})
@@ -70,7 +70,7 @@ class ConstructCitationTree():
         except:
             result = []
             print "error"
-            logging.error("error happen in read data from mysql")
+            logging.error("error happen in read data from mongo")
         # print len(result)
         # print "被引用文章id： ", result
 
@@ -79,29 +79,40 @@ class ConstructCitationTree():
             id = paper_info['paper_id']
             year = paper_info['year']
 
-            self.total_node_list.append(id)
+            # 如果总节点数超过限制，则终止循环
+            if len(self.total_node_list) > self.node_limit:
+                print "break in 处理第一层引用节点与根节点的关系"
+                break
+            if id not in self.total_node_list:
+                self.total_node_list.append(id)
 
             self.Graph.add_node(id, paper_title=title, id=id, year=year)
             self.Graph.add_edge(id, paper_id)
             print "被引用文章id： ", title
             relevant_paper_ids.append(id)
 
-        # 存储第二层引用节点的数组
-        second_layer_ref_ids = []
+
+
+
+        second_layer_ref_ids = [] # 存储第二层节点的数组
 
         # 处理第一层引用节点与第二层引用节点的关系
         print "第一层节点与第二层节点（第一层之间）关系建立"
 
         for relevant_paper_id in relevant_paper_ids:
 
-            # 如果总节点数超过限制，则终止循环
+            # # 如果总节点数超过限制，则终止循环 ###############################
             if len(self.total_node_list) > self.node_limit:
+                print "break in 处理第一层引用节点与第二层引用节点的关系：1"
                 break
             if relevant_paper_id not in self.total_node_list:
                 self.total_node_list.append(relevant_paper_id)
 
+
+
+
+            # 查询第一层节点引用的论文(node1 ← node2)
             time_start = time.time()
-            # 查询引用文章的引用
             rel_node = self.my_set.find_one({"paper_id": relevant_paper_id})
             time_end = time.time()
             # print "query time", time_end-time_start
@@ -109,17 +120,18 @@ class ConstructCitationTree():
             rel_ref_ids = rel_node['ref_id']
             relevant_paper_title = rel_node['title']
 
-            self.Graph.add_node(
-                rel_node['paper_id'],
-                paper_title=rel_node['title'],
-                id=rel_node['paper_id'],
-                year=rel_node['year']
-            )
+            # self.Graph.add_node(
+            #     rel_node['paper_id'],
+            #     paper_title=rel_node['title'],
+            #     id=rel_node['paper_id'],
+            #     year=rel_node['year']
+            # )
 
             for rel_ref_id in rel_ref_ids:
 
-                # 如果总节点数超过限制，则终止循环
+                # # 如果总节点数超过限制，则终止循环 ###############################
                 if len(self.total_node_list) > self.node_limit:
+                    print "break in 处理第一层引用节点与第二层引用节点的关系：2"
                     break
                 if rel_ref_id not in self.total_node_list:
                     self.total_node_list.append(rel_ref_id)
@@ -139,18 +151,50 @@ class ConstructCitationTree():
                     year=rel_ref_year
                 )
                 self.Graph.add_edge(relevant_paper_id, rel_ref_id)
-
                 print relevant_paper_title, "引用", rel_ref_title
 
-        # 处理第二层节点之间的关系
+
+            # 引用第一层节点的论文(node1 → node2)
+            try:
+                time_start = time.time()
+                ref2_rel1_nodes = self.my_set.find(filter={"ref_id": relevant_paper_id})
+                time_end = time.time()
+                print "query time: ", time_end - time_start
+            except:
+                ref2_rel1_nodes = []
+                print "error"
+                logging.error("error happen in read data from mongo")
+
+            for ref2_rel1_node in ref2_rel1_nodes:
+                title = ref2_rel1_node['title']
+                id = ref2_rel1_node['paper_id']
+                year = ref2_rel1_node['year']
+                print "引用第一层节点的文章：", title
+
+                # # 如果总节点数超过限制，则终止循环 ###############################
+                if len(self.total_node_list) > self.node_limit:
+                    print "break in 处理第一层引用节点与根节点的关系"
+                    break
+                if id not in self.total_node_list:
+                    self.total_node_list.append(id)
+
+                self.Graph.add_node(id, paper_title=title, id=id, year=year)
+                self.Graph.add_edge(id, paper_id)
+                print "被引用文章id： ", title
+                if id not in second_layer_ref_ids:
+                    second_layer_ref_ids.append(id)
+
+
+        # 处理第二层节点之间的关系 （此过程没有添加节点）
         print "第二层节点之间关系建立"
         for ref2_id in second_layer_ref_ids:
 
-            # 如果总节点数超过限制，则终止循环
-            if len(self.total_node_list) > self.node_limit:
-                break
-            if ref2_id not in self.total_node_list:
-                self.total_node_list.append(ref2_id)
+            # # 如果总节点数超过限制，则终止循环 ###############################
+            # if len(self.total_node_list) > self.node_limit:
+            #     print "break in 处理第二层节点之间的关系: 1"
+            #     break
+            # if ref2_id not in self.total_node_list:
+            #     self.total_node_list.append(ref2_id)
 
             ref2_id, ref2_title, ref2_year = self.query_paper_id_title_year(ref2_id)
             self.Graph.add_node(ref2_id, paper_title=ref2_title, id=ref2_id, year=ref2_year)
@@ -159,11 +203,12 @@ class ConstructCitationTree():
             ref_ref2_ids = self.my_set.find_one({"paper_id": ref2_id})["ref_id"]
             for ref_ref2_id in ref_ref2_ids:
 
-                # 如果总节点数超过限制，则终止循环
-                if len(self.total_node_list) > self.node_limit:
-                    break
-                if ref_ref2_id not in self.total_node_list:
-                    self.total_node_list.append(ref_ref2_id)
+                # # 如果总节点数超过限制，则终止循环 ###############################
+                # if len(self.total_node_list) > self.node_limit:
+                #     print "break in 处理第二层节点之间的关系: 2"
+                #     break
+                # if ref_ref2_id not in self.total_node_list:
+                #     self.total_node_list.append(ref_ref2_id)
 
                 # 第二层节点引用第二层节点的情况
                 if ref_ref2_id in second_layer_ref_ids:
@@ -172,7 +217,7 @@ class ConstructCitationTree():
                     self.Graph.add_node(ref_ref2_id, paper_title=ref_ref2_title, id=ref_ref2_id, year=ref_ref2_year)
                     self.Graph.add_edge(ref2_id, ref_ref2_id)
 
-                # 第二层节点引用第一层节点的情况
+                # 第二层节点(第一层节点)引用第一层节点的情况
                 if ref_ref2_id in relevant_paper_ids:
                     print "反引用："
                     ref_ref2_id, ref_ref2_title, ref_ref2_year = self.query_paper_id_title_year(ref_ref2_id)
@@ -197,20 +242,20 @@ class ConstructCitationTree():
         # print "edges: ", self.Graph.edges()
         # print "node: ", self.Graph.nodes()
 
-        # colors = []
-        # for node in self.Graph.nodes():
-        #     print node
-        #     if str(node) == paper_title:
-        #         colors.append('r')
-        #     else:
-        #         colors.append('b')
-        #
-        # # nx.draw(self.Graph, with_labels=True)
-        # nx.draw(self.Graph, node_size=100, width=0.3,
-        #         # pos=nx.spring_layout(self.Graph),
-        #         node_color=colors)
-        # plt.savefig(paper_id + "_modify")
-        # plt.show()
+        colors = []
+        for node in self.Graph.nodes():
+            # print node
+            if str(node) == paper_id:
+                colors.append('r')
+            else:
+                colors.append('b')
+
+        # nx.draw(self.Graph, with_labels=True)
+        nw.draw(self.Graph, node_size=100, width=0.3,
+                # pos=nx.spring_layout(self.Graph),
+                node_color=colors)
+        plt.savefig(paper_id + "_modify")
+        plt.show()
 
     # def construct_from_source(self, paper_id):
 

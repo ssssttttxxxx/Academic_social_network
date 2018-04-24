@@ -678,6 +678,36 @@ def public_profile():
     return render_template('public_profile.html', Status=status, authorDetail=author_detail)
 
 
+@api.route('get_paper', methods=['GET'])
+def get_paper():
+    # author_id = request.args.get('authorID')
+    author_name = request.args.get('authorName')
+    result = mongo.db.Paper_of_author.find_one({'author_name': author_name})
+    papers = result['papers']
+    items = []
+
+    for paper in papers:
+        paper_id = paper['paper_id']
+        paper_detail = mongo.db.Citation_total.find_one({'paper_id': paper_id})
+        paper_keywords = []
+        papers_kv = mongo.db.paper_keywords.find_one({'paper_id': paper_id})['keyword_and_val']
+        for paper_kv in papers_kv:
+            paper_keywords.append(paper_kv['keyword'])
+        item = {
+            'paper_id':paper_detail['paper_id'],
+            'title':paper_detail['title'],
+            'co_authors':paper_detail['co_authors'],
+            'year':paper_detail['year'],
+            'abstract':paper_detail['abstarct'],
+            'venue':paper_detail['venue'],
+            'ref_id':paper_detail['ref_id'],
+            'keywords':paper_keywords,
+        }
+
+        items.append(item)
+
+
+
 @api.route('/expert_network', methods=['POST'])
 def expert_network():
     """
@@ -787,49 +817,6 @@ def paper_network():
         edges.append(edges_item)
     return json.dumps({"nodes": nodes, "links": edges})
 
-
-@api.route('/author_paper', methods=['GET'])
-@api.route('/author_paper/<string:author_name>')
-def author_paper():
-    """
-    返回作者的所有论文
-    :param author_name:
-    :return:
-    """
-    author_name = request.args.get('name')
-    print "author name: ", author_name
-    results = mongo.db.Co_authors_added_year_title_abstract.find({'co_authors': author_name})
-    papers = []
-    for result in results:
-        id = result['paper_id']
-        title = result['title']
-        co_authors = result['co_authors']
-        year = result['year']
-        abstract = result['abstract']
-        paper = {
-            "id": id,
-            "title": title,
-            "co_authors": co_authors,
-            "year": year,
-            "abstract": abstract,
-        }
-        papers.append(paper)
-        print papers
-    return render_template("blank.html", papers=papers)
-    # return json.dumps(papers)
-
-
-@api.route('/author_detail', methods=['GET'])
-@api.route('/author_detail/<string:author_name>')
-def author_detail(author_name=None):
-    """
-    返回作者的详细信息
-    :param author_name:
-    :return:
-    """
-    print "author_name: ", author_name
-    author_detail = Expert_detail_total.query.filter_by(name=author_name).first()
-    return render_template('asn_detail.html', author=author_detail)
 
 
 @api.route('/insert_new_item', methods=['POST'])
@@ -1257,3 +1244,5 @@ def get_upload_paper():
         return json.dumps({'result': 'success', 'paperItem': files})
     except Exception, e:
         return json.dumps({'result': 'fail', 'msg': 'database query fail'})
+
+

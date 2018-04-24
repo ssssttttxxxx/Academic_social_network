@@ -144,8 +144,8 @@
                                                     <div class="search-result">
                                                         <img alt="image" :src="item.avatarSrc" width="50px" height="50px" style="float: left;margin: 0px 10px;">
                                                         <div style="margin-left: 75px;">
-                                                            <h3><a href="#">{{ item.title }}</a></h3>
-                                                            <a href="#" class="search-link">{{ item.subtitle }}</a>
+                                                            <h3><a>{{ item.title }}</a></h3>
+                                                            <a href="" class="search-link">{{ item.subtitle }}</a>
                                                             <p>{{ item.profile }}</p>  
                                                         </div>
                                                     </div>
@@ -176,7 +176,7 @@
                                                     <div class="search-result" >
                                                         <img alt="image" :src="item.avatarSrc" width="50px" height="50px" style="float: left;margin: 0px 10px;">
                                                         <div style="margin-left: 75px;">
-                                                            <h3><a href="#">{{ item.title }}</a></h3>
+                                                            <h3><a v-on:click="toPublicProfile(item.ID)">{{ item.title }}</a></h3>
                                                             <a href="#" class="search-link">{{ item.subtitle }}</a>
                                                             <p>{{ item.profile }}</p>
                                                         </div>
@@ -262,7 +262,8 @@
                 avatarSrc: res.author[i].avatar,
                 title: res.author[i].name,
                 subtitle: 'h-index: ' + res.author[i].h_index + ' | ' +  'g-index: ' + res.author[i].g_index,
-                profile: res.author[i].tags
+                profile: res.author[i].tags,
+                ID: res.author[i].id
             })
         }
 
@@ -339,8 +340,11 @@
                         console.log("asdfjasd")
                         that.loading = true
                         searchProcess("paper", that.searchContent, 1, 1);
-                        // searchProcess("author", that.searchContent, 1);
+                        searchProcess("author", that.searchContent, 1, 1);
                     }
+                },
+                toPublicProfile: function(ID) {
+                    window.open("/api/public_profile?id=" + ID);
                 }
             }
         })

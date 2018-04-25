@@ -240,7 +240,7 @@
             {% else %}
             searchContent: "",
             {% endif %}
-            paperItems:[], 
+            paperItems: [],
             authorItems: [],
             loading: false
         }
@@ -277,7 +277,7 @@
 
 
         function searchProcess(searchType, searchContent, searchPaperPage, searchAuthorPage) {
-            window.location.href = "/api/search?type=" + searchType + "&content=" + searchContent + "&p_page=" + searchPaperPage + "&a_page=" + searchAuthorPage
+            window.location.href = "/api/search_result?type=" + searchType + "&content=" + searchContent + "&p_page=" + searchPaperPage + "&a_page=" + searchAuthorPage
             
             // $.ajax({
             //     url: "/api/search_result",
@@ -341,7 +341,7 @@
                         console.log("asdfjasd")
                         that.loading = true
                         searchProcess("paper", that.searchContent, 1, 1);
-                        searchProcess("author", that.searchContent, 1, 1);
+                        // searchProcess("author", that.searchContent, 1, 1);
                     }
                 },
                 toPublicProfile: function(ID) {

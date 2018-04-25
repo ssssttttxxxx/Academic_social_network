@@ -3,4 +3,4 @@ from app import app
 
 if __name__ == '__main__':
     # app.run(debug=True, host='localhost')
-    app.run(host='localhost')
+    app.run(host='localhost', threaded=True)

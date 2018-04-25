@@ -38,6 +38,10 @@
 	<link href="../static/footable/css/footable.core.css" type="text/css" rel="stylesheet" />
 	<script src="../static/footable/js/footable.all.min.js"></script>
 
+    <!-- sweetalert -->
+    <link href="../static/sweetalert/css/sweetalert.css" rel="stylesheet">
+    <script src="../static/sweetalert/js/sweetalert.min.js"></script>
+
     <link href="../static/common/animate.css" rel="stylesheet">
     <link href="../static/common/style.css" rel="stylesheet">
     <link href="../static/common/style2.css" rel="stylesheet">
@@ -114,13 +118,13 @@
 				                            </h2>
 			                            </div>
 			                            <img :src="author_avatarSrc" class="img-circle circle-border m-b-md" alt="profile" width="140px" height="140px">
-			                            <div>
-			                            	<div class="btn-group" v-if="isFollow" v-on:click="toUnfollow" id="btn-follow">
+			                            <div v-show="loginStatus">
+			                            	<div class="btn-group" v-if="isFollow" v-on:click="toUnfollow(authorID)" id="btn-follow">
 			                            		<a class="btn btn-sm btn-white" style="background:transparent;">
 							                    	<i class="fa fa-user-times"></i> Following
 							                    </a>
 							                </div>
-							                <div class="btn-group" v-else v-on:click="toFollow">
+							                <div class="btn-group" v-else v-on:click="toFollow(authorID)">
 							                    <a class="btn btn-sm btn-white" style="background:transparent;">
 							                    	<i class="fa fa-user-plus"></i> Follow
 							                    </a>
@@ -129,9 +133,9 @@
 			                        </div>
 			                        <div class="widget-text-box">
 			                            <div class="text-center">
-			                            	<a href="#tab-1" id="toTab1"><small class="label label-danger"><i class="fa fa-hand-paper-o"></i> 100 发表</small></a> |
-			                                <a href="#tab-2" id="toTab2"><small class="label label-info"><i class="fa fa-hand-paper-o"></i> 350 关注</small></a> |
-			                                <a href="#tab-3" id="toTab3"><small class="label label-warning"><i class="fa fa-hand-paper-o"></i> 610 粉丝</small></a> 
+			                            	<a href="#tab-1" id="toTab1"><small class="label label-danger"><i class="fa fa-hand-paper-o"></i> {{ paper_list_total }} 发表</small></a> |
+			                                <a href="#tab-2" id="toTab2"><small class="label label-info"><i class="fa fa-hand-paper-o"></i> {{ following_list_total }} 关注</small></a> |
+			                                <a href="#tab-3" id="toTab3"><small class="label label-warning"><i class="fa fa-hand-paper-o"></i> {{ followed_list_total }} 粉丝</small></a> 
 			                            </div>
 			                        </div>
 			                    </div>
@@ -173,8 +177,8 @@
                     <div class="tabs-container">
                         <div class="tabs-left">
 	                        <ul class="nav nav-tabs" id="mainTab">
-	                            <li class="active"><a data-toggle="tab" href="#tab-1" id="tab1"><i class="fa fa-circle text-info"></i> Ta的关注&nbsp;&nbsp;<span class="badge badge-info">10</span></a></li>
-	                            <li class=""><a data-toggle="tab" href="#tab-2" id="tab2"><i class="fa fa-circle text-warning"></i> 谁关注Ta&nbsp;&nbsp;<span class="badge badge-warning">6</span></a></li>
+	                            <li class="active"><a data-toggle="tab" href="#tab-1" id="tab1"><i class="fa fa-circle text-info"></i> Ta的关注&nbsp;&nbsp;<span class="badge badge-info">{{ following_list_total }}</span></a></li>
+	                            <li class=""><a data-toggle="tab" href="#tab-2" id="tab2"><i class="fa fa-circle text-warning"></i> 谁关注Ta&nbsp;&nbsp;<span class="badge badge-warning">{{ followed_list_total }}</span></a></li>
 	                            <li class=""><a data-toggle="tab" href="#tab-3" id="tab3"><i class="fa fa-circle text-danger"></i> Ta的论文&nbsp;&nbsp;<span class="badge badge-danger">{{ paper_list_total }}</span></a></li>
 	                            <li class=""><a data-toggle="tab" href="#tab-4" id="tab4"><i class="fa fa-circle text-muted"></i> 关系图</a></li>
 	                        </ul>
@@ -185,156 +189,32 @@
 	                                		<div class="ibox-content">
 		                            	        <div class="wrapper wrapper-content animated fadeInRight">
 											        <div class="row">
-											            <div class="col-md-4">
+
+														<div class="col-md-4" v-for="item in author_following_list">
 											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
+											                    <a v-on:click="toPublicProfile(item.profile.id)">
 												                    <div class="col-sm-5">
 												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" :src="item.profile.avatar" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">{{ item.profile.education }}</div>
+												                            <img alt="image" src="../static/common/img/male.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;" v-if="item.profile.gender==='0'">
+												                        	<img alt="image" src="../static/common/img/female.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;" v-else>
 												                        </div>
 												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
+												                    <div class="col-sm-7" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+												                        <h4>
+												                        	<strong>{{ item.profile.name }}</strong>
+												                        	
+												                        </h4>
+												                        <p><i class="fa fa-institution"></i> {{ item.profile.department }}</p>
+												                        <p><i class="fa fa-map-marker"></i> {{ item.profile.address }}</p>
+												                        <p><i class="fa fa-phone"></i> {{ item.profile.phone }}</p>
 												                    </div>
 												                    <div class="clearfix"></div>
 										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-users"></i> Following</a>
-													                </div>
-													            </div>
 											                </div>
 											            </div>
-											            <div class="col-md-4">
-											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
-												                    <div class="col-sm-5">
-												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
-												                        </div>
-												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
-												                    </div>
-												                    <div class="clearfix"></div>
-										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-users"></i> Following</a>
-													                </div>
-													            </div>
-											                </div>
-											            </div>
-											            <div class="col-md-4">
-											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
-												                    <div class="col-sm-5">
-												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
-												                        </div>
-												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
-												                    </div>
-												                    <div class="clearfix"></div>
-										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-users"></i> Following</a>
-													                </div>
-													            </div>
-											                </div>
-											            </div>
-											            <div class="col-md-4">
-											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
-												                    <div class="col-sm-5">
-												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
-												                        </div>
-												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
-												                    </div>
-												                    <div class="clearfix"></div>
-										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-users"></i> Following</a>
-													                </div>
-													            </div>
-											                </div>
-											            </div>
-											            <div class="col-md-4">
-											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
-												                    <div class="col-sm-5">
-												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
-												                        </div>
-												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
-												                    </div>
-												                    <div class="clearfix"></div>
-										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-users"></i> Following</a>
-													                </div>
-													            </div>
-											                </div>
-											            </div>
-											            <div class="col-md-4">
-											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
-												                    <div class="col-sm-5">
-												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
-												                        </div>
-												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
-												                    </div>
-												                    <div class="clearfix"></div>
-										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-users"></i> Following</a>
-													                </div>
-													            </div>
-											                </div>
-											            </div>
+														
 											        </div>
 											    </div>
 											</div>
@@ -347,156 +227,31 @@
 											<div class="ibox-content">
 		                            	        <div class="wrapper wrapper-content animated fadeInRight">
 											        <div class="row">
-											            <div class="col-md-4">
+
+											            <div class="col-md-4" v-for="item in author_followed_list">
 											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
+											                    <a v-on:click="toPublicProfile(item.profile.id)">
 												                    <div class="col-sm-5">
 												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
+												                            <img alt="image" class="img-circle m-t-xs img-responsive" :src="item.profile.avatar" width="64px" height="64px">
+												                            <div class="m-t-xs font-bold">{{ item.profile.education }}</div>
+												                            <img alt="image" src="../static/common/img/male.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;" v-if="item.profile.gender==='0'">
+												                        	<img alt="image" src="../static/common/img/female.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;" v-else>
 												                        </div>
 												                    </div>
 												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
+												                        <h3>
+												                        	<strong>{{ item.profile.name }}</strong>
+												                        </h3>
+												                        <p><i class="fa fa-institution"></i> {{ item.profile.department }}</p>
+												                        <p><i class="fa fa-map-marker"></i> {{ item.profile.address }}</p>
+												                        <p><i class="fa fa-phone"></i> {{ item.profile.phone }}</p>
 												                    </div>
 												                    <div class="clearfix"></div>
 										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
-													                </div>
-													            </div>
 											                </div>
 											            </div>
-											            <div class="col-md-4">
-											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
-												                    <div class="col-sm-5">
-												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
-												                        </div>
-												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
 
-												                    </div>
-												                    <div class="clearfix"></div>
-										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
-													                </div>
-													            </div>
-											                </div>
-											            </div>
-											            <div class="col-md-4">
-											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
-												                    <div class="col-sm-5">
-												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
-												                        </div>
-												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
-												                    </div>
-												                    <div class="clearfix"></div>
-										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
-													                </div>
-													            </div>
-											                </div>
-											            </div>
-											            <div class="col-md-4">
-											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
-												                    <div class="col-sm-5">
-												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
-												                        </div>
-												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
-												                    </div>
-												                    <div class="clearfix"></div>
-										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
-													                </div>
-													            </div>
-											                </div>
-											            </div>
-											            <div class="col-md-4">
-											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
-												                    <div class="col-sm-5">
-												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
-												                        </div>
-												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
-												                    </div>
-												                    <div class="clearfix"></div>
-										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
-													                </div>
-													            </div>
-											                </div>
-											            </div>
-											            <div class="col-md-4">
-											                <div class="contact-box" style="padding: 10px;">
-											                    <a href="profile.html">
-												                    <div class="col-sm-5">
-												                        <div class="text-center">
-												                            <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/a4.jpg" width="64px" height="64px">
-												                            <div class="m-t-xs font-bold">博士</div>
-												                        </div>
-												                    </div>
-												                    <div class="col-sm-7">
-												                        <h3><strong>张三</strong></h3>
-												                        <p><i class="fa fa-institution"></i> 华南理工大学</p>
-												                        <p><i class="fa fa-map-marker"></i> 广州大学城</p>
-												                        <p><i class="fa fa-phone"></i> 1377777777</p>
-
-												                    </div>
-												                    <div class="clearfix"></div>
-										                        </a>
-					                                            <div class="contact-box-footer" style="padding: 4px 0px 0px 0px;">
-													                <div class="m-t-xs btn-group">
-													                    <a class="btn btn-sm btn-white followBtn"><i class="fa fa-user-plus"></i> Follow</a>
-													                </div>
-													            </div>
-											                </div>
-											            </div>
 											        </div>
 											    </div>
 											</div>
@@ -637,7 +392,6 @@
         });
 
         //作者信息
-
         var res = JSON.parse([[authorDetail|tojson]])
         data2 = {
         	author_name: res.name,
@@ -648,12 +402,18 @@
         	author_address: res.address,
         	author_telephone: res.phone,
         	author_avatarSrc: res.avatar,
-        	isFollow: false,
+        	authorID: res.id,
+        	isFollow: res.isFollow,
         	tagSource: res.tags,
         	paperList: res.paper_list,
-        	paper_list_total: res.paper_list.length
+        	paper_list_total: res.paper_list.length,
+        	loginStatus: [[Status.loginStatus|tojson]],
+        	author_following_list: [],
+        	author_followed_list: [],
+        	following_list_total: '',
+        	followed_list_total: '',
         }
-        console.log(data2.paperList)
+
         if (res.name_zh !== '') {
         	data2.author_name_zh = '(' + res.name_zh + ')'
         }
@@ -661,15 +421,85 @@
         	data2.author_avatarSrc = '../static/avatar/init.png'
         }
 
+        $.ajax({
+    		url: '/api/get_follow',
+    		type: 'POST',
+    		data: {
+    			id: res.id
+    		},
+    		success: function(data) {
+    			var res = JSON.parse(data);
+    			if (res.result === "success") {
+					for (var i=0;i<res.follow.length;i++) {
+    					data2.author_following_list.push({
+    						profile: res.follow[i].profile
+    					})
+    				}
+    				
+    				for (var i=0;i<res.followed.length;i++) {
+    					data2.author_followed_list.push({
+    						profile: res.followed[i].profile
+    					})
+    				}
+
+    				data2.following_list_total = res.follow.length
+    				data2.followed_list_total = res.followed.length
+    			}
+    		},
+    		error: function() {
+    			console.log("getFollowList,error");
+    		}
+    	});
+
         var app2 = new Vue({
         	el: '#author_profile',
         	data: data2,
         	methods: {
-        		toFollow: function() {
-        			this.isFollow = true;
+        		toFollow: function(publicID) {
+        			var that = this
+        			$.ajax({
+			    		url: '/api/to_follow',
+			    		type: 'POST',
+			    		data: {
+			    			id: publicID
+			    		},
+			    		success: function(data) {
+			    			var res = JSON.parse(data);
+			    			if (res.result === "success") {
+			    				that.isFollow = true;
+			    				swal("关注成功! ", "", "success");
+			    			}
+			    			else {
+			    				swal("关注失败! ", "请重新关注! ", "error");
+			    			}
+			    		},
+			    		error: function() {
+			    			swal("请求关注失败! ", "请重新关注! ", "error");
+			    		}
+			    	});
         		},
-        		toUnfollow: function() {
-        			this.isFollow = false;
+        		toUnfollow: function(publicID) {
+        			var that = this
+        			$.ajax({
+			    		url: '/api/cancel_follow',
+			    		type: 'POST',
+			    		data: {
+			    			id: publicID
+			    		},
+			    		success: function(data) {
+			    			var res = JSON.parse(data);
+			    			if (res.result === "success") {
+			    				that.isFollow = false;
+			    				swal("取消关注成功! ", "", "success");
+			    			}
+			    			else {
+			    				swal("取消关注失败! ", "请重新取消关注! ", "error");
+			    			}
+			    		},
+			    		error: function() {
+			    			swal("请求取消关注失败! ", "请重新取消关注! ", "error");
+			    		}
+			    	});
         		},
         		toSearchPage: function(searchContent) {
         			window.open("/api/search?type=paper" + "&content=" + searchContent + "&p_page=1&a_page=1")

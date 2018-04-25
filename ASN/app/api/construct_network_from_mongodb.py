@@ -81,7 +81,7 @@ class ConstructCitationTree():
 
             # 如果总节点数超过限制，则终止循环
             if len(self.total_node_list) > self.node_limit:
-                print "break in 处理第一层引用节点与根节点的关系"
+                # print "break in 处理第一层引用节点与根节点的关系"
                 break
             if id not in self.total_node_list:
                 self.total_node_list.append(id)
@@ -97,13 +97,13 @@ class ConstructCitationTree():
         second_layer_ref_ids = [] # 存储第二层节点的数组
 
         # 处理第一层引用节点与第二层引用节点的关系
-        print "第一层节点与第二层节点（第一层之间）关系建立"
+        # print "第一层节点与第二层节点（第一层之间）关系建立"
 
         for relevant_paper_id in relevant_paper_ids:
 
             # # 如果总节点数超过限制，则终止循环 ###############################
             if len(self.total_node_list) > self.node_limit:
-                print "break in 处理第一层引用节点与第二层引用节点的关系：1"
+                # print "break in 处理第一层引用节点与第二层引用节点的关系：1"
                 break
             if relevant_paper_id not in self.total_node_list:
                 self.total_node_list.append(relevant_paper_id)
@@ -131,7 +131,7 @@ class ConstructCitationTree():
 
                 # # 如果总节点数超过限制，则终止循环 ###############################
                 if len(self.total_node_list) > self.node_limit:
-                    print "break in 处理第一层引用节点与第二层引用节点的关系：2"
+                    # print "break in 处理第一层引用节点与第二层引用节点的关系：2"
                     break
                 if rel_ref_id not in self.total_node_list:
                     self.total_node_list.append(rel_ref_id)
@@ -140,7 +140,6 @@ class ConstructCitationTree():
                 if rel_ref_id not in second_layer_ref_ids:
                     second_layer_ref_ids.append(rel_ref_id)
 
-                # if rel_ref_id in relevant_paper_ids:
 
                 rel_ref_id, rel_ref_title, rel_ref_year\
                     = self.query_paper_id_title_year(rel_ref_id)
@@ -169,11 +168,11 @@ class ConstructCitationTree():
                 title = ref2_rel1_node['title']
                 id = ref2_rel1_node['paper_id']
                 year = ref2_rel1_node['year']
-                print "引用第一层节点的文章：", title
+                # print "引用第一层节点的文章：", title
 
                 # # 如果总节点数超过限制，则终止循环 ###############################
                 if len(self.total_node_list) > self.node_limit:
-                    print "break in 处理第一层引用节点与根节点的关系"
+                    # print "break in 处理第一层引用节点与根节点的关系"
                     break
                 if id not in self.total_node_list:
                     self.total_node_list.append(id)
@@ -213,17 +212,17 @@ class ConstructCitationTree():
                 # 第二层节点引用第二层节点的情况
                 if ref_ref2_id in second_layer_ref_ids:
                     ref_ref2_id, ref_ref2_title, ref_ref2_year = self.query_paper_id_title_year(ref_ref2_id)
-                    print ref2_title, "引用", ref_ref2_title
+                    # print ref2_title, "引用", ref_ref2_title
                     self.Graph.add_node(ref_ref2_id, paper_title=ref_ref2_title, id=ref_ref2_id, year=ref_ref2_year)
                     self.Graph.add_edge(ref2_id, ref_ref2_id)
 
                 # 第二层节点(第一层节点)引用第一层节点的情况
                 if ref_ref2_id in relevant_paper_ids:
-                    print "反引用："
+                    # print "反引用："
                     ref_ref2_id, ref_ref2_title, ref_ref2_year = self.query_paper_id_title_year(ref_ref2_id)
                     self.Graph.add_node(ref_ref2_id, paper_title=ref_ref2_title, id=ref_ref2_id, year=ref_ref2_year)
                     # ref2_id, ref2_title, ref2_year = self.query_paper_id_title_year(ref2_id)
-                    print ref2_title, "引用", ref_ref2_title
+                    # print ref2_title, "引用", ref_ref2_title
                     self.Graph.add_edge(ref2_id, ref_ref2_id)
 
                     # for relevant_paper_id in relevant_paper_ids:

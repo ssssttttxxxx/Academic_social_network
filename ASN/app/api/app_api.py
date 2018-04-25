@@ -199,12 +199,12 @@ def registBussiness():
 
         # 发送验证邮件
         to_email = '709778550@qq.com'
-        token = generate_confirmation_token(email)
-        confirm_url = url_for('api.confirm_email', token=token, _external=True)
-        print "confirm_url", confirm_url
-        html = render_template('activate.html', confirm_url=confirm_url)
-        subject = "Please confirm your email"
-        send_email('709778550@qq.com', subject, html)
+        # token = generate_confirmation_token(email)
+        # confirm_url = url_for('api.confirm_email', token=token, _external=True)
+        # print "confirm_url", confirm_url
+        # html = render_template('activate.html', confirm_url=confirm_url)
+        # subject = "Please confirm your email"
+        # send_email('709778550@qq.com', subject, html)
 
         # 注册时添加到作者表中
         try:
@@ -233,8 +233,10 @@ def registBussiness():
             logging.error(error_msg)
 
         # 注册时在mongodb初始化关注列表
-        mongo_user = {"email": email, "follow": []}
-        mongo.db.follow.insert_one(mongo_user)
+        mongo_follow = {"id": email, "follow": []}
+        mongo.db.follow.insert_one(mongo_follow)
+        mongo_followed = {"id": email, "followed": []}
+        mongo.db.mongo_followed.insert_one(mongo_followed)
 
         # login_user(user)
         flash('注册成功!请登录!')
@@ -278,72 +280,47 @@ def reset():
     return jsonify(error=False)
 
 
-@api.route('/ref_id')
-@api.route('/ref_id/<string:paper_id>')
-def ref_id(paper_id=None):
-    """
-    返回paper的id和paper引文的id
-    :param paper_id:
-    :return:
-    """
-    print "id", paper_id
-    # data = {'id':paper_id, 'detail':'fxxx'}
-    # mongo.db.C.insert_one(data)
-    if paper_id is None:
-        paper = mongo.db.Citation.find()
-        return render_template('blank.html')
-    else:
-        paper = mongo.db.Citation.find_one({'paper_id': paper_id})
-        if paper is not None:
-            paper_detail = {
-                "paper_id": paper["paper_id"],
-                "ref_id": paper["ref_id"]
-            }
-            print paper_detail
-            return render_template('blank.html', papers=[paper_detail])
-            # return paper_detail
-        else:
-            return "no paper found!fxxx_ref_id"
-            # return "insert!!"
+@api.route('/paper_authors', methods=['GET'])
+def paper_authors():
+    searchtext = request.args.get('content', default='*', type=str).strip()
+    search_type = request.args.get('type', default='paper', type=str)
+    paper_page_num = request.args.get('p_page', default=1, type=int)
+    author_page_num = request.args.get('a_page', default=1, type=int)
+    if search_type == "author":
+        authors = db.session.query(Expert_detail_total).filter(
+            Expert_detail_total.name.like('%' + searchtext + '%')).all()
+        if len(authors) == 1:
+            id = authors[0].id
+            return redirect(url_for('api.public_profile', ID=id))
+    return redirect(
+        url_for('api.search', type=search_type, content=searchtext, p_page=paper_page_num, a_page=author_page_num))
 
 
-@api.route('/expert_search')
-@api.route('/expert_search/<string:expert_name>')
-def search_expert(expert_name=None):
-    """
-    返回作者的搜索结果
-    :param expert_name:
-    :return:
-    """
-    page = 1
-    pagesize = 20
-    print "name", expert_name
-
-    if expert_name is None:
-        return render_template("asn_detail.html")
-    else:
-        # cursor = mysql_db.cursor()
-        # sql = "select * from expert_user_detail where name like '%" + expert_name + "%'"
-        # print "sql", sql
-        # cursor.execute(sql)
-        # results = cursor.fetchall()
+@api.route('/search_result', methods=['GET', 'POST'])
+def search_result():
+    if request.method == 'GET':
+        print 'GET'
+        searchtext = request.args.get('content', default='*', type=str).strip()
+        search_type = request.args.get('type', default='paper', type=str)
+        paper_page_num = request.args.get('p_page', default=1, type=int)
+        author_page_num = request.args.get('a_page', default=1, type=int)
 
 
-        results = db.session.query(Expert_detail_total).filter(
-            Expert_detail_total.name.like('%' + expert_name + '%')).order_by(Expert_detail_total.name).all()
-        if results is not None:
-            print "results", results
-            for index, result in enumerate(results):
-                print index, result
-                # if result is not None:
-                try:
-                    print index, result.name
-                except:
-                    print index, "result is None"
-                    # print result.name
-            return render_template('asn_detail.html', experts=results)
-        else:
-            return "no expert found!fxxx_expert_detail"
+    elif request.method == 'POST':
+        print 'POST'
+        searchtext = request.form.get('content', default='*', type=str).strip()
+        search_type = request.form.get('type', default='paper', type=str)
+        paper_page_num = request.form.get('p_page', default=1, type=int)
+        author_page_num = request.form.get('a_page', default=1, type=int)
+
+    # print "p_page", paper_page_num
+    # print "a_page", author_page_num
+    # print "content", searchtext
+    print "type", search_type
+
+
+    return redirect(
+        url_for('api.search', type=search_type, content=searchtext, p_page=paper_page_num, a_page=author_page_num))
 
 
 @api.route('/search', methods=['POST', 'GET'])
@@ -371,7 +348,7 @@ def search():
     author_page_num = int(request.args.get('a_page'))
 
     nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
-    print "home current user:", nowUser
+    # print "home current user:", nowUser
     if not nowUser:
         print "not current user"
         status = {"loginStatus": False}
@@ -405,7 +382,7 @@ def search():
 
         author_num = db.session.query(Expert_detail_total).filter(
             Expert_detail_total.name.like('%' + searchtext + '%')).count()
-        print "author_num", author_num
+        # print "author_num", author_num
 
         author_total_page = int(math.ceil(author_num / float(item_number)))
         if author_total_page == 0:
@@ -528,35 +505,11 @@ def search():
     # return redirect(url_for('user.search_results', SearchContent=searchtext, Results=results), code=302, Response=None)
 
 
-@api.route('/search_result', methods=['GET', 'POST'])
-def search_result():
-    if request.method == 'GET':
-        print 'GET'
-        searchtext = request.args.get('content', default='*', type=str).strip()
-        search_type = request.args.get('type', default='paper', type=str)
-        paper_page_num = request.args.get('p_page', default=1, type=int)
-        author_page_num = request.args.get('a_page', default=1, type=int)
-
-
-    elif request.method == 'POST':
-        print 'POST'
-        searchtext = request.form.get('content', default='*', type=str).strip()
-        search_type = request.form.get('type', default='paper', type=str)
-        paper_page_num = request.form.get('p_page', default=1, type=int)
-        author_page_num = request.form.get('a_page', default=1, type=int)
-
-    print "p_page", paper_page_num
-    print "a_page", author_page_num
-    print "content", searchtext
-    print "type", search_type
-
-    return redirect(
-        url_for('api.search',type=search_type, content=searchtext, p_page=paper_page_num, a_page=author_page_num))
-
 @api.route('/to_public_profile', methods=['GET'])
 def to_public_profile():
     id = request.args.get('id')
     return redirect(url_for('api.public_profile', ID=id))
+
 
 @api.route('/public_profile', methods=['GET'])
 def public_profile():
@@ -578,11 +531,14 @@ def public_profile():
         print "with current user"
         status = {"loginStatus": True}
 
+    if not nowUser:
+        is_followed_flag = False
+    else:
+        is_followed_flag = is_followed(id)
+
+
     author_name = result.name
-    print "author_name",author_name
-    print "查询论文"
     paper_result = mongo.db.Paper_of_author.find_one({'author_name':author_name})
-    print "end"
     paper_detail_list = []
 
     if paper_result is not None:
@@ -618,7 +574,8 @@ def public_profile():
         "cite_num": result.cite_num,
         "tags": tags,
         "author_id": result.author_id,
-        "paper_list": paper_detail_list
+        "paper_list": paper_detail_list,
+        "isFollow": is_followed_flag
     }
 
 
@@ -626,34 +583,6 @@ def public_profile():
     author_detail_json = json.dumps(author_detail)
     return render_template('public_profile.html', Status=status, authorDetail=author_detail_json)
 
-
-@api.route('get_paper', methods=['GET'])
-def get_paper():
-    # author_id = request.args.get('authorID')
-    author_name = request.args.get('authorName')
-    result = mongo.db.Paper_of_author.find_one({'author_name': author_name})
-    papers = result['papers']
-    items = []
-
-    for paper in papers:
-        paper_id = paper['paper_id']
-        paper_detail = mongo.db.Citation_total.find_one({'paper_id': paper_id})
-        paper_keywords = []
-        papers_kv = mongo.db.paper_keywords.find_one({'paper_id': paper_id})['keyword_and_val']
-        for paper_kv in papers_kv:
-            paper_keywords.append(paper_kv['keyword'])
-        item = {
-            'id':paper_detail['paper_id'],
-            'title':paper_detail['title'],
-            'co_authors':paper_detail['co_authors'],
-            'year':paper_detail['year'],
-            'abstract':paper_detail['abstract'],
-            'venue':paper_detail['venue'],
-            'ref_id':paper_detail['ref_id'],
-            'keywords':paper_keywords,
-        }
-
-        items.append(item)
 
 @api.route('/to_paper_detail', methods=['GET'])
 def to_paper_detail():
@@ -674,11 +603,31 @@ def paper_detail():
     else:
         print "with current user"
         status = {"loginStatus": True}
+
     paper = mongo.db.Citation_total.find_one({'paper_id': paper_id})
+
     paper_keywords = []
     papers_kv = mongo.db.paper_keywords.find_one({'paper_id': paper_id})['keyword_and_val']
     for paper_kv in papers_kv:
         paper_keywords.append(paper_kv['keyword'])
+
+
+    ref_list = paper['ref_id']
+    ref_paper_list = []
+    for ref_id in ref_list:
+        ref_paper = mongo.db.Citation_total.find_one({'paper_id': ref_id})
+        ref_paper_detail = {
+            'id': ref_paper['paper_id'],
+            'title': ref_paper['title'],
+            'co_authors': ref_paper['co_authors'],
+            'abstract': ref_paper['abstract'],
+            'venue': ref_paper['venue'],
+            'year': ref_paper['year'],
+            'ref_id': ref_paper['ref_id'],
+            'keywords': paper_keywords,
+        }
+        ref_paper_list.append(ref_paper_detail)
+
     paper_detail = {
         'id': paper['paper_id'],
         'title': paper['title'],
@@ -686,12 +635,11 @@ def paper_detail():
         'abstract':paper['abstract'],
         'venue': paper['venue'],
         'year': paper['year'],
-        'ref_id': paper['ref_id'],
+        'ref_id': ref_paper_list,
         'keywords': paper_keywords,
     }
     paper_detail_json = json.dumps(paper_detail)
     return render_template('paper_detail.html', paperDetail=paper_detail_json, Status=status)
-
 
 
 @api.route('/expert_network', methods=['POST'])
@@ -802,7 +750,6 @@ def paper_network():
         }
         edges.append(edges_item)
     return json.dumps({"nodes": nodes, "links": edges})
-
 
 
 @api.route('/insert_new_item', methods=['POST'])
@@ -955,21 +902,189 @@ def modify_user():
         print "error: ", e
         return json.dumps({'result': 'fail'})
 
+@api.route('/get_follow', methods=['POST'])
+def get_follow():
+    """
+    得到关注和被关注信息
+    :return:
+    """
+    # 获取follow信息
+    current_id = request.form.get('id')
+    result_follow = mongo.db.follow.find_one({'email':current_id})
+    if result_follow is None:
+        follow_list = []
+    else:
+        follow_list = result_follow['follow']
 
-@api.route('/follow', methods=['POST'])
-@login_required
-def follow():
+    follow_detail = []
+    for id in follow_list:
+        try:
+            follow_author = db.session.query(Expert_detail_total).filter(Expert_detail_total.id == id).first()
+        except:
+            return json.dumps({'result': 'fail'})
+
+        gender = "0" if follow_author.gender == 'male' else "1"
+        item = {
+            "id": follow_author.id,
+            "name": follow_author.name,
+            "phone": follow_author.phone,
+            "department": follow_author.department,
+            "address": follow_author.address,
+            "education": follow_author.education,
+            "avatar": follow_author.avatar,
+            "gender": gender
+        }
+        detail = {'profile': item}
+
+        follow_detail.append(detail)
+
+    # 获取followed信息
+    result_followed = mongo.db.followed.find_one({'id':current_id})
+    if result_followed is None:
+        followed_list = []
+    else:
+        followed_list = result_followed['followed']
+
+    followed_detail = []
+    for id in followed_list:
+        try:
+            followed_author = db.session.query(Expert_detail_total).filter(Expert_detail_total.id == id).first()
+        except:
+            return json.dumps({'result': 'fail'})
+
+        if id in follow_list:
+            is_followed_flag = True
+        else:
+            is_followed_flag = False
+        gender = "0" if followed_author.gender == 'male' else "1"
+        item = {
+            "id": followed_author.id,
+            "name": followed_author.name,
+            "phone": followed_author.phone,
+            "department": followed_author.department,
+            "address": followed_author.address,
+            "education": followed_author.education,
+            "avatar": followed_author.avatar,
+            "gender": gender
+        }
+        detail = {'profile': item, 'isFollow': is_followed_flag}
+        followed_detail.append(detail)
+
+    return json.dumps({'result': 'success', 'follow': follow_detail, 'followed': followed_detail})
+
+
+# @api.route('/is_followed', methods=['POST'])
+def is_followed(author_id):
+    """
+    返回用户管对author_id的关注状态
+    :return:
+    """
+    # author_id = request.form.get('authorID')
     current_email = current_user.get_id()
-    follow_email = request.args.get("email")
+    try:
+        result_follow = mongo.db.follow.find_one({'email':current_email})
+    except:
+        # return json.dumps({'result':'fail'})
+        pass
+
+    if result_follow is None:
+        # return json.dumps({'result':'success', 'isFollow':False})
+        return False
+    else:
+        follow_list = result_follow['follow']
+        if author_id in follow_list:
+            # return json.dumps({'result':'success', 'isFollow':True})
+            return True
+        else:
+            # return json.dumps({'result':'success', 'isFollow':False})
+            return False
+
+@api.route('/to_follow', methods=['POST'])
+@login_required
+def to_follow():
+    """
+    关注
+    :return:
+    """
+    current_email = current_user.get_id()
+    follow_id = request.form.get("id")
+    print "Follow", follow_id
+
+    # 更新用户follow
+    result_follow = mongo.db.follow.find_one({"email": current_email})
+    if result_follow is None:
+        follow_list = result_follow["follow"]
+
+        if follow_id not in follow_list:
+            follow_list.append(follow_id)
+
+        update_item = {"email": current_email, "follow": follow_list}
+        try:
+            mongo.db.follow.replace_one({'email': current_email}, update_item)
+        except:
+            return json.dumps({'result': 'fail'})
+    else:
+        # 如果用户不存在follow表，则插入
+        follow_list = []
+        follow_list.append(follow_id)
+        new_item = {"email": current_email, "follow": follow_list}
+        mongo.db.follow.insert_one(new_item)
+
+
+    # 更新作者followed
+    result_followed = mongo.db.followed.find_one({'id': follow_id})
+
+    # 如果id没有followed表，则插入
+    if result_followed is None:
+        followed_list = [current_email]
+        new_item = {'id': follow_id, 'followed': followed_list}
+        try:
+            mongo.db.followed.insert_one(new_item)
+        except:
+            return json.dumps({'result': 'fail'})
+    else:
+        followed_list = result_followed['followed']
+        if current_email not in followed_list:
+            followed_list.append(current_email)
+        update_item = {'id': follow_id, 'followed':followed_list}
+        try:
+            mongo.db.followed.replace_one({'id':follow_id}, update_item)
+        except:
+            return json.dumps({'result': 'fail'})
+
+    return json.dumps({"result": "success"})
+
+@api.route('/cancel_follow', methods=['POST'])
+def cancel_follow():
+    """
+    取消关注
+    :return:
+    """
+    current_email = current_user.get_id()
+    follow_id = request.form.get("id")
+
+    # 更新用户follow
     result = mongo.db.follow.find_one({"email": current_email})
     follow_list = result["follow"]
-    if follow_email not in follow_list:
-        follow_list.append(follow_email)
-
+    follow_list.remove(follow_id)
     update_item = {"email": current_email, "follow": follow_list}
-    result = mongo.db.users.replace_one({'email': current_email}, update_item)
-    return json.dumps({"result": "successed"})
+    try:
+        mongo.db.follow.replace_one({'email': current_email}, update_item)
+    except:
+        return json.dumps({'result': 'fail'})
 
+    # 更新作者followed
+    result_follow = mongo.db.followed.find_one({'id': follow_id})
+
+    followed_list = result_follow['followed']
+    followed_list.remove(current_email)
+    update_item = {'id': follow_id, 'followed': followed_list}
+    try:
+        mongo.db.followed.replace_one({'id': follow_id}, update_item)
+    except:
+        return json.dumps({'result': 'fail'})
+
+    return json.dumps({'result':'success'})
 
 @api.route('/modify_password', methods=['POST'])
 @login_required

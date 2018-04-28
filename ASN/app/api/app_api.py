@@ -199,12 +199,12 @@ def registBussiness():
 
         # 发送验证邮件
         to_email = '709778550@qq.com'
-        # token = generate_confirmation_token(email)
-        # confirm_url = url_for('api.confirm_email', token=token, _external=True)
-        # print "confirm_url", confirm_url
-        # html = render_template('activate.html', confirm_url=confirm_url)
-        # subject = "Please confirm your email"
-        # send_email('709778550@qq.com', subject, html)
+        token = generate_confirmation_token(email)
+        confirm_url = url_for('api.confirm_email', token=token, _external=True)
+        print "confirm_url", confirm_url
+        html = render_template('activate.html', confirm_url=confirm_url)
+        subject = "Please confirm your email"
+        send_email(email, subject, html)
 
         # 注册时添加到作者表中
         try:
@@ -367,7 +367,7 @@ def search():
     # print "paper_cache", paper_cache
     # print "author_cache", author_cache
 
-
+    query_time_author = 0
     if search_type == 'paper' and author_cache is not None:
         print "have author cache"
         authors_detail=author_cache
@@ -376,6 +376,7 @@ def search():
         end_item_number = author_page_num * item_number
 
         # 使用mysql查询 not model
+        begin = time.time()
         author_results = db.session.query(Expert_detail_total).filter(
             Expert_detail_total.name.like('%' + searchtext + '%')).order_by(Expert_detail_total.name).slice(
             start_item_number, end_item_number).all()
@@ -383,7 +384,9 @@ def search():
         author_num = db.session.query(Expert_detail_total).filter(
             Expert_detail_total.name.like('%' + searchtext + '%')).count()
         # print "author_num", author_num
-
+        end = time.time()
+        query_time_author = end - begin
+        print "query_time_author", query_time_author
         author_total_page = int(math.ceil(author_num / float(item_number)))
         if author_total_page == 0:
             author_total_page = 1
@@ -437,8 +440,7 @@ def search():
                 authors_detail.append(author_detail)
                 # json_authors_detail = json.dumps({"authors_detail": authors_detail})
 
-
-
+    query_time_paper = 0
     if search_type == 'author' and paper_cache is not None:
         print "have paper cache"
         papers_detail = paper_cache
@@ -450,16 +452,20 @@ def search():
         # paper_results = Paper_detail.query.filter(Paper_detail.title.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
 
         # 使用mongodb查询
+        begin = time.time()
         paper_num = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).count()
         print "paper num", paper_num
 
+        paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
+            start_item_number).sort('title', -1).limit(item_number)
+        end = time.time()
+        query_time_paper = end - begin
+        print "query_time_paper", query_time_paper
         paper_total_page = int(math.ceil(paper_num / float(item_number)))
         if paper_total_page == 0:
             paper_total_page = 1
         print "paper page total", paper_total_page
 
-        paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
-            start_item_number).sort('title', -1).limit(item_number)
 
         if paper_results is not None:
             # 存放所有paper信息的数据
@@ -479,6 +485,17 @@ def search():
     cache.set('paper', papers_detail)
     cache.set('author', authors_detail)
 
+    # query_time = {
+    #     'paperQueryTime': query_time_paper,
+    #     'authorQueryTime': query_time_author
+    # }
+    if search_type == "paper":
+        query_time = round(query_time_paper, 2)
+        result_total = paper_num
+    elif search_type == "author":
+        query_time = round(query_time_author, 2)
+        result_total = author_num
+
     pages = {
         'PaperCurrentPage': paper_page_num,
         'TotalPaperPage': paper_total_page,
@@ -491,6 +508,9 @@ def search():
         'paper': papers_detail,
         'author': authors_detail,
         'pages': pages,
+        'queryTime': query_time,
+        'resultTotal': result_total
+
     }
 
     print "return"
@@ -1012,7 +1032,7 @@ def to_follow():
 
     # 更新用户follow
     result_follow = mongo.db.follow.find_one({"email": current_email})
-    if result_follow is None:
+    if result_follow is not None:
         follow_list = result_follow["follow"]
 
         if follow_id not in follow_list:

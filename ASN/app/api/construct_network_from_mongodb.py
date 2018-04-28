@@ -21,7 +21,7 @@ class ConstructCitationTree():
         # self.my_set = self.mongdb.Citation
         self.paper_id = paper_id
 
-        self.node_limit = 30
+        self.node_limit = 100
         self.total_node_list = []
 
     def construct(self):
@@ -59,7 +59,7 @@ class ConstructCitationTree():
 
             self.Graph.add_node(ref_id, paper_title=ref_title, id=ref_id, year=ref_year)
             self.Graph.add_edge(paper_id, ref_id)
-            print "引用文章id: ", ref_title
+            # print "引用文章id: ", ref_title
 
         # 查询引用根节点的论文 (node ← root)
         try:
@@ -88,7 +88,7 @@ class ConstructCitationTree():
 
             self.Graph.add_node(id, paper_title=title, id=id, year=year)
             self.Graph.add_edge(id, paper_id)
-            print "被引用文章id： ", title
+            # print "被引用文章id： ", title
             relevant_paper_ids.append(id)
 
 
@@ -179,7 +179,7 @@ class ConstructCitationTree():
 
                 self.Graph.add_node(id, paper_title=title, id=id, year=year)
                 self.Graph.add_edge(id, paper_id)
-                print "被引用文章id： ", title
+                # print "被引用文章id： ", title
                 if id not in second_layer_ref_ids:
                     second_layer_ref_ids.append(id)
 

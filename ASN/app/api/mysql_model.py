@@ -79,7 +79,7 @@ class ASNUser(db.Model, UserMixin):
 
 
 class Expert_detail_total(db.Model):
-    __bind_key__ = 'ali'
+    __bind_key__ = 'expert'
     __tablename__ = 'expert_user_detail'
     id = db.Column(db.String(45),  primary_key=True)
     mid = db.Column(db.String(45))

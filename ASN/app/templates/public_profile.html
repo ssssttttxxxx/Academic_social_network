@@ -118,6 +118,7 @@
 				                            </h2>
 			                            </div>
 			                            <img :src="author_avatarSrc" class="img-circle circle-border m-b-md" alt="profile" width="140px" height="140px">
+			                            <p>h-index: {{ author_hIndex }} | g-index: {{ author_gIndex }}</p>
 			                            <div v-show="loginStatus">
 			                            	<div class="btn-group" v-if="isFollow" v-on:click="toUnfollow(authorID)" id="btn-follow">
 			                            		<a class="btn btn-sm btn-white" style="background:transparent;">
@@ -402,6 +403,8 @@
         	author_address: res.address,
         	author_telephone: res.phone,
         	author_avatarSrc: res.avatar,
+        	author_hIndex: res.h_index,
+        	author_gIndex: res.g_index,
         	authorID: res.id,
         	isFollow: res.isFollow,
         	tagSource: res.tags,

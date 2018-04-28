@@ -114,6 +114,9 @@
                             </div>
                         <!-- </form> -->
                     </div>
+                    <div class="search-form">
+                        <small>找到约 {{ results_total }} 条结果 （用时 {{ query_time }} 秒）</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -242,10 +245,14 @@
             {% endif %}
             paperItems: [],
             authorItems: [],
-            loading: false
+            loading: false,
+            results_total: "",
+            query_time: ""
         }
 
         var res = JSON.parse([[Results|tojson]])
+        data2.results_total = res.resultTotal
+        data2.query_time = res.queryTime
         for (var i = 0;i < res.paper.length;i++) {
             data2.paperItems.push({
                 avatarSrc: "../static/common/img/icon-paper.png",
@@ -341,7 +348,7 @@
                         console.log("asdfjasd")
                         that.loading = true
                         searchProcess("paper", that.searchContent, 1, 1);
-                        // searchProcess("author", that.searchContent, 1, 1);
+                        searchProcess("author", that.searchContent, 1, 1);
                     }
                 },
                 toPublicProfile: function(ID) {

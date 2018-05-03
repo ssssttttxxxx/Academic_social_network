@@ -19,23 +19,20 @@ import time
 import math
 import logging
 import datetime
-import MySQLdb
 from PIL import Image
 from token import generate_confirmation_token, confirm_token
 from werkzeug.contrib.cache import SimpleCache
 from decorators import check_confirmed
 
-# from app.api.model import User, Lemma, Comment, db
 from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, Expert_detail_total, Upload_paper, db
-from app.api.construct_network_from_mongodb import ConstructCoauthorsTree, ConstructCitationTree
-# from app.api.mongodb_model import mongo
+from app.api.new_construct_network_form_mongodb import ConstructCoauthorsTree, NewConstructCitationTree
+from app.api.keywordSearch import KeywordSearch
 
 # 缓存
 cache = SimpleCache()
 
 
 
-mysql_db = MySQLdb.connect("47.106.157.16", "root", "123456", "citation", charset='utf8')
 
 photos = UploadSet('PHOTOS', IMAGES)
 papers = UploadSet('PAPERS')
@@ -348,12 +345,10 @@ def search():
     author_page_num = int(request.args.get('a_page'))
 
     nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
-    # print "home current user:", nowUser
+
     if not nowUser:
-        print "not current user"
         status = {"loginStatus": False}
     else:
-        print "with current user"
         status = {"loginStatus": True}
 
     item_number = 10
@@ -363,87 +358,123 @@ def search():
     paper_total_page = 1
     author_total_page = 1
     paper_cache = cache.get('paper')
+    papers_cache_detail = cache.get('papers_detail')
+    paper_page = cache.get('paper_page')
+    # paper_cache_results = cache.get('paper_cache_results')
     author_cache = cache.get('author')
-    # print "paper_cache", paper_cache
-    # print "author_cache", author_cache
+    authors_cache_detail = cache.get('authors_detail')
+    author_page = cache.get('author_page')
+    # author_cahe_results = cache.get('author_cache_results')
 
+    previous_search_text = cache.get('search_text')
+    # previous_paper_total_page = cache.get('paper_total_page')
+    # previous_author_total_page = cache.get('author_total_page')
+
+
+    if paper_cache is not None:
+        print 'paper_cache_results', len(paper_cache)
+    if author_cache is not None:
+        print 'author_cahe_results', len(author_cache)
+
+
+    ################################################################
     query_time_author = 0
     if search_type == 'paper' and author_cache is not None:
-        print "have author cache"
-        authors_detail=author_cache
+        print "author cache"
+        authors_detail = authors_cache_detail
     else:
         start_item_number = (author_page_num - 1) * item_number
         end_item_number = author_page_num * item_number
 
         # 使用mysql查询 not model
         begin = time.time()
-        author_results = db.session.query(Expert_detail_total).filter(
-            Expert_detail_total.name.like('%' + searchtext + '%')).order_by(Expert_detail_total.name).slice(
-            start_item_number, end_item_number).all()
 
-        author_num = db.session.query(Expert_detail_total).filter(
-            Expert_detail_total.name.like('%' + searchtext + '%')).count()
-        # print "author_num", author_num
+        # author_results = db.session.query(Expert_detail_total).filter(
+        #     Expert_detail_total.name.like('%' + searchtext + '%')).order_by(Expert_detail_total.name).slice(
+        #     start_item_number, end_item_number).all()
+        if author_cache is None or searchtext != previous_search_text:
+            author_results = db.session.query(Expert_detail_total).filter(
+                Expert_detail_total.name.like('%' + searchtext + '%')).order_by(Expert_detail_total.name)
+            author_num = db.session.query(Expert_detail_total).filter(
+                Expert_detail_total.name.like('%' + searchtext + '%')).count()
+            cache.set('author_num', author_num)
+
+            # author_num = db.session.query(Expert_detail_total).filter(
+            #     Expert_detail_total.name.like('%' + searchtext + '%')).count()
+
+            author_total_page = int(math.ceil(author_num / float(item_number)))
+            if author_total_page == 0:
+                author_total_page = 1
+
+            # 使用mysql查询 model
+            # author_results = Expert_detail.query.filter(Expert_detail.name.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
+
+            # 使用mongodb查询
+            # author_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
+            #     (page - 1) * item_number).sort('title', -1).limit(item_number)
+
+            if author_results is not None:
+                # 存放所有研究者信息的数组
+                authors_detail = []
+                for author in author_results:
+                    tags = author.tags
+                    if tags is None:
+                        tags = ""
+                    tags = re.split(r'[\[\];,]', str(tags))
+                    tags_str = ""
+                    for i, tag in enumerate(tags):
+                        if i == len(tags):
+                            tags_str = tags_str + tag
+                        else:
+                            tags_str = tags_str + tag + ', '
+                    while '' in tags:
+                        tags.remove('')
+                    author_detail = {
+                        "id": author.id,
+                        "position": author.position,
+                        "mid": author.mid,
+                        "name": author.name,
+                        "name_zh": author.name_zh,
+                        "phone": author.phone,
+                        "fax": author.fax,
+                        "email": author.email,
+                        "department": author.department,
+                        "address": author.address,
+                        "homepage": author.homepage,
+                        "education": author.education,
+                        "experience": author.experience,
+                        "biography": author.biography,
+                        "avatar": author.avatar,
+                        "h_index": author.h_index,
+                        "g_index": author.g_index,
+                        "gender": author.gender,
+                        "cite_num": author.cite_num,
+                        "tags": tags_str,
+                        "author_id": author.author_id,
+                    }
+                    authors_detail.append(author_detail)
+                    # json_authors_detail = json.dumps({"authors_detail": authors_detail})
+            cache.set('author', authors_detail)
+            authors_detail = authors_detail[start_item_number:end_item_number]
+            cache.set('authors_detail', authors_detail)
+
+        else:
+            authors_detail = author_cache[start_item_number:end_item_number]
+            author_total_page = cache.get('author_total_page')
+            author_num = cache.get('author_num')
         end = time.time()
         query_time_author = end - begin
-        print "query_time_author", query_time_author
-        author_total_page = int(math.ceil(author_num / float(item_number)))
-        if author_total_page == 0:
-            author_total_page = 1
 
-        # 使用mysql查询 model
-        # author_results = Expert_detail.query.filter(Expert_detail.name.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
+    ################################################################
 
-        # 使用mongodb查询
-        # author_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
-        #     (page - 1) * item_number).sort('title', -1).limit(item_number)
-
-        if author_results is not None:
-            # 存放所有研究者信息的数组
-            authors_detail = []
-            for author in author_results:
-                tags = author.tags
-                if tags is None:
-                    tags = ""
-                tags = re.split(r'[\[\];,]', str(tags))
-                tags_str = ""
-                for i, tag in enumerate(tags):
-                    if i == len(tags):
-                        tags_str = tags_str + tag
-                    else:
-                        tags_str = tags_str + tag + ', '
-                while '' in tags:
-                    tags.remove('')
-                author_detail = {
-                    "id": author.id,
-                    "position": author.position,
-                    "mid": author.mid,
-                    "name": author.name,
-                    "name_zh": author.name_zh,
-                    "phone": author.phone,
-                    "fax": author.fax,
-                    "email": author.email,
-                    "department": author.department,
-                    "address": author.address,
-                    "homepage": author.homepage,
-                    "education": author.education,
-                    "experience": author.experience,
-                    "biography": author.biography,
-                    "avatar": author.avatar,
-                    "h_index": author.h_index,
-                    "g_index": author.g_index,
-                    "gender": author.gender,
-                    "cite_num": author.cite_num,
-                    "tags": tags_str,
-                    "author_id": author.author_id,
-                }
-                authors_detail.append(author_detail)
-                # json_authors_detail = json.dumps({"authors_detail": authors_detail})
 
     query_time_paper = 0
+    # 搜索作者的情况，有缓存使用缓存
     if search_type == 'author' and paper_cache is not None:
-        print "have paper cache"
-        papers_detail = paper_cache
+        print "paper cache"
+        papers_detail = papers_cache_detail
+        paper_num = cache.get('paper_num')
+        paper_total_page = cache.get('paper_total_page')
     else:
         start_item_number = (paper_page_num - 1) * item_number
         end_item_number = paper_page_num * item_number
@@ -451,39 +482,66 @@ def search():
         # 使用mysql查询 model
         # paper_results = Paper_detail.query.filter(Paper_detail.title.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
 
-        # 使用mongodb查询
         begin = time.time()
-        paper_num = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).count()
-        print "paper num", paper_num
 
-        paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
-            start_item_number).sort('title', -1).limit(item_number)
+        # 如果没有缓存存在 或者 搜索内容变化，查询数据库
+        if paper_cache is None or searchtext != previous_search_text:
+
+            # 使用mongodb查询
+            paper_num = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).count()
+            cache.set('paper_num', paper_num)
+            # paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
+            #     start_item_number).sort('title', -1).limit(item_number)
+
+            paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).sort('title', -1)
+            print "end query"
+            # KS = KeywordSearch()
+            # sorted_index = KS.searchProcess(searchtext, paper_results)
+            print paper_results
+            # print "sorted_index: ", sorted_index
+            paper_total_page = int(math.ceil(paper_num / float(item_number)))
+            if paper_total_page == 0:
+                paper_total_page = 1
+
+            if paper_results is None:
+                print "none for paper_results"
+
+            if paper_results is not None:
+                # 存放所有paper信息的数据
+                papers_detail = []
+                for paper in paper_results:
+                    paper_detail = {
+                        "id": paper["paper_id"],
+                        "title": paper["title"],
+                        "authors": paper["co_authors"],
+                        # "venue": paper["venue"],
+                        "year": paper["year"],
+                        # "ref": paper["ref_id"],
+                        "abstract": paper["abstract"],
+                    }
+
+                    papers_detail.append(paper_detail)
+
+            cache.set('paper', papers_detail)
+            papers_detail = papers_detail[start_item_number:end_item_number]
+            cache.set('papers_detail', papers_detail)
+
+        #搜索内容不变，翻页的情况
+        else:
+            papers_detail = paper_cache[start_item_number:end_item_number]
+            # print 'papers_detail:', papers_detail
+            paper_num = cache.get('paper_num')
+            paper_total_page = cache.get('paper_total_page')
+            print "paper_total_page", paper_total_page
+
         end = time.time()
         query_time_paper = end - begin
-        print "query_time_paper", query_time_paper
-        paper_total_page = int(math.ceil(paper_num / float(item_number)))
-        if paper_total_page == 0:
-            paper_total_page = 1
-        print "paper page total", paper_total_page
 
-
-        if paper_results is not None:
-            # 存放所有paper信息的数据
-            papers_detail = []
-            for paper in paper_results:
-                paper_detail = {
-                    "id": paper["paper_id"],
-                    "title": paper["title"],
-                    "authors": paper["co_authors"],
-                    # "venue": paper["venue"],
-                    "year": paper["year"],
-                    # "ref": paper["ref_id"],
-                    "abstract": paper["abstract"],
-                }
-                papers_detail.append(paper_detail)
-
-    cache.set('paper', papers_detail)
-    cache.set('author', authors_detail)
+    # cache.set('paper', papers_detail)
+    # cache.set('author', authors_detail)
+    cache.set('search_text', searchtext)
+    cache.set('paper_total_page', paper_total_page)
+    cache.set('author_total_page', author_total_page)
 
     # query_time = {
     #     'paperQueryTime': query_time_paper,
@@ -492,9 +550,11 @@ def search():
     if search_type == "paper":
         query_time = round(query_time_paper, 2)
         result_total = paper_num
-    elif search_type == "author":
+    else:
         query_time = round(query_time_author, 2)
         result_total = author_num
+
+    print "total page", papers_detail
 
     pages = {
         'PaperCurrentPage': paper_page_num,
@@ -643,8 +703,8 @@ def paper_detail():
             'abstract': ref_paper['abstract'],
             'venue': ref_paper['venue'],
             'year': ref_paper['year'],
-            'ref_id': ref_paper['ref_id'],
-            'keywords': paper_keywords,
+            # 'ref_id': ref_paper['ref_id'],
+            # 'keywords': paper_keywords,
         }
         ref_paper_list.append(ref_paper_detail)
 
@@ -729,33 +789,22 @@ def paper_network():
     :return:
     """
     paper_id = request.form.get('paperID')
-    years = [2008, 2009, 2010]
     nodes = []
     edges = []
     print "paper_id", paper_id
-    paper_network = ConstructCitationTree(paper_id)
+    paper_network = NewConstructCitationTree(paper_id)
     paper_network.construct()
+    cate_num = paper_network.community_detection()
     paper_network_edges = paper_network.edges()
     paper_network_nodes = paper_network.all_nodes()
 
-    for pi, t, y in paper_network_nodes:
-        # node_detail = {
-        #     'node':[
-        #         {'name': 'ii',
-        #          'id': '1'},
-        #         {
-        #
-        #         }
-        #     ]
-        # }
+    for pi, t, y, c in paper_network_nodes:
 
         node_item = {
             "name": pi,
-            "attributes": {"title": pi, "year": y,},
+            "attributes": {"title": t, "year": y,},
             "value": 10,
-            # "itemStyle":{
-            #     "color": '#FF3030'
-            # }
+            "cate": c,
         }
         nodes.append(node_item)
 
@@ -763,13 +812,14 @@ def paper_network():
         edges_item = {
             "source": source,
             "target": target,
-            "values": 2,
+            "values": 0.5,
             # "lineStyle":{
             #     "color":'#000000'
             # }
         }
         edges.append(edges_item)
-    return json.dumps({"nodes": nodes, "links": edges})
+        # print "edges:",edges
+    return json.dumps({"nodes": nodes, "links": edges, "cate_num": cate_num})
 
 
 @api.route('/insert_new_item', methods=['POST'])

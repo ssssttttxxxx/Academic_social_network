@@ -245,51 +245,44 @@
 		        	myChartGraph1.hideLoading();
 
 		        	var graph = JSON.parse(data);
+		        	var categories = [];
 
-		        	graph.nodes.forEach(function(node){
-		        		if (node.name === sendData1.paperID) {
-		    		        node.itemStyle = {
-		    		        	color: '#66CCFF'
-		    		        };
-		        		}
-		        		else {
-		    		        node.itemStyle = {
-		    		        	color: '#FF3030'
-		    		        };
-		    		    }					        
+		        	for (var i=0;i<graph.cate_num;i++) {
+		        		categories[i] = {
+		        			name: '类目' + i
+		        		};
+		        	}
+
+		        	graph.nodes.forEach(function(node){				        
 		        		// node.symbolSize = 10;
 				        // node.value = node.symbolSize;
-				        // node.category = node.attributes.modularity_class;
+				        node.itemStyle = null;
+				        node.category = node.cate
 				        // Use random x, y
 				        node.x = node.y = null;
 				        node.draggable = false;
-				        // node.label = {
-				        // 	show: true,
-				        // 	position: 'bottom'
-				        // };
-				        // node.tooltip = {           
-				        // 	position: function (point, params, dom, rect, size) {
-				        //         $(dom).html('<div class="contact-box" style="color: #676a6c;background-color: #F0FFFF;padding: 10px;width: 120%;"><div style="width: 40%;float: left;"><div class="text-center" style="text-align: center;"><img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/init.png" width="64px" height="64px"><div class="m-t-xs font-bold">博士</div></div></div><div style="width: 60%;float: left;"><h4><strong>'+ node.name +'</strong><img alt="image"\ src="../static/common/img/female.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;"></h4><p><i class="fa fa-institution"></i> 华南理工大学</p><p><i class="fa fa-map-marker"></i> 广州大学城</p><p><i class="fa fa-phone"></i> 1377777777</p></div><div class="clearfix"></div></div>')
-				        //     },
-				        //     backgroundColor: '#FFFFFF'
-				        // }
+				        node.label = {
+				        	show: false
+				        }
 		        	})
 
 		        	graph.links.forEach(function(link) {
 		        		link.lineStyle = {
 		        			width: link.values,
-		        			color: '#000000'
+		        			// color: '#000000'
 		        		}
+			        	link.label = {
+				        	show: false
+				        }
 		        	})
 
 	        	    option1 = {
 				        title: {
-				        	text: 'paper',
+				        	text: '论文引用关系图',
 				            subtext: '',
 				            top: 'bottom',
 				            left: 'right'
 				        },
-				        tooltip: {},
 				        toolbox: {
 				        	show: true,
 				        	feature: {
@@ -298,9 +291,24 @@
 				        		saveAsImage: {}
 				        	}
 				        },
+				        tooltip: {
+				        	show: true,
+				        	trigger: 'item',
+				         	position: 'bottom',
+ 				        	formatter: function(params) {
+ 				        		if (params.dataType == "node") {
+ 				        			return  params.data.attributes.title + ' | ' + params.data.attributes.year
+ 				        		}
+ 				        		else if (params.dataType == "edge"){
+ 				        			return ''
+ 				        		}
+				        	}
+				        },
 				        legend: {
 				            // selectedMode: 'single',
-				            data: []
+				            data: categories.map(function(a) {
+				            	return a.name;
+				            })
 				        },
 				        animation: false,
 				        series : [
@@ -310,12 +318,19 @@
 				                layout: 'force',
                                 data: graph.nodes,
             					links: graph.links,
+            					categories: categories,
 				                roam: true,
-				                forceNodeAdjacency: true,
-				                cursor: 'pointer',
-				                label: {
-				                    normal: {
-				                        position: 'right'
+				                focusNodeAdjacency: true,
+				                edgeSymbol: ['none', 'arrow'],
+				                edgeSymbolSize: 6,
+				                lineStyle: {
+				                    color: 'source',
+				                    curveness: 0.3,
+				                    opacity: 0.7
+				                },
+                                emphasis: {
+				                    lineStyle: {
+				                        width: 2
 				                    }
 				                },
 				                force: {
@@ -333,6 +348,17 @@
 		        }
 	        });
         }
+
+        myChartGraph1.on('click', function (params) {
+			if (params.componentType === 'series') {
+		        if (params.seriesType === 'graph') {
+		            if (params.dataType === 'node') {
+		            	window.open("/api/paper_detail?paperID=" + params.name);
+		            }
+		        }
+		    }
+
+		});
 
         $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
             myChartGraph1.resize();

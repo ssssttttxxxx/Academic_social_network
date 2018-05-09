@@ -10,7 +10,6 @@ from flask import Blueprint, request, abort, redirect, url_for, flash, jsonify, 
     render_template, current_app, session, logging, g
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, DOCUMENTS
-from flask_wtf import FlaskForm
 from flask_mail import Message, Mail
 from flask_pymongo import PyMongo
 
@@ -21,10 +20,11 @@ import logging
 import datetime
 from PIL import Image
 from token import generate_confirmation_token, confirm_token
+from sqlalchemy.sql import func
 from werkzeug.contrib.cache import SimpleCache
 from decorators import check_confirmed
 
-from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, Expert_detail_total, Upload_paper, db
+from app.api.mysql_model import ASNUser, Paper_detail, Expert_detail_total, Upload_paper, db
 from app.api.new_construct_network_form_mongodb import ConstructCoauthorsTree, NewConstructCitationTree
 from app.api.keywordSearch import KeywordSearch
 
@@ -488,15 +488,14 @@ def search():
         if paper_cache is None or searchtext != previous_search_text:
 
             # 使用mongodb查询
-            paper_num = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).count()
+            paper_num = mongo.db.Citation_total.find({'title': re.compile(searchtext)}).count()
             cache.set('paper_num', paper_num)
             # paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
             #     start_item_number).sort('title', -1).limit(item_number)
 
-            paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).sort('title', -1)
+            paper_results = mongo.db.Citation_total.find({'title': re.compile(searchtext)}).sort('title', -1)
             print "end query"
-            # KS = KeywordSearch()
-            # sorted_index = KS.searchProcess(searchtext, paper_results)
+
             print paper_results
             # print "sorted_index: ", sorted_index
             paper_total_page = int(math.ceil(paper_num / float(item_number)))
@@ -514,14 +513,18 @@ def search():
                         "id": paper["paper_id"],
                         "title": paper["title"],
                         "authors": paper["co_authors"],
-                        # "venue": paper["venue"],
                         "year": paper["year"],
-                        # "ref": paper["ref_id"],
                         "abstract": paper["abstract"],
                     }
 
                     papers_detail.append(paper_detail)
 
+            # 按相关度排序
+            KS = KeywordSearch()
+            sorted_index = KS.searchProcess(searchtext, papers_detail)
+            papers_detail = [papers_sorted_detail for _, papers_sorted_detail in sorted(zip(sorted_index, papers_detail))]
+
+            print "sorted_index: ", sorted_index
             cache.set('paper', papers_detail)
             papers_detail = papers_detail[start_item_number:end_item_number]
             cache.set('papers_detail', papers_detail)
@@ -529,10 +532,8 @@ def search():
         #搜索内容不变，翻页的情况
         else:
             papers_detail = paper_cache[start_item_number:end_item_number]
-            # print 'papers_detail:', papers_detail
             paper_num = cache.get('paper_num')
             paper_total_page = cache.get('paper_total_page')
-            print "paper_total_page", paper_total_page
 
         end = time.time()
         query_time_paper = end - begin
@@ -554,7 +555,6 @@ def search():
         query_time = round(query_time_author, 2)
         result_total = author_num
 
-    print "total page", papers_detail
 
     pages = {
         'PaperCurrentPage': paper_page_num,
@@ -794,7 +794,7 @@ def paper_network():
     print "paper_id", paper_id
     paper_network = NewConstructCitationTree(paper_id)
     paper_network.construct()
-    cate_num = paper_network.community_detection()
+    cate_num = paper_network.community_detection_slpa()
     paper_network_edges = paper_network.edges()
     paper_network_nodes = paper_network.all_nodes()
 
@@ -813,12 +813,8 @@ def paper_network():
             "source": source,
             "target": target,
             "values": 0.5,
-            # "lineStyle":{
-            #     "color":'#000000'
-            # }
         }
         edges.append(edges_item)
-        # print "edges:",edges
     return json.dumps({"nodes": nodes, "links": edges, "cate_num": cate_num})
 
 
@@ -1417,3 +1413,13 @@ def get_upload_paper():
         return json.dumps({'result': 'fail', 'msg': 'database query fail'})
 
 
+@api.route('/summary_data', methods=['GET'])
+def summary_data():
+    expert_detail_num = db.session.query(Expert_detail_total).count()
+    user_num = db.session.query(ASNUser).count()
+    author_num = mongo.db.Paper_Of_Author.find().count()
+    # paper_num = mongo.db.Citation_total.find().count
+    paper_num = '3,079,007'
+    cite_num = '25,166,994'
+    return json.dumps({"user_num": user_num, "expert_detail": expert_detail_num, "author_num": author_num,
+                       "paper_num": paper_num, "cite_num": cite_num})

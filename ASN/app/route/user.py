@@ -5,7 +5,7 @@ sys.path.append("..")
 from flask import render_template, Blueprint, redirect, url_for, request, session, current_app, flash
 from flask_login import login_required, current_user
 # from api.model import User, Lemma, Comment, db
-from app.api.mysql_model import ASNUser, Expert_detail, Paper_detail, db
+from app.api.mysql_model import ASNUser, Paper_detail, db
 from app.api.decorators import check_confirmed
 
 

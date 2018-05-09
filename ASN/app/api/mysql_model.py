@@ -23,6 +23,8 @@ db = SQLAlchemy()
 
 class ASNUser(db.Model, UserMixin):
     __bind_key__ = 'expert'
+    # __bind_key__ = 'ali'
+
     __tablename__ = 'user'
     email = db.Column(db.Integer, primary_key=True)
     password = db.Column(db.String(40))
@@ -80,6 +82,8 @@ class ASNUser(db.Model, UserMixin):
 
 class Expert_detail_total(db.Model):
     __bind_key__ = 'expert'
+    # __bind_key__ = 'ali'
+
     __tablename__ = 'expert_user_detail'
     id = db.Column(db.String(45),  primary_key=True)
     mid = db.Column(db.String(45))
@@ -136,28 +140,12 @@ class Expert_detail_total(db.Model):
         self.author_id = author_id
 
 
-class Expert_detail(db.Model):
-    __bind_key__ = 'expert_total'
-    __tablename__ = 'expert_detail_total'
-    id = db.Column(db.String(45), primary_key=True)
-    mid = db.Column(db.String(45))
-    department = db.Column(db.String(100))
-    name = db.Column(db.String(100))
-    email = db.Column(db.String(100))
-
-    def __str__(self):
-        return '专家<id:%s, 名字：%s>' % (self.id, self.name)
-
-    def __init__(self, mid=None, department=None, name=None, email=None):
-        self.mid = mid
-        self.department = department
-        self.name = name
-        self.email = email
-
 
 class Paper_detail(db.Model):
 
     __bind_key__ = 'paper'
+    # __bind_key__ = 'ali'
+
     __tablename__ = 'paper_total'
 
     id = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
@@ -183,6 +171,8 @@ class Paper_detail(db.Model):
 class Upload_paper(db.Model):
 
     __bind_key__ = 'expert'
+    # __bind_key__ = 'ali'
+
     __tablename__= 'upload_paper'
     user_email = db.Column(db.String(45))
     file_url = db.Column(db.String(45), primary_key=True)

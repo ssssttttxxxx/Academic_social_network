@@ -5899,3 +5899,45 @@
 2018-05-03 17:24:15,200 - dictionary.py[line:116] - INFO: adding document #10000 to Dictionary(45193 unique tokens: [u'homomorphism', u'localizes', u'Suche', u'Poetry', u'circuitry']...)
 2018-05-03 17:24:16,657 - dictionary.py[line:116] - INFO: adding document #20000 to Dictionary(64156 unique tokens: [u'correlatingthe', u'ASSET4', u'Prony', u'homomorphism', u'localizes']...)
 2018-05-03 17:24:17,040 - dictionary.py[line:123] - INFO: built Dictionary(68142 unique tokens: [u'correlatingthe', u'ASSET4', u'Prony', u'homomorphism', u'localizes']...) from 22617 documents (total 2060333 corpus positions)
+2018-05-05 15:26:46,002 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-05 15:26:46,046 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-05 15:31:59,049 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-05 15:31:59,059 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-05 15:32:56,203 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-05 15:32:56,213 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-05 21:14:20,859 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-05 21:14:25,216 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-05 21:14:25,250 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-05 21:14:25,255 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-05 21:14:31,982 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:31] "GET /api/search_result?content=fox HTTP/1.1" 302 -
+2018-05-05 21:14:45,926 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-05 21:14:45,936 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-05 21:14:45,970 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:45] "GET /api/search?content=fox&type=paper&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-05-05 21:14:46,927 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:46] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-05-05 21:14:46,934 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:46] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-05-05 21:14:46,940 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:46] "GET /static/common/login/ace-fonts.css HTTP/1.1" 200 -
+2018-05-05 21:14:46,946 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:46] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 200 -
+2018-05-05 21:14:46,953 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:46] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-05-05 21:14:46,963 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:46] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-05-05 21:14:47,236 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/common/style2.css HTTP/1.1" 200 -
+2018-05-05 21:14:47,243 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-05-05 21:14:47,250 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 200 -
+2018-05-05 21:14:47,256 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 200 -
+2018-05-05 21:14:47,266 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 200 -
+2018-05-05 21:14:47,276 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-05-05 21:14:47,543 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-05-05 21:14:47,555 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 200 -
+2018-05-05 21:14:47,562 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/jqPaginator/js/jqpaginator.min.js HTTP/1.1" 200 -
+2018-05-05 21:14:47,569 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 200 -
+2018-05-05 21:14:47,871 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-05 21:14:47,913 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:47] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-05-05 21:14:48,092 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:48] "GET /static/common/img/icon-paper.png HTTP/1.1" 200 -
+2018-05-05 21:14:48,098 - _internal.py[line:87] - INFO: 127.0.0.1 - - [05/May/2018 21:14:48] "GET /static/avatar/init.png HTTP/1.1" 200 -
+2018-05-05 21:15:24,621 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\run_asn.py', reloading
+2018-05-05 21:15:25,082 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-05 21:49:19,249 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-05 21:49:19,262 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-08 00:28:43,645 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-08 00:28:43,700 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-08 14:37:18,671 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-08 14:37:18,760 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)

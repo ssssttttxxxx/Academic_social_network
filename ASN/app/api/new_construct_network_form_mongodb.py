@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
-import community
 import pymongo
-import MySQLdb
+import numpy as np
 import networkx as nx
+from collections import defaultdict
 import matplotlib.pyplot as plt
 import logging
 import time
@@ -21,9 +21,12 @@ class NewConstructCitationTree():
         self.my_set = self.mongdb.Citation_added_title_year
         self.paper_id = paper_id
 
-        self.node_limit_num = 50
+        self.node_limit_num = 89
         self.total_node_list = []
         self.init_cata = 0
+
+        self.iter_time = 5000
+        self.smallest_community_node_num = 2
     def construct(self):
 
         paper_id = self.paper_id # root 节点
@@ -190,11 +193,9 @@ class NewConstructCitationTree():
     def community_detection(self):
         H = self.Graph.to_undirected()
         klist = list(nx.k_clique_communities(H, 3))
-        # print "klist", len(klist)
         pos = nx.spring_layout(H)
         plt.clf()
 
-        colors = ['aliceblue', 'olive', 'seashell', 'steelblue', 'yellow']
         nx.draw(H, pos=pos, with_labels=False)
 
         for index, cata in enumerate(klist):
@@ -206,6 +207,89 @@ class NewConstructCitationTree():
         # plt.show()
         print "klist:", len(klist)
         return len(klist)+1
+
+    def community_detection_slpa(self):
+        # 迭代次数
+        T = self.iter_time
+        # 将图中数据录入到数据字典中以便使用
+        # G = self.Graph.to_undirected()
+        G = self.Graph
+        # 建立成员标签记录
+        memory = {i: {i: 1} for i in G.nodes()}
+        # print "memory", memory
+        # 开始遍历T次所有节点
+        for t in range(T):
+            listenerslist = list(G.nodes())
+            # print "listenerslist", listenerslist
+            # 随机排列遍历顺序
+            np.random.shuffle(listenerslist)
+            # 开始遍历节点
+            for listener in listenerslist:
+                # 每个节点的key就是与他相连的节点标签名
+                # speakerlist = G[listener].keys()
+                speakerlist = G.neighbors(listener)
+                if len(speakerlist) == 0:
+                    continue
+                labels = defaultdict(int)
+                # print "labels", labels
+                # 遍历所有与其相关联的节点
+                for j, speaker in enumerate(speakerlist):
+                    total = float(sum(memory[speaker].values()))
+                    # 查看speaker中memory中出现概率最大的标签并记录，key是标签名，value是Listener与speaker之间的权
+                    # np.random.multinomial(1，seq),根据数列seq概率随机选择seq中的1个
+                    labels[memory[speaker].keys()[
+                        np.random.multinomial(1, [freq / total for freq in memory[speaker].values()]).argmax()]] += 1
+                    # print "labels", labels
+
+                # 查看labels中值最大的标签，若不存在于memory的listener中，让其成为当前listener的一个记录，若存在，增加value的值
+                maxlabel = max(labels, key=labels.get)
+                # print "maxlabel", maxlabel
+                if maxlabel in memory[listener]:
+                    memory[listener][maxlabel] += 1
+                else:
+                    memory[listener][maxlabel] = 1
+
+        # 提取出每个节点memory中记录标签出现最多的一个
+        for primary in memory:
+            # print "freq", memory[primary].values()
+            # print "total", total
+            # print "multinomial: ", [freq / total for freq in memory[primary].values()]
+            # print "after: ", np.random.multinomial(1, [freq / total for freq in memory[primary].values()])
+            # print "after_m: ", np.argmax(memory[primary].values())
+            # p = memory[primary].keys()[
+            #     np.random.multinomial(1, [freq / total for freq in memory[primary].values()]).argmax()]
+            # memory[primary] = {p: memory[primary][p]}
+            p = memory[primary].keys()[np.argmax(memory[primary].values())]
+            memory[primary] = {p: memory[primary][p]}
+        # 如果希望将那种所属社区不明显的节点排除的就使用下面这段注释代码
+
+
+        communities = {}
+        # 扫描memory中的记录标签，相同标签的节点加入同一个社区中
+        for primary, change in memory.iteritems():
+            for label in change.keys():
+                if label in communities:
+                    communities[label].add(primary)
+                else:
+                    communities[label] = set([primary])
+        freecommunities = set()
+        keys = communities.keys()
+
+        pos = nx.spring_layout(G)
+
+        #  过滤节点小于一定数目的社区
+        new_communities = []
+        nx.draw(G, pos=pos, with_labels=False)
+        for index, com in enumerate(communities.keys()):
+            if len(communities[com])> self.smallest_community_node_num:
+                for node in communities[com]:
+                    self.Graph.node[node]['cata'] = len(new_communities) + 1
+                new_communities.append(communities[com])
+            else:
+                for node in communities[com]:
+                    self.Graph.node[node]['cata'] = 0
+
+        return len(new_communities) + 1
 
     def query_paper_id_title_year(self, paper_id):
         """
@@ -314,7 +398,7 @@ class ConstructCoauthorsTree():
 if __name__ == "__main__":
     CTM = NewConstructCitationTree("62e74114-e52b-4441-b39c-6cab360ad9ed")
     CTM.construct()
-    CTM.community_detection()
+    CTM.community_detection_slpa(5,3)
     print CTM.all_nodes()
 
     print "num: ", CTM.num_of_nodes()

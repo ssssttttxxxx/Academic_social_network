@@ -690,6 +690,20 @@
 	        });
         }
 
+        myChartGraph2.on('click', function (params) {
+			if (params.componentType === 'series') {
+		        if (params.seriesType === 'graph') {
+		            if (params.dataType === 'node') {
+		            	window.open("/api/paper_authors?type=author&content=" + params.name + "&p_page=1&a_page=1");
+		            }
+		            else {
+
+		            }
+		        }
+		    }
+
+		});
+
         $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
             // myChartGraph1.resize();
             myChartGraph2.resize();

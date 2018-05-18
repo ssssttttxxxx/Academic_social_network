@@ -22,8 +22,8 @@ db = SQLAlchemy()
 
 
 class ASNUser(db.Model, UserMixin):
-    __bind_key__ = 'expert'
-    # __bind_key__ = 'ali'
+    # __bind_key__ = 'expert'
+    __bind_key__ = 'ali'
 
     __tablename__ = 'user'
     email = db.Column(db.Integer, primary_key=True)
@@ -38,7 +38,7 @@ class ASNUser(db.Model, UserMixin):
     avatar = db.Column(db.String(100))
     focus_area = db.Column(db.String(100))
     confirmed = db.Column(db.Boolean)
-
+    regist_time = db.Column(db.DateTime)
     def __str__(self):
         return '用户<email:%s, password:%s>' % (self.email, self.password)
 
@@ -46,7 +46,7 @@ class ASNUser(db.Model, UserMixin):
                  education="", department="", phone="",
                  first_name="", last_name="", address="",
                  avatar="../static/avatar/init.png",
-                 focus_area="", confirmed=False):
+                 focus_area="", confirmed=False, regist_time=""):
         self.email = email
         self.password = password
         self.gender = gender
@@ -60,6 +60,7 @@ class ASNUser(db.Model, UserMixin):
         self.avatar = avatar
         self.focus_area = focus_area
         self.confirmed = confirmed
+        self.regist_time =regist_time
 
     def __repr__(self):
         return '<ASNUser %r>' % self.usernam
@@ -81,8 +82,8 @@ class ASNUser(db.Model, UserMixin):
 
 
 class Expert_detail_total(db.Model):
-    __bind_key__ = 'expert'
-    # __bind_key__ = 'ali'
+    # __bind_key__ = 'expert'
+    __bind_key__ = 'ali'
 
     __tablename__ = 'expert_user_detail'
     id = db.Column(db.String(45),  primary_key=True)
@@ -143,8 +144,8 @@ class Expert_detail_total(db.Model):
 
 class Paper_detail(db.Model):
 
-    __bind_key__ = 'paper'
-    # __bind_key__ = 'ali'
+    # __bind_key__ = 'paper'
+    __bind_key__ = 'ali'
 
     __tablename__ = 'paper_total'
 
@@ -170,8 +171,8 @@ class Paper_detail(db.Model):
 
 class Upload_paper(db.Model):
 
-    __bind_key__ = 'expert'
-    # __bind_key__ = 'ali'
+    # __bind_key__ = 'expert'
+    __bind_key__ = 'ali'
 
     __tablename__= 'upload_paper'
     user_email = db.Column(db.String(45))

@@ -47,11 +47,8 @@
     <link href="../static/common/style2.css" rel="stylesheet">
 
     <style type="text/css">
-    	.dl-horizontal dt {
-    		width: 80px;
-    	}
-    	.dl-horizontal dd {
-    		margin-left: 100px;
+    	.hr-line-dashed {
+    		margin: 16px 0;
     	}
     </style>
 </head>
@@ -154,6 +151,8 @@
                                         <dt>地址:</dt> <dd>{{ author_address }}</dd>
                                         <div class="hr-line-dashed"></div>
                                         <dt>电话:</dt> <dd>{{ author_telephone }}</dd>
+                                        <div class="hr-line-dashed"></div>
+                                        <dt>邮箱:</dt> <dd><img :src="author_email" height="24px"> </dd>
                                     </dl>
 			                    </div>
 			                    <div class="col-md-12" style="margin-top: 20px;">
@@ -303,15 +302,9 @@
 						                <div class="col-lg-12">
 						                    <div class="tabs-container">
 						                        <ul class="nav nav-tabs" style="border-bottom: none;" id="chartTab">
-						                            <!-- <li class="active"><a data-toggle="tab" href="#tab-7"> 论文关系图</a></li> -->
 						                            <li class="active"><a data-toggle="tab" href="#chart2"> 作者关系图</a></li>
 						                        </ul>
 						                        <div class="tab-content">
-<!-- 						                            <div id="tab-7" class="tab-pane active">
-						                                <div class="panel-body" style="width: 100%;margin-left: 0%;">
-						                                    <div id="paperGraph" style="height: 100%"></div>
-						                                </div>
-						                            </div> -->
 						                            <div id="chart2" class="tab-pane active">
 						                                <div class="panel-body" style="margin: 0;width: 100%;height: 500px;">
 															<div id="coauthorGraph" style="height: 100%;width: 100%;"></div>
@@ -331,6 +324,10 @@
             </div>
 
 		</div>
+	</div>
+
+	<div id="mask" style="width: 100%;height: 100%;">
+        <div id="mask-body"></div>
 	</div>
             
     <script>
@@ -402,6 +399,7 @@
         	author_department: res.department,
         	author_address: res.address,
         	author_telephone: res.phone,
+        	author_email: res.email,
         	author_avatarSrc: res.avatar,
         	author_hIndex: res.h_index,
         	author_gIndex: res.g_index,
@@ -505,11 +503,14 @@
 			    	});
         		},
         		toSearchPage: function(searchContent) {
-        			window.open("/api/search?type=paper" + "&content=" + searchContent + "&p_page=1&a_page=1")
+        			window.open("/api/search_result?type=paper" + "&content=" + searchContent + "&p_page=1&a_page=1")
         		},
         		toPaperDetail: function(ID) {
         			window.open("/api/to_paper_detail?id=" + ID)
-        		}
+        		},
+                toPublicProfile: function(ID) {
+                    window.open("/api/to_public_profile?id=" + ID);
+                },
         	}
         });
 
@@ -546,19 +547,132 @@
 
     <script type="text/javascript">
 		//作者关系图
+	    $(document).keyup(function(event){
+	    	if (event.keyCode === 27) {
+	    		$("#mask").css('display',"none");
+	    	}
+	    });
+
         var dom2 = document.getElementById("coauthorGraph");
         var myChartGraph2 = echarts.init(dom2);
-        // var app = {};
+        // // var app = {};
         option2 = null;
-        // app.title = '作者关系图';
+        // // app.title = '作者关系图';
 
         var sendData2 = {"name": res.name}
        	myChartGraph2.resize({width: 798, height: 458});
         myChartGraph2.showLoading();
 
+        function myChart_option2(id, years, optionInit) {        
+        	$("#mask-body").width($(document.body).width()-100);
+	    	$("#mask-header").width($(document.body).width()-100);
+
+	        var dom2 = document.getElementById(id);
+        	var myChartGraph2 = echarts.init(dom2);
+
+			option2 = {
+		    	baseOption: {
+		    		timeline: {
+			            // y: 0,
+			            axisType: 'category',
+			            // realtime: false,
+			            // loop: false,
+			            autoPlay: false,
+			            // currentIndex: 2,
+			            // playInterval: 1000,
+			            // controlStyle: {
+			            //     position: 'left'
+			            // },
+			            data: years,
+			            label: {
+			                // formatter : function(s) {
+			                //     return (new Date(s)).getFullYear();
+			                // }
+			            }
+			        },
+			        title: {
+			            subtext: '',
+			            top: 'bottom',
+			            left: 'right'
+			        },
+			        tooltip: {},
+			        toolbox: {
+			        	show: true,
+			        	feature: {
+			        		dataView: {readOnly: true},
+			        		restore: {},
+			        		saveAsImage: {},
+			        		myTool1: {
+			        			show: true,
+			        			title: '全屏',
+			        			icon: 'image://../static/common/img/fullscreen.png',
+			        			onclick: function (){
+				                    $("#mask").css("display","block");
+				                    myChart_option2("mask-body", years, optionInit)
+				                }
+			        		},
+			        		myTool2: {
+			        			show: true,
+			        			title: '退出',
+			        			icon: 'image://../static/common/img/back.png',
+			        			onclick: function(){
+			        				$("#mask").css('display',"none");
+			        			}
+			        		}
+			        	}
+			        },
+			        legend: {
+			            // selectedMode: 'single',
+			            data: ["Martin Ester"]
+			        },
+			        animation: false,
+			        series : [
+			            {
+			                name: '',
+			                type: 'graph',
+			                layout: 'force',
+			                roam: true,
+			                forceNodeAdjacency: true,
+			                cursor: 'pointer',
+			                label: {
+			                    normal: {
+			                        position: 'right'
+			                    }
+			                },
+			                force: {
+			                    repulsion: 100
+			                }
+			            }
+			        ]
+			    },
+			    options: optionInit
+		    };
+
+		    myChartGraph2.setOption(option2);
+		    myChartGraph2.resize();        
+		    myChartGraph2.on('click', function (params) {
+				if (params.componentType === 'series') {
+			        if (params.seriesType === 'graph') {
+			            if (params.dataType === 'node') {
+			            	window.open("/api/paper_authors?type=author&content=" + params.name + "&p_page=1&a_page=1");
+			            }
+			            else {
+
+			            }
+			        }
+			    }
+			});
+
+	        $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
+	            myChartGraph2.resize();
+		    });         
+		    window.onresize = function() {
+	        	myChartGraph2.resize();
+	        }
+        }
+
         function getExpertNetwork() { 
 
-        	
 	        $.ajax({
 	        	url: "/api/expert_network",
 	        	type: "POST",
@@ -597,7 +711,7 @@
 					        }
 					        node.tooltip = {           
 					        	position: function (point, params, dom, rect, size) {
-					                $(dom).html('<div class="contact-box" style="color: #676a6c;background-color: #F0FFFF;padding: 10px;width: 120%;"><div style="width: 40%;float: left;"><div class="text-center" style="text-align: center;"><img alt="image" class="img-circle m-t-xs img-responsive" src="../static/common/img/init.png" width="64px" height="64px"><div class="m-t-xs font-bold">博士</div></div></div><div style="width: 60%;float: left;"><h4><strong>'+ node.name +'</strong><img alt="image"\ src="../static/common/img/female.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;"></h4><p><i class="fa fa-institution"></i> 华南理工大学</p><p><i class="fa fa-map-marker"></i> 广州大学城</p><p><i class="fa fa-phone"></i> 1377777777</p></div><div class="clearfix"></div></div>')
+					                $(dom).html('<div class="contact-box" style="color: #676a6c;background-color: #F0FFFF;padding: 10px;width: 120%;"><div style="width: 40%;float: left;"><div class="text-center" style="text-align: center;"><img alt="image" class="img-circle m-t-xs img-responsive" src="' + node.attributes.avatar + '" width="64px" height="64px"><div class="m-t-xs font-bold">' + node.attributes.position + '</div></div></div><div style="width: 60%;float: left;"><h4><strong>'+ node.name +'</strong><img alt="image"\ src="../static/common/img/' + node.attributes.gender + '.png" width="20px" height="20px" style="margin: 0px 0px 2px 5px;"></h4><p><i class="fa fa-institution"></i> ' + node.attributes.department + '</p><p><i class="fa fa-map-marker"></i> ' + node.attributes.address + '</p><p><i class="fa fa-phone"></i> ' + node.attributes.phone + '</p></div><div class="clearfix"></div></div>')
 					            },
 					            backgroundColor: '#FFFFFF'
 					        }
@@ -619,70 +733,7 @@
 		        		optionInit.push(nodeItem)
 		        	}
 
-	        	    option2 = {
-	        	    	baseOption: {
-
-	        	    		timeline: {
-					            // y: 0,
-					            axisType: 'category',
-					            // realtime: false,
-					            // loop: false,
-					            autoPlay: false,
-					            // currentIndex: 2,
-					            // playInterval: 1000,
-					            // controlStyle: {
-					            //     position: 'left'
-					            // },
-					            data: years,
-					            label: {
-					                // formatter : function(s) {
-					                //     return (new Date(s)).getFullYear();
-					                // }
-					            }
-					        },
-					        title: {
-					            subtext: '',
-					            top: 'bottom',
-					            left: 'right'
-					        },
-					        tooltip: {},
-					        toolbox: {
-					        	show: true,
-					        	feature: {
-					        		dataView: {readOnly: true},
-					        		restore: {},
-					        		saveAsImage: {}
-					        	}
-					        },
-					        legend: {
-					            // selectedMode: 'single',
-					            data: ["Martin Ester"]
-					        },
-					        animation: false,
-					        series : [
-					            {
-					                name: '',
-					                type: 'graph',
-					                layout: 'force',
-					                roam: true,
-					                forceNodeAdjacency: true,
-					                cursor: 'pointer',
-					                label: {
-					                    normal: {
-					                        position: 'right'
-					                    }
-					                },
-					                force: {
-					                    repulsion: 100
-					                }
-					            }
-					        ]
-					    },
-					    options: optionInit
-				    };
-
-				    myChartGraph2.setOption(option2);
-				    myChartGraph2.resize();
+		        	myChart_option2("coauthorGraph", years, optionInit);
 	        	},
 	        	error: function (errorMsg) {
 		            //alert("图表数据加载失败！");
@@ -690,28 +741,6 @@
 	        });
         }
 
-        myChartGraph2.on('click', function (params) {
-			if (params.componentType === 'series') {
-		        if (params.seriesType === 'graph') {
-		            if (params.dataType === 'node') {
-		            	window.open("/api/paper_authors?type=author&content=" + params.name + "&p_page=1&a_page=1");
-		            }
-		            else {
-
-		            }
-		        }
-		    }
-
-		});
-
-        $('#chartTab a[data-toggle="tab"]').on('shown.bs.tab', function(e) {  
-            // myChartGraph1.resize();
-            myChartGraph2.resize();
-	    });         
-	    window.onresize = function() {
-        	// myChartGraph1.resize();
-        	myChartGraph2.resize();
-        }
     </script>
 
     <div id="return-top" style="position: fixed;right: 1%;bottom: 4%;z-index: 99;">

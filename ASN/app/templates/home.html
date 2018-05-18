@@ -108,17 +108,17 @@
     </div>
 
     <div class="wrapper wrapper-content">
-        <div class="container">
+        <div class="container" id="board">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <span class="label label-success pull-right">本月</span>
+                            <span class="label label-success pull-right">本周</span>
                             <h5>作者总数</h5>
                         </div>
                         <div class="ibox-content">
-                            <h1 class="no-margins">386,200</h1>
-                            <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                            <h1 class="no-margins">{{ authorTotal }}</h1>
+                            <div class="stat-percent font-bold text-success"><!-- 98% <i class="fa fa-bolt"></i> --></div>
                             <small>Total views</small>
                         </div>
                     </div>
@@ -127,12 +127,12 @@
                 <div class="col-lg-3">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <span class="label label-success pull-right">本月</span>
+                            <span class="label label-info pull-right">本周</span>
                             <h5>论文总数</h5>
                         </div>
                         <div class="ibox-content">
-                            <h1 class="no-margins">386,200</h1>
-                            <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                            <h1 class="no-margins">{{ paperTotal }}</h1>
+                            <div class="stat-percent font-bold text-success"><!-- 98% <i class="fa fa-bolt"></i> --></div>
                             <small>Total views</small>
                         </div>
                     </div>
@@ -141,12 +141,12 @@
                 <div class="col-lg-3">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <span class="label label-success pull-right">本月</span>
+                            <span class="label label-danger pull-right">今天</span>
                             <h5>用户总数</h5>
                         </div>
                         <div class="ibox-content">
-                            <h1 class="no-margins">386,200</h1>
-                            <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                            <h1 class="no-margins">{{ userTotal }}</h1>
+                            <div class="stat-percent font-bold text-success">{{ newUserNum }} <i class="fa fa-level-up"></i></div>
                             <small>Total views</small>
                         </div>
                     </div>
@@ -155,12 +155,12 @@
                 <div class="col-lg-3">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <span class="label label-success pull-right">本月</span>
-                            <h5>被引用总数</h5>
+                            <span class="label label-warning pull-right">本周</span>
+                            <h5>引用关系总数</h5>
                         </div>
                         <div class="ibox-content">
-                            <h1 class="no-margins">386,200</h1>
-                            <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                            <h1 class="no-margins">{{ citationTotal }}</h1>
+                            <div class="stat-percent font-bold text-success"><!-- 98% <i class="fa fa-bolt"></i> --></div>
                             <small>Total views</small>
                         </div>
                     </div>
@@ -198,6 +198,38 @@
                 // }
             }
         });
+
+        data2 = {
+            authorTotal: '',
+            paperTotal: '',
+            userTotal: '',
+            citationTotal: '',
+            newUserNum: ''
+        }
+        getTotal();
+
+        var app2 = new Vue({
+            el: '#board',
+            data: data2
+        })
+
+        function getTotal(){
+            $.ajax({
+                url: "/api/summary_data",
+                type: "GET",
+                success: function(data){
+                    var total = JSON.parse(data);
+                    data2.authorTotal = total.author_num
+                    data2.paperTotal = total.paper_num
+                    data2.userTotal = total.user_num
+                    data2.citationTotal = total.cite_num
+                    data2.newUserNum = total.new_user_num
+                },
+                error: function(){
+                    console.log("获取总数失败");
+                }
+            })
+        }
 
         // var app2 = new Vue({
         //     el: '#searchInput',

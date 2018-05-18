@@ -79,3 +79,53 @@
 .tab-content > .active {
     height: auto;
 }*/
+
+.dl-horizontal dt {
+	width: 80px;
+}
+.dl-horizontal dd {
+	margin-left: 100px;
+}
+
+/*关系图全屏div*/
+#mask{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 9999999;
+	background: #f3f3f4;
+}
+#mask-body{
+	position: absolute;
+	top: 5%;
+	left: 3%;
+	height: 90%;
+	border: 1px solid #f3f3f4;
+	background: white!important;
+	opacity: 1;
+	z-index: 99;
+}
+/*#mask-header{
+	position: absolute;
+	top: 5%;
+	left: 3%;
+	height: 5%;
+	border: 1px solid #f3f3f4;
+	background: white!important;
+	opacity: 1;
+	z-index: 999;
+}
+#mask-header>button{
+	padding: 3px;
+	border: 1px solid black;
+	position: absolute;
+	right: 1%;
+	top: 20%;
+	cursor: pointer;
+}
+#mask-header>button:hover{
+	background: #ccc;
+}*/

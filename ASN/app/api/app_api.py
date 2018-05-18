@@ -20,7 +20,6 @@ import logging
 import datetime
 from PIL import Image
 from token import generate_confirmation_token, confirm_token
-from sqlalchemy.sql import func
 from werkzeug.contrib.cache import SimpleCache
 from decorators import check_confirmed
 
@@ -190,18 +189,18 @@ def registBussiness():
             education = "master"
         elif degree == "2":
             education = "Ph.D"
-
+        regist_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         # token = generate_confirmation_token()
         # send_email('709778550@qq.com', "hello", )
 
         # 发送验证邮件
         to_email = '709778550@qq.com'
-        token = generate_confirmation_token(email)
-        confirm_url = url_for('api.confirm_email', token=token, _external=True)
-        print "confirm_url", confirm_url
-        html = render_template('activate.html', confirm_url=confirm_url)
-        subject = "Please confirm your email"
-        send_email(email, subject, html)
+        # token = generate_confirmation_token(email)
+        # confirm_url = url_for('api.confirm_email', token=token, _external=True)
+        # print "confirm_url", confirm_url
+        # html = render_template('activate.html', confirm_url=confirm_url)
+        # subject = "Please confirm your email"
+        # send_email(email, subject, html)
 
         # 注册时添加到作者表中
         try:
@@ -221,7 +220,7 @@ def registBussiness():
         # 注册到用户表
         try:
             user = ASNUser(email=email, password=password, first_name=first_name,
-                           last_name=last_name, gender=gender, education=degree)
+                           last_name=last_name, gender=gender, education=degree, regist_time=regist_time)
             db.session.add(user)
             db.session.commit()
         except Exception, e:
@@ -230,10 +229,10 @@ def registBussiness():
             logging.error(error_msg)
 
         # 注册时在mongodb初始化关注列表
-        mongo_follow = {"id": email, "follow": []}
-        mongo.db.follow.insert_one(mongo_follow)
-        mongo_followed = {"id": email, "followed": []}
-        mongo.db.mongo_followed.insert_one(mongo_followed)
+        follow = {"id": email, "follow": []}
+        mongo.db.follow.insert_one(follow)
+        followed = {"id": email, "followed": []}
+        mongo.db.followed.insert_one(followed)
 
         # login_user(user)
         flash('注册成功!请登录!')
@@ -290,13 +289,14 @@ def paper_authors():
             id = authors[0].id
             return redirect(url_for('api.public_profile', ID=id))
     return redirect(
-        url_for('api.search', type=search_type, content=searchtext, p_page=paper_page_num, a_page=author_page_num))
+        url_for('api.search_result', type=search_type, content=searchtext, p_page=paper_page_num, a_page=author_page_num))
 
 
 @api.route('/search_result', methods=['GET', 'POST'])
 def search_result():
     if request.method == 'GET':
         print 'GET'
+        cache_type = request.args.get('all', default="false", type=str)
         searchtext = request.args.get('content', default='*', type=str).strip()
         search_type = request.args.get('type', default='paper', type=str)
         paper_page_num = request.args.get('p_page', default=1, type=int)
@@ -305,19 +305,24 @@ def search_result():
 
     elif request.method == 'POST':
         print 'POST'
+        cache_type = request.form.get('all', default="false", type=str)
         searchtext = request.form.get('content', default='*', type=str).strip()
         search_type = request.form.get('type', default='paper', type=str)
         paper_page_num = request.form.get('p_page', default=1, type=int)
         author_page_num = request.form.get('a_page', default=1, type=int)
 
+    if cache_type != 'false' and cache_type != 'true':
+        return redirect(url_for('user.not_found'))
+    if search_type != 'paper' and search_type != 'author':
+        return redirect(url_for('user.not_found'))
     # print "p_page", paper_page_num
     # print "a_page", author_page_num
     # print "content", searchtext
     print "type", search_type
-
+    print "cache", cache_type
 
     return redirect(
-        url_for('api.search', type=search_type, content=searchtext, p_page=paper_page_num, a_page=author_page_num))
+        url_for('api.search', type=search_type, content=searchtext, p_page=paper_page_num, a_page=author_page_num, all=cache_type))
 
 
 @api.route('/search', methods=['POST', 'GET'])
@@ -328,21 +333,21 @@ def search():
     :return:
     """
 
-    # if request.method == 'GET':
-    #     print 'GET'
-    #     searchtext = request.args.get('content', default='*', type=str).strip()
-    # elif request.method == 'POST':
-    #     print 'POST'
-    #     searchtext = request.form.get('content', default='*', type=str).strip()
-    #
-    # page = request.args.get('page', default=1, type=int)
-    # print "page", page
-    # print "content", searchtext
-
+    cache_type = request.args.get('all')
     searchtext = request.args.get('content').strip()
     search_type = request.args.get('type')
     paper_page_num = int(request.args.get('p_page'))
     author_page_num = int(request.args.get('a_page'))
+
+    previous_searchtext = cache.get('searchtext')
+
+    if previous_searchtext != searchtext:
+        print "##################!!!!!!!!!!!!!!!!################"
+
+    if cache_type != 'false' and cache_type != 'true':
+        return redirect(url_for('user.not_found'))
+    if search_type != 'paper' and search_type != 'author':
+        return redirect(url_for('user.not_found'))
 
     nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
 
@@ -353,201 +358,180 @@ def search():
 
     item_number = 10
 
-    papers_detail = {}
-    authors_detail = {}
-    paper_total_page = 1
-    author_total_page = 1
-    paper_cache = cache.get('paper')
-    papers_cache_detail = cache.get('papers_detail')
-    paper_page = cache.get('paper_page')
-    # paper_cache_results = cache.get('paper_cache_results')
-    author_cache = cache.get('author')
-    authors_cache_detail = cache.get('authors_detail')
-    author_page = cache.get('author_page')
-    # author_cahe_results = cache.get('author_cache_results')
+    # 不使用cache
+    if cache_type == "false" or searchtext != previous_searchtext:
 
-    previous_search_text = cache.get('search_text')
-    # previous_paper_total_page = cache.get('paper_total_page')
-    # previous_author_total_page = cache.get('author_total_page')
+        cache.set("searchtext", searchtext)
 
+        print "不使用cache"
 
-    if paper_cache is not None:
-        print 'paper_cache_results', len(paper_cache)
-    if author_cache is not None:
-        print 'author_cahe_results', len(author_cache)
+        #搜索author
+        # if search_type == 'author':
 
-
-    ################################################################
-    query_time_author = 0
-    if search_type == 'paper' and author_cache is not None:
-        print "author cache"
-        authors_detail = authors_cache_detail
-    else:
         start_item_number = (author_page_num - 1) * item_number
         end_item_number = author_page_num * item_number
 
-        # 使用mysql查询 not model
         begin = time.time()
 
-        # author_results = db.session.query(Expert_detail_total).filter(
-        #     Expert_detail_total.name.like('%' + searchtext + '%')).order_by(Expert_detail_total.name).slice(
-        #     start_item_number, end_item_number).all()
-        if author_cache is None or searchtext != previous_search_text:
-            author_results = db.session.query(Expert_detail_total).filter(
-                Expert_detail_total.name.like('%' + searchtext + '%')).order_by(Expert_detail_total.name)
-            author_num = db.session.query(Expert_detail_total).filter(
-                Expert_detail_total.name.like('%' + searchtext + '%')).count()
-            cache.set('author_num', author_num)
+        author_results = db.session.query(Expert_detail_total).filter(
+            Expert_detail_total.name.like('%' + searchtext + '%')).order_by(Expert_detail_total.name)
+        author_num = db.session.query(Expert_detail_total).filter(
+            Expert_detail_total.name.like('%' + searchtext + '%')).count()
 
-            # author_num = db.session.query(Expert_detail_total).filter(
-            #     Expert_detail_total.name.like('%' + searchtext + '%')).count()
-
-            author_total_page = int(math.ceil(author_num / float(item_number)))
-            if author_total_page == 0:
-                author_total_page = 1
-
-            # 使用mysql查询 model
-            # author_results = Expert_detail.query.filter(Expert_detail.name.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
-
-            # 使用mongodb查询
-            # author_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
-            #     (page - 1) * item_number).sort('title', -1).limit(item_number)
-
-            if author_results is not None:
-                # 存放所有研究者信息的数组
-                authors_detail = []
-                for author in author_results:
-                    tags = author.tags
-                    if tags is None:
-                        tags = ""
-                    tags = re.split(r'[\[\];,]', str(tags))
-                    tags_str = ""
-                    for i, tag in enumerate(tags):
-                        if i == len(tags):
-                            tags_str = tags_str + tag
-                        else:
-                            tags_str = tags_str + tag + ', '
-                    while '' in tags:
-                        tags.remove('')
-                    author_detail = {
-                        "id": author.id,
-                        "position": author.position,
-                        "mid": author.mid,
-                        "name": author.name,
-                        "name_zh": author.name_zh,
-                        "phone": author.phone,
-                        "fax": author.fax,
-                        "email": author.email,
-                        "department": author.department,
-                        "address": author.address,
-                        "homepage": author.homepage,
-                        "education": author.education,
-                        "experience": author.experience,
-                        "biography": author.biography,
-                        "avatar": author.avatar,
-                        "h_index": author.h_index,
-                        "g_index": author.g_index,
-                        "gender": author.gender,
-                        "cite_num": author.cite_num,
-                        "tags": tags_str,
-                        "author_id": author.author_id,
-                    }
-                    authors_detail.append(author_detail)
-                    # json_authors_detail = json.dumps({"authors_detail": authors_detail})
-            cache.set('author', authors_detail)
-            authors_detail = authors_detail[start_item_number:end_item_number]
-            cache.set('authors_detail', authors_detail)
-
-        else:
-            authors_detail = author_cache[start_item_number:end_item_number]
-            author_total_page = cache.get('author_total_page')
-            author_num = cache.get('author_num')
         end = time.time()
         query_time_author = end - begin
 
-    ################################################################
+        cache.set('author_num', author_num)
+        cache.set('query_time_author', query_time_author)
 
+        author_total_page = int(math.ceil(author_num / float(item_number)))
+        if author_total_page == 0:
+            author_total_page = 1
 
-    query_time_paper = 0
-    # 搜索作者的情况，有缓存使用缓存
-    if search_type == 'author' and paper_cache is not None:
-        print "paper cache"
-        papers_detail = papers_cache_detail
-        paper_num = cache.get('paper_num')
-        paper_total_page = cache.get('paper_total_page')
-    else:
-        start_item_number = (paper_page_num - 1) * item_number
-        end_item_number = paper_page_num * item_number
+        if author_results is not None:
+            # 存放所有研究者信息的数组
+            authors_detail = []
+            for author in author_results:
+                tags = author.tags
+                if tags is None:
+                    tags = ""
+                tags = re.split(r'[\[\];,]', str(tags))
+                tags_str = ""
+                for i, tag in enumerate(tags):
+                    if i == len(tags):
+                        tags_str = tags_str + tag
+                    else:
+                        tags_str = tags_str + tag + ', '
+                while '' in tags:
+                    tags.remove('')
+                author_detail = {
+                    "id": author.id,
+                    "position": author.position,
+                    "mid": author.mid,
+                    "name": author.name,
+                    "name_zh": author.name_zh,
+                    "phone": author.phone,
+                    "fax": author.fax,
+                    "email": author.email,
+                    "department": author.department,
+                    "address": author.address,
+                    "homepage": author.homepage,
+                    "education": author.education,
+                    "experience": author.experience,
+                    "biography": author.biography,
+                    "avatar": author.avatar,
+                    "h_index": author.h_index,
+                    "g_index": author.g_index,
+                    "gender": author.gender,
+                    "cite_num": author.cite_num,
+                    "tags": tags_str,
+                    "author_id": author.author_id,
+                }
+                authors_detail.append(author_detail)
+                # json_authors_detail = json.dumps({"authors_detail": authors_detail})
+        cache.set('author', authors_detail)
+        authors_detail = authors_detail[start_item_number:end_item_number]
+        cache.set('authors_detail', authors_detail)
 
-        # 使用mysql查询 model
-        # paper_results = Paper_detail.query.filter(Paper_detail.title.like("%" + searchtext + "%")).slice(start_item_number, item_number).all()
+        # 搜索paper
+        # if search_type == 'paper':
 
         begin = time.time()
-
-        # 如果没有缓存存在 或者 搜索内容变化，查询数据库
-        if paper_cache is None or searchtext != previous_search_text:
-
-            # 使用mongodb查询
-            paper_num = mongo.db.Citation_total.find({'title': re.compile(searchtext)}).count()
-            cache.set('paper_num', paper_num)
-            # paper_results = mongo.db.Co_authors_added_year_title_abstract.find({'title': re.compile(searchtext)}).skip(
-            #     start_item_number).sort('title', -1).limit(item_number)
-
-            paper_results = mongo.db.Citation_total.find({'title': re.compile(searchtext)}).sort('title', -1)
-            print "end query"
-
-            print paper_results
-            # print "sorted_index: ", sorted_index
-            paper_total_page = int(math.ceil(paper_num / float(item_number)))
-            if paper_total_page == 0:
-                paper_total_page = 1
-
-            if paper_results is None:
-                print "none for paper_results"
-
-            if paper_results is not None:
-                # 存放所有paper信息的数据
-                papers_detail = []
-                for paper in paper_results:
-                    paper_detail = {
-                        "id": paper["paper_id"],
-                        "title": paper["title"],
-                        "authors": paper["co_authors"],
-                        "year": paper["year"],
-                        "abstract": paper["abstract"],
-                    }
-
-                    papers_detail.append(paper_detail)
-
-            # 按相关度排序
-            KS = KeywordSearch()
-            sorted_index = KS.searchProcess(searchtext, papers_detail)
-            papers_detail = [papers_sorted_detail for _, papers_sorted_detail in sorted(zip(sorted_index, papers_detail))]
-
-            print "sorted_index: ", sorted_index
-            cache.set('paper', papers_detail)
-            papers_detail = papers_detail[start_item_number:end_item_number]
-            cache.set('papers_detail', papers_detail)
-
-        #搜索内容不变，翻页的情况
-        else:
-            papers_detail = paper_cache[start_item_number:end_item_number]
-            paper_num = cache.get('paper_num')
-            paper_total_page = cache.get('paper_total_page')
+        # 使用mongodb查询
+        paper_num = mongo.db.citation_total.find({'title': re.compile(searchtext)}).count()
+        paper_results = mongo.db.citation_total.find({'title': re.compile(searchtext)}).sort('title', -1)
 
         end = time.time()
         query_time_paper = end - begin
 
-    # cache.set('paper', papers_detail)
-    # cache.set('author', authors_detail)
-    cache.set('search_text', searchtext)
-    cache.set('paper_total_page', paper_total_page)
-    cache.set('author_total_page', author_total_page)
+        cache.set('paper_num', paper_num)
+        cache.set('query_time_paper', query_time_paper)
 
-    # query_time = {
-    #     'paperQueryTime': query_time_paper,
-    #     'authorQueryTime': query_time_author
-    # }
+        paper_total_page = int(math.ceil(paper_num / float(item_number)))
+        if paper_total_page == 0:
+            paper_total_page = 1
+
+        if paper_results.count() != 0:
+            print paper_results
+
+        if paper_results.count() != 0:
+            # 存放所有paper信息的数据
+            papers_detail = list()
+            for paper in paper_results:
+                paper_detail = {
+                    "id": paper["paper_id"],
+                    "title": paper["title"],
+                    "authors": paper["co_authors"],
+                    "year": paper["year"],
+                    "abstract": paper["abstract"],
+                }
+
+                papers_detail.append(paper_detail)
+
+            # 按相关度排序
+            KS = KeywordSearch()
+            sorted_index = KS.searchProcess(searchtext, papers_detail)
+            papers_detail = [papers_sorted_detail for _, papers_sorted_detail in
+                             sorted(zip(sorted_index, papers_detail))]
+
+            cache.set('paper', papers_detail)
+            papers_detail = papers_detail[start_item_number:end_item_number]
+        else:
+            papers_detail = dict()
+
+        cache.set('papers_detail', papers_detail)
+        cache.set('paper_total_page', paper_total_page)
+        cache.set('author_total_page', author_total_page)
+
+    # 使用cache
+    elif cache_type == "true":
+        print "使用cache"
+        papers_detail = {}
+        authors_detail = {}
+        author_total_page = 1
+        paper_cache = cache.get('paper')
+        papers_cache_detail = cache.get('papers_detail')
+        paper_page = cache.get('paper_page')
+        author_cache = cache.get('author')
+        authors_cache_detail = cache.get('authors_detail')
+        author_page = cache.get('author_page')
+
+        query_time_author = 0
+
+        # 搜索paper的情况，使用author缓存
+        if search_type == 'paper' and author_cache is not None:
+            print "author cache"
+            authors_detail = authors_cache_detail
+
+        # author翻页的情况
+        else:
+            start_item_number = (author_page_num - 1) * item_number
+            end_item_number = author_page_num * item_number
+
+            authors_detail = author_cache[start_item_number:end_item_number]
+            author_total_page = cache.get('author_total_page')
+            author_num = cache.get('author_num')
+
+            query_time_author = cache.get('query_time_author')
+
+
+        query_time_paper = 0
+        # 搜索author的情况，有缓存使用缓存
+        if search_type == 'author' and paper_cache is not None:
+            print "paper cache"
+            papers_detail = papers_cache_detail
+
+        # paper翻页的情况
+        else:
+            start_item_number = (paper_page_num - 1) * item_number
+            end_item_number = paper_page_num * item_number
+
+            paper_total_page = cache.get('paper_total_page')
+            papers_detail = paper_cache[start_item_number:end_item_number]
+            paper_num = cache.get('paper_num')
+
+            query_time_paper = cache.get('query_time_paper')
+
     if search_type == "paper":
         query_time = round(query_time_paper, 2)
         result_total = paper_num
@@ -582,9 +566,6 @@ def search():
     )
 
 
-    # return redirect(url_for('user.search_results', SearchContent=searchtext, Results=results), code=302, Response=None)
-
-
 @api.route('/to_public_profile', methods=['GET'])
 def to_public_profile():
     id = request.args.get('id')
@@ -597,6 +578,11 @@ def public_profile():
     print 'id', id
 
     result = db.session.query(Expert_detail_total).filter(Expert_detail_total.id == id).first()
+
+    # 如果id不存在，返回404
+    if result is None:
+        return redirect(url_for('user.not_found'))
+
     tags = result.tags
     if tags is None:
         tags = ""
@@ -618,7 +604,7 @@ def public_profile():
 
 
     author_name = result.name
-    paper_result = mongo.db.Paper_of_author.find_one({'author_name':author_name})
+    paper_result = mongo.db.paper_of_author.find_one({'author_name': author_name})
     paper_detail_list = []
 
     if paper_result is not None:
@@ -684,7 +670,11 @@ def paper_detail():
         print "with current user"
         status = {"loginStatus": True}
 
-    paper = mongo.db.Citation_total.find_one({'paper_id': paper_id})
+    paper = mongo.db.citation_total.find_one({'paper_id': paper_id})
+
+    # 如果id不存在，返回404
+    if paper is None:
+        return redirect(url_for('user.not_found'))
 
     paper_keywords = []
     papers_kv = mongo.db.paper_keywords.find_one({'paper_id': paper_id})['keyword_and_val']
@@ -695,7 +685,7 @@ def paper_detail():
     ref_list = paper['ref_id']
     ref_paper_list = []
     for ref_id in ref_list:
-        ref_paper = mongo.db.Citation_total.find_one({'paper_id': ref_id})
+        ref_paper = mongo.db.citation_total.find_one({'paper_id': ref_id})
         ref_paper_detail = {
             'id': ref_paper['paper_id'],
             'title': ref_paper['title'],
@@ -732,8 +722,8 @@ def expert_network():
     # expert_id = request.form.get('expert_id')
     # expert_name = request.form.get('expert_name')
     # year = request.form.get('year')
-    # min_year = 1954
-    min_year = 2013
+    min_year = 1954
+    # min_year = 2013
     max_year = 2017
     years = []
     datas = []
@@ -753,17 +743,27 @@ def expert_network():
             continue
 
         coauthor_nodes = coauthor_network.all_nodes()
-        nodes = []
-        for node in coauthor_nodes:
+        nodes = list()
+
+        for name, position, department, address, phone, avatar, gender in coauthor_nodes:
             node_item = {
-                "name": str(node),
+                "name": name,
+                "attributes": {
+                    "position":position,
+                    "department": department,
+                    "address": address,
+                    "phone": phone,
+                    "avatar": avatar,
+                    "gender": gender,
+                },
+
                 "value": 10,
             }
 
             nodes.append(node_item)
 
         coauthor_network_edges = coauthor_network.all_edges()
-        edges = []
+        edges = list()
         for source, target, value in coauthor_network_edges:
             edges_item = {
                 "source": source,
@@ -799,7 +799,6 @@ def paper_network():
     paper_network_nodes = paper_network.all_nodes()
 
     for pi, t, y, c in paper_network_nodes:
-
         node_item = {
             "name": pi,
             "attributes": {"title": t, "year": y,},
@@ -815,6 +814,7 @@ def paper_network():
             "values": 0.5,
         }
         edges.append(edges_item)
+    print "return"
     return json.dumps({"nodes": nodes, "links": edges, "cate_num": cate_num})
 
 
@@ -1263,15 +1263,16 @@ def add_tag():
         print "tag", area_text
 
         result = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
-        print result.focus_area
-        area_list = result.focus_area
+        area_str = result.focus_area
 
-        if area_list == "":
-            area_list = area_text
+        if area_str == "":
+            area_str = area_text
         else:
-            area_list = area_list + "," + area_text
-
-        area_str = area_list
+            area_list = area_str.split(',')
+            if area_text in area_list:
+                return json.dumps({'result': 'fail', 'msg': 'dupliate tag'})
+            else:
+                area_str = area_str + "," + area_text
         print "area str", area_str
         result.focus_area = area_str
 
@@ -1280,7 +1281,8 @@ def add_tag():
 
         db.session.commit()
         return json.dumps({'result': 'success'})
-    except:
+    except Exception, e:
+        logging.error(e)
         return json.dumps({'result': 'fail'})
 
 
@@ -1415,11 +1417,19 @@ def get_upload_paper():
 
 @api.route('/summary_data', methods=['GET'])
 def summary_data():
-    expert_detail_num = db.session.query(Expert_detail_total).count()
-    user_num = db.session.query(ASNUser).count()
-    author_num = mongo.db.Paper_Of_Author.find().count()
-    # paper_num = mongo.db.Citation_total.find().count
-    paper_num = '3,079,007'
+    expert_detail_num = format(db.session.query(Expert_detail_total).count(), ',')
+    user_num = format(db.session.query(ASNUser).count(), ',')
+    author_num = format(mongo.db.paper_of_author.find().count(), ',')
+    print author_num
+    paper_num = format(mongo.db.citation_total.find().count(), ',')
+    print paper_num
+    # paper_num = '3,079,007'
     cite_num = '25,166,994'
+
+    today = datetime.date.today()
+    new_user_num = db.session.query(ASNUser).filter(
+        ASNUser.regist_time.between((today - datetime.timedelta(days=1)),today)).count()
+    # new_user_rate = round(float(new_user_num) / (int(user_num) - new_user_num), 2)
+    print "new_rate", new_user_num
     return json.dumps({"user_num": user_num, "expert_detail": expert_detail_num, "author_num": author_num,
-                       "paper_num": paper_num, "cite_num": cite_num})
+                       "paper_num": paper_num, "cite_num": cite_num, 'new_user_num': new_user_num})

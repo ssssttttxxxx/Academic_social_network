@@ -283,8 +283,8 @@
         }
 
 
-        function searchProcess(searchType, searchContent, searchPaperPage, searchAuthorPage) {
-            window.location.href = "/api/search_result?type=" + searchType + "&content=" + searchContent + "&p_page=" + searchPaperPage + "&a_page=" + searchAuthorPage
+        function searchProcess(searchType, searchContent, searchPaperPage, searchAuthorPage, all) {
+            window.location.href = "/api/search_result?type=" + searchType + "&content=" + searchContent + "&all=" + all + "&p_page=" + searchPaperPage + "&a_page=" + searchAuthorPage
             
             // $.ajax({
             //     url: "/api/search_result",
@@ -345,10 +345,11 @@
                         swal("搜索内容不能为空! ", "请重新搜索! ", "error");
                     }
                     else {
-                        console.log("asdfjasd")
                         that.loading = true
-                        searchProcess("paper", that.searchContent, 1, 1);
-                        searchProcess("author", that.searchContent, 1, 1);
+                        
+                        searchProcess("author", that.searchContent, 1, 1, false);
+                        searchProcess("paper", that.searchContent, 1, 1, false);
+                        
                     }
                 },
                 toPublicProfile: function(ID) {
@@ -381,7 +382,7 @@
                     // console.log("di "+ n + " ye");
                     data2.loading = true
                     // window.location.href = "/api/search?content=" + data2.searchContent + "&page=" + n
-                    searchProcess("author", data2.searchContent, res.pages.PaperCurrentPage, n);
+                    searchProcess("author", data2.searchContent, res.pages.PaperCurrentPage, n, true);
                 }
 
             }
@@ -408,7 +409,7 @@
                     // console.log("di "+ n + " ye");
                     data2.loading = true
                     // window.location.href = "/api/search?content=" + data2.searchContent + "&page=" + n
-                    searchProcess("paper", data2.searchContent, n, res.pages.AuthorCurrentPage);
+                    searchProcess("paper", data2.searchContent, n, res.pages.AuthorCurrentPage, true);
                     // console.log(data)
                     // $("#searchButton").action = "/api/search_result?content=" + data2.searchContent + "&page=" + n;
                     // $("#searchButton").attr("action", "/api/search_result?content=" + data2.searchContent + "&page=" + n);

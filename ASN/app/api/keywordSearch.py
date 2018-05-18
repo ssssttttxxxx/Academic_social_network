@@ -51,7 +51,8 @@ class KeywordSearch():
             # print result['title']
             # print i
 
-            title_abstract = result['title']+': ' + result['abstract']
+            # title_abstract = result['title']+': ' + result['abstract']
+            title_abstract = result['title']
             title_abstract_tokenized = tokenizer.tokenize(title_abstract)
             # print title_abstract_tokenized
             title_abstract_tokenized = [w for w in title_abstract_tokenized if w not in stop_words]

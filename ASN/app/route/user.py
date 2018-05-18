@@ -44,24 +44,6 @@ def add():
     return render_template('add.html')
 
 
-@user.route('/search', methods=['POST'])
-def search():
-    searchtext = request.form.get('searchtext')
-    results = Expert_detail.query.filter(Expert_detail.name.like("%" + searchtext + "%")).all()
-    if results:
-        return render_template('result.html', results=results)
-    else:
-        flash('not found')
-    return redirect(url_for('user.home'))
-
-
-@user.route('/detail', methods=['POST'])
-def detail():
-    entirelytitle = request.form.get('linklist')
-    fullcontent = Expert_detail.query.filter_by(title=entirelytitle)
-    return render_template('detail.html', fullcontent=fullcontent)
-
-
 @user.route('/modify')
 @login_required
 def modify():
@@ -128,3 +110,7 @@ def get_paper():
         status = {"loginStatus": True}
 
     return render_template('paper_detail.html', Status=status)
+
+@user.route('/404_not_found', methods=['GET'])
+def not_found():
+    return render_template('404.html')

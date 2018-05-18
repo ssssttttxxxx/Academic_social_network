@@ -1,4 +1,14 @@
 flask
 flask_login
+flask_uploads
+flask_mail
+flask_pymongo
 flask_SQLAlchemy
 mysql-python
+gunicorn
+Pillow
+networkx
+numpy
+nltk
+gensim
+matplotlib

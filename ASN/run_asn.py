@@ -7,6 +7,6 @@ if __name__ == '__main__':
     # app.run(debug=True, host='localhost')
     # app.run(host='localhost', threaded=True)
 
-    http_server = WSGIServer(('localhost', 5000), app)
-    http_server.serve_forever()
-    # app.run()
+    # http_server = WSGIServer(('localhost', 5000), app)
+    # http_server.serve_forever()
+    app.run()

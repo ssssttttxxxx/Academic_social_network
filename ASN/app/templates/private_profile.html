@@ -869,7 +869,7 @@
 		    		data3.isShowMultiSelect = false;
 		    	},
 		    	toSearchPage: function(searchContent) {
-        			window.open("/api/search?type=paper" + "&content=" + searchContent + "&p_page=1&a_page=1")
+        			window.open("/api/search_result?type=paper" + "&content=" + searchContent + "&p_page=1&a_page=1")
         		}
 			}
 		}
@@ -1203,8 +1203,7 @@
 					console.log($(e.target).text());
         		}
         		else if ($(e.target).attr("id") === "tab6") { //关系图页
-        			// getPaperNetwork();
-        			getExpertNetwork();
+        			// getExpertNetwork();
         			console.log($(e.target).text());
         		}
         	});
@@ -1212,7 +1211,7 @@
        });
     </script>
 
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
 
 		//作者关系图
         var dom2 = document.getElementById("coauthorGraph");
@@ -1377,7 +1376,7 @@
         	// myChartGraph1.resize();
         	myChartGraph2.resize();
         }
-    </script>
+    </script> -->
 
     <div id="return-top" style="position: fixed;right: 1%;bottom: 4%;z-index: 99;">
         <a onclick="backToTop()">

@@ -5941,3 +5941,675 @@
 2018-05-08 00:28:43,700 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
 2018-05-08 14:37:18,671 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
 2018-05-08 14:37:18,760 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-09 14:59:32,627 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-09 14:59:33,023 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-09 15:34:03,055 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-09 15:34:03,076 - dictionary.py[line:123] - INFO: built Dictionary(112 unique tokens: [u'help', u'show', u'increasingly', u'captures', u'abundant']...) from 1 documents (total 130 corpus positions)
+2018-05-09 15:41:23,344 - dictionary.py[line:123] - INFO: built Dictionary(0 unique tokens: []) from 0 documents (total 0 corpus positions)
+2018-05-09 19:05:29,538 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-09 19:05:30,033 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 15:38:28,122 - app_api.py[line:239] - INFO: tygtyg@qq successfully registed
+2018-05-10 16:02:10,691 - app_api.py[line:239] - INFO: yunyun@qq successfully registed
+2018-05-10 17:16:20,483 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 17:16:20,513 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 17:19:56,226 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 17:19:56,244 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 17:25:10,043 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 17:25:10,058 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 17:29:48,532 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 17:29:48,543 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 17:31:46,970 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 17:31:46,989 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 17:33:53,618 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 17:33:53,640 - dictionary.py[line:123] - INFO: built Dictionary(3744 unique tokens: [u'limited', u'geometriques', u'r', u'Laplacian', u'Improvement']...) from 123 documents (total 9711 corpus positions)
+2018-05-10 17:37:22,615 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 17:37:22,637 - dictionary.py[line:123] - INFO: built Dictionary(3744 unique tokens: [u'limited', u'geometriques', u'r', u'Laplacian', u'Improvement']...) from 123 documents (total 9711 corpus positions)
+2018-05-10 17:42:44,178 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 17:42:44,226 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 17:55:35,897 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 17:55:35,910 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 18:26:01,076 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 18:26:01,094 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 18:29:42,417 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 18:29:42,428 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 18:43:33,704 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 18:43:35,423 - dictionary.py[line:116] - INFO: adding document #10000 to Dictionary(40604 unique tokens: [u'eF', u'homomorphism', u'deferment', u'Poetry', u'circuitry']...)
+2018-05-10 18:43:37,559 - dictionary.py[line:116] - INFO: adding document #20000 to Dictionary(58958 unique tokens: [u'eF', u'homomorphism', u'deferment', u'SIMulated', u'Poetry']...)
+2018-05-10 18:43:39,688 - dictionary.py[line:116] - INFO: adding document #30000 to Dictionary(73347 unique tokens: [u'demystifies', u'QoSMig', u'eF', u'homomorphism', u'microtome']...)
+2018-05-10 18:43:41,535 - dictionary.py[line:116] - INFO: adding document #40000 to Dictionary(85498 unique tokens: [u'demystifies', u'QoSMig', u'eF', u'homomorphism', u'microtome']...)
+2018-05-10 18:43:43,565 - dictionary.py[line:116] - INFO: adding document #50000 to Dictionary(96707 unique tokens: [u'Prony', u'localizer', u'localizes', u'EXPLAIN', u'circuitry']...)
+2018-05-10 18:43:45,591 - dictionary.py[line:116] - INFO: adding document #60000 to Dictionary(107732 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...)
+2018-05-10 18:43:47,575 - dictionary.py[line:116] - INFO: adding document #70000 to Dictionary(116606 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...)
+2018-05-10 18:43:49,556 - dictionary.py[line:116] - INFO: adding document #80000 to Dictionary(126795 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...)
+2018-05-10 18:43:51,571 - dictionary.py[line:116] - INFO: adding document #90000 to Dictionary(134674 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...)
+2018-05-10 18:43:53,628 - dictionary.py[line:116] - INFO: adding document #100000 to Dictionary(141540 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...)
+2018-05-10 18:43:54,039 - dictionary.py[line:123] - INFO: built Dictionary(143097 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...) from 101683 documents (total 10308921 corpus positions)
+2018-05-10 18:48:18,970 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 18:48:18,984 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 18:48:36,286 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 18:48:36,286 - dictionary.py[line:123] - INFO: built Dictionary(227 unique tokens: [u'infant', u'concept', u'proposed', u'less', u'global']...) from 4 documents (total 388 corpus positions)
+2018-05-10 18:56:04,874 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 18:56:07,561 - dictionary.py[line:116] - INFO: adding document #10000 to Dictionary(46072 unique tokens: [u'Neurite', u'eF', u'homomorphism', u'localizer', u'Integro']...)
+2018-05-10 18:56:11,028 - dictionary.py[line:116] - INFO: adding document #20000 to Dictionary(66213 unique tokens: [u'Neurite', u'eF', u'homomorphism', u'Dage', u'localizer']...)
+2018-05-10 18:56:14,421 - dictionary.py[line:116] - INFO: adding document #30000 to Dictionary(79996 unique tokens: [u'Neurite', u'eF', u'homomorphism', u'Dage', u'localizer']...)
+2018-05-10 18:56:15,565 - dictionary.py[line:123] - INFO: built Dictionary(85277 unique tokens: [u'Neurite', u'eF', u'homomorphism', u'Dage', u'localizer']...) from 33975 documents (total 3531203 corpus positions)
+2018-05-10 19:06:46,973 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 19:06:50,301 - dictionary.py[line:116] - INFO: adding document #10000 to Dictionary(46072 unique tokens: [u'Neurite', u'eF', u'homomorphism', u'localizer', u'Integro']...)
+2018-05-10 19:06:53,484 - dictionary.py[line:116] - INFO: adding document #20000 to Dictionary(66213 unique tokens: [u'Neurite', u'eF', u'homomorphism', u'Dage', u'localizer']...)
+2018-05-10 19:06:58,545 - dictionary.py[line:116] - INFO: adding document #30000 to Dictionary(79996 unique tokens: [u'Neurite', u'eF', u'homomorphism', u'Dage', u'localizer']...)
+2018-05-10 19:07:00,825 - dictionary.py[line:123] - INFO: built Dictionary(85277 unique tokens: [u'Neurite', u'eF', u'homomorphism', u'Dage', u'localizer']...) from 33975 documents (total 3531203 corpus positions)
+2018-05-10 19:54:16,997 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-10 19:54:17,025 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-10 20:02:05,279 - dictionary.py[line:123] - INFO: built Dictionary(0 unique tokens: []) from 0 documents (total 0 corpus positions)
+2018-05-10 20:04:23,119 - dictionary.py[line:123] - INFO: built Dictionary(0 unique tokens: []) from 0 documents (total 0 corpus positions)
+2018-05-11 13:33:01,344 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 13:33:07,657 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 13:33:07,747 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 13:33:07,765 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 13:35:34,378 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\new_construct_network_form_mongodb.py', reloading
+2018-05-11 13:35:35,160 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 13:35:40,043 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 13:35:40,076 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 13:35:40,089 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 13:36:36,924 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:36] "GET /favicon.ico HTTP/1.1" 404 -
+2018-05-11 13:36:45,302 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:45] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 13:36:46,538 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 304 -
+2018-05-11 13:36:46,545 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 304 -
+2018-05-11 13:36:46,621 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-05-11 13:36:46,632 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 304 -
+2018-05-11 13:36:46,640 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-05-11 13:36:46,648 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 304 -
+2018-05-11 13:36:46,848 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/common/login/ace-fonts.css HTTP/1.1" 304 -
+2018-05-11 13:36:46,858 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/footable/css/footable.core.css HTTP/1.1" 200 -
+2018-05-11 13:36:46,950 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 304 -
+2018-05-11 13:36:46,980 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/common/animate.css HTTP/1.1" 304 -
+2018-05-11 13:36:46,986 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/common/style.css HTTP/1.1" 304 -
+2018-05-11 13:36:46,999 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:46] "GET /static/common/style2.css HTTP/1.1" 304 -
+2018-05-11 13:36:47,181 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 304 -
+2018-05-11 13:36:47,197 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 304 -
+2018-05-11 13:36:47,259 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/footable/js/footable.all.min.js HTTP/1.1" 200 -
+2018-05-11 13:36:47,293 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 304 -
+2018-05-11 13:36:47,302 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 304 -
+2018-05-11 13:36:47,308 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/vue/js/vue.js HTTP/1.1" 304 -
+2018-05-11 13:36:47,664 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 13:36:47,897 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-05-11 13:36:47,911 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-05-11 13:36:47,926 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/common/img/male.png HTTP/1.1" 200 -
+2018-05-11 13:36:47,934 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/common/img/female.png HTTP/1.1" 304 -
+2018-05-11 13:36:47,941 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:47] "GET /static/common/img/return-top.png HTTP/1.1" 304 -
+2018-05-11 13:36:57,792 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:36:57] "POST /api/expert_network HTTP/1.1" 500 -
+2018-05-11 13:38:41,191 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 13:38:49,095 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 13:38:49,127 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 13:38:49,153 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 13:38:52,209 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:38:52] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 13:38:52,641 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:38:52] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 13:39:20,595 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:39:20] "POST /api/expert_network HTTP/1.1" 200 -
+2018-05-11 13:39:23,727 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:39:23] "GET /static/common/img/fullscreen.png HTTP/1.1" 200 -
+2018-05-11 13:39:23,739 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:39:23] "GET /static/common/img/back.png HTTP/1.1" 200 -
+2018-05-11 13:39:35,250 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:39:35] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-05-11 13:42:31,625 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 13:42:38,207 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 13:42:38,236 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 13:42:38,247 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 13:42:40,915 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:42:40] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 13:42:41,355 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:42:41] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 13:42:51,032 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:42:51] "POST /api/expert_network HTTP/1.1" 500 -
+2018-05-11 13:43:40,723 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 13:43:47,404 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 13:43:47,463 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 13:43:47,490 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 13:43:48,121 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:43:48] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 13:43:48,579 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:43:48] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 13:44:15,730 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 13:44:15] "POST /api/expert_network HTTP/1.1" 200 -
+2018-05-11 13:47:11,966 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\new_construct_network_form_mongodb.py', reloading
+2018-05-11 13:47:12,530 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 13:47:21,388 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 13:47:21,417 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 13:47:21,437 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 13:48:58,163 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\new_construct_network_form_mongodb.py', reloading
+2018-05-11 13:48:58,994 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 13:49:08,992 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 13:49:09,032 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 13:49:09,051 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 14:31:53,612 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\new_construct_network_form_mongodb.py', reloading
+2018-05-11 14:32:01,444 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 14:32:14,854 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 14:32:14,941 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 14:32:14,956 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 14:33:59,302 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:33:59] "GET /user/login HTTP/1.1" 200 -
+2018-05-11 14:34:00,533 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:00] "GET /static/icheck/css/custom.css HTTP/1.1" 200 -
+2018-05-11 14:34:00,552 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:00] "GET /static/icheck/js/icheck.min.js HTTP/1.1" 200 -
+2018-05-11 14:34:00,588 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:00] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 14:34:01,115 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:01] "GET /static/icheck/css/green.png HTTP/1.1" 200 -
+2018-05-11 14:34:10,516 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:10] "POST /api/login HTTP/1.1" 302 -
+2018-05-11 14:34:10,582 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:10] "GET /user/home HTTP/1.1" 200 -
+2018-05-11 14:34:11,052 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:11] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 14:34:11,322 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:11] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 14:34:11,332 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:11] "GET /static/avatar/init.png HTTP/1.1" 200 -
+2018-05-11 14:34:12,632 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:12] "GET /user/private_profile HTTP/1.1" 200 -
+2018-05-11 14:34:12,974 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:12] "GET /static/dropzone-5.4.0/css/dropzone.css HTTP/1.1" 200 -
+2018-05-11 14:34:12,984 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:12] "GET /static/chosen/css/chosen.css HTTP/1.1" 200 -
+2018-05-11 14:34:12,993 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:12] "GET /static/dropzone-5.4.0/js/dropzone.js HTTP/1.1" 200 -
+2018-05-11 14:34:13,005 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:13] "GET /static/chosen/js/chosen.jquery.js HTTP/1.1" 200 -
+2018-05-11 14:34:13,301 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:13] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 14:34:13,701 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:13] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:34:13,798 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:13] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-05-11 14:34:17,573 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:34:17] "GET /static/chosen/css/chosen-sprite.png HTTP/1.1" 200 -
+2018-05-11 14:37:05,828 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:37:05] "GET /favicon.ico HTTP/1.1" 404 -
+2018-05-11 14:45:02,542 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:02] "GET / HTTP/1.1" 200 -
+2018-05-11 14:45:02,937 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:02] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 14:45:02,940 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:02] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 14:45:04,855 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:04] "GET /user/login HTTP/1.1" 200 -
+2018-05-11 14:45:04,934 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:04] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 14:45:12,348 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:12] "POST /api/login HTTP/1.1" 302 -
+2018-05-11 14:45:12,729 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:12] "GET /user/home HTTP/1.1" 200 -
+2018-05-11 14:45:12,927 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:12] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 14:45:13,230 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:13] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 14:45:14,201 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:14] "GET /user/private_profile HTTP/1.1" 200 -
+2018-05-11 14:45:14,990 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:14] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 14:45:15,122 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:15] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:45:15,214 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:45:15] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-05-11 14:46:14,506 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:46:14] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map HTTP/1.1" 304 -
+2018-05-11 14:46:31,773 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:46:31] "GET /user/private_profile HTTP/1.1" 200 -
+2018-05-11 14:46:32,322 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:46:32] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 14:46:32,720 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:46:32] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:46:32,845 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:46:32] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-05-11 14:51:10,622 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:10] "GET /user/home HTTP/1.1" 200 -
+2018-05-11 14:51:10,895 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:10] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 14:51:11,151 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:11] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 14:51:14,332 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:14] "GET /api/search_result?content=fox HTTP/1.1" 302 -
+2018-05-11 14:51:25,015 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-11 14:51:25,026 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-11 14:51:25,075 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:25] "GET /api/search?content=fox&type=paper&all=false&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-05-11 14:51:25,418 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:25] "GET /static/jqPaginator/js/jqpaginator.min.js HTTP/1.1" 304 -
+2018-05-11 14:51:25,671 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:25] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 14:51:25,792 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:25] "GET /static/common/img/icon-paper.png HTTP/1.1" 200 -
+2018-05-11 14:51:29,414 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:29] "GET /api/to_public_profile?id=54325d04dabfaeb54215035f HTTP/1.1" 302 -
+2018-05-11 14:51:30,141 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:30] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 200 -
+2018-05-11 14:51:30,492 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:51:30] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:52:24,677 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:52:24] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 200 -
+2018-05-11 14:52:25,266 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:52:25] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:52:43,674 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:52:43] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 200 -
+2018-05-11 14:52:44,260 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:52:44] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:52:59,562 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:52:59] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 200 -
+2018-05-11 14:53:00,173 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:53:00] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:53:12,743 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:53:12] "POST /api/expert_network HTTP/1.1" 200 -
+2018-05-11 14:53:23,858 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:53:23] "GET /api/to_public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 302 -
+2018-05-11 14:53:24,394 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:53:24] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 14:53:24,783 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:53:24] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:53:55,920 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:53:55] "GET /api/to_public_profile?id=54325d04dabfaeb54215035f HTTP/1.1" 302 -
+2018-05-11 14:53:56,434 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:53:56] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 200 -
+2018-05-11 14:53:56,835 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:53:56] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:55:16,898 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:55:16] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 14:55:17,355 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:55:17] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:55:45,857 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:55:45] "GET /api/public_profile?ID=54325d04dabfaeb54215035f HTTP/1.1" 200 -
+2018-05-11 14:55:46,288 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:55:46] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:55:58,575 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:55:58] "POST /api/expert_network HTTP/1.1" 200 -
+2018-05-11 14:56:04,374 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:04] "GET /api/to_public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 302 -
+2018-05-11 14:56:04,936 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:04] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 14:56:05,400 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:05] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:56:16,953 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:16] "POST /api/expert_network HTTP/1.1" 200 -
+2018-05-11 14:56:18,999 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:18] "GET /static/common/img/init.png HTTP/1.1" 200 -
+2018-05-11 14:56:19,299 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:19] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:19,671 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:19] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:29,325 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:29] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:29,648 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:29] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:29,900 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:29] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:30,082 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:30] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:30,411 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:30] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:34,269 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:34] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:34,588 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:34] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:34,625 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:34] "GET /static/common/img/University%20of%20Washington.png HTTP/1.1" 404 -
+2018-05-11 14:56:35,992 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:35] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:36,319 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:36] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:36,572 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:36] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:37,454 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:37] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:40,371 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:40] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:42,667 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:42] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:42,983 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:42] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:43,901 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:43] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:44,737 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:44] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:44,989 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:44] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:45,765 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:45] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:46,805 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:46] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:47,269 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:47] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:47,611 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:47] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:48,030 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:48] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:48,348 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:48] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:48,894 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:48] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:49,234 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:49] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:52,651 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:52] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:53,529 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:53] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:54,525 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:54] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:54,851 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:54] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:55,220 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:55] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:55,540 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:55] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:55,796 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:55] "GET /static/common/img/Computer%20and%20Information%20ScienceUniversity%20of%20Pennsylvania.png HTTP/1.1" 404 -
+2018-05-11 14:56:57,693 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:57] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:58,013 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:58] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:56:58,032 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:56:58] "GET /static/common/img/University%20of%20Washington.png HTTP/1.1" 404 -
+2018-05-11 14:57:10,788 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:10] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:11,099 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:11] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:11,421 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:11] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:19,282 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:19] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:19,931 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:19] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:44,065 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:44] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:44,496 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:44] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:44,825 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:44] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:45,387 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:45] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:45,707 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:45] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:45,989 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:45] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:46,332 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:46] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:46,986 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:46] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:47,342 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:47] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:47,851 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:47] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:48,665 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:48] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:49,134 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:49] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:49,510 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:49] "GET /static/common/img/Computer%20and%20Information%20ScienceUniversity%20of%20Pennsylvania.png HTTP/1.1" 404 -
+2018-05-11 14:57:50,069 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:50] "GET /static/common/img/Computer%20and%20Information%20ScienceUniversity%20of%20Pennsylvania.png HTTP/1.1" 404 -
+2018-05-11 14:57:50,391 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:50] "GET /static/common/img/Computer%20and%20Information%20ScienceUniversity%20of%20Pennsylvania.png HTTP/1.1" 404 -
+2018-05-11 14:57:50,638 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:50] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:51,128 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:51] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:51,483 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:51] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:51,734 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:51] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:51,973 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:51] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:52,243 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:52] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:52,780 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:52] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:53,112 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:53] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:54,313 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:54] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:54,657 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:54] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:54,911 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:54] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:55,191 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:55] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:56,362 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:56] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:56,697 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:56] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:58,523 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:58] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:58,842 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:58] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:59,216 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:59] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:57:59,542 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:57:59] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:58:00,548 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:58:00] "GET /static/common/img/University%20of%20Washington.png HTTP/1.1" 404 -
+2018-05-11 14:58:02,911 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:58:02] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:58:03,289 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:58:03] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:58:03,605 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:58:03] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:58:07,101 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:58:07] "GET /static/common/img/University%20of%20Washington.png HTTP/1.1" 404 -
+2018-05-11 14:58:07,418 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:58:07] "GET /static/common/img/University%20of%20Washington.png HTTP/1.1" 404 -
+2018-05-11 14:58:07,434 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:58:07] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:58:07,674 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:58:07] "GET /static/common/img/University%20of%20Washington.png HTTP/1.1" 404 -
+2018-05-11 14:58:07,763 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:58:07] "GET /static/common/img/University%20of%20Washington.png HTTP/1.1" 404 -
+2018-05-11 14:58:08,046 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:58:08] "GET /static/common/img/University%20of%20Washington.png HTTP/1.1" 404 -
+2018-05-11 14:58:59,694 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 14:59:04,569 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 14:59:04,624 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 14:59:04,637 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 14:59:05,161 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:05] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 14:59:05,612 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:05] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 14:59:09,424 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:09] "POST /api/expert_network HTTP/1.1" 200 -
+2018-05-11 14:59:14,078 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:14] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:14,535 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:14] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:14,792 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:14] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:15,551 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:15] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:15,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:15] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:16,246 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:16] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:17,358 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:17] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:17,607 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:17] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:18,046 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:18] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:18,444 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:18] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:18,696 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:18] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:20,586 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:20] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:20,907 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:20] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:21,440 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:21] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:22,316 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:22] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:32,348 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:32] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:32,671 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:32] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:33,418 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:33] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:34,624 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:34] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:40,440 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:40] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:40,772 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:40] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 14:59:41,025 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 14:59:41] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:10,684 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:10] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:11,112 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:11] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:11,443 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:11] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:18,565 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:18] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:18,894 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:18] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:19,813 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:19] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:20,819 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:20] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:21,430 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:21] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:22,075 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:22] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:24,211 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:24] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:25,664 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:25] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:25,924 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:25] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:26,200 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:26] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:26,694 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:26] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:27,059 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:27] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:27,309 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:27] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:28,039 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:28] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:28,357 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:28] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:28,927 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:28] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:29,615 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:29] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:29,871 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:29] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:30,160 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:30] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:30,487 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:30] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:34,358 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:34] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:34,684 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:34] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:37,638 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:37] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:38,882 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:38] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:39,138 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:39] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:39,476 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:39] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:39,796 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:39] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:40,049 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:40] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:40,165 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:40] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:40,493 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:40] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:41,563 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:41] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:41,890 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:41] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:47,601 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:47] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:49,650 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:49] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:49,901 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:49] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:50,071 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:50] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:50,398 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:50] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:50,647 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:50] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:50,933 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:50] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:51,374 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:51] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:51,630 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:51] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:51,861 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:51] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:52,168 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:52] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:52,516 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:52] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:52,767 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:52] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:53,051 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:53] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:53,313 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:53] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:54,736 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:54] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:54,993 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:54] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:55,427 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:55] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:55,747 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:55] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:55,997 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:55] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:56,144 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:56] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:56,447 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:56] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:56,776 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:56] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:57,053 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:57] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:57,668 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:57] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:57,926 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:57] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:58,105 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:58] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:58,426 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:58] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:58,677 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:58] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:58,846 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:58] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:59,411 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:59] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:00:59,809 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:00:59] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:01,319 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:01] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:01,805 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:01] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:02,121 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:02] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:02,500 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:02] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:02,826 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:02] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:10,058 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:10] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:10,384 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:10] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:25,516 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:25] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:25,793 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:25] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:26,141 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:26] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:26,594 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:26] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:26,951 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:26] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:27,201 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:27] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:28,270 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:28] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:29,105 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:29] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:29,592 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:29] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:29,918 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:29] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:30,168 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:30] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:30,766 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:30] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:31,085 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:31] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:31,342 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:31] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:31,759 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:31] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:32,642 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:32] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:33,118 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:33] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:33,892 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:33] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:34,142 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:34] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:35,721 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:35] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:36,039 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:36] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:37,372 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:37] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:37,799 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:37] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:38,052 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:38] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:40,576 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:40] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:01:40,898 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:01:40] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:02:48,217 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\new_construct_network_form_mongodb.py', reloading
+2018-05-11 15:02:48,961 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:02:53,187 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:02:53,216 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:02:53,226 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:04:10,486 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\new_construct_network_form_mongodb.py', reloading
+2018-05-11 15:04:10,961 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:04:14,878 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:04:14,907 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:04:14,921 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:06:09,082 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\new_construct_network_form_mongodb.py', reloading
+2018-05-11 15:06:09,700 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:06:13,878 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:06:13,908 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:06:13,920 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:12:15,358 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:12:19,098 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:12:19,134 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:12:19,144 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:12:20,180 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:12:20] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 15:12:20,743 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:12:20] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:12:23,460 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:12:23] "POST /api/expert_network HTTP/1.1" 500 -
+2018-05-11 15:12:58,615 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:13:04,849 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:13:04,898 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:13:04,914 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:13:06,533 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:13:06] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 15:13:07,644 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:13:07] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:13:10,855 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:13:10] "POST /api/expert_network HTTP/1.1" 200 -
+2018-05-11 15:13:12,655 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:13:12] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:13:14,654 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:13:14] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:14:19,005 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\new_construct_network_form_mongodb.py', reloading
+2018-05-11 15:14:19,576 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:14:25,961 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:14:26,003 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:14:26,019 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:14:45,910 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:14:45] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:14:46,194 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:14:46] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:14:50,365 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:14:50] "GET /static/common/img/.png HTTP/1.1" 404 -
+2018-05-11 15:14:56,476 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-05-11 15:14:57,081 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:21:56,388 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:22:00,499 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:22:00,684 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:22:00,710 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:22:04,217 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:04] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 15:22:05,107 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:05] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:22:13,545 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:13] "POST /api/expert_network HTTP/1.1" 200 -
+2018-05-11 15:22:18,878 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:18] "GET /static/common/img/unknow.png HTTP/1.1" 404 -
+2018-05-11 15:22:19,125 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:19] "GET /static/common/img/unknow.png HTTP/1.1" 404 -
+2018-05-11 15:22:19,405 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:19] "GET /static/common/img/unknow.png HTTP/1.1" 404 -
+2018-05-11 15:22:22,618 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:22] "GET /static/common/img/unknow.png HTTP/1.1" 404 -
+2018-05-11 15:22:22,872 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:22] "GET /static/common/img/unknow.png HTTP/1.1" 404 -
+2018-05-11 15:22:23,171 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:23] "GET /static/common/img/unknow.png HTTP/1.1" 404 -
+2018-05-11 15:22:28,763 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:28] "GET /static/common/img/unknow.png HTTP/1.1" 404 -
+2018-05-11 15:22:45,562 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:22:49,512 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:22:49,543 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:22:49,553 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:22:51,335 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:51] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 15:22:52,071 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:52] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:22:54,924 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:54] "POST /api/expert_network HTTP/1.1" 200 -
+2018-05-11 15:22:57,928 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:22:57] "GET /static/common/img/unknown.png HTTP/1.1" 200 -
+2018-05-11 15:26:09,519 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:26:13,688 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:26:13,717 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:26:13,729 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:26:15,085 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:26:15] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 15:26:16,028 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:26:16] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:26:19,542 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:26:19] "GET /static/footable/css/fonts/footable.woff HTTP/1.1" 200 -
+2018-05-11 15:26:20,279 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:26:20] "POST /api/expert_network HTTP/1.1" 200 -
+2018-05-11 15:28:35,005 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-05-11 15:28:35,763 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:28:40,555 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:28:40,584 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:28:40,594 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:29:07,591 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:29:07] "GET /user/home HTTP/1.1" 200 -
+2018-05-11 15:29:07,885 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:29:07] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 15:29:08,342 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:29:08] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 15:31:49,881 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:31:49] "GET /user/private_profile HTTP/1.1" 200 -
+2018-05-11 15:31:50,448 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:31:50] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 15:31:50,868 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:31:50] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:31:51,013 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:31:51] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-05-11 15:32:26,315 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:32:26] "POST /api/add_tag HTTP/1.1" 200 -
+2018-05-11 15:32:26,410 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:32:26] "POST /api/add_tag HTTP/1.1" 200 -
+2018-05-11 15:32:26,457 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:32:26] "GET /user/private_profile HTTP/1.1" 200 -
+2018-05-11 15:32:27,076 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:32:27] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:32:27,433 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:32:27] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 15:32:27,576 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:32:27] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-05-11 15:33:10,536 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:33:10] "GET /user/private_profile HTTP/1.1" 200 -
+2018-05-11 15:33:11,104 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:33:11] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 15:33:11,519 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:33:11] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:33:11,684 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:33:11] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-05-11 15:34:09,747 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:34:09] "POST /api/add_tag HTTP/1.1" 200 -
+2018-05-11 15:34:09,908 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:34:09] "GET /static/common/fonts/OpenSans-300.woff HTTP/1.1" 404 -
+2018-05-11 15:34:50,470 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:34:50] "GET /user/private_profile HTTP/1.1" 200 -
+2018-05-11 15:34:51,058 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:34:51] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 15:34:51,487 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:34:51] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:34:51,648 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:34:51] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-05-11 15:35:16,640 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:35:16] "POST /api/add_tag HTTP/1.1" 200 -
+2018-05-11 15:35:16,813 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:35:16] "GET /static/common/fonts/OpenSans-300.woff HTTP/1.1" 404 -
+2018-05-11 15:36:02,078 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:36:06,138 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:36:06,177 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:36:06,191 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:36:07,316 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:36:07] "GET /user/private_profile HTTP/1.1" 200 -
+2018-05-11 15:36:07,796 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:36:07] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 15:36:08,272 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:36:08] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:36:08,407 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:36:08] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-05-11 15:36:13,036 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:36:13] "POST /api/add_tag HTTP/1.1" 500 -
+2018-05-11 15:36:13,374 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:36:13] "GET /static/common/fonts/OpenSans-300.woff HTTP/1.1" 404 -
+2018-05-11 15:51:03,997 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:51:07,680 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:51:07,713 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:51:07,724 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 15:51:12,551 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:51:12] "GET /user/home HTTP/1.1" 200 -
+2018-05-11 15:51:13,030 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:51:13] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 15:51:13,042 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:51:13] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 15:51:15,858 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:51:15] "GET /api/search_result?content=data HTTP/1.1" 302 -
+2018-05-11 15:52:57,743 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-11 15:52:59,795 - dictionary.py[line:116] - INFO: adding document #10000 to Dictionary(40604 unique tokens: [u'eF', u'homomorphism', u'deferment', u'Poetry', u'circuitry']...)
+2018-05-11 15:53:01,951 - dictionary.py[line:116] - INFO: adding document #20000 to Dictionary(58958 unique tokens: [u'eF', u'homomorphism', u'deferment', u'SIMulated', u'Poetry']...)
+2018-05-11 15:53:03,990 - dictionary.py[line:116] - INFO: adding document #30000 to Dictionary(73347 unique tokens: [u'demystifies', u'QoSMig', u'eF', u'homomorphism', u'microtome']...)
+2018-05-11 15:53:05,759 - dictionary.py[line:116] - INFO: adding document #40000 to Dictionary(85498 unique tokens: [u'demystifies', u'QoSMig', u'eF', u'homomorphism', u'microtome']...)
+2018-05-11 15:53:07,605 - dictionary.py[line:116] - INFO: adding document #50000 to Dictionary(96707 unique tokens: [u'Prony', u'localizer', u'localizes', u'EXPLAIN', u'circuitry']...)
+2018-05-11 15:53:09,505 - dictionary.py[line:116] - INFO: adding document #60000 to Dictionary(107732 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...)
+2018-05-11 15:53:11,453 - dictionary.py[line:116] - INFO: adding document #70000 to Dictionary(116606 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...)
+2018-05-11 15:53:13,553 - dictionary.py[line:116] - INFO: adding document #80000 to Dictionary(126795 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...)
+2018-05-11 15:53:16,076 - dictionary.py[line:116] - INFO: adding document #90000 to Dictionary(134674 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...)
+2018-05-11 15:53:18,066 - dictionary.py[line:116] - INFO: adding document #100000 to Dictionary(141540 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...)
+2018-05-11 15:53:18,358 - dictionary.py[line:123] - INFO: built Dictionary(143097 unique tokens: [u'Prony', u'reallocations', u'localizer', u'localizes', u'EXPLAIN']...) from 101683 documents (total 10308921 corpus positions)
+2018-05-11 15:53:43,201 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:53:43] "GET /api/search?content=data&type=paper&all=false&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-05-11 15:53:43,269 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:53:43] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 15:53:43,357 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:53:43] "GET /user/home HTTP/1.1" 200 -
+2018-05-11 15:53:44,174 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:53:44] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 15:53:44,394 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:53:44] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 15:53:44,542 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 15:53:44] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 15:58:30,836 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-05-11 15:58:32,635 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 15:58:39,630 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 15:58:39,661 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 15:58:39,676 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 16:00:16,931 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:00:16] "GET /api/search_result?type=author&content=linear%20&all=false&p_page=1&a_page=1 HTTP/1.1" 302 -
+2018-05-11 16:01:17,677 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-11 16:01:19,492 - dictionary.py[line:116] - INFO: adding document #10000 to Dictionary(33034 unique tokens: [u'sequencias', u'homomorphism', u'PQ2', u'circuitry', u'pseudoinversion']...)
+2018-05-11 16:01:21,575 - dictionary.py[line:116] - INFO: adding document #20000 to Dictionary(46801 unique tokens: [u'sequencias', u'Prony', u'homomorphism', u'localizes', u'PQ2']...)
+2018-05-11 16:01:24,223 - dictionary.py[line:116] - INFO: adding document #30000 to Dictionary(59171 unique tokens: [u'sequencias', u'Prony', u'homomorphism', u'3480', u'localizes']...)
+2018-05-11 16:01:26,635 - dictionary.py[line:116] - INFO: adding document #40000 to Dictionary(68513 unique tokens: [u'sequencias', u'Prony', u'homomorphism', u'3480', u'localizes']...)
+2018-05-11 16:01:28,697 - dictionary.py[line:116] - INFO: adding document #50000 to Dictionary(76202 unique tokens: [u'sequencias', u'Prony', u'homomorphism', u'3480', u'localizer']...)
+2018-05-11 16:01:29,882 - dictionary.py[line:123] - INFO: built Dictionary(79984 unique tokens: [u'sequencias', u'Prony', u'homomorphism', u'3480', u'localizer']...) from 54643 documents (total 4684306 corpus positions)
+2018-05-11 16:01:41,940 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:01:41] "GET /api/search?content=linear&type=author&all=false&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-05-11 16:01:42,569 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:01:42] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:02:02,575 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:02:02] "GET /api/search_result?type=author&content=linear&all=false&p_page=1&a_page=1 HTTP/1.1" 302 -
+2018-05-11 16:02:59,441 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-11 16:03:01,591 - dictionary.py[line:116] - INFO: adding document #10000 to Dictionary(33034 unique tokens: [u'sequencias', u'homomorphism', u'PQ2', u'circuitry', u'pseudoinversion']...)
+2018-05-11 16:03:03,154 - dictionary.py[line:116] - INFO: adding document #20000 to Dictionary(46801 unique tokens: [u'sequencias', u'Prony', u'homomorphism', u'localizes', u'PQ2']...)
+2018-05-11 16:03:04,993 - dictionary.py[line:116] - INFO: adding document #30000 to Dictionary(59171 unique tokens: [u'sequencias', u'Prony', u'homomorphism', u'3480', u'localizes']...)
+2018-05-11 16:03:06,798 - dictionary.py[line:116] - INFO: adding document #40000 to Dictionary(68513 unique tokens: [u'sequencias', u'Prony', u'homomorphism', u'3480', u'localizes']...)
+2018-05-11 16:03:08,539 - dictionary.py[line:116] - INFO: adding document #50000 to Dictionary(76202 unique tokens: [u'sequencias', u'Prony', u'homomorphism', u'3480', u'localizer']...)
+2018-05-11 16:03:09,270 - dictionary.py[line:123] - INFO: built Dictionary(79984 unique tokens: [u'sequencias', u'Prony', u'homomorphism', u'3480', u'localizer']...) from 54643 documents (total 4684306 corpus positions)
+2018-05-11 16:03:15,509 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:03:15] "GET /api/search?content=linear&type=author&all=false&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-05-11 16:03:16,075 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:03:16] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:05:07,440 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:05:07] "GET /user/home HTTP/1.1" 200 -
+2018-05-11 16:05:07,615 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:05:07] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:05:07,956 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:05:07] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 16:05:41,503 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:05:41] "GET /api/search_result?content=fox HTTP/1.1" 302 -
+2018-05-11 16:05:53,483 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-11 16:05:53,497 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-11 16:05:53,536 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:05:53] "GET /api/search?content=fox&type=paper&all=false&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-05-11 16:05:53,967 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:05:53] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:06:06,842 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:06:06] "GET /api/search_result?type=author&content=lie&all=false&p_page=1&a_page=1 HTTP/1.1" 302 -
+2018-05-11 16:19:52,298 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 16:19:56,130 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 16:19:56,158 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 16:19:56,171 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 16:20:39,188 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:39] "GET /favicon.ico HTTP/1.1" 404 -
+2018-05-11 16:20:40,092 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:40] "GET / HTTP/1.1" 200 -
+2018-05-11 16:20:40,644 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:40] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 16:20:40,651 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:40] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:20:41,572 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:41] "GET /user/login HTTP/1.1" 200 -
+2018-05-11 16:20:41,688 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:41] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:20:48,246 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:48] "POST /api/login HTTP/1.1" 302 -
+2018-05-11 16:20:48,660 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:48] "GET /user/home HTTP/1.1" 200 -
+2018-05-11 16:20:48,864 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:48] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:20:49,157 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:49] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 16:20:50,289 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:50] "GET /user/private_profile HTTP/1.1" 200 -
+2018-05-11 16:20:50,926 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:50] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:20:51,063 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:51] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 16:20:51,180 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:51] "POST /api/get_upload_paper HTTP/1.1" 200 -
+2018-05-11 16:20:53,815 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:20:53] "GET /api/search_result?type=paper&content=Social%20Network&p_page=1&a_page=1 HTTP/1.1" 302 -
+2018-05-11 16:21:11,835 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-11 16:21:12,759 - dictionary.py[line:123] - INFO: built Dictionary(23275 unique tokens: [u'reallocations', u'localized', u'Prone', u'LASS', u'OPAC']...) from 5759 documents (total 470812 corpus positions)
+2018-05-11 16:21:13,460 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:21:13] "GET /api/search?content=Social+Network&type=paper&all=false&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-05-11 16:21:14,138 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:21:14] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:37:55,359 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 16:37:59,717 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 16:37:59,776 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 16:37:59,798 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 16:38:08,096 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:38:08] "GET /user/home HTTP/1.1" 200 -
+2018-05-11 16:38:08,799 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:38:08] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:38:09,214 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:38:09] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 16:38:11,519 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:38:11] "GET /api/search_result?content=fox HTTP/1.1" 302 -
+2018-05-11 16:38:27,062 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-11 16:38:27,078 - dictionary.py[line:123] - INFO: built Dictionary(2519 unique tokens: [u'limited', u'similarity', u'dynamic', u'four', u'entropy']...) from 80 documents (total 6844 corpus positions)
+2018-05-11 16:38:27,130 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:38:27] "GET /api/search?content=fox&type=paper&all=false&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-05-11 16:38:27,578 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:38:27] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 16:38:41,229 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:38:41] "GET /api/to_public_profile?id=53f4388ddabfaedf43593d27 HTTP/1.1" 302 -
+2018-05-11 16:38:41,582 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:38:41] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 200 -
+2018-05-11 16:38:41,888 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:38:41] "POST /api/get_follow HTTP/1.1" 200 -
+2018-05-11 16:41:55,280 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 16:41:59,417 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 16:41:59,450 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 16:41:59,461 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 16:42:03,934 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:42:03] "GET /api/public_profile?ID=53f4388ddabfaedf43593d27 HTTP/1.1" 500 -
+2018-05-11 16:42:03,948 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:42:03] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 404 -
+2018-05-11 16:42:04,253 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:42:04] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 404 -
+2018-05-11 16:42:04,253 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:42:04] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 404 -
+2018-05-11 16:42:04,654 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 16:42:04] "GET /api/public_profile?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 404 -
+2018-05-11 16:42:19,571 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-05-11 16:42:20,295 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 16:42:25,062 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 16:42:25,101 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 16:42:25,114 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 17:23:13,219 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-11 17:23:17,753 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-11 17:23:17,785 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-11 17:23:17,799 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-11 17:23:28,661 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:28] "GET / HTTP/1.1" 200 -
+2018-05-11 17:23:31,517 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-05-11 17:23:31,555 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-05-11 17:23:31,586 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-05-11 17:23:31,671 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/common/login/ace-fonts.css HTTP/1.1" 200 -
+2018-05-11 17:23:31,744 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 200 -
+2018-05-11 17:23:31,779 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-05-11 17:23:31,796 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-05-11 17:23:31,809 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 200 -
+2018-05-11 17:23:31,822 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 200 -
+2018-05-11 17:23:31,838 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 200 -
+2018-05-11 17:23:31,865 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-05-11 17:23:31,914 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:31] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-05-11 17:23:32,028 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:32] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 200 -
+2018-05-11 17:23:32,055 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:32] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 200 -
+2018-05-11 17:23:32,105 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:32] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-05-11 17:23:35,961 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:35] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-11 17:23:36,085 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:36] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-05-11 17:23:36,108 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:36] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-11 17:23:36,224 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:36] "GET /favicon.ico HTTP/1.1" 404 -

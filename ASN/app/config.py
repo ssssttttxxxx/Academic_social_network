@@ -13,15 +13,16 @@ class Config:
     # MySql
     SQLALCHEMY_DATABASE_URI = "mysql://%s:%s@%s/%s" % ('root', 'stx11stx11', '127.0.0.1', 'dblp_ref')
     SQLALCHEMY_BINDS = {
-        'paper':    r'mysql://root:stx11stx11@127.0.0.1/dblp_ref',
+        # 'paper':    r'mysql://root:stx11stx11@127.0.0.1/dblp_ref',
 
-        'expert':   r'mysql://root:stx11stx11@127.0.0.1/expert_example',
+        # 'expert':   r'mysql://root:stx11stx11@127.0.0.1/expert_example',
 
         'ali':      r'mysql://root:123456@47.106.157.16/citation',
         }
 
     # Mongo
-    MONGO_HOST = '47.106.157.16'
+    MONGO_HOST = '110.64.66.221'
+    # MONGO_HOST = '47.106.157.16'
     # MONGO_HOST = '127.0.0.1'
     MONGO_PORT = 27017
     MONGO_USERNAME = ''

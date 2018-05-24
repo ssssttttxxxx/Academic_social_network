@@ -114,3 +114,7 @@ def get_paper():
 @user.route('/404_not_found', methods=['GET'])
 def not_found():
     return render_template('404.html')
+
+@user.route('/unconfirmed', methods=['GET'])
+def unconfirmed():
+    return render_template('unconfirmed.html')

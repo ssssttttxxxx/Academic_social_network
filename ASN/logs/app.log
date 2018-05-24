@@ -6613,3 +6613,105 @@
 2018-05-11 17:23:36,085 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:36] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
 2018-05-11 17:23:36,108 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:36] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
 2018-05-11 17:23:36,224 - _internal.py[line:87] - INFO: 127.0.0.1 - - [11/May/2018 17:23:36] "GET /favicon.ico HTTP/1.1" 404 -
+2018-05-21 22:26:04,799 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:26:20,848 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:26:21,036 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:26:21,092 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:26:41,220 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:41] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:26:44,480 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:44] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-05-21 22:26:44,566 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:44] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-05-21 22:26:44,604 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:44] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-05-21 22:26:44,651 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:44] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-05-21 22:26:44,760 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:44] "GET /static/common/style2.css HTTP/1.1" 200 -
+2018-05-21 22:26:44,796 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:44] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-05-21 22:26:44,891 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:44] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-05-21 22:26:45,028 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:45] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-05-21 22:26:45,115 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:45] "GET /static/echarts/js/echarts.min.js HTTP/1.1" 200 -
+2018-05-21 22:26:45,469 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:45] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-05-21 22:26:45,694 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:45] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map HTTP/1.1" 200 -
+2018-05-21 22:26:46,167 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:46] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-05-21 22:26:46,724 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:26:46] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-05-21 22:27:29,075 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:27:29] "POST /api/paper_network HTTP/1.1" 500 -
+2018-05-21 22:27:29,141 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:27:29] "GET /favicon.ico HTTP/1.1" 404 -
+2018-05-21 22:28:43,348 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:29:08,142 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:29:08,311 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:29:08,413 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:29:36,239 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:29:36] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:29:43,319 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:29:43] "POST /api/paper_network HTTP/1.1" 200 -
+2018-05-21 22:29:45,993 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:29:45] "GET /static/common/img/fullscreen.png HTTP/1.1" 200 -
+2018-05-21 22:29:46,055 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:29:46] "GET /static/common/img/back.png HTTP/1.1" 200 -
+2018-05-21 22:31:02,012 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:31:06,947 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:31:07,022 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:31:07,043 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:31:10,440 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:31:10] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:31:13,670 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:31:13] "POST /api/paper_network HTTP/1.1" 200 -
+2018-05-21 22:32:06,391 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:32:06] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:32:09,029 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:32:09] "POST /api/paper_network HTTP/1.1" 200 -
+2018-05-21 22:32:41,831 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:32:48,680 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:32:52,775 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:32:52,805 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:32:52,816 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:32:54,552 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:32:54] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:32:58,253 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:32:58] "POST /api/paper_network HTTP/1.1" 500 -
+2018-05-21 22:33:23,354 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:33:30,658 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:33:30,701 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:33:30,720 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:34:33,865 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:34:41,391 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:34:41,459 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:34:41,484 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:34:55,486 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:34:55] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:34:59,236 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:34:59] "POST /api/paper_network HTTP/1.1" 200 -
+2018-05-21 22:35:16,378 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:35:20,753 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:35:20,783 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:35:20,796 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:35:22,444 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:35:22] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:35:26,161 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:35:26] "POST /api/paper_network HTTP/1.1" 200 -
+2018-05-21 22:35:52,016 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:35:56,510 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:35:56,565 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:35:56,585 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:36:35,167 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:36:35] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:36:38,657 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:36:38] "POST /api/paper_network HTTP/1.1" 200 -
+2018-05-21 22:37:16,834 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:37:21,036 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:37:21,069 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:37:21,082 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:37:33,526 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:37:33] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:37:36,963 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:37:36] "POST /api/paper_network HTTP/1.1" 200 -
+2018-05-21 22:38:14,717 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:38:23,744 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:38:28,605 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:38:28,707 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:38:28,723 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:38:29,688 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:38:29] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:38:33,427 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:38:33] "POST /api/paper_network HTTP/1.1" 500 -
+2018-05-21 22:38:56,036 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:39:03,509 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:39:03,559 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:39:03,584 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:39:13,099 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:39:13] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:39:16,921 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:39:16] "POST /api/paper_network HTTP/1.1" 200 -
+2018-05-21 22:39:54,822 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:39:59,309 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:39:59,358 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:39:59,372 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:40:00,664 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:40:00] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:40:04,651 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:40:04] "POST /api/paper_network HTTP/1.1" 200 -
+2018-05-21 22:41:09,118 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:41:13,776 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:41:13,809 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:41:13,819 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 22:41:15,507 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:41:15] "GET /api/paper_detail?paperID=0eab66e7-71a4-4a4c-9055-33501f919a8c HTTP/1.1" 200 -
+2018-05-21 22:41:18,085 - _internal.py[line:87] - INFO: 127.0.0.1 - - [21/May/2018 22:41:18] "POST /api/paper_network HTTP/1.1" 200 -
+2018-05-21 22:49:51,749 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\new_construct_network_form_mongodb.py', reloading
+2018-05-21 22:49:52,380 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-21 22:49:56,917 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-21 22:49:56,954 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-21 22:49:56,970 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-21 23:52:42,818 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading

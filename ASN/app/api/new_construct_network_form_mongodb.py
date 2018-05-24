@@ -21,12 +21,12 @@ class NewConstructCitationTree():
         self.my_set = self.mongdb.citation_total
         self.paper_id = paper_id
 
-        self.node_limit_num = 1000 - 1
+        self.node_limit_num = 100 - 1
         # self.node_limit_num = 'inf'
         self.total_node_list = []
         self.init_cata = 0
 
-        self.iter_time = 500
+        self.iter_time = 200
         self.smallest_community_node_num = 2
 
     def construct(self):
@@ -40,7 +40,7 @@ class NewConstructCitationTree():
         year = root["title"]
         self.Graph.add_node(paper_id, paper_title=paper_title, id=paper_id, year=year, cata=self.init_cata)
 
-        first_layer_paper_ids = []  # 存储相关的paper的id (第一层节点 即引用root和被root引用的论文)
+        first_layer_paper_ids = list()  # 存储相关的paper的id (第一层节点 即引用root和被root引用的论文)
 
         # 添加root引用的节点和建立边，并更新layer_list
         first_layer_paper_ids = self.add_nodes_and_edges_to_root(paper_id, first_layer_paper_ids)
@@ -49,7 +49,7 @@ class NewConstructCitationTree():
         first_layer_paper_ids = self.add_nodes_and_edges_from_root(paper_id, first_layer_paper_ids)
         print "len of layer 1: ", len(first_layer_paper_ids)
 
-        second_layer_paper_ids = []  # 存储第二层节点 即引用第一层节点(node1)或 第一层节点(node1)引用的节点
+        second_layer_paper_ids = list()  # 存储第二层节点 即引用第一层节点(node1)或 第一层节点(node1)引用的节点
 
         for id1 in first_layer_paper_ids:
             # 添加node1引用的节点和建立边，并更新next_layer_list (如果在layer1中存在node1引用的节点，在此建立边)
@@ -158,7 +158,7 @@ class NewConstructCitationTree():
 
     def add_nodes_and_edges_from_root(self, root_id, layer_list):
         """
-        天添加所有引用root节点的节点的边
+        添加所有引用root节点的节点的边
         :param root_id:
         :param id_list: 引用root的所有节点
         :return:
@@ -239,8 +239,7 @@ class NewConstructCitationTree():
                     total = float(sum(memory[speaker].values()))
                     # 查看speaker中memory中出现概率最大的标签并记录，key是标签名，value是Listener与speaker之间的权
                     # np.random.multinomial(1，seq),根据数列seq概率随机选择seq中的1个
-                    labels[memory[speaker].keys()[
-                        np.random.multinomial(1, [freq / total for freq in memory[speaker].values()]).argmax()]] += 1
+                    labels[memory[speaker].keys()[np.random.multinomial(1, [freq / total for freq in memory[speaker].values()]).argmax()]] += 1
                     # print "labels", labels
 
                 # 查看labels中值最大的标签，若不存在于memory的listener中，让其成为当前listener的一个记录，若存在，增加value的值
@@ -263,7 +262,6 @@ class NewConstructCitationTree():
             # memory[primary] = {p: memory[primary][p]}
             p = memory[primary].keys()[np.argmax(memory[primary].values())]
             memory[primary] = {p: memory[primary][p]}
-        # 如果希望将那种所属社区不明显的节点排除的就使用下面这段注释代码
 
 
         communities = {}
@@ -320,7 +318,12 @@ class NewConstructCitationTree():
             y = self.Graph.node[node]['year']
             # print "y", y
             c = self.Graph.node[node]['cata']
-            node_list.append((pi, t, y, c))
+
+            d = self.Graph.in_degree(pi) + 5
+            # if d > 50:
+            #     d -= 30
+
+            node_list.append((pi, t, y, c, d))
         return node_list
 
     def num_of_nodes(self):

@@ -140,10 +140,10 @@ def confirm_email(token=None):
 @login_required
 def unconfirmed():
     if current_user.confirmed:
-        return redirect('user.home')
+        return redirect(url_for('user.home'))
     else:
         flash('Please confirm your account!', 'warning')
-        return render_template('unconfirmed.html')
+        return redirect(url_for('user.uncomfirmed'))
 
 
 @api.route('/resend')
@@ -433,12 +433,14 @@ def search():
         authors_detail = authors_detail[start_item_number:end_item_number]
         cache.set('authors_detail', authors_detail)
 
-        # 搜索paper
-        # if search_type == 'paper':
-
         begin = time.time()
+
+        word_list = list()
+        for word in searchtext.split():
+            word_list.append(re.compile(word))
         # 使用mongodb查询
-        paper_num = mongo.db.citation_total.find({'title': re.compile(searchtext)}).count()
+        # paper_num = mongo.db.citation_total.find({'title': re.compile(searchtext)}).count()
+        paper_num = mongo.db.citation_total.find({'title': {'$in': word_list}}).count()
         paper_results = mongo.db.citation_total.find({'title': re.compile(searchtext)}).sort('title', -1)
 
         end = time.time()
@@ -660,7 +662,6 @@ def to_paper_detail():
 @api.route('/paper_detail', methods=['GET'])
 def paper_detail():
     paper_id = request.args.get('paperID')
-    print "paper id", paper_id
 
     nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
     if not nowUser:
@@ -739,7 +740,6 @@ def expert_network():
 
         # 网络中只有作者自己，则进行下一年的关系网络构建
         if coauthor_network.nodes_num() == 1:
-            print year, 'break'
             continue
 
         coauthor_nodes = coauthor_network.all_nodes()
@@ -798,11 +798,11 @@ def paper_network():
     paper_network_edges = paper_network.edges()
     paper_network_nodes = paper_network.all_nodes()
 
-    for pi, t, y, c in paper_network_nodes:
+    for pi, t, y, c, d in paper_network_nodes:
         node_item = {
             "name": pi,
             "attributes": {"title": t, "year": y,},
-            "value": 10,
+            "value": 20,
             "cate": c,
         }
         nodes.append(node_item)
@@ -816,48 +816,6 @@ def paper_network():
         edges.append(edges_item)
     print "return"
     return json.dumps({"nodes": nodes, "links": edges, "cate_num": cate_num})
-
-
-@api.route('/insert_new_item', methods=['POST'])
-def insert_new_item():
-    """
-
-    :return:
-    """
-    info = request.args.get('mydata')
-    id = 1
-    mid = ""
-    name = info["name"]
-    name_zh = info["name_zh"]
-    department = info["department"]
-    tags = info["tags"]
-    gender = info["gender"]
-    phone = info["phone"]
-    email = info["email"]
-    position = info["position"]
-    biography = info["biography"]
-    experience = info["experience"]
-    fax = info["fax"]
-    education = info["education"]
-    address = info["address"]
-    homepage = info["homepage"]
-    h_index = 0.00
-    g_index = 0.00
-    cite_num = 0
-    avatar = ""
-
-    item = Expert_detail_total(id, mid, name, name_zh, position,
-                               phone, fax, email, department, address,
-                               homepage, education, experience, biography, avatar,
-                               h_index, g_index, gender, cite_num, tags, )
-
-    try:
-        db.session.add(item)
-        db.session.commit()
-        return json.dumps({"result": "insertion successd"})
-
-    except:
-        return json.dumps({"result": "insertion failed"})
 
 
 @api.route('/modify_user', methods=['POST'])
@@ -894,18 +852,10 @@ def modify_user():
         # another_result = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
         # print "first_name", request.form['firstName']
         if first_name is not None:
-            print "firstName", first_name
-            print "lastName", last_name
-            print "gender", gender
-            print "degree", degree
-            print "department", department
-            print "address", address
-            print "phone", phone
             try:
                 result_user = db.session.query(ASNUser).filter(ASNUser.email == current_email).first()
             except Exception, e:
                 print "modify_user：mysql 查询用户表出错"
-                print "error: ", e
                 logging.error(e)
                 return json.dumps({'result': 'fail', 'msg': 'can not query mysql'})
         else:
@@ -967,6 +917,7 @@ def modify_user():
     except Exception, e:
         print "error: ", e
         return json.dumps({'result': 'fail'})
+
 
 @api.route('/get_follow', methods=['POST'])
 def get_follow():
@@ -1074,7 +1025,6 @@ def to_follow():
     """
     current_email = current_user.get_id()
     follow_id = request.form.get("id")
-    print "Follow", follow_id
 
     # 更新用户follow
     result_follow = mongo.db.follow.find_one({"email": current_email})
@@ -1307,12 +1257,15 @@ def del_tag():
         else:
             area_str = area_str + area + ','
     result.focus_area = area_str
+    try:
+        result_author = db.session.query(Expert_detail_total).filter(Expert_detail_total.id == current_email).first()
+        result_author.tags = area_str
 
-    result_author = db.session.query(Expert_detail_total).filter(Expert_detail_total.id == current_email).first()
-    result_author.tags = area_str
-
-    db.session.commit()
-    return json.dumps({'result': 'success'})
+        db.session.commit()
+        return json.dumps({'result': 'success'})
+    except Exception, e:
+        logging.error(e)
+        return json.dumps({'result': 'fail'})
 
 
 @api.route('/upload_paper', methods=['POST'])
@@ -1431,5 +1384,5 @@ def summary_data():
         ASNUser.regist_time.between((today - datetime.timedelta(days=1)),today)).count()
     # new_user_rate = round(float(new_user_num) / (int(user_num) - new_user_num), 2)
     print "new_rate", new_user_num
-    return json.dumps({"user_num": user_num, "expert_detail": expert_detail_num, "author_num": author_num,
+    return json.dumps({"user_num": user_num, "author_num": author_num,
                        "paper_num": paper_num, "cite_num": cite_num, 'new_user_num': new_user_num})

@@ -343,19 +343,11 @@ def search():
 
     if previous_searchtext != searchtext:
         print "##################!!!!!!!!!!!!!!!!################"
-
-    if cache_type != 'false' and cache_type != 'true':
-        return redirect(url_for('user.not_found'))
-    if search_type != 'paper' and search_type != 'author':
-        return redirect(url_for('user.not_found'))
-
     nowUser = db.session.query(ASNUser).filter(ASNUser.email == current_user.get_id()).first()
-
     if not nowUser:
         status = {"loginStatus": False}
     else:
         status = {"loginStatus": True}
-
     item_number = 10
 
     # 不使用cache
@@ -365,9 +357,7 @@ def search():
 
         print "不使用cache"
 
-        #搜索author
-        # if search_type == 'author':
-
+        # 查询author
         start_item_number = (author_page_num - 1) * item_number
         end_item_number = author_page_num * item_number
 
@@ -433,6 +423,7 @@ def search():
         authors_detail = authors_detail[start_item_number:end_item_number]
         cache.set('authors_detail', authors_detail)
 
+        # 查询paper
         begin = time.time()
 
         word_list = list()

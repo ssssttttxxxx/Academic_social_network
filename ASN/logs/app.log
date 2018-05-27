@@ -6715,3 +6715,49 @@
 2018-05-21 22:49:56,954 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
 2018-05-21 22:49:56,970 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2018-05-21 23:52:42,818 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-05-25 13:04:17,538 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-25 13:04:30,380 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-25 13:04:30,512 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-25 13:04:30,546 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-05-25 13:04:47,940 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:47] "GET / HTTP/1.1" 200 -
+2018-05-25 13:04:49,737 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:49] "GET /static/jquery/jquery-3.3.1.min.js HTTP/1.1" 200 -
+2018-05-25 13:04:49,812 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:49] "GET /static/jquery/jquery-migrate-3.0.1.min.js HTTP/1.1" 200 -
+2018-05-25 13:04:49,875 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:49] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 -
+2018-05-25 13:04:49,986 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:49] "GET /static/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 -
+2018-05-25 13:04:50,009 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/common/login/ace-fonts.css HTTP/1.1" 200 -
+2018-05-25 13:04:50,043 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/sweetalert/css/sweetalert.css HTTP/1.1" 200 -
+2018-05-25 13:04:50,066 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/common/animate.css HTTP/1.1" 200 -
+2018-05-25 13:04:50,092 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/common/style.css HTTP/1.1" 200 -
+2018-05-25 13:04:50,168 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/jquery-validation-1.17.0/dist/jquery.validate.min.js HTTP/1.1" 200 -
+2018-05-25 13:04:50,226 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/jquery-validation-1.17.0/dist/localization/messages_zh.min.js HTTP/1.1" 200 -
+2018-05-25 13:04:50,253 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 -
+2018-05-25 13:04:50,312 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/vue/js/vue.js HTTP/1.1" 200 -
+2018-05-25 13:04:50,470 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js HTTP/1.1" 200 -
+2018-05-25 13:04:50,499 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/sweetalert/js/sweetalert.min.js HTTP/1.1" 200 -
+2018-05-25 13:04:50,565 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:50] "GET /static/common/img/logo.png HTTP/1.1" 200 -
+2018-05-25 13:04:56,078 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:56] "GET /api/summary_data HTTP/1.1" 200 -
+2018-05-25 13:04:56,128 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:56] "GET /static/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+2018-05-25 13:04:56,197 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:56] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-25 13:04:56,250 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:04:56] "GET /favicon.ico HTTP/1.1" 404 -
+2018-05-25 13:05:11,582 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:05:11] "GET /api/search_result?content=machine+learning HTTP/1.1" 302 -
+2018-05-25 13:05:49,042 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-25 13:05:49,180 - dictionary.py[line:123] - INFO: built Dictionary(5125 unique tokens: [u'Transduction', u'aided', u'MLC', u'exams', u'similarity']...) from 2536 documents (total 23699 corpus positions)
+2018-05-25 13:05:49,413 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:05:49] "GET /api/search?content=machine+learning&type=paper&all=false&a_page=1&p_page=1 HTTP/1.1" 200 -
+2018-05-25 13:05:49,563 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:05:49] "GET /static/common/style2.css HTTP/1.1" 200 -
+2018-05-25 13:05:49,726 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:05:49] "GET /static/jqPaginator/js/jqpaginator.min.js HTTP/1.1" 200 -
+2018-05-25 13:05:49,872 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:05:49] "GET /static/common/img/return-top.png HTTP/1.1" 200 -
+2018-05-25 13:05:49,984 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:05:49] "GET /static/common/img/icon-paper.png HTTP/1.1" 200 -
+2018-05-25 13:05:49,997 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:05:49] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-25 13:06:35,503 - dictionary.py[line:116] - INFO: adding document #0 to Dictionary(0 unique tokens: [])
+2018-05-25 13:06:35,875 - dictionary.py[line:116] - INFO: adding document #10000 to Dictionary(10647 unique tokens: [u'Transduction', u'Laplacian', u'factory', u'four', u'prefix']...)
+2018-05-25 13:06:36,391 - dictionary.py[line:116] - INFO: adding document #20000 to Dictionary(15780 unique tokens: [u'Transduction', u'writings', u'aerodynamic', u'Laplacian', u'factory']...)
+2018-05-25 13:06:36,865 - dictionary.py[line:116] - INFO: adding document #30000 to Dictionary(19742 unique tokens: [u'Transduction', u'writings', u'Oatey', u'aerodynamic', u'cosegmentation']...)
+2018-05-25 13:06:37,315 - dictionary.py[line:116] - INFO: adding document #40000 to Dictionary(22675 unique tokens: [u'localized', u'OPAC', u'OPAL', u'labelsets', u'Western']...)
+2018-05-25 13:06:37,426 - dictionary.py[line:123] - INFO: built Dictionary(23314 unique tokens: [u'localized', u'OPAC', u'OPAL', u'labelsets', u'Western']...) from 42856 documents (total 370929 corpus positions)
+2018-05-25 13:06:40,411 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:06:40] "GET /api/search?type=paper&content=learning&all=false&p_page=1&a_page=1 HTTP/1.1" 200 -
+2018-05-25 13:06:40,630 - _internal.py[line:87] - INFO: 127.0.0.1 - - [25/May/2018 13:06:40] "GET /static/common/fonts/OpenSans-400.woff HTTP/1.1" 404 -
+2018-05-25 13:12:37,684 - _internal.py[line:87] - INFO:  * Detected change in 'C:\\Users\\hphp\\Desktop\\graduation_design\\AcademicSN\\ASN\\app\\api\\app_api.py', reloading
+2018-05-25 13:12:38,997 - _internal.py[line:87] - INFO:  * Restarting with stat
+2018-05-25 13:12:47,589 - _internal.py[line:87] - WARNING:  * Debugger is active!
+2018-05-25 13:12:47,621 - _internal.py[line:87] - INFO:  * Debugger pin code: 115-141-193
+2018-05-25 13:12:47,648 - _internal.py[line:87] - INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
